@@ -40,18 +40,6 @@
             this.btnPrintReviewProgram = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrintReviewSyllabus = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrintReviewFull = new DevExpress.XtraBars.BarButtonItem();
-            this.pageAccount = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.groupAccountManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.groupAccountRole = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.groupAccountPassword = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.pagePrint = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.groupPrint = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.groupPrintReview = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.pageSyllabus = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.groupSyllabusInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.groupSyllabusObjectiveOutcome = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.groupSyllabusSchedule = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.groupSyllabusMapping = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnSyllabusCourseInfo = new DevExpress.XtraBars.BarButtonItem();
             this.btnSyllabusLecturerInfo = new DevExpress.XtraBars.BarButtonItem();
             this.btnSyllabusCoursePoint = new DevExpress.XtraBars.BarButtonItem();
@@ -64,13 +52,9 @@
             this.btnSyllabusSchedule = new DevExpress.XtraBars.BarButtonItem();
             this.btnSyllabusMapping = new DevExpress.XtraBars.BarButtonItem();
             this.btnSyllabusMappingDetail = new DevExpress.XtraBars.BarButtonItem();
-            this.pageProgram = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.groupProgramManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnProgramCreate = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramCreateSyllabus = new DevExpress.XtraBars.BarButtonItem();
-            this.pageProgramGeneralInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnProgramInfo = new DevExpress.XtraBars.BarButtonItem();
-            this.groupProgramObjectiveOutcome = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnProgramObjective = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramOutcome = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramContent = new DevExpress.XtraBars.BarButtonItem();
@@ -79,6 +63,22 @@
             this.btnProgramLecturerList = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramFacilities = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.pageProgram = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.groupProgramManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageProgramGeneralInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.groupProgramObjectiveOutcome = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageSyllabus = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.groupSyllabusInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.groupSyllabusSchedule = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.groupSyllabusObjectiveOutcome = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.groupSyllabusMapping = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pagePrint = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.groupPrint = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.groupPrintReview = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageAccount = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.groupAccountManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.groupAccountRole = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.groupAccountPassword = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -222,100 +222,6 @@
             this.btnPrintReviewFull.LargeWidth = 90;
             this.btnPrintReviewFull.Name = "btnPrintReviewFull";
             // 
-            // pageAccount
-            // 
-            this.pageAccount.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.groupAccountManager,
-            this.groupAccountRole,
-            this.groupAccountPassword});
-            this.pageAccount.Name = "pageAccount";
-            this.pageAccount.Text = "Tài Khoản";
-            // 
-            // groupAccountManager
-            // 
-            this.groupAccountManager.ItemLinks.Add(this.btnAccountManager);
-            this.groupAccountManager.Name = "groupAccountManager";
-            this.groupAccountManager.Text = "Quản Lý";
-            // 
-            // groupAccountRole
-            // 
-            this.groupAccountRole.ItemLinks.Add(this.btnAccountRole);
-            this.groupAccountRole.Name = "groupAccountRole";
-            this.groupAccountRole.Text = "Quyền Hạn";
-            // 
-            // groupAccountPassword
-            // 
-            this.groupAccountPassword.ItemLinks.Add(this.btnAccountReset);
-            this.groupAccountPassword.ItemLinks.Add(this.btnAccountChange);
-            this.groupAccountPassword.Name = "groupAccountPassword";
-            this.groupAccountPassword.Text = "Mật Khẩu";
-            // 
-            // pagePrint
-            // 
-            this.pagePrint.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.groupPrint,
-            this.groupPrintReview});
-            this.pagePrint.Name = "pagePrint";
-            this.pagePrint.Text = "Xem Lại và In";
-            // 
-            // groupPrint
-            // 
-            this.groupPrint.ItemLinks.Add(this.btnProgram);
-            this.groupPrint.ItemLinks.Add(this.btnPrintSyllabus);
-            this.groupPrint.ItemLinks.Add(this.btnPrintFull);
-            this.groupPrint.Name = "groupPrint";
-            this.groupPrint.Text = "In";
-            // 
-            // groupPrintReview
-            // 
-            this.groupPrintReview.ItemLinks.Add(this.btnPrintReviewProgram);
-            this.groupPrintReview.ItemLinks.Add(this.btnPrintReviewSyllabus);
-            this.groupPrintReview.ItemLinks.Add(this.btnPrintReviewFull);
-            this.groupPrintReview.Name = "groupPrintReview";
-            this.groupPrintReview.Text = "Xem Lại";
-            // 
-            // pageSyllabus
-            // 
-            this.pageSyllabus.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.groupSyllabusInfo,
-            this.groupSyllabusSchedule,
-            this.groupSyllabusObjectiveOutcome,
-            this.groupSyllabusMapping});
-            this.pageSyllabus.Name = "pageSyllabus";
-            this.pageSyllabus.Text = "Đề Cương";
-            // 
-            // groupSyllabusInfo
-            // 
-            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusCourseInfo);
-            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusLecturerInfo);
-            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusCoursePoint);
-            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusCourseDescription);
-            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusDocument);
-            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusMethod);
-            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusRequirement);
-            this.groupSyllabusInfo.Name = "groupSyllabusInfo";
-            this.groupSyllabusInfo.Text = "Thông Tin Chung";
-            // 
-            // groupSyllabusObjectiveOutcome
-            // 
-            this.groupSyllabusObjectiveOutcome.ItemLinks.Add(this.btnSyllabusObjectives);
-            this.groupSyllabusObjectiveOutcome.ItemLinks.Add(this.btnSyllabusOutcomes);
-            this.groupSyllabusObjectiveOutcome.Name = "groupSyllabusObjectiveOutcome";
-            this.groupSyllabusObjectiveOutcome.Text = "Mục Tiêu Và Đầu Ra";
-            // 
-            // groupSyllabusSchedule
-            // 
-            this.groupSyllabusSchedule.ItemLinks.Add(this.btnSyllabusSchedule);
-            this.groupSyllabusSchedule.Name = "groupSyllabusSchedule";
-            this.groupSyllabusSchedule.Text = "Kế Hoạch";
-            // 
-            // groupSyllabusMapping
-            // 
-            this.groupSyllabusMapping.ItemLinks.Add(this.btnSyllabusMapping);
-            this.groupSyllabusMapping.ItemLinks.Add(this.btnSyllabusMappingDetail);
-            this.groupSyllabusMapping.Name = "groupSyllabusMapping";
-            this.groupSyllabusMapping.Text = "Liên Kết";
-            // 
             // btnSyllabusCourseInfo
             // 
             this.btnSyllabusCourseInfo.Caption = "Thông Tin Môn Học";
@@ -424,22 +330,6 @@
             this.btnSyllabusMappingDetail.LargeWidth = 75;
             this.btnSyllabusMappingDetail.Name = "btnSyllabusMappingDetail";
             // 
-            // pageProgram
-            // 
-            this.pageProgram.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.groupProgramManager,
-            this.pageProgramGeneralInfo,
-            this.groupProgramObjectiveOutcome});
-            this.pageProgram.Name = "pageProgram";
-            this.pageProgram.Text = "Chương Trình Đào Tạo";
-            // 
-            // groupProgramManager
-            // 
-            this.groupProgramManager.ItemLinks.Add(this.btnProgramCreate);
-            this.groupProgramManager.ItemLinks.Add(this.btnProgramCreateSyllabus);
-            this.groupProgramManager.Name = "groupProgramManager";
-            this.groupProgramManager.Text = "Quản Lý Chương Trình";
-            // 
             // btnProgramCreate
             // 
             this.btnProgramCreate.Caption = "Tạo Chương Trình";
@@ -458,17 +348,6 @@
             this.btnProgramCreateSyllabus.LargeWidth = 75;
             this.btnProgramCreateSyllabus.Name = "btnProgramCreateSyllabus";
             // 
-            // pageProgramGeneralInfo
-            // 
-            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramInfo);
-            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramContent);
-            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramPlan);
-            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramDescription);
-            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramLecturerList);
-            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramFacilities);
-            this.pageProgramGeneralInfo.Name = "pageProgramGeneralInfo";
-            this.pageProgramGeneralInfo.Text = "Thông Tin Chung";
-            // 
             // btnProgramInfo
             // 
             this.btnProgramInfo.Caption = "Thông Tin Chương Trình";
@@ -477,13 +356,6 @@
             this.btnProgramInfo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramInfo.LargeGlyph")));
             this.btnProgramInfo.LargeWidth = 90;
             this.btnProgramInfo.Name = "btnProgramInfo";
-            // 
-            // groupProgramObjectiveOutcome
-            // 
-            this.groupProgramObjectiveOutcome.ItemLinks.Add(this.btnProgramObjective);
-            this.groupProgramObjectiveOutcome.ItemLinks.Add(this.btnProgramOutcome);
-            this.groupProgramObjectiveOutcome.Name = "groupProgramObjectiveOutcome";
-            this.groupProgramObjectiveOutcome.Text = "Mục Tiêu Và Đầu Ra";
             // 
             // btnProgramObjective
             // 
@@ -558,14 +430,142 @@
             this.skinRibbonGalleryBarItem1.Id = 34;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
-            // Form1
+            // pageProgram
+            // 
+            this.pageProgram.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.groupProgramManager,
+            this.pageProgramGeneralInfo,
+            this.groupProgramObjectiveOutcome});
+            this.pageProgram.Name = "pageProgram";
+            this.pageProgram.Text = "Chương Trình Đào Tạo";
+            // 
+            // groupProgramManager
+            // 
+            this.groupProgramManager.ItemLinks.Add(this.btnProgramCreate);
+            this.groupProgramManager.ItemLinks.Add(this.btnProgramCreateSyllabus);
+            this.groupProgramManager.Name = "groupProgramManager";
+            this.groupProgramManager.Text = "Quản Lý Chương Trình";
+            // 
+            // pageProgramGeneralInfo
+            // 
+            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramInfo);
+            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramContent);
+            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramPlan);
+            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramDescription);
+            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramLecturerList);
+            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramFacilities);
+            this.pageProgramGeneralInfo.Name = "pageProgramGeneralInfo";
+            this.pageProgramGeneralInfo.Text = "Thông Tin Chung";
+            // 
+            // groupProgramObjectiveOutcome
+            // 
+            this.groupProgramObjectiveOutcome.ItemLinks.Add(this.btnProgramObjective);
+            this.groupProgramObjectiveOutcome.ItemLinks.Add(this.btnProgramOutcome);
+            this.groupProgramObjectiveOutcome.Name = "groupProgramObjectiveOutcome";
+            this.groupProgramObjectiveOutcome.Text = "Mục Tiêu Và Đầu Ra";
+            // 
+            // pageSyllabus
+            // 
+            this.pageSyllabus.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.groupSyllabusInfo,
+            this.groupSyllabusSchedule,
+            this.groupSyllabusObjectiveOutcome,
+            this.groupSyllabusMapping});
+            this.pageSyllabus.Name = "pageSyllabus";
+            this.pageSyllabus.Text = "Đề Cương";
+            // 
+            // groupSyllabusInfo
+            // 
+            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusCourseInfo);
+            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusLecturerInfo);
+            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusCoursePoint);
+            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusCourseDescription);
+            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusDocument);
+            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusMethod);
+            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusRequirement);
+            this.groupSyllabusInfo.Name = "groupSyllabusInfo";
+            this.groupSyllabusInfo.Text = "Thông Tin Chung";
+            // 
+            // groupSyllabusSchedule
+            // 
+            this.groupSyllabusSchedule.ItemLinks.Add(this.btnSyllabusSchedule);
+            this.groupSyllabusSchedule.Name = "groupSyllabusSchedule";
+            this.groupSyllabusSchedule.Text = "Kế Hoạch";
+            // 
+            // groupSyllabusObjectiveOutcome
+            // 
+            this.groupSyllabusObjectiveOutcome.ItemLinks.Add(this.btnSyllabusObjectives);
+            this.groupSyllabusObjectiveOutcome.ItemLinks.Add(this.btnSyllabusOutcomes);
+            this.groupSyllabusObjectiveOutcome.Name = "groupSyllabusObjectiveOutcome";
+            this.groupSyllabusObjectiveOutcome.Text = "Mục Tiêu Và Đầu Ra";
+            // 
+            // groupSyllabusMapping
+            // 
+            this.groupSyllabusMapping.ItemLinks.Add(this.btnSyllabusMapping);
+            this.groupSyllabusMapping.ItemLinks.Add(this.btnSyllabusMappingDetail);
+            this.groupSyllabusMapping.Name = "groupSyllabusMapping";
+            this.groupSyllabusMapping.Text = "Liên Kết";
+            // 
+            // pagePrint
+            // 
+            this.pagePrint.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.groupPrint,
+            this.groupPrintReview});
+            this.pagePrint.Name = "pagePrint";
+            this.pagePrint.Text = "Xem Lại và In";
+            // 
+            // groupPrint
+            // 
+            this.groupPrint.ItemLinks.Add(this.btnProgram);
+            this.groupPrint.ItemLinks.Add(this.btnPrintSyllabus);
+            this.groupPrint.ItemLinks.Add(this.btnPrintFull);
+            this.groupPrint.Name = "groupPrint";
+            this.groupPrint.Text = "In";
+            // 
+            // groupPrintReview
+            // 
+            this.groupPrintReview.ItemLinks.Add(this.btnPrintReviewProgram);
+            this.groupPrintReview.ItemLinks.Add(this.btnPrintReviewSyllabus);
+            this.groupPrintReview.ItemLinks.Add(this.btnPrintReviewFull);
+            this.groupPrintReview.Name = "groupPrintReview";
+            this.groupPrintReview.Text = "Xem Lại";
+            // 
+            // pageAccount
+            // 
+            this.pageAccount.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.groupAccountManager,
+            this.groupAccountRole,
+            this.groupAccountPassword});
+            this.pageAccount.Name = "pageAccount";
+            this.pageAccount.Text = "Tài Khoản";
+            // 
+            // groupAccountManager
+            // 
+            this.groupAccountManager.ItemLinks.Add(this.btnAccountManager);
+            this.groupAccountManager.Name = "groupAccountManager";
+            this.groupAccountManager.Text = "Quản Lý";
+            // 
+            // groupAccountRole
+            // 
+            this.groupAccountRole.ItemLinks.Add(this.btnAccountRole);
+            this.groupAccountRole.Name = "groupAccountRole";
+            this.groupAccountRole.Text = "Quyền Hạn";
+            // 
+            // groupAccountPassword
+            // 
+            this.groupAccountPassword.ItemLinks.Add(this.btnAccountReset);
+            this.groupAccountPassword.ItemLinks.Add(this.btnAccountChange);
+            this.groupAccountPassword.Name = "groupAccountPassword";
+            this.groupAccountPassword.Text = "Mật Khẩu";
+            // 
+            // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 533);
             this.Controls.Add(this.ribbonControl1);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Education Program Builder";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
