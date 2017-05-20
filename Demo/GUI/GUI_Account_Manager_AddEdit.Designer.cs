@@ -29,21 +29,23 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.txtAccountManagerEmail = new System.Windows.Forms.TextBox();
-            this.lblAccountManagerEmail = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblAccountManagerPass = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lblAccountManagerName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnAccountManagerSave = new System.Windows.Forms.Button();
             this.cboAccountManagerType = new System.Windows.Forms.ComboBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAccountManagerEmail = new System.Windows.Forms.TextBox();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.lblAccountManagerEmail = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lblAccountManagerPass = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lblAccountManagerName = new DevExpress.XtraLayout.LayoutControlItem();
             this.lblAccountManagerType = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btnAccountManagerSave = new System.Windows.Forms.Button();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.checkboxActive = new System.Windows.Forms.CheckBox();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -55,10 +57,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.checkboxActive);
             this.layoutControl1.Controls.Add(this.btnAccountManagerSave);
             this.layoutControl1.Controls.Add(this.cboAccountManagerType);
             this.layoutControl1.Controls.Add(this.textBox3);
@@ -72,6 +76,44 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnAccountManagerSave
+            // 
+            this.btnAccountManagerSave.Location = new System.Drawing.Point(12, 171);
+            this.btnAccountManagerSave.Name = "btnAccountManagerSave";
+            this.btnAccountManagerSave.Size = new System.Drawing.Size(473, 27);
+            this.btnAccountManagerSave.TabIndex = 10;
+            this.btnAccountManagerSave.Text = "Lưu Lại";
+            this.btnAccountManagerSave.UseVisualStyleBackColor = true;
+            // 
+            // cboAccountManagerType
+            // 
+            this.cboAccountManagerType.FormattingEnabled = true;
+            this.cboAccountManagerType.Location = new System.Drawing.Point(84, 106);
+            this.cboAccountManagerType.Name = "cboAccountManagerType";
+            this.cboAccountManagerType.Size = new System.Drawing.Size(401, 21);
+            this.cboAccountManagerType.TabIndex = 9;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(84, 82);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(401, 20);
+            this.textBox3.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(84, 58);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(401, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // txtAccountManagerEmail
+            // 
+            this.txtAccountManagerEmail.Location = new System.Drawing.Point(84, 34);
+            this.txtAccountManagerEmail.Name = "txtAccountManagerEmail";
+            this.txtAccountManagerEmail.Size = new System.Drawing.Size(401, 20);
+            this.txtAccountManagerEmail.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -84,72 +126,44 @@
             this.emptySpaceItem2,
             this.emptySpaceItem3,
             this.layoutControlItem1,
-            this.emptySpaceItem4});
+            this.emptySpaceItem4,
+            this.layoutControlItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(497, 245);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // txtAccountManagerEmail
-            // 
-            this.txtAccountManagerEmail.Location = new System.Drawing.Point(84, 36);
-            this.txtAccountManagerEmail.Name = "txtAccountManagerEmail";
-            this.txtAccountManagerEmail.Size = new System.Drawing.Size(401, 20);
-            this.txtAccountManagerEmail.TabIndex = 4;
-            // 
             // lblAccountManagerEmail
             // 
             this.lblAccountManagerEmail.Control = this.txtAccountManagerEmail;
-            this.lblAccountManagerEmail.Location = new System.Drawing.Point(0, 24);
+            this.lblAccountManagerEmail.Location = new System.Drawing.Point(0, 22);
             this.lblAccountManagerEmail.Name = "lblAccountManagerEmail";
             this.lblAccountManagerEmail.Size = new System.Drawing.Size(477, 24);
             this.lblAccountManagerEmail.Text = "Email";
             this.lblAccountManagerEmail.TextSize = new System.Drawing.Size(69, 13);
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(84, 60);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(401, 20);
-            this.textBox2.TabIndex = 5;
-            // 
             // lblAccountManagerPass
             // 
             this.lblAccountManagerPass.Control = this.textBox2;
-            this.lblAccountManagerPass.Location = new System.Drawing.Point(0, 48);
+            this.lblAccountManagerPass.Location = new System.Drawing.Point(0, 46);
             this.lblAccountManagerPass.Name = "lblAccountManagerPass";
             this.lblAccountManagerPass.Size = new System.Drawing.Size(477, 24);
             this.lblAccountManagerPass.Text = "Mật Khẩu";
             this.lblAccountManagerPass.TextSize = new System.Drawing.Size(69, 13);
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(84, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(401, 20);
-            this.textBox3.TabIndex = 6;
-            // 
             // lblAccountManagerName
             // 
             this.lblAccountManagerName.Control = this.textBox3;
-            this.lblAccountManagerName.Location = new System.Drawing.Point(0, 72);
+            this.lblAccountManagerName.Location = new System.Drawing.Point(0, 70);
             this.lblAccountManagerName.Name = "lblAccountManagerName";
             this.lblAccountManagerName.Size = new System.Drawing.Size(477, 24);
             this.lblAccountManagerName.Text = "Họ và Tên";
             this.lblAccountManagerName.TextSize = new System.Drawing.Size(69, 13);
             // 
-            // cboAccountManagerType
-            // 
-            this.cboAccountManagerType.FormattingEnabled = true;
-            this.cboAccountManagerType.Location = new System.Drawing.Point(84, 108);
-            this.cboAccountManagerType.Name = "cboAccountManagerType";
-            this.cboAccountManagerType.Size = new System.Drawing.Size(401, 21);
-            this.cboAccountManagerType.TabIndex = 9;
-            // 
             // lblAccountManagerType
             // 
             this.lblAccountManagerType.Control = this.cboAccountManagerType;
-            this.lblAccountManagerType.Location = new System.Drawing.Point(0, 96);
+            this.lblAccountManagerType.Location = new System.Drawing.Point(0, 94);
             this.lblAccountManagerType.Name = "lblAccountManagerType";
             this.lblAccountManagerType.Size = new System.Drawing.Size(477, 25);
             this.lblAccountManagerType.Text = "Loại Tài Khoản";
@@ -160,42 +174,51 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(477, 24);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(477, 22);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 199);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 190);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(477, 26);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(477, 35);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // btnAccountManagerSave
-            // 
-            this.btnAccountManagerSave.Location = new System.Drawing.Point(12, 160);
-            this.btnAccountManagerSave.Name = "btnAccountManagerSave";
-            this.btnAccountManagerSave.Size = new System.Drawing.Size(473, 47);
-            this.btnAccountManagerSave.TabIndex = 10;
-            this.btnAccountManagerSave.Text = "Lưu Lại";
-            this.btnAccountManagerSave.UseVisualStyleBackColor = true;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnAccountManagerSave;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 148);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 159);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(477, 51);
+            this.layoutControlItem1.Size = new System.Drawing.Size(477, 31);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 121);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 143);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(477, 27);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(477, 16);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // checkboxActive
+            // 
+            this.checkboxActive.Location = new System.Drawing.Point(12, 131);
+            this.checkboxActive.Name = "checkboxActive";
+            this.checkboxActive.Size = new System.Drawing.Size(473, 20);
+            this.checkboxActive.TabIndex = 11;
+            this.checkboxActive.Text = "Kích Hoạt Tài Khoản";
+            this.checkboxActive.UseVisualStyleBackColor = true;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.checkboxActive;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 119);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(477, 24);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
             // 
             // GUI_Account_Manager_AddEdit
             // 
@@ -216,6 +239,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -238,5 +262,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.CheckBox checkboxActive;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }

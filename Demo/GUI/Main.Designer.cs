@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnAccountManager = new DevExpress.XtraBars.BarButtonItem();
-            this.btnAccountRole = new DevExpress.XtraBars.BarButtonItem();
             this.btnAccountReset = new DevExpress.XtraBars.BarButtonItem();
             this.btnAccountChange = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgram = new DevExpress.XtraBars.BarButtonItem();
@@ -77,7 +76,6 @@
             this.groupPrintReview = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageAccount = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupAccountManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.groupAccountRole = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupAccountPassword = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +86,6 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.btnAccountManager,
-            this.btnAccountRole,
             this.btnAccountReset,
             this.btnAccountChange,
             this.btnProgram,
@@ -121,7 +118,7 @@
             this.btnProgramFacilities,
             this.skinRibbonGalleryBarItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 35;
+            this.ribbonControl1.MaxItemId = 36;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.pageProgram,
@@ -140,15 +137,6 @@
             this.btnAccountManager.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAccountManager.LargeGlyph")));
             this.btnAccountManager.LargeWidth = 75;
             this.btnAccountManager.Name = "btnAccountManager";
-            // 
-            // btnAccountRole
-            // 
-            this.btnAccountRole.Caption = "Đặt Quyền Hạn";
-            this.btnAccountRole.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAccountRole.Glyph")));
-            this.btnAccountRole.Id = 2;
-            this.btnAccountRole.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAccountRole.LargeGlyph")));
-            this.btnAccountRole.LargeWidth = 75;
-            this.btnAccountRole.Name = "btnAccountRole";
             // 
             // btnAccountReset
             // 
@@ -534,7 +522,6 @@
             // 
             this.pageAccount.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.groupAccountManager,
-            this.groupAccountRole,
             this.groupAccountPassword});
             this.pageAccount.Name = "pageAccount";
             this.pageAccount.Text = "Tài Khoản";
@@ -544,12 +531,6 @@
             this.groupAccountManager.ItemLinks.Add(this.btnAccountManager);
             this.groupAccountManager.Name = "groupAccountManager";
             this.groupAccountManager.Text = "Quản Lý";
-            // 
-            // groupAccountRole
-            // 
-            this.groupAccountRole.ItemLinks.Add(this.btnAccountRole);
-            this.groupAccountRole.Name = "groupAccountRole";
-            this.groupAccountRole.Text = "Quyền Hạn";
             // 
             // groupAccountPassword
             // 
@@ -580,10 +561,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage pageAccount;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupAccountManager;
         private DevExpress.XtraBars.BarButtonItem btnAccountManager;
-        private DevExpress.XtraBars.BarButtonItem btnAccountRole;
         private DevExpress.XtraBars.BarButtonItem btnAccountReset;
         private DevExpress.XtraBars.BarButtonItem btnAccountChange;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupAccountRole;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupAccountPassword;
         private DevExpress.XtraBars.BarButtonItem btnProgram;
         private DevExpress.XtraBars.BarButtonItem btnPrintSyllabus;
