@@ -103,11 +103,11 @@
     <Compile Include="GUI\GUI_Program_CreateProgram.Designer.cs">
       <DependentUpon>GUI_Program_CreateProgram.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\GUI_Program_Objectives.cs">
+    <Compile Include="GUI\GUI_Program_Objectives_AddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\GUI_Program_Objectives.Designer.cs">
-      <DependentUpon>GUI_Program_Objectives.cs</DependentUpon>
+    <Compile Include="GUI\GUI_Program_Objectives_AddEdit.Designer.cs">
+      <DependentUpon>GUI_Program_Objectives_AddEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Main.cs">
       <SubType>Form</SubType>
@@ -120,6 +120,18 @@
     </Compile>
     <Compile Include="GUI\GUI_Account_Manager.Designer.cs">
       <DependentUpon>GUI_Account_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_Program_Objectives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Program_Objectives.Designer.cs">
+      <DependentUpon>GUI_Program_Objectives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_Program_Outcomes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_Program_Outcomes.Designer.cs">
+      <DependentUpon>GUI_Program_Outcomes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_Program_Objectives.resx">
       <DependentUpon>GUI_Program_Objectives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_Program_Objectives_AddEdit.resx">
+      <DependentUpon>GUI_Program_Objectives_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_Program_Outcomes.resx">
+      <DependentUpon>GUI_Program_Outcomes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
