@@ -220,6 +220,12 @@
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Lecturer.Designer.cs">
       <DependentUpon>GUI_Syllabus_Lecturer.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Map.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Map.Designer.cs">
+      <DependentUpon>GUI_Syllabus_Map.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Methods.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Lecturer.resx">
       <DependentUpon>GUI_Syllabus_Lecturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Map.resx">
+      <DependentUpon>GUI_Syllabus_Map.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Methods.resx">
       <DependentUpon>GUI_Syllabus_Methods.cs</DependentUpon>
