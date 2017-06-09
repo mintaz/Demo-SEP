@@ -38,6 +38,8 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.lblOutcometype = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtProgramOutNo = new System.Windows.Forms.TextBox();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -46,10 +48,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblOutcometype)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtProgramOutNo);
             this.layoutControl1.Controls.Add(this.cboOutcomeType);
             this.layoutControl1.Controls.Add(this.btnOutcomesSave);
             this.layoutControl1.Controls.Add(this.rcOutcomes);
@@ -64,25 +68,25 @@
             // cboOutcomeType
             // 
             this.cboOutcomeType.FormattingEnabled = true;
-            this.cboOutcomeType.Location = new System.Drawing.Point(73, 12);
+            this.cboOutcomeType.Location = new System.Drawing.Point(100, 36);
             this.cboOutcomeType.Name = "cboOutcomeType";
-            this.cboOutcomeType.Size = new System.Drawing.Size(495, 21);
+            this.cboOutcomeType.Size = new System.Drawing.Size(468, 21);
             this.cboOutcomeType.TabIndex = 6;
             // 
             // btnOutcomesSave
             // 
-            this.btnOutcomesSave.Location = new System.Drawing.Point(12, 165);
+            this.btnOutcomesSave.Location = new System.Drawing.Point(12, 182);
             this.btnOutcomesSave.Name = "btnOutcomesSave";
-            this.btnOutcomesSave.Size = new System.Drawing.Size(556, 51);
+            this.btnOutcomesSave.Size = new System.Drawing.Size(556, 40);
             this.btnOutcomesSave.TabIndex = 5;
             this.btnOutcomesSave.Text = "Lưu Lại";
             this.btnOutcomesSave.UseVisualStyleBackColor = true;
             // 
             // rcOutcomes
             // 
-            this.rcOutcomes.Location = new System.Drawing.Point(73, 37);
+            this.rcOutcomes.Location = new System.Drawing.Point(100, 61);
             this.rcOutcomes.Name = "rcOutcomes";
-            this.rcOutcomes.Size = new System.Drawing.Size(495, 87);
+            this.rcOutcomes.Size = new System.Drawing.Size(468, 88);
             this.rcOutcomes.TabIndex = 4;
             this.rcOutcomes.Text = "";
             // 
@@ -95,7 +99,8 @@
             this.lblOutcome,
             this.layoutControlItem1,
             this.emptySpaceItem2,
-            this.lblOutcometype});
+            this.lblOutcometype,
+            this.layoutControlItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(580, 262);
@@ -104,45 +109,61 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 208);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 214);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(560, 34);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(560, 28);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // lblOutcome
             // 
             this.lblOutcome.Control = this.rcOutcomes;
-            this.lblOutcome.Location = new System.Drawing.Point(0, 25);
+            this.lblOutcome.Location = new System.Drawing.Point(0, 49);
             this.lblOutcome.Name = "lblOutcome";
-            this.lblOutcome.Size = new System.Drawing.Size(560, 91);
+            this.lblOutcome.Size = new System.Drawing.Size(560, 92);
             this.lblOutcome.Text = "Nội Dung";
-            this.lblOutcome.TextSize = new System.Drawing.Size(58, 13);
+            this.lblOutcome.TextSize = new System.Drawing.Size(85, 13);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnOutcomesSave;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 153);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 170);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(560, 55);
+            this.layoutControlItem1.Size = new System.Drawing.Size(560, 44);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 116);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 141);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(560, 37);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(560, 29);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // lblOutcometype
             // 
             this.lblOutcometype.Control = this.cboOutcomeType;
-            this.lblOutcometype.Location = new System.Drawing.Point(0, 0);
+            this.lblOutcometype.Location = new System.Drawing.Point(0, 24);
             this.lblOutcometype.Name = "lblOutcometype";
             this.lblOutcometype.Size = new System.Drawing.Size(560, 25);
             this.lblOutcometype.Text = "Loại Đầu Ra";
-            this.lblOutcometype.TextSize = new System.Drawing.Size(58, 13);
+            this.lblOutcometype.TextSize = new System.Drawing.Size(85, 13);
+            // 
+            // txtProgramOutNo
+            // 
+            this.txtProgramOutNo.Location = new System.Drawing.Point(100, 12);
+            this.txtProgramOutNo.Name = "txtProgramOutNo";
+            this.txtProgramOutNo.Size = new System.Drawing.Size(468, 20);
+            this.txtProgramOutNo.TabIndex = 7;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.txtProgramOutNo;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(560, 24);
+            this.layoutControlItem2.Text = "Chuẩn Đâu Ra Số";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(85, 13);
             // 
             // GUI_Program_Outcomes_AddEdit
             // 
@@ -160,6 +181,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblOutcometype)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,5 +198,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private System.Windows.Forms.ComboBox cboOutcomeType;
         private DevExpress.XtraLayout.LayoutControlItem lblOutcometype;
+        private System.Windows.Forms.TextBox txtProgramOutNo;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }

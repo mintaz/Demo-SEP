@@ -232,6 +232,12 @@
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Objectives.Designer.cs">
       <DependentUpon>GUI_Syllabus_Objectives.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Objectives_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Objectives_Add.Designer.cs">
+      <DependentUpon>GUI_Syllabus_Objectives_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Outcomes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,8 +324,14 @@
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Objectives.resx">
       <DependentUpon>GUI_Syllabus_Objectives.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Objectives_Add.resx">
+      <DependentUpon>GUI_Syllabus_Objectives_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Outcomes.resx">
       <DependentUpon>GUI_Syllabus_Outcomes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Outcomes_Add.resx">
+      <DependentUpon>GUI_Syllabus_Outcomes_Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Request.resx">
       <DependentUpon>GUI_Syllabus_Request.cs</DependentUpon>

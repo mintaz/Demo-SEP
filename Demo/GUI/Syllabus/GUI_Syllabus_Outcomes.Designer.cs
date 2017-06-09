@@ -33,12 +33,12 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnEdit = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnDel = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.btnEdit = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnDel = new DevExpress.XtraBars.BarLargeButtonItem();
             this.gcCourseOut = new DevExpress.XtraGrid.GridControl();
             this.gvCourseOut = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -82,6 +82,23 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 0);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Caption = "Sửa";
+            this.btnEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.Glyph")));
+            this.btnEdit.Id = 1;
+            this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 0);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Caption = "Xóa";
+            this.btnDel.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDel.Glyph")));
+            this.btnDel.Id = 2;
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 0);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -109,23 +126,6 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(882, 67);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Caption = "Sửa";
-            this.btnEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.Glyph")));
-            this.btnEdit.Id = 1;
-            this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 0);
-            // 
-            // btnDel
-            // 
-            this.btnDel.Caption = "Xóa";
-            this.btnDel.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDel.Glyph")));
-            this.btnDel.Id = 2;
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 0);
             // 
             // gcCourseOut
             // 

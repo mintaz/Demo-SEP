@@ -28,128 +28,155 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.rtObjectives = new System.Windows.Forms.RichTextBox();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Syllabus_Objectives));
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.btnAdd = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnEdit = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnDel = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.gcCourseObj = new DevExpress.XtraGrid.GridControl();
+            this.gvCourseObj = new DevExpress.XtraGrid.Views.Grid.GridView();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCourseObj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCourseObj)).BeginInit();
             this.SuspendLayout();
             // 
-            // layoutControl1
+            // barManager1
             // 
-            this.layoutControl1.Controls.Add(this.btnSave);
-            this.layoutControl1.Controls.Add(this.rtObjectives);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(624, 262);
-            this.layoutControl1.TabIndex = 0;
-            this.layoutControl1.Text = "layoutControl1";
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar1});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.btnAdd,
+            this.btnEdit,
+            this.btnDel});
+            this.barManager1.MaxItemId = 3;
             // 
-            // layoutControlGroup1
+            // bar1
             // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.emptySpaceItem1,
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.emptySpaceItem2});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(624, 262);
-            this.layoutControlGroup1.TextVisible = false;
+            this.bar1.BarName = "Tools";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAdd),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEdit),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnDel, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar1.Text = "Tools";
             // 
-            // emptySpaceItem1
+            // btnAdd
             // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 214);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(604, 28);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.btnAdd.Caption = "Thêm";
+            this.btnAdd.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAdd.Glyph")));
+            this.btnAdd.Id = 0;
+            this.btnAdd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAdd.LargeGlyph")));
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 0);
             // 
-            // rtObjectives
+            // btnEdit
             // 
-            this.rtObjectives.Location = new System.Drawing.Point(102, 12);
-            this.rtObjectives.Name = "rtObjectives";
-            this.rtObjectives.Size = new System.Drawing.Size(510, 105);
-            this.rtObjectives.TabIndex = 4;
-            this.rtObjectives.Text = "";
+            this.btnEdit.Caption = "Sửa";
+            this.btnEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.Glyph")));
+            this.btnEdit.Id = 1;
+            this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 0);
             // 
-            // layoutControlItem1
+            // btnDel
             // 
-            this.layoutControlItem1.Control = this.rtObjectives;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(604, 109);
-            this.layoutControlItem1.Text = "Mục Tiêu Môn Học";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(86, 13);
+            this.btnDel.Caption = "Xóa";
+            this.btnDel.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDel.Glyph")));
+            this.btnDel.Id = 2;
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 0);
             // 
-            // btnSave
+            // barDockControlTop
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 185);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(600, 37);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Lưu Lại";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(882, 67);
             // 
-            // layoutControlItem2
+            // barDockControlBottom
             // 
-            this.layoutControlItem2.Control = this.btnSave;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 173);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(604, 41);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 412);
+            this.barDockControlBottom.Size = new System.Drawing.Size(882, 0);
             // 
-            // emptySpaceItem2
+            // barDockControlLeft
             // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 109);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(604, 64);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 67);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 345);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(882, 67);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
+            // 
+            // gcCourseObj
+            // 
+            this.gcCourseObj.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcCourseObj.Location = new System.Drawing.Point(0, 67);
+            this.gcCourseObj.MainView = this.gvCourseObj;
+            this.gcCourseObj.MenuManager = this.barManager1;
+            this.gcCourseObj.Name = "gcCourseObj";
+            this.gcCourseObj.Size = new System.Drawing.Size(882, 345);
+            this.gcCourseObj.TabIndex = 4;
+            this.gcCourseObj.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvCourseObj});
+            // 
+            // gvCourseObj
+            // 
+            this.gvCourseObj.GridControl = this.gcCourseObj;
+            this.gvCourseObj.Name = "gvCourseObj";
+            this.gvCourseObj.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             // 
             // GUI_Syllabus_Objectives
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 262);
-            this.Controls.Add(this.layoutControl1);
+            this.ClientSize = new System.Drawing.Size(882, 412);
+            this.Controls.Add(this.gcCourseObj);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Syllabus_Objectives";
             this.Text = "GUI_Syllabus_Objectives";
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCourseObj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCourseObj)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.RichTextBox rtObjectives;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarLargeButtonItem btnAdd;
+        private DevExpress.XtraBars.BarLargeButtonItem btnEdit;
+        private DevExpress.XtraBars.BarLargeButtonItem btnDel;
+        private DevExpress.XtraGrid.GridControl gcCourseObj;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvCourseObj;
     }
 }

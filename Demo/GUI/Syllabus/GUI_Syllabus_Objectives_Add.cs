@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Demo.GUI.Syllabus
 {
-    public partial class GUI_Syllabus_Objectives : Form
+    public partial class GUI_Syllabus_Objectives_Add: Form
     {
-        public GUI_Syllabus_Objectives()
+        public GUI_Syllabus_Objectives_Add()
         {
             InitializeComponent();
         }
