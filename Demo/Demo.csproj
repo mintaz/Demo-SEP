@@ -142,6 +142,12 @@
     <Compile Include="GUI\Program\GUI_Program_CreateSyllabus.Designer.cs">
       <DependentUpon>GUI_Program_CreateSyllabus.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Program\GUI_Program_Outcomes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Program\GUI_Program_Outcomes.Designer.cs">
+      <DependentUpon>GUI_Program_Outcomes.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Program\GUI_Program_ProgramInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,12 +177,6 @@
     </Compile>
     <Compile Include="GUI\Program\GUI_Program_CreateProgram.Designer.cs">
       <DependentUpon>GUI_Program_CreateProgram.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Program\GUI_Program_Objectives_AddEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Program\GUI_Program_Objectives_AddEdit.Designer.cs">
-      <DependentUpon>GUI_Program_Objectives_AddEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Program\GUI_Program_Outcomes_AddEdit.cs">
       <SubType>Form</SubType>
@@ -232,18 +232,6 @@
     <Compile Include="GUI\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Program\GUI_Program_Objectives.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Program\GUI_Program_Objectives.Designer.cs">
-      <DependentUpon>GUI_Program_Objectives.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Program\GUI_Program_Outcomes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Program\GUI_Program_Outcomes.Designer.cs">
-      <DependentUpon>GUI_Program_Outcomes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Account\GUI_Account_ChangePass.resx">
@@ -261,6 +249,9 @@
     <EmbeddedResource Include="GUI\Program\GUI_Program_CreateSyllabus.resx">
       <DependentUpon>GUI_Program_CreateSyllabus.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Program\GUI_Program_Outcomes.resx">
+      <DependentUpon>GUI_Program_Outcomes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_ProgramInfo.resx">
       <DependentUpon>GUI_Program_ProgramInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,15 +266,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_CreateProgram.resx">
       <DependentUpon>GUI_Program_CreateProgram.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Program\GUI_Program_Objectives.resx">
-      <DependentUpon>GUI_Program_Objectives.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Program\GUI_Program_Objectives_AddEdit.resx">
-      <DependentUpon>GUI_Program_Objectives_AddEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Program\GUI_Program_Outcomes.resx">
-      <DependentUpon>GUI_Program_Outcomes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_Outcomes_AddEdit.resx">
       <DependentUpon>GUI_Program_Outcomes_AddEdit.cs</DependentUpon>
