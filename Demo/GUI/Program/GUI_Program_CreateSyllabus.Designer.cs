@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Program_CreateSyllabus));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.btnAdd = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnEdit = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.bar2 = new DevExpress.XtraBars.Bar();
-            this.btnAdd = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnEdit = new DevExpress.XtraBars.BarLargeButtonItem();
             this.gcCourse = new DevExpress.XtraGrid.GridControl();
             this.gvCourse = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -63,12 +63,6 @@
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1});
             this.barManager1.MaxItemId = 1;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // barDockControlTop
             // 
@@ -98,6 +92,12 @@
             this.barDockControlRight.Location = new System.Drawing.Point(877, 67);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 328);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // bar1
             // 
             this.bar1.BarName = "Tools";
@@ -118,7 +118,36 @@
             this.barManager2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btnAdd,
             this.btnEdit});
-            this.barManager2.MaxItemId = 3;
+            this.barManager2.MaxItemId = 4;
+            // 
+            // bar2
+            // 
+            this.bar2.BarName = "Tools";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnAdd, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEdit)});
+            this.bar2.Text = "Tools";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Caption = "Thêm";
+            this.btnAdd.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAdd.Glyph")));
+            this.btnAdd.Id = 0;
+            this.btnAdd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAdd.LargeGlyph")));
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 0);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Caption = "Sửa";
+            this.btnEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.Glyph")));
+            this.btnEdit.Id = 2;
+            this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 0);
             // 
             // barDockControl1
             // 
@@ -147,34 +176,6 @@
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControl4.Location = new System.Drawing.Point(877, 67);
             this.barDockControl4.Size = new System.Drawing.Size(0, 328);
-            // 
-            // bar2
-            // 
-            this.bar2.BarName = "Tools";
-            this.bar2.DockCol = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnAdd, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnEdit)});
-            this.bar2.Text = "Tools";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Caption = "Thêm";
-            this.btnAdd.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAdd.Glyph")));
-            this.btnAdd.Id = 0;
-            this.btnAdd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAdd.LargeGlyph")));
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 0);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Caption = "Sửa";
-            this.btnEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.Glyph")));
-            this.btnEdit.Id = 2;
-            this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 0);
             // 
             // gcCourse
             // 

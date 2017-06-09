@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Demo.GUI.Program
 {
-    public partial class GUI_Program_Syllabus_Des : Form
+    public partial class GUI_Program_ProgramInfo : Form
     {
-        public GUI_Program_Syllabus_Des()
+        public GUI_Program_ProgramInfo()
         {
             InitializeComponent();
         }

@@ -38,20 +38,5 @@ namespace Demo
             btnPrintSyllabus.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             //btnAccountManager.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
         }
-
-        private void btnProgramFacilities_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Form formFacilitiescheck = this.checkexist(typeof(GUI.GUI_Program_PackageInfo));
-            if (formFacilitiescheck !=null)
-            {
-                formFacilitiescheck.Activate();
-            }
-            else
-            {
-                GUI.GUI_Program_PackageInfo formFacilities = new GUI.GUI_Program_PackageInfo();
-                formFacilities.MdiParent = this;
-                formFacilities.Show();
-            }
-        }
     }
 }

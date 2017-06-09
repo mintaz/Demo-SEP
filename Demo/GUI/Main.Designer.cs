@@ -56,17 +56,13 @@
             this.btnProgramCreateSyllabus = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramInfo = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramObjective = new DevExpress.XtraBars.BarButtonItem();
-            this.btnProgramOutcome = new DevExpress.XtraBars.BarButtonItem();
-            this.btnProgramContent = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramPlan = new DevExpress.XtraBars.BarButtonItem();
-            this.btnProgramDescription = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramLecturerList = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramFacilities = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.pageProgram = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupProgramManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageProgramGeneralInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.groupProgramObjectiveOutcome = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageSyllabus = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupSyllabusInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupSyllabusSchedule = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -112,10 +108,7 @@
             this.btnProgramCreateSyllabus,
             this.btnProgramInfo,
             this.btnProgramObjective,
-            this.btnProgramOutcome,
-            this.btnProgramContent,
             this.btnProgramPlan,
-            this.btnProgramDescription,
             this.btnProgramLecturerList,
             this.btnProgramFacilities,
             this.skinRibbonGalleryBarItem1});
@@ -356,24 +349,6 @@
             this.btnProgramObjective.LargeWidth = 75;
             this.btnProgramObjective.Name = "btnProgramObjective";
             // 
-            // btnProgramOutcome
-            // 
-            this.btnProgramOutcome.Caption = "Đầu Ra";
-            this.btnProgramOutcome.Glyph = ((System.Drawing.Image)(resources.GetObject("btnProgramOutcome.Glyph")));
-            this.btnProgramOutcome.Id = 28;
-            this.btnProgramOutcome.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramOutcome.LargeGlyph")));
-            this.btnProgramOutcome.LargeWidth = 75;
-            this.btnProgramOutcome.Name = "btnProgramOutcome";
-            // 
-            // btnProgramContent
-            // 
-            this.btnProgramContent.Caption = "Nội Dung Chương Trình";
-            this.btnProgramContent.Glyph = ((System.Drawing.Image)(resources.GetObject("btnProgramContent.Glyph")));
-            this.btnProgramContent.Id = 29;
-            this.btnProgramContent.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramContent.LargeGlyph")));
-            this.btnProgramContent.LargeWidth = 90;
-            this.btnProgramContent.Name = "btnProgramContent";
-            // 
             // btnProgramPlan
             // 
             this.btnProgramPlan.Caption = "Kế Hoạch Giảng Dạy";
@@ -382,15 +357,6 @@
             this.btnProgramPlan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramPlan.LargeGlyph")));
             this.btnProgramPlan.LargeWidth = 90;
             this.btnProgramPlan.Name = "btnProgramPlan";
-            // 
-            // btnProgramDescription
-            // 
-            this.btnProgramDescription.Caption = "Mô Tả Vắn Tắt";
-            this.btnProgramDescription.Glyph = ((System.Drawing.Image)(resources.GetObject("btnProgramDescription.Glyph")));
-            this.btnProgramDescription.Id = 31;
-            this.btnProgramDescription.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramDescription.LargeGlyph")));
-            this.btnProgramDescription.LargeWidth = 90;
-            this.btnProgramDescription.Name = "btnProgramDescription";
             // 
             // btnProgramLecturerList
             // 
@@ -409,7 +375,6 @@
             this.btnProgramFacilities.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramFacilities.LargeGlyph")));
             this.btnProgramFacilities.LargeWidth = 90;
             this.btnProgramFacilities.Name = "btnProgramFacilities";
-            this.btnProgramFacilities.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(btnProgramFacilities_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -425,8 +390,7 @@
             // 
             this.pageProgram.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.groupProgramManager,
-            this.pageProgramGeneralInfo,
-            this.groupProgramObjectiveOutcome});
+            this.pageProgramGeneralInfo});
             this.pageProgram.Name = "pageProgram";
             this.pageProgram.Text = "Chương Trình Đào Tạo";
             // 
@@ -440,20 +404,11 @@
             // pageProgramGeneralInfo
             // 
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramInfo);
-            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramContent);
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramPlan);
-            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramDescription);
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramLecturerList);
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramFacilities);
             this.pageProgramGeneralInfo.Name = "pageProgramGeneralInfo";
             this.pageProgramGeneralInfo.Text = "Thông Tin Chung";
-            // 
-            // groupProgramObjectiveOutcome
-            // 
-            this.groupProgramObjectiveOutcome.ItemLinks.Add(this.btnProgramObjective);
-            this.groupProgramObjectiveOutcome.ItemLinks.Add(this.btnProgramOutcome);
-            this.groupProgramObjectiveOutcome.Name = "groupProgramObjectiveOutcome";
-            this.groupProgramObjectiveOutcome.Text = "Mục Tiêu Và Đầu Ra";
             // 
             // pageSyllabus
             // 
@@ -606,13 +561,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupProgramManager;
         private DevExpress.XtraBars.BarButtonItem btnProgramInfo;
         private DevExpress.XtraBars.BarButtonItem btnProgramObjective;
-        private DevExpress.XtraBars.BarButtonItem btnProgramOutcome;
-        private DevExpress.XtraBars.BarButtonItem btnProgramContent;
         private DevExpress.XtraBars.BarButtonItem btnProgramPlan;
-        private DevExpress.XtraBars.BarButtonItem btnProgramDescription;
         private DevExpress.XtraBars.BarButtonItem btnProgramLecturerList;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageProgramGeneralInfo;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupProgramObjectiveOutcome;
         private DevExpress.XtraBars.BarButtonItem btnProgramFacilities;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
