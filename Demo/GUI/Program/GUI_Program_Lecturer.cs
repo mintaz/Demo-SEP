@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Demo.GUI
+namespace Demo.GUI.Program
 {
-    public partial class GUI_Syllabus_DetailMapping : Form
+    public partial class GUI_Program_Lecturer : Form
     {
-        public GUI_Syllabus_DetailMapping()
+        public GUI_Program_Lecturer()
         {
             InitializeComponent();
         }
 
         private void GUI_Program_PackageInfo_Load(object sender, EventArgs e)
         {
-            richtextboxPackage.LoadDocument("C:\\Users\\Mint\\Desktop\\Template\\Syllabus\\DetailMapping.docx");
+            richtextboxLecturer.LoadDocument("C:\\Users\\Mint\\Desktop\\z1.docx");
 
         }
     }

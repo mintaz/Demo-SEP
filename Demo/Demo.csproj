@@ -12,6 +12,7 @@
     <AssemblyName>Demo</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -142,6 +142,12 @@
     <Compile Include="GUI\Program\GUI_Program_CreateSyllabus.Designer.cs">
       <DependentUpon>GUI_Program_CreateSyllabus.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Program\GUI_Program_Lecturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Program\GUI_Program_Lecturer.Designer.cs">
+      <DependentUpon>GUI_Program_Lecturer.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Program\GUI_Program_Outcomes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,17 +166,17 @@
     <Compile Include="GUI\Program\GUI_Program_ProgramList.Designer.cs">
       <DependentUpon>GUI_Program_ProgramList.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Program\GUI_Program_Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Program\GUI_Program_Schedule.Designer.cs">
+      <DependentUpon>GUI_Program_Schedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Program\GUI_Program_Syllabus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Program\GUI_Program_Syllabus.Designer.cs">
       <DependentUpon>GUI_Program_Syllabus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Syllabus\GUI_Syllabus_DetailMapping.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Syllabus\GUI_Syllabus_DetailMapping.Designer.cs">
-      <DependentUpon>GUI_Syllabus_DetailMapping.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Program\GUI_Program_CreateProgram.cs">
       <SubType>Form</SubType>
@@ -202,6 +208,12 @@
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Document.Designer.cs">
       <DependentUpon>GUI_Syllabus_Document.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Info.Designer.cs">
+      <DependentUpon>GUI_Syllabus_Info.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Lecturer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,17 +226,29 @@
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Methods.Designer.cs">
       <DependentUpon>GUI_Syllabus_Methods.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Objectives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Objectives.Designer.cs">
+      <DependentUpon>GUI_Syllabus_Objectives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Outcomes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Outcomes.Designer.cs">
+      <DependentUpon>GUI_Syllabus_Outcomes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Outcomes_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Outcomes_Add.Designer.cs">
+      <DependentUpon>GUI_Syllabus_Outcomes_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Request.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Request.Designer.cs">
       <DependentUpon>GUI_Syllabus_Request.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Syllabus\GUI_Syllabus_TrainingPlan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Syllabus\GUI_Syllabus_TrainingPlan.Designer.cs">
-      <DependentUpon>GUI_Syllabus_TrainingPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Main.cs">
       <SubType>Form</SubType>
@@ -249,6 +273,9 @@
     <EmbeddedResource Include="GUI\Program\GUI_Program_CreateSyllabus.resx">
       <DependentUpon>GUI_Program_CreateSyllabus.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Program\GUI_Program_Lecturer.resx">
+      <DependentUpon>GUI_Program_Lecturer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_Outcomes.resx">
       <DependentUpon>GUI_Program_Outcomes.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,11 +285,11 @@
     <EmbeddedResource Include="GUI\Program\GUI_Program_ProgramList.resx">
       <DependentUpon>GUI_Program_ProgramList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Program\GUI_Program_Schedule.resx">
+      <DependentUpon>GUI_Program_Schedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_Syllabus.resx">
       <DependentUpon>GUI_Program_Syllabus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_DetailMapping.resx">
-      <DependentUpon>GUI_Syllabus_DetailMapping.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_CreateProgram.resx">
       <DependentUpon>GUI_Program_CreateProgram.cs</DependentUpon>
@@ -279,17 +306,23 @@
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Document.resx">
       <DependentUpon>GUI_Syllabus_Document.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Info.resx">
+      <DependentUpon>GUI_Syllabus_Info.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Lecturer.resx">
       <DependentUpon>GUI_Syllabus_Lecturer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Methods.resx">
       <DependentUpon>GUI_Syllabus_Methods.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Objectives.resx">
+      <DependentUpon>GUI_Syllabus_Objectives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Outcomes.resx">
+      <DependentUpon>GUI_Syllabus_Outcomes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Request.resx">
       <DependentUpon>GUI_Syllabus_Request.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_TrainingPlan.resx">
-      <DependentUpon>GUI_Syllabus_TrainingPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

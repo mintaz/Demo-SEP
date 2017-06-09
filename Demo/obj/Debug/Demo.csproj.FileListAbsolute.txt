@@ -101,9 +101,6 @@ C:\Users\Mint\documents\visual studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI
 C:\Users\Mint\documents\visual studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.GUI_Account_Manager_AddEdit.resources
 C:\Users\Mint\documents\visual studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.GUI_Account_ResetPass.resources
 C:\Users\Mint\documents\visual studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.GUI_Program_CreateProgram.resources
-C:\Users\Mint\documents\visual studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.GUI_Program_Objectives.resources
-C:\Users\Mint\documents\visual studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.GUI_Program_Objectives_AddEdit.resources
-C:\Users\Mint\documents\visual studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.GUI_Program_Outcomes.resources
 C:\Users\Mint\documents\visual studio 2015\Projects\Demo\Demo\bin\Debug\Accessibility.dll
 C:\Users\Mint\documents\visual studio 2015\Projects\Demo\Demo\bin\Debug\System.ComponentModel.DataAnnotations.dll
 C:\Users\Mint\documents\visual studio 2015\Projects\Demo\Demo\bin\Debug\System.Configuration.dll
@@ -134,3 +131,7 @@ C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI
 C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.GUI_Program_ProgramList.resources
 C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_CreateSyllabus.resources
 C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_Syllabus.resources
+C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_Lecturer.resources
+C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_Outcomes.resources
+C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_ProgramInfo.resources
+C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_Schedule.resources

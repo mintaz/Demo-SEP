@@ -1,6 +1,6 @@
-﻿namespace Demo.GUI
+﻿namespace Demo.GUI.Program
 {
-    partial class GUI_Syllabus_DetailMapping
+    partial class GUI_Program_Lecturer
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            this.richtextboxPackage = new DevExpress.XtraRichEdit.RichEditControl();
+            this.richtextboxLecturer = new DevExpress.XtraRichEdit.RichEditControl();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.commonBar1 = new DevExpress.XtraRichEdit.UI.CommonBar();
             this.undoItem1 = new DevExpress.XtraRichEdit.UI.UndoItem();
@@ -287,15 +287,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.richEditBarController1)).BeginInit();
             this.SuspendLayout();
             // 
-            // richtextboxPackage
+            // richtextboxLecturer
             // 
-            this.richtextboxPackage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richtextboxPackage.Location = new System.Drawing.Point(0, 33);
-            this.richtextboxPackage.MenuManager = this.barManager1;
-            this.richtextboxPackage.Name = "richtextboxPackage";
-            this.richtextboxPackage.Options.Printing.PrintPreviewFormKind = DevExpress.XtraRichEdit.PrintPreviewFormKind.Bars;
-            this.richtextboxPackage.Size = new System.Drawing.Size(1020, 565);
-            this.richtextboxPackage.TabIndex = 0;
+            this.richtextboxLecturer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richtextboxLecturer.Location = new System.Drawing.Point(0, 33);
+            this.richtextboxLecturer.MenuManager = this.barManager1;
+            this.richtextboxLecturer.Name = "richtextboxLecturer";
+            this.richtextboxLecturer.Options.Printing.PrintPreviewFormKind = DevExpress.XtraRichEdit.PrintPreviewFormKind.Bars;
+            this.richtextboxLecturer.Size = new System.Drawing.Size(1189, 565);
+            this.richtextboxLecturer.TabIndex = 0;
+            this.richtextboxLecturer.Text = "Thông tin giảng viên";
             // 
             // barManager1
             // 
@@ -549,7 +550,7 @@
             // 
             // commonBar1
             // 
-            this.commonBar1.Control = this.richtextboxPackage;
+            this.commonBar1.Control = this.richtextboxLecturer;
             this.commonBar1.DockCol = 0;
             this.commonBar1.DockRow = 0;
             this.commonBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -575,7 +576,7 @@
             // 
             // fontBar1
             // 
-            this.fontBar1.Control = this.richtextboxPackage;
+            this.fontBar1.Control = this.richtextboxLecturer;
             this.fontBar1.DockCol = 1;
             this.fontBar1.DockRow = 0;
             this.fontBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -616,7 +617,7 @@
             this.repositoryItemRichEditFontSizeEdit1.AutoHeight = false;
             this.repositoryItemRichEditFontSizeEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemRichEditFontSizeEdit1.Control = this.richtextboxPackage;
+            this.repositoryItemRichEditFontSizeEdit1.Control = this.richtextboxLecturer;
             this.repositoryItemRichEditFontSizeEdit1.Name = "repositoryItemRichEditFontSizeEdit1";
             // 
             // fontSizeIncreaseItem1
@@ -691,7 +692,7 @@
             // 
             // tablesBar1
             // 
-            this.tablesBar1.Control = this.richtextboxPackage;
+            this.tablesBar1.Control = this.richtextboxLecturer;
             this.tablesBar1.DockCol = 2;
             this.tablesBar1.DockRow = 0;
             this.tablesBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -706,7 +707,7 @@
             // 
             // tableRowsAndColumnsBar1
             // 
-            this.tableRowsAndColumnsBar1.Control = this.richtextboxPackage;
+            this.tableRowsAndColumnsBar1.Control = this.richtextboxLecturer;
             this.tableRowsAndColumnsBar1.DockCol = 3;
             this.tableRowsAndColumnsBar1.DockRow = 0;
             this.tableRowsAndColumnsBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -776,7 +777,7 @@
             // 
             // tableMergeBar1
             // 
-            this.tableMergeBar1.Control = this.richtextboxPackage;
+            this.tableMergeBar1.Control = this.richtextboxLecturer;
             this.tableMergeBar1.DockCol = 4;
             this.tableMergeBar1.DockRow = 0;
             this.tableMergeBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -806,14 +807,14 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1020, 33);
+            this.barDockControlTop.Size = new System.Drawing.Size(1189, 33);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 598);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1020, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1189, 0);
             // 
             // barDockControlLeft
             // 
@@ -826,7 +827,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1020, 33);
+            this.barDockControlRight.Location = new System.Drawing.Point(1189, 33);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 565);
             // 
             // showDocumentPropertiesFormItem1
@@ -979,7 +980,7 @@
             this.repositoryItemRichEditStyleEdit1.AutoHeight = false;
             this.repositoryItemRichEditStyleEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemRichEditStyleEdit1.Control = this.richtextboxPackage;
+            this.repositoryItemRichEditStyleEdit1.Control = this.richtextboxLecturer;
             this.repositoryItemRichEditStyleEdit1.Name = "repositoryItemRichEditStyleEdit1";
             // 
             // showEditStyleFormItem1
@@ -1592,7 +1593,7 @@
             this.repositoryItemBorderLineStyle1.AutoHeight = false;
             this.repositoryItemBorderLineStyle1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemBorderLineStyle1.Control = this.richtextboxPackage;
+            this.repositoryItemBorderLineStyle1.Control = this.richtextboxLecturer;
             this.repositoryItemBorderLineStyle1.Name = "repositoryItemBorderLineStyle1";
             // 
             // changeTableBorderLineWeightItem1
@@ -1608,7 +1609,7 @@
             this.repositoryItemBorderLineWeight1.AutoHeight = false;
             this.repositoryItemBorderLineWeight1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemBorderLineWeight1.Control = this.richtextboxPackage;
+            this.repositoryItemBorderLineWeight1.Control = this.richtextboxLecturer;
             this.repositoryItemBorderLineWeight1.Name = "repositoryItemBorderLineWeight1";
             // 
             // changeTableBorderColorItem1
@@ -1824,7 +1825,7 @@
             this.repositoryItemFloatingObjectOutlineWeight1.AutoHeight = false;
             this.repositoryItemFloatingObjectOutlineWeight1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemFloatingObjectOutlineWeight1.Control = this.richtextboxPackage;
+            this.repositoryItemFloatingObjectOutlineWeight1.Control = this.richtextboxLecturer;
             this.repositoryItemFloatingObjectOutlineWeight1.Name = "repositoryItemFloatingObjectOutlineWeight1";
             // 
             // changeFloatingObjectTextWrapTypeItem1
@@ -2206,12 +2207,12 @@
             this.richEditBarController1.BarItems.Add(this.floatingObjectSendBackwardItem1);
             this.richEditBarController1.BarItems.Add(this.floatingObjectSendToBackItem1);
             this.richEditBarController1.BarItems.Add(this.floatingObjectSendBehindTextItem1);
-            this.richEditBarController1.Control = this.richtextboxPackage;
+            this.richEditBarController1.Control = this.richtextboxLecturer;
             // 
             // paragraphBar1
             // 
             this.paragraphBar1.BarName = "";
-            this.paragraphBar1.Control = this.richtextboxPackage;
+            this.paragraphBar1.Control = this.richtextboxLecturer;
             this.paragraphBar1.DockCol = 6;
             this.paragraphBar1.DockRow = 0;
             this.paragraphBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -2234,7 +2235,7 @@
             // tableAlignmentBar1
             // 
             this.tableAlignmentBar1.BarName = "";
-            this.tableAlignmentBar1.Control = this.richtextboxPackage;
+            this.tableAlignmentBar1.Control = this.richtextboxLecturer;
             this.tableAlignmentBar1.DockCol = 3;
             this.tableAlignmentBar1.DockRow = 1;
             this.tableAlignmentBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -2251,18 +2252,18 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.showTableOptionsFormItem1)});
             this.tableAlignmentBar1.Text = "";
             // 
-            // GUI_Syllabus_DetailMapping
+            // GUI_Program_Lecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 598);
-            this.Controls.Add(this.richtextboxPackage);
+            this.ClientSize = new System.Drawing.Size(1189, 598);
+            this.Controls.Add(this.richtextboxLecturer);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "GUI_Syllabus_DetailMapping";
-            this.Text = "Ma trận chi tiết";
+            this.Name = "GUI_Program_Lecturer";
+            this.Text = "Thông Tin Giảng Viên";
             this.Load += new System.EventHandler(this.GUI_Program_PackageInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).EndInit();
@@ -2279,7 +2280,7 @@
 
         #endregion
 
-        private DevExpress.XtraRichEdit.RichEditControl richtextboxPackage;
+        private DevExpress.XtraRichEdit.RichEditControl richtextboxLecturer;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraRichEdit.UI.CommonBar commonBar1;
         private DevExpress.XtraRichEdit.UI.UndoItem undoItem1;

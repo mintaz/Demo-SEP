@@ -29,40 +29,41 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.txtCourseName = new System.Windows.Forms.TextBox();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtCourseCode = new System.Windows.Forms.TextBox();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtCoursePoint = new System.Windows.Forms.TextBox();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtLTtime = new System.Windows.Forms.TextBox();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtTHtime = new System.Windows.Forms.TextBox();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cboCourseType = new System.Windows.Forms.ComboBox();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cboPreCourse = new System.Windows.Forms.ComboBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.rtCourseContent = new System.Windows.Forms.RichTextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.gvPreCourse = new System.Windows.Forms.DataGridView();
+            this.cboCourseSemester = new System.Windows.Forms.ComboBox();
             this.cboCourseOwner = new System.Windows.Forms.ComboBox();
+            this.cboCourseType = new System.Windows.Forms.ComboBox();
+            this.txtTHtime = new System.Windows.Forms.TextBox();
+            this.txtLTtime = new System.Windows.Forms.TextBox();
+            this.txtCoursePoint = new System.Windows.Forms.TextBox();
+            this.txtCourseCode = new System.Windows.Forms.TextBox();
+            this.txtCourseName = new System.Windows.Forms.TextBox();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.cboCourseSemester = new System.Windows.Forms.ComboBox();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gvPreCourse = new System.Windows.Forms.DataGridView();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.rtCourseContent = new System.Windows.Forms.RichTextBox();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btnSave = new System.Windows.Forms.Button();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.cboPreCourse = new System.Windows.Forms.ComboBox();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPreCourse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -73,7 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPreCourse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -108,6 +108,107 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // cboPreCourse
+            // 
+            this.cboPreCourse.FormattingEnabled = true;
+            this.cboPreCourse.Location = new System.Drawing.Point(694, 250);
+            this.cboPreCourse.Name = "cboPreCourse";
+            this.cboPreCourse.Size = new System.Drawing.Size(412, 21);
+            this.cboPreCourse.TabIndex = 19;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(561, 511);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(545, 42);
+            this.btnSave.TabIndex = 18;
+            this.btnSave.Text = "Lưu Lại";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // rtCourseContent
+            // 
+            this.rtCourseContent.Location = new System.Drawing.Point(694, 364);
+            this.rtCourseContent.Name = "rtCourseContent";
+            this.rtCourseContent.Size = new System.Drawing.Size(412, 125);
+            this.rtCourseContent.TabIndex = 17;
+            this.rtCourseContent.Text = "";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(561, 291);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(545, 35);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // gvPreCourse
+            // 
+            this.gvPreCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvPreCourse.Location = new System.Drawing.Point(145, 250);
+            this.gvPreCourse.Name = "gvPreCourse";
+            this.gvPreCourse.Size = new System.Drawing.Size(412, 303);
+            this.gvPreCourse.TabIndex = 15;
+            // 
+            // cboCourseSemester
+            // 
+            this.cboCourseSemester.FormattingEnabled = true;
+            this.cboCourseSemester.Location = new System.Drawing.Point(145, 110);
+            this.cboCourseSemester.Name = "cboCourseSemester";
+            this.cboCourseSemester.Size = new System.Drawing.Size(961, 21);
+            this.cboCourseSemester.TabIndex = 14;
+            // 
+            // cboCourseOwner
+            // 
+            this.cboCourseOwner.FormattingEnabled = true;
+            this.cboCourseOwner.Location = new System.Drawing.Point(145, 85);
+            this.cboCourseOwner.Name = "cboCourseOwner";
+            this.cboCourseOwner.Size = new System.Drawing.Size(961, 21);
+            this.cboCourseOwner.TabIndex = 11;
+            // 
+            // cboCourseType
+            // 
+            this.cboCourseType.FormattingEnabled = true;
+            this.cboCourseType.Location = new System.Drawing.Point(145, 60);
+            this.cboCourseType.Name = "cboCourseType";
+            this.cboCourseType.Size = new System.Drawing.Size(961, 21);
+            this.cboCourseType.TabIndex = 9;
+            // 
+            // txtTHtime
+            // 
+            this.txtTHtime.Location = new System.Drawing.Point(145, 183);
+            this.txtTHtime.Name = "txtTHtime";
+            this.txtTHtime.Size = new System.Drawing.Size(961, 20);
+            this.txtTHtime.TabIndex = 8;
+            // 
+            // txtLTtime
+            // 
+            this.txtLTtime.Location = new System.Drawing.Point(145, 159);
+            this.txtLTtime.Name = "txtLTtime";
+            this.txtLTtime.Size = new System.Drawing.Size(961, 20);
+            this.txtLTtime.TabIndex = 7;
+            // 
+            // txtCoursePoint
+            // 
+            this.txtCoursePoint.Location = new System.Drawing.Point(145, 135);
+            this.txtCoursePoint.Name = "txtCoursePoint";
+            this.txtCoursePoint.Size = new System.Drawing.Size(961, 20);
+            this.txtCoursePoint.TabIndex = 6;
+            // 
+            // txtCourseCode
+            // 
+            this.txtCourseCode.Location = new System.Drawing.Point(145, 36);
+            this.txtCourseCode.Name = "txtCourseCode";
+            this.txtCourseCode.Size = new System.Drawing.Size(961, 20);
+            this.txtCourseCode.TabIndex = 5;
+            // 
+            // txtCourseName
+            // 
+            this.txtCourseName.Location = new System.Drawing.Point(145, 12);
+            this.txtCourseName.Name = "txtCourseName";
+            this.txtCourseName.Size = new System.Drawing.Size(961, 20);
+            this.txtCourseName.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -136,13 +237,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(1118, 589);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // txtCourseName
-            // 
-            this.txtCourseName.Location = new System.Drawing.Point(146, 12);
-            this.txtCourseName.Name = "txtCourseName";
-            this.txtCourseName.Size = new System.Drawing.Size(960, 20);
-            this.txtCourseName.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtCourseName;
@@ -151,13 +245,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(1098, 24);
             this.layoutControlItem1.Text = "Tên Môn Học";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(130, 13);
-            // 
-            // txtCourseCode
-            // 
-            this.txtCourseCode.Location = new System.Drawing.Point(146, 36);
-            this.txtCourseCode.Name = "txtCourseCode";
-            this.txtCourseCode.Size = new System.Drawing.Size(960, 20);
-            this.txtCourseCode.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -168,13 +255,6 @@
             this.layoutControlItem2.Text = "Mã Môn Học";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(130, 13);
             // 
-            // txtCoursePoint
-            // 
-            this.txtCoursePoint.Location = new System.Drawing.Point(146, 135);
-            this.txtCoursePoint.Name = "txtCoursePoint";
-            this.txtCoursePoint.Size = new System.Drawing.Size(960, 20);
-            this.txtCoursePoint.TabIndex = 6;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtCoursePoint;
@@ -183,13 +263,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(1098, 24);
             this.layoutControlItem3.Text = "Số Tín Chỉ";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(130, 13);
-            // 
-            // txtLTtime
-            // 
-            this.txtLTtime.Location = new System.Drawing.Point(146, 159);
-            this.txtLTtime.Name = "txtLTtime";
-            this.txtLTtime.Size = new System.Drawing.Size(960, 20);
-            this.txtLTtime.TabIndex = 7;
             // 
             // layoutControlItem4
             // 
@@ -200,13 +273,6 @@
             this.layoutControlItem4.Text = "Số giờ Lý Thuyết";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(130, 13);
             // 
-            // txtTHtime
-            // 
-            this.txtTHtime.Location = new System.Drawing.Point(146, 183);
-            this.txtTHtime.Name = "txtTHtime";
-            this.txtTHtime.Size = new System.Drawing.Size(960, 20);
-            this.txtTHtime.TabIndex = 8;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtTHtime;
@@ -216,14 +282,6 @@
             this.layoutControlItem5.Text = "Số giờ Thực Hành";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(130, 13);
             // 
-            // cboCourseType
-            // 
-            this.cboCourseType.FormattingEnabled = true;
-            this.cboCourseType.Location = new System.Drawing.Point(146, 60);
-            this.cboCourseType.Name = "cboCourseType";
-            this.cboCourseType.Size = new System.Drawing.Size(960, 21);
-            this.cboCourseType.TabIndex = 9;
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.cboCourseType;
@@ -232,14 +290,6 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(1098, 25);
             this.layoutControlItem6.Text = "Loại Môn Học";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(130, 13);
-            // 
-            // cboCourseOwner
-            // 
-            this.cboCourseOwner.FormattingEnabled = true;
-            this.cboCourseOwner.Location = new System.Drawing.Point(146, 85);
-            this.cboCourseOwner.Name = "cboCourseOwner";
-            this.cboCourseOwner.Size = new System.Drawing.Size(960, 21);
-            this.cboCourseOwner.TabIndex = 11;
             // 
             // layoutControlItem8
             // 
@@ -258,14 +308,6 @@
             this.emptySpaceItem3.Size = new System.Drawing.Size(1098, 24);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // cboCourseSemester
-            // 
-            this.cboCourseSemester.FormattingEnabled = true;
-            this.cboCourseSemester.Location = new System.Drawing.Point(146, 110);
-            this.cboCourseSemester.Name = "cboCourseSemester";
-            this.cboCourseSemester.Size = new System.Drawing.Size(960, 21);
-            this.cboCourseSemester.TabIndex = 14;
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.cboCourseSemester;
@@ -275,14 +317,6 @@
             this.layoutControlItem11.Text = "Học Kỳ";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(130, 13);
             // 
-            // gvPreCourse
-            // 
-            this.gvPreCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvPreCourse.Location = new System.Drawing.Point(146, 250);
-            this.gvPreCourse.Name = "gvPreCourse";
-            this.gvPreCourse.Size = new System.Drawing.Size(411, 303);
-            this.gvPreCourse.TabIndex = 15;
-            // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.gvPreCourse;
@@ -291,15 +325,6 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(549, 307);
             this.layoutControlItem7.Text = "Danh Sách Môn Tiên Quyết";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(130, 13);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(561, 291);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(545, 35);
-            this.btnAdd.TabIndex = 16;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // layoutControlItem9
             // 
@@ -326,14 +351,6 @@
             this.emptySpaceItem4.Size = new System.Drawing.Size(1098, 43);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // rtCourseContent
-            // 
-            this.rtCourseContent.Location = new System.Drawing.Point(695, 364);
-            this.rtCourseContent.Name = "rtCourseContent";
-            this.rtCourseContent.Size = new System.Drawing.Size(411, 125);
-            this.rtCourseContent.TabIndex = 17;
-            this.rtCourseContent.Text = "";
-            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.rtCourseContent;
@@ -351,15 +368,6 @@
             this.emptySpaceItem5.Size = new System.Drawing.Size(549, 34);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(561, 511);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(545, 42);
-            this.btnSave.TabIndex = 18;
-            this.btnSave.Text = "Lưu Lại";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.btnSave;
@@ -376,14 +384,6 @@
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(549, 18);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // cboPreCourse
-            // 
-            this.cboPreCourse.FormattingEnabled = true;
-            this.cboPreCourse.Location = new System.Drawing.Point(695, 250);
-            this.cboPreCourse.Name = "cboPreCourse";
-            this.cboPreCourse.Size = new System.Drawing.Size(411, 21);
-            this.cboPreCourse.TabIndex = 19;
             // 
             // layoutControlItem10
             // 
@@ -404,6 +404,7 @@
             this.Text = "Thêm Môn Học";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvPreCourse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -414,7 +415,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPreCourse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
