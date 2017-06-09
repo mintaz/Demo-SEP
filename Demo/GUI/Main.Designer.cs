@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnAccountManager = new DevExpress.XtraBars.BarButtonItem();
@@ -77,6 +78,7 @@
             this.pageAccount = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupAccountManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupAccountPassword = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,7 +129,7 @@
             this.pageAccount});
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.skinRibbonGalleryBarItem1);
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(1000, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(976, 166);
             // 
             // btnAccountManager
             // 
@@ -407,6 +409,7 @@
             this.btnProgramFacilities.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramFacilities.LargeGlyph")));
             this.btnProgramFacilities.LargeWidth = 90;
             this.btnProgramFacilities.Name = "btnProgramFacilities";
+            this.btnProgramFacilities.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(btnProgramFacilities_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -539,16 +542,23 @@
             this.groupAccountPassword.Name = "groupAccountPassword";
             this.groupAccountPassword.Text = "Mật Khẩu";
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Metropolis";
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 533);
+            this.ClientSize = new System.Drawing.Size(976, 521);
             this.Controls.Add(this.ribbonControl1);
+            this.IsMdiContainer = true;
             this.Name = "Main";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Education Program Builder";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -605,6 +615,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupProgramObjectiveOutcome;
         private DevExpress.XtraBars.BarButtonItem btnProgramFacilities;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }
 

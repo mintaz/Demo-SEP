@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.cboProgramMaster = new System.Windows.Forms.ComboBox();
+            this.btnProgramSave = new System.Windows.Forms.Button();
+            this.dtpProgramDate = new System.Windows.Forms.DateTimePicker();
+            this.txtProgramSchool1 = new System.Windows.Forms.TextBox();
+            this.txtProgramType = new System.Windows.Forms.TextBox();
+            this.txtProgramTraining = new System.Windows.Forms.TextBox();
+            this.txtProgramLevel = new System.Windows.Forms.TextBox();
+            this.txtProgramName = new System.Windows.Forms.TextBox();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtProgramName = new System.Windows.Forms.TextBox();
             this.lblProgramName = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtProgramLevel = new System.Windows.Forms.TextBox();
             this.lblProgramLevel = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtProgramTraining = new System.Windows.Forms.TextBox();
             this.lblProgramTraining = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtProgramType = new System.Windows.Forms.TextBox();
             this.lblProgramType = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtProgramSchool1 = new System.Windows.Forms.TextBox();
             this.lblProgramSchool1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dtpProgramDate = new System.Windows.Forms.DateTimePicker();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.lblProgramDay = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnProgramSave = new System.Windows.Forms.Button();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.cboProgramMaster = new System.Windows.Forms.ComboBox();
             this.lblProgramMaster = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -59,8 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lblProgramLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProgramTraining)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProgramType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProgramSchool1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProgramDay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
@@ -85,6 +85,65 @@
             this.layoutControl1.Size = new System.Drawing.Size(617, 339);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // cboProgramMaster
+            // 
+            this.cboProgramMaster.FormattingEnabled = true;
+            this.cboProgramMaster.Location = new System.Drawing.Point(145, 154);
+            this.cboProgramMaster.Name = "cboProgramMaster";
+            this.cboProgramMaster.Size = new System.Drawing.Size(460, 21);
+            this.cboProgramMaster.TabIndex = 12;
+            // 
+            // btnProgramSave
+            // 
+            this.btnProgramSave.Location = new System.Drawing.Point(12, 216);
+            this.btnProgramSave.Name = "btnProgramSave";
+            this.btnProgramSave.Size = new System.Drawing.Size(593, 49);
+            this.btnProgramSave.TabIndex = 11;
+            this.btnProgramSave.Text = "Lưu Lại";
+            this.btnProgramSave.UseVisualStyleBackColor = true;
+            // 
+            // dtpProgramDate
+            // 
+            this.dtpProgramDate.Location = new System.Drawing.Point(426, 130);
+            this.dtpProgramDate.Name = "dtpProgramDate";
+            this.dtpProgramDate.Size = new System.Drawing.Size(179, 20);
+            this.dtpProgramDate.TabIndex = 10;
+            // 
+            // txtProgramSchool1
+            // 
+            this.txtProgramSchool1.Location = new System.Drawing.Point(145, 130);
+            this.txtProgramSchool1.Name = "txtProgramSchool1";
+            this.txtProgramSchool1.Size = new System.Drawing.Size(134, 20);
+            this.txtProgramSchool1.TabIndex = 8;
+            // 
+            // txtProgramType
+            // 
+            this.txtProgramType.Location = new System.Drawing.Point(145, 106);
+            this.txtProgramType.Name = "txtProgramType";
+            this.txtProgramType.Size = new System.Drawing.Size(460, 20);
+            this.txtProgramType.TabIndex = 7;
+            // 
+            // txtProgramTraining
+            // 
+            this.txtProgramTraining.Location = new System.Drawing.Point(145, 82);
+            this.txtProgramTraining.Name = "txtProgramTraining";
+            this.txtProgramTraining.Size = new System.Drawing.Size(460, 20);
+            this.txtProgramTraining.TabIndex = 6;
+            // 
+            // txtProgramLevel
+            // 
+            this.txtProgramLevel.Location = new System.Drawing.Point(145, 58);
+            this.txtProgramLevel.Name = "txtProgramLevel";
+            this.txtProgramLevel.Size = new System.Drawing.Size(460, 20);
+            this.txtProgramLevel.TabIndex = 5;
+            // 
+            // txtProgramName
+            // 
+            this.txtProgramName.Location = new System.Drawing.Point(145, 34);
+            this.txtProgramName.Name = "txtProgramName";
+            this.txtProgramName.Size = new System.Drawing.Size(460, 20);
+            this.txtProgramName.TabIndex = 4;
             // 
             // layoutControlGroup1
             // 
@@ -124,13 +183,6 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(597, 22);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // txtProgramName
-            // 
-            this.txtProgramName.Location = new System.Drawing.Point(146, 34);
-            this.txtProgramName.Name = "txtProgramName";
-            this.txtProgramName.Size = new System.Drawing.Size(459, 20);
-            this.txtProgramName.TabIndex = 4;
-            // 
             // lblProgramName
             // 
             this.lblProgramName.Control = this.txtProgramName;
@@ -139,13 +191,6 @@
             this.lblProgramName.Size = new System.Drawing.Size(597, 24);
             this.lblProgramName.Text = "Tên Chương Trình Đào Tạo";
             this.lblProgramName.TextSize = new System.Drawing.Size(130, 13);
-            // 
-            // txtProgramLevel
-            // 
-            this.txtProgramLevel.Location = new System.Drawing.Point(146, 58);
-            this.txtProgramLevel.Name = "txtProgramLevel";
-            this.txtProgramLevel.Size = new System.Drawing.Size(459, 20);
-            this.txtProgramLevel.TabIndex = 5;
             // 
             // lblProgramLevel
             // 
@@ -156,13 +201,6 @@
             this.lblProgramLevel.Text = "Trình Độ Đào Tạo";
             this.lblProgramLevel.TextSize = new System.Drawing.Size(130, 13);
             // 
-            // txtProgramTraining
-            // 
-            this.txtProgramTraining.Location = new System.Drawing.Point(146, 82);
-            this.txtProgramTraining.Name = "txtProgramTraining";
-            this.txtProgramTraining.Size = new System.Drawing.Size(459, 20);
-            this.txtProgramTraining.TabIndex = 6;
-            // 
             // lblProgramTraining
             // 
             this.lblProgramTraining.Control = this.txtProgramTraining;
@@ -171,13 +209,6 @@
             this.lblProgramTraining.Size = new System.Drawing.Size(597, 24);
             this.lblProgramTraining.Text = "Ngành Đào Tạo";
             this.lblProgramTraining.TextSize = new System.Drawing.Size(130, 13);
-            // 
-            // txtProgramType
-            // 
-            this.txtProgramType.Location = new System.Drawing.Point(146, 106);
-            this.txtProgramType.Name = "txtProgramType";
-            this.txtProgramType.Size = new System.Drawing.Size(459, 20);
-            this.txtProgramType.TabIndex = 7;
             // 
             // lblProgramType
             // 
@@ -188,21 +219,6 @@
             this.lblProgramType.Text = "Loại Hình Đào Tạo";
             this.lblProgramType.TextSize = new System.Drawing.Size(130, 13);
             // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(271, 118);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(10, 24);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // txtProgramSchool1
-            // 
-            this.txtProgramSchool1.Location = new System.Drawing.Point(146, 130);
-            this.txtProgramSchool1.Name = "txtProgramSchool1";
-            this.txtProgramSchool1.Size = new System.Drawing.Size(133, 20);
-            this.txtProgramSchool1.TabIndex = 8;
-            // 
             // lblProgramSchool1
             // 
             this.lblProgramSchool1.Control = this.txtProgramSchool1;
@@ -212,12 +228,13 @@
             this.lblProgramSchool1.Text = "Quyết định số:";
             this.lblProgramSchool1.TextSize = new System.Drawing.Size(130, 13);
             // 
-            // dtpProgramDate
+            // emptySpaceItem3
             // 
-            this.dtpProgramDate.Location = new System.Drawing.Point(427, 130);
-            this.dtpProgramDate.Name = "dtpProgramDate";
-            this.dtpProgramDate.Size = new System.Drawing.Size(178, 20);
-            this.dtpProgramDate.TabIndex = 10;
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(271, 118);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(10, 24);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // lblProgramDay
             // 
@@ -227,15 +244,6 @@
             this.lblProgramDay.Size = new System.Drawing.Size(316, 24);
             this.lblProgramDay.Text = "Ngày Ban Hành:";
             this.lblProgramDay.TextSize = new System.Drawing.Size(130, 13);
-            // 
-            // btnProgramSave
-            // 
-            this.btnProgramSave.Location = new System.Drawing.Point(12, 216);
-            this.btnProgramSave.Name = "btnProgramSave";
-            this.btnProgramSave.Size = new System.Drawing.Size(593, 49);
-            this.btnProgramSave.TabIndex = 11;
-            this.btnProgramSave.Text = "Lưu Lại";
-            this.btnProgramSave.UseVisualStyleBackColor = true;
             // 
             // layoutControlItem1
             // 
@@ -253,14 +261,6 @@
             this.emptySpaceItem5.Name = "emptySpaceItem5";
             this.emptySpaceItem5.Size = new System.Drawing.Size(597, 37);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // cboProgramMaster
-            // 
-            this.cboProgramMaster.FormattingEnabled = true;
-            this.cboProgramMaster.Location = new System.Drawing.Point(146, 154);
-            this.cboProgramMaster.Name = "cboProgramMaster";
-            this.cboProgramMaster.Size = new System.Drawing.Size(459, 21);
-            this.cboProgramMaster.TabIndex = 12;
             // 
             // lblProgramMaster
             // 
@@ -288,8 +288,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lblProgramLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProgramTraining)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProgramType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProgramSchool1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProgramDay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
