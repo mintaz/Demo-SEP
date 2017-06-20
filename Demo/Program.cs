@@ -20,7 +20,7 @@ namespace Demo
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new GUI.Program.GUI_Program_Schedule());
+            Application.Run(new GUI.Print.GUI_Print_PrintAll());
         }
     }
 }

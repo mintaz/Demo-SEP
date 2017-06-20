@@ -124,6 +124,12 @@
     <Compile Include="GUI\Account\GUI_Account_Login.Designer.cs">
       <DependentUpon>GUI_Account_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Account\GUI_Account_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Account\GUI_Account_Manager.Designer.cs">
+      <DependentUpon>GUI_Account_Manager.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Account\GUI_Account_Manager_AddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,12 @@
     <Compile Include="GUI\Account\GUI_Account_ResetPass.Designer.cs">
       <DependentUpon>GUI_Account_ResetPass.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Print\GUI_Print_PrintAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Print\GUI_Print_PrintAll.Designer.cs">
+      <DependentUpon>GUI_Print_PrintAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Program\GUI_Program_CreateSyllabus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +159,12 @@
     </Compile>
     <Compile Include="GUI\Program\GUI_Program_Lecturer.Designer.cs">
       <DependentUpon>GUI_Program_Lecturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Program\GUI_Program_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Program\GUI_Program_List.Designer.cs">
+      <DependentUpon>GUI_Program_List.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Program\GUI_Program_Outcomes.cs">
       <SubType>Form</SubType>
@@ -226,6 +244,18 @@
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Map.Designer.cs">
       <DependentUpon>GUI_Syllabus_Map.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_MethodMapp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_MethodMapp.Designer.cs">
+      <DependentUpon>GUI_Syllabus_MethodMapp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_MethodMap_Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_MethodMap_Dialog.Designer.cs">
+      <DependentUpon>GUI_Syllabus_MethodMap_Dialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Methods.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +298,23 @@
     <Compile Include="GUI\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_Schedule.Designer.cs">
+      <DependentUpon>GUI_Syllabus_Schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_ScheduleManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_ScheduleManager.Designer.cs">
+      <DependentUpon>GUI_Syllabus_ScheduleManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Account\GUI_Account_ChangePass.resx">
@@ -276,17 +323,26 @@
     <EmbeddedResource Include="GUI\Account\GUI_Account_Login.resx">
       <DependentUpon>GUI_Account_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Account\GUI_Account_Manager.resx">
+      <DependentUpon>GUI_Account_Manager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Account\GUI_Account_Manager_AddEdit.resx">
       <DependentUpon>GUI_Account_Manager_AddEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Account\GUI_Account_ResetPass.resx">
       <DependentUpon>GUI_Account_ResetPass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Print\GUI_Print_PrintAll.resx">
+      <DependentUpon>GUI_Print_PrintAll.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_CreateSyllabus.resx">
       <DependentUpon>GUI_Program_CreateSyllabus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_Lecturer.resx">
       <DependentUpon>GUI_Program_Lecturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Program\GUI_Program_List.resx">
+      <DependentUpon>GUI_Program_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_Outcomes.resx">
       <DependentUpon>GUI_Program_Outcomes.cs</DependentUpon>
@@ -327,6 +383,12 @@
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Map.resx">
       <DependentUpon>GUI_Syllabus_Map.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_MethodMapp.resx">
+      <DependentUpon>GUI_Syllabus_MethodMapp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_MethodMap_Dialog.resx">
+      <DependentUpon>GUI_Syllabus_MethodMap_Dialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Methods.resx">
       <DependentUpon>GUI_Syllabus_Methods.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,6 +409,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Schedule.resx">
+      <DependentUpon>GUI_Syllabus_Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_ScheduleManager.resx">
+      <DependentUpon>GUI_Syllabus_ScheduleManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -380,9 +452,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\Print\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -29,14 +29,11 @@ namespace Demo
 
         private void Main_Load(object sender, EventArgs e)
         {
-            //pagePrint.Visible = false;
-            pageSyllabus.Visible = false;
-            //groupProgramObjectiveOutcome.Visible = false;
-            //pageProgramGeneralInfo.Visible = false;
+           
             groupAccountManager.Visible = false;
-            btnPrintReviewSyllabus.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnPrintSyllabus.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            //btnAccountManager.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnAccountReset.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            pageProgram.Visible = false;
+            
         }
     }
 }

@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.lsSyllabusOut = new DevExpress.XtraEditors.ListBoxControl();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnSave = new System.Windows.Forms.Button();
             this.lsProgramOut = new DevExpress.XtraEditors.CheckedListBoxControl();
+            this.lsSyllabusOut = new DevExpress.XtraEditors.ListBoxControl();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btnSave = new System.Windows.Forms.Button();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lsSyllabusOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lsProgramOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lsSyllabusOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
@@ -63,6 +63,31 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(12, 423);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(697, 38);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Lưu Lại";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // lsProgramOut
+            // 
+            this.lsProgramOut.Location = new System.Drawing.Point(386, 12);
+            this.lsProgramOut.Name = "lsProgramOut";
+            this.lsProgramOut.Size = new System.Drawing.Size(323, 379);
+            this.lsProgramOut.StyleController = this.layoutControl1;
+            this.lsProgramOut.TabIndex = 5;
+            // 
+            // lsSyllabusOut
+            // 
+            this.lsSyllabusOut.Location = new System.Drawing.Point(12, 12);
+            this.lsSyllabusOut.Name = "lsSyllabusOut";
+            this.lsSyllabusOut.Size = new System.Drawing.Size(320, 379);
+            this.lsSyllabusOut.StyleController = this.layoutControl1;
+            this.lsSyllabusOut.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -78,14 +103,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(721, 473);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // lsSyllabusOut
-            // 
-            this.lsSyllabusOut.Location = new System.Drawing.Point(12, 12);
-            this.lsSyllabusOut.Name = "lsSyllabusOut";
-            this.lsSyllabusOut.Size = new System.Drawing.Size(320, 379);
-            this.lsSyllabusOut.StyleController = this.layoutControl1;
-            this.lsSyllabusOut.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.lsSyllabusOut;
@@ -94,14 +111,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(324, 383);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // lsProgramOut
-            // 
-            this.lsProgramOut.Location = new System.Drawing.Point(386, 12);
-            this.lsProgramOut.Name = "lsProgramOut";
-            this.lsProgramOut.Size = new System.Drawing.Size(323, 379);
-            this.lsProgramOut.StyleController = this.layoutControl1;
-            this.lsProgramOut.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -128,15 +137,6 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(701, 28);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(12, 423);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(697, 38);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Lưu Lại";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnSave;
@@ -156,10 +156,10 @@
             this.Text = "GUI_Syllabus_Map";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lsSyllabusOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lsProgramOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lsSyllabusOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
