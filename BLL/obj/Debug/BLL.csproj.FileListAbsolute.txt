@@ -1,0 +1,7 @@
+C:\Users\Mint\documents\visual studio 2015\Projects\Demo\BLL\bin\Debug\BLL.dll
+C:\Users\Mint\documents\visual studio 2015\Projects\Demo\BLL\bin\Debug\BLL.pdb
+C:\Users\Mint\documents\visual studio 2015\Projects\Demo\BLL\bin\Debug\DAL.dll
+C:\Users\Mint\documents\visual studio 2015\Projects\Demo\BLL\bin\Debug\DAL.pdb
+C:\Users\Mint\documents\visual studio 2015\Projects\Demo\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Mint\documents\visual studio 2015\Projects\Demo\BLL\obj\Debug\BLL.dll
+C:\Users\Mint\documents\visual studio 2015\Projects\Demo\BLL\obj\Debug\BLL.pdb

@@ -1,0 +1,6 @@
+C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\DAL\bin\Debug\DAL.dll
+C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\DAL\bin\Debug\DAL.pdb
+C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\DAL\obj\Debug\DAL.dll
+C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\DAL\obj\Debug\DAL.pdb
+C:\Users\Mint\documents\visual studio 2015\Projects\Demo\DAL\bin\Debug\DAL.dll.config
+C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

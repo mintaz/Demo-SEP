@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lblResetPassInfo = new System.Windows.Forms.Label();
+            this.btnResetPass = new System.Windows.Forms.Button();
+            this.txtResetPass = new System.Windows.Forms.TextBox();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtResetPass = new System.Windows.Forms.TextBox();
             this.lblResetPassEmail = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btnResetPass = new System.Windows.Forms.Button();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.lblResetPassInfo = new System.Windows.Forms.Label();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -62,6 +62,33 @@
             this.layoutControl1.Size = new System.Drawing.Size(514, 262);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lblResetPassInfo
+            // 
+            this.lblResetPassInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResetPassInfo.Location = new System.Drawing.Point(12, 12);
+            this.lblResetPassInfo.Name = "lblResetPassInfo";
+            this.lblResetPassInfo.Size = new System.Drawing.Size(214, 238);
+            this.lblResetPassInfo.TabIndex = 6;
+            this.lblResetPassInfo.Text = "\r\nĐặt lại mật khẩu sẽ đưa mật khẩu về giá trị mặc định là:\r\n\r\nTên đăng nhập: emai" +
+    "l của bạn\r\nMật khẩu: vanlang";
+            // 
+            // btnResetPass
+            // 
+            this.btnResetPass.Location = new System.Drawing.Point(230, 130);
+            this.btnResetPass.Name = "btnResetPass";
+            this.btnResetPass.Size = new System.Drawing.Size(272, 41);
+            this.btnResetPass.TabIndex = 5;
+            this.btnResetPass.Text = "Đặt Lại Mật Khẩu";
+            this.btnResetPass.UseVisualStyleBackColor = true;
+            this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
+            // 
+            // txtResetPass
+            // 
+            this.txtResetPass.Location = new System.Drawing.Point(285, 59);
+            this.txtResetPass.Name = "txtResetPass";
+            this.txtResetPass.Size = new System.Drawing.Size(217, 20);
+            this.txtResetPass.TabIndex = 4;
             // 
             // layoutControlGroup1
             // 
@@ -89,13 +116,6 @@
             this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // txtResetPass
-            // 
-            this.txtResetPass.Location = new System.Drawing.Point(286, 59);
-            this.txtResetPass.Name = "txtResetPass";
-            this.txtResetPass.Size = new System.Drawing.Size(216, 20);
-            this.txtResetPass.TabIndex = 4;
-            // 
             // lblResetPassEmail
             // 
             this.lblResetPassEmail.Control = this.txtResetPass;
@@ -113,15 +133,6 @@
             this.emptySpaceItem3.Size = new System.Drawing.Size(276, 47);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // btnResetPass
-            // 
-            this.btnResetPass.Location = new System.Drawing.Point(230, 130);
-            this.btnResetPass.Name = "btnResetPass";
-            this.btnResetPass.Size = new System.Drawing.Size(272, 41);
-            this.btnResetPass.TabIndex = 5;
-            this.btnResetPass.Text = "Đặt Lại Mật Khẩu";
-            this.btnResetPass.UseVisualStyleBackColor = true;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnResetPass;
@@ -138,16 +149,6 @@
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(276, 47);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // lblResetPassInfo
-            // 
-            this.lblResetPassInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResetPassInfo.Location = new System.Drawing.Point(12, 12);
-            this.lblResetPassInfo.Name = "lblResetPassInfo";
-            this.lblResetPassInfo.Size = new System.Drawing.Size(214, 238);
-            this.lblResetPassInfo.TabIndex = 6;
-            this.lblResetPassInfo.Text = "\r\nĐặt lại mật khẩu sẽ đưa mật khẩu về giá trị mặc định là:\r\n\r\nTên đăng nhập: emai" +
-    "l của bạn\r\nMật khẩu: vanlang";
             // 
             // layoutControlItem2
             // 

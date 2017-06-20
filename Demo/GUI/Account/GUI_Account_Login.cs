@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Demo.GUI
 {
     public partial class GUI_Account_Login : Form
@@ -16,29 +16,56 @@ namespace Demo.GUI
         {
             InitializeComponent();
         }
+        public bool admin;
+        public string idAccountlogin;
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            //demo
-            string email = txtEmail.Text;
-            string pass = txtPass.Text;
-            if(email == "1" && pass == "1")
-            {
-                Main MainForm = new Main();
-                MainForm.FormClosing += delegate { this.Show(); txtEmail.Text = "";txtPass.Text = ""; };
-                MainForm.Show();
-                this.Hide();
-            }
+            EncryptBLL encrypt = new EncryptBLL();
+            LoginBLL lg = new LoginBLL();
+            DicBLL dic = new DicBLL();
+            string user = txtEmail.Text;
+            string pass = encrypt.EncodeSHA1(txtPass.Text);
 
-            else if(email=="2" && pass == "2")
+            if (lg.isvaildEmail(user) == true)
             {
-                
-                MessageBox.Show("Tài khoản của bạn hiện đang bị vô hiệu hóa, vui lòng liên hệ với Người Quản Trị để được kích hoạt.");
+                if(lg.isvaildAccount(user) == true)
+                {
+                    if(lg.isvaildPass(user,pass) == true)
+                    {
+                        if(lg.isActive(user) == true)
+                        {
+                            if(lg.isAdmin(user)== true)
+                            {
+                                admin = true;
+                            }
+                            else
+                            {
+                                admin = false;
+                            }
+                            idAccountlogin = lg.getID(user);
+                        }
+                        else
+                        {
+                            MessageBox.Show(dic.errorloginMessage("chua acitve"));
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(dic.errorloginMessage("sai pass"));
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(dic.errorloginMessage("sai user"));
+                }
             }
             else
             {
-                MessageBox.Show("Sai email đăng nhập hoặc mật khẩu, vui lòng kiểm tra lại");
+                MessageBox.Show(dic.errorloginMessage("sai email"));
             }
+
+
         }
     }
 }

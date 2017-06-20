@@ -205,7 +205,6 @@
             this.printPreviewBarItem22 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem23 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem24 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem25 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem26 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem27 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem28 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
@@ -240,19 +239,21 @@
             this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
             this.ribbonPage1 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPage();
             this.printPreviewRibbonPageGroup2 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
-            this.printPreviewRibbonPageGroup3 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup4 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup5 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup6 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup7 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup8 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.printPreviewRibbonPageGroup3 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
+            this.printPreviewBarItem25 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // documentViewer1
@@ -265,11 +266,6 @@
             this.documentViewer1.Size = new System.Drawing.Size(1229, 433);
             this.documentViewer1.TabIndex = 0;
             // 
-            // printingSystem1
-            // 
-            this.printingSystem1.Links.AddRange(new object[] {
-            this.printableComponentLink1});
-            // 
             // documentViewerRibbonController1
             // 
             this.documentViewerRibbonController1.DocumentViewer = this.documentViewer1;
@@ -278,6 +274,7 @@
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.ApplicationButtonDropDownControl = this.backstageViewControl1;
             this.ribbonControl1.AutoHideEmptyItems = true;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -306,7 +303,6 @@
             this.printPreviewBarItem22,
             this.printPreviewBarItem23,
             this.printPreviewBarItem24,
-            this.printPreviewBarItem25,
             this.printPreviewBarItem26,
             this.printPreviewBarItem27,
             this.printPreviewBarItem28,
@@ -825,27 +821,6 @@
             superToolTip24.MaxWidth = 210;
             this.printPreviewBarItem24.SuperTip = superToolTip24;
             // 
-            // printPreviewBarItem25
-            // 
-            this.printPreviewBarItem25.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.printPreviewBarItem25.Caption = "E-Mail As";
-            this.printPreviewBarItem25.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendFile;
-            this.printPreviewBarItem25.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem25.Enabled = false;
-            this.printPreviewBarItem25.Glyph = ((System.Drawing.Image)(resources.GetObject("printPreviewBarItem25.Glyph")));
-            this.printPreviewBarItem25.Id = 25;
-            this.printPreviewBarItem25.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printPreviewBarItem25.LargeGlyph")));
-            this.printPreviewBarItem25.Name = "printPreviewBarItem25";
-            superToolTip25.FixedTooltipWidth = true;
-            toolTipTitleItem25.Text = "E-Mail As...";
-            toolTipItem25.LeftIndent = 6;
-            toolTipItem25.Text = "Export the current document in one of the available formats, and attach it to the" +
-    " e-mail.";
-            superToolTip25.Items.Add(toolTipTitleItem25);
-            superToolTip25.Items.Add(toolTipItem25);
-            superToolTip25.MaxWidth = 210;
-            this.printPreviewBarItem25.SuperTip = superToolTip25;
-            // 
             // printPreviewBarItem26
             // 
             this.printPreviewBarItem26.Caption = "Close";
@@ -856,14 +831,14 @@
             this.printPreviewBarItem26.Id = 26;
             this.printPreviewBarItem26.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_ClosePreviewLarge;
             this.printPreviewBarItem26.Name = "printPreviewBarItem26";
-            superToolTip26.FixedTooltipWidth = true;
-            toolTipTitleItem26.Text = "Close Print Preview";
-            toolTipItem26.LeftIndent = 6;
-            toolTipItem26.Text = "Close Print Preview of the document.";
-            superToolTip26.Items.Add(toolTipTitleItem26);
-            superToolTip26.Items.Add(toolTipItem26);
-            superToolTip26.MaxWidth = 210;
-            this.printPreviewBarItem26.SuperTip = superToolTip26;
+            superToolTip25.FixedTooltipWidth = true;
+            toolTipTitleItem25.Text = "Close Print Preview";
+            toolTipItem25.LeftIndent = 6;
+            toolTipItem25.Text = "Close Print Preview of the document.";
+            superToolTip25.Items.Add(toolTipTitleItem25);
+            superToolTip25.Items.Add(toolTipItem25);
+            superToolTip25.MaxWidth = 210;
+            this.printPreviewBarItem26.SuperTip = superToolTip25;
             // 
             // printPreviewBarItem27
             // 
@@ -876,14 +851,14 @@
             this.printPreviewBarItem27.Id = 27;
             this.printPreviewBarItem27.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_PageOrientationLarge;
             this.printPreviewBarItem27.Name = "printPreviewBarItem27";
-            superToolTip27.FixedTooltipWidth = true;
-            toolTipTitleItem27.Text = "Page Orientation";
-            toolTipItem27.LeftIndent = 6;
-            toolTipItem27.Text = "Switch the pages between portrait and landscape layouts.";
-            superToolTip27.Items.Add(toolTipTitleItem27);
-            superToolTip27.Items.Add(toolTipItem27);
-            superToolTip27.MaxWidth = 210;
-            this.printPreviewBarItem27.SuperTip = superToolTip27;
+            superToolTip26.FixedTooltipWidth = true;
+            toolTipTitleItem26.Text = "Page Orientation";
+            toolTipItem26.LeftIndent = 6;
+            toolTipItem26.Text = "Switch the pages between portrait and landscape layouts.";
+            superToolTip26.Items.Add(toolTipTitleItem26);
+            superToolTip26.Items.Add(toolTipItem26);
+            superToolTip26.MaxWidth = 210;
+            this.printPreviewBarItem27.SuperTip = superToolTip26;
             // 
             // printPreviewBarItem28
             // 
@@ -896,14 +871,14 @@
             this.printPreviewBarItem28.Id = 28;
             this.printPreviewBarItem28.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_PaperSizeLarge;
             this.printPreviewBarItem28.Name = "printPreviewBarItem28";
-            superToolTip28.FixedTooltipWidth = true;
-            toolTipTitleItem28.Text = "Page Size";
-            toolTipItem28.LeftIndent = 6;
-            toolTipItem28.Text = "Choose the paper size of the document.";
-            superToolTip28.Items.Add(toolTipTitleItem28);
-            superToolTip28.Items.Add(toolTipItem28);
-            superToolTip28.MaxWidth = 210;
-            this.printPreviewBarItem28.SuperTip = superToolTip28;
+            superToolTip27.FixedTooltipWidth = true;
+            toolTipTitleItem27.Text = "Page Size";
+            toolTipItem27.LeftIndent = 6;
+            toolTipItem27.Text = "Choose the paper size of the document.";
+            superToolTip27.Items.Add(toolTipTitleItem27);
+            superToolTip27.Items.Add(toolTipItem27);
+            superToolTip27.MaxWidth = 210;
+            this.printPreviewBarItem28.SuperTip = superToolTip27;
             // 
             // printPreviewBarItem29
             // 
@@ -916,15 +891,15 @@
             this.printPreviewBarItem29.Id = 29;
             this.printPreviewBarItem29.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_PageMarginsLarge;
             this.printPreviewBarItem29.Name = "printPreviewBarItem29";
-            superToolTip29.FixedTooltipWidth = true;
-            toolTipTitleItem29.Text = "Page Margins";
-            toolTipItem29.LeftIndent = 6;
-            toolTipItem29.Text = "Select the margin sizes for the entire document.\r\n\r\nTo apply specific margin size" +
+            superToolTip28.FixedTooltipWidth = true;
+            toolTipTitleItem28.Text = "Page Margins";
+            toolTipItem28.LeftIndent = 6;
+            toolTipItem28.Text = "Select the margin sizes for the entire document.\r\n\r\nTo apply specific margin size" +
     "s to the document, click Custom Margins.";
-            superToolTip29.Items.Add(toolTipTitleItem29);
-            superToolTip29.Items.Add(toolTipItem29);
-            superToolTip29.MaxWidth = 210;
-            this.printPreviewBarItem29.SuperTip = superToolTip29;
+            superToolTip28.Items.Add(toolTipTitleItem28);
+            superToolTip28.Items.Add(toolTipItem28);
+            superToolTip28.MaxWidth = 210;
+            this.printPreviewBarItem29.SuperTip = superToolTip28;
             // 
             // printPreviewBarItem30
             // 
@@ -937,14 +912,14 @@
             this.printPreviewBarItem30.Id = 30;
             this.printPreviewBarItem30.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_SendPdfLarge;
             this.printPreviewBarItem30.Name = "printPreviewBarItem30";
-            superToolTip30.FixedTooltipWidth = true;
-            toolTipTitleItem30.Text = "E-Mail As PDF";
-            toolTipItem30.LeftIndent = 6;
-            toolTipItem30.Text = "Export the document to PDF and attach it to the e-mail.";
-            superToolTip30.Items.Add(toolTipTitleItem30);
-            superToolTip30.Items.Add(toolTipItem30);
-            superToolTip30.MaxWidth = 210;
-            this.printPreviewBarItem30.SuperTip = superToolTip30;
+            superToolTip29.FixedTooltipWidth = true;
+            toolTipTitleItem29.Text = "E-Mail As PDF";
+            toolTipItem29.LeftIndent = 6;
+            toolTipItem29.Text = "Export the document to PDF and attach it to the e-mail.";
+            superToolTip29.Items.Add(toolTipTitleItem29);
+            superToolTip29.Items.Add(toolTipItem29);
+            superToolTip29.MaxWidth = 210;
+            this.printPreviewBarItem30.SuperTip = superToolTip29;
             // 
             // printPreviewBarItem31
             // 
@@ -957,14 +932,14 @@
             this.printPreviewBarItem31.Id = 31;
             this.printPreviewBarItem31.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_SendTxtLarge;
             this.printPreviewBarItem31.Name = "printPreviewBarItem31";
-            superToolTip31.FixedTooltipWidth = true;
-            toolTipTitleItem31.Text = "E-Mail As Text";
-            toolTipItem31.LeftIndent = 6;
-            toolTipItem31.Text = "Export the document to Text and attach it to the e-mail.";
-            superToolTip31.Items.Add(toolTipTitleItem31);
-            superToolTip31.Items.Add(toolTipItem31);
-            superToolTip31.MaxWidth = 210;
-            this.printPreviewBarItem31.SuperTip = superToolTip31;
+            superToolTip30.FixedTooltipWidth = true;
+            toolTipTitleItem30.Text = "E-Mail As Text";
+            toolTipItem30.LeftIndent = 6;
+            toolTipItem30.Text = "Export the document to Text and attach it to the e-mail.";
+            superToolTip30.Items.Add(toolTipTitleItem30);
+            superToolTip30.Items.Add(toolTipItem30);
+            superToolTip30.MaxWidth = 210;
+            this.printPreviewBarItem31.SuperTip = superToolTip30;
             // 
             // printPreviewBarItem32
             // 
@@ -977,14 +952,14 @@
             this.printPreviewBarItem32.Id = 32;
             this.printPreviewBarItem32.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_SendCsvLarge;
             this.printPreviewBarItem32.Name = "printPreviewBarItem32";
-            superToolTip32.FixedTooltipWidth = true;
-            toolTipTitleItem32.Text = "E-Mail As CSV";
-            toolTipItem32.LeftIndent = 6;
-            toolTipItem32.Text = "Export the document to CSV and attach it to the e-mail.";
-            superToolTip32.Items.Add(toolTipTitleItem32);
-            superToolTip32.Items.Add(toolTipItem32);
-            superToolTip32.MaxWidth = 210;
-            this.printPreviewBarItem32.SuperTip = superToolTip32;
+            superToolTip31.FixedTooltipWidth = true;
+            toolTipTitleItem31.Text = "E-Mail As CSV";
+            toolTipItem31.LeftIndent = 6;
+            toolTipItem31.Text = "Export the document to CSV and attach it to the e-mail.";
+            superToolTip31.Items.Add(toolTipTitleItem31);
+            superToolTip31.Items.Add(toolTipItem31);
+            superToolTip31.MaxWidth = 210;
+            this.printPreviewBarItem32.SuperTip = superToolTip31;
             // 
             // printPreviewBarItem33
             // 
@@ -997,14 +972,14 @@
             this.printPreviewBarItem33.Id = 33;
             this.printPreviewBarItem33.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_SendMhtLarge;
             this.printPreviewBarItem33.Name = "printPreviewBarItem33";
-            superToolTip33.FixedTooltipWidth = true;
-            toolTipTitleItem33.Text = "E-Mail As MHT";
-            toolTipItem33.LeftIndent = 6;
-            toolTipItem33.Text = "Export the document to MHT and attach it to the e-mail.";
-            superToolTip33.Items.Add(toolTipTitleItem33);
-            superToolTip33.Items.Add(toolTipItem33);
-            superToolTip33.MaxWidth = 210;
-            this.printPreviewBarItem33.SuperTip = superToolTip33;
+            superToolTip32.FixedTooltipWidth = true;
+            toolTipTitleItem32.Text = "E-Mail As MHT";
+            toolTipItem32.LeftIndent = 6;
+            toolTipItem32.Text = "Export the document to MHT and attach it to the e-mail.";
+            superToolTip32.Items.Add(toolTipTitleItem32);
+            superToolTip32.Items.Add(toolTipItem32);
+            superToolTip32.MaxWidth = 210;
+            this.printPreviewBarItem33.SuperTip = superToolTip32;
             // 
             // printPreviewBarItem34
             // 
@@ -1017,14 +992,14 @@
             this.printPreviewBarItem34.Id = 34;
             this.printPreviewBarItem34.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_SendXlsLarge;
             this.printPreviewBarItem34.Name = "printPreviewBarItem34";
-            superToolTip34.FixedTooltipWidth = true;
-            toolTipTitleItem34.Text = "E-Mail As XLS";
-            toolTipItem34.LeftIndent = 6;
-            toolTipItem34.Text = "Export the document to XLS and attach it to the e-mail.";
-            superToolTip34.Items.Add(toolTipTitleItem34);
-            superToolTip34.Items.Add(toolTipItem34);
-            superToolTip34.MaxWidth = 210;
-            this.printPreviewBarItem34.SuperTip = superToolTip34;
+            superToolTip33.FixedTooltipWidth = true;
+            toolTipTitleItem33.Text = "E-Mail As XLS";
+            toolTipItem33.LeftIndent = 6;
+            toolTipItem33.Text = "Export the document to XLS and attach it to the e-mail.";
+            superToolTip33.Items.Add(toolTipTitleItem33);
+            superToolTip33.Items.Add(toolTipItem33);
+            superToolTip33.MaxWidth = 210;
+            this.printPreviewBarItem34.SuperTip = superToolTip33;
             // 
             // printPreviewBarItem35
             // 
@@ -1037,14 +1012,14 @@
             this.printPreviewBarItem35.Id = 35;
             this.printPreviewBarItem35.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_SendXlsxLarge;
             this.printPreviewBarItem35.Name = "printPreviewBarItem35";
-            superToolTip35.FixedTooltipWidth = true;
-            toolTipTitleItem35.Text = "E-Mail As XLSX";
-            toolTipItem35.LeftIndent = 6;
-            toolTipItem35.Text = "Export the document to XLSX and attach it to the e-mail.";
-            superToolTip35.Items.Add(toolTipTitleItem35);
-            superToolTip35.Items.Add(toolTipItem35);
-            superToolTip35.MaxWidth = 210;
-            this.printPreviewBarItem35.SuperTip = superToolTip35;
+            superToolTip34.FixedTooltipWidth = true;
+            toolTipTitleItem34.Text = "E-Mail As XLSX";
+            toolTipItem34.LeftIndent = 6;
+            toolTipItem34.Text = "Export the document to XLSX and attach it to the e-mail.";
+            superToolTip34.Items.Add(toolTipTitleItem34);
+            superToolTip34.Items.Add(toolTipItem34);
+            superToolTip34.MaxWidth = 210;
+            this.printPreviewBarItem35.SuperTip = superToolTip34;
             // 
             // printPreviewBarItem36
             // 
@@ -1057,14 +1032,14 @@
             this.printPreviewBarItem36.Id = 36;
             this.printPreviewBarItem36.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_SendRtfLarge;
             this.printPreviewBarItem36.Name = "printPreviewBarItem36";
-            superToolTip36.FixedTooltipWidth = true;
-            toolTipTitleItem36.Text = "E-Mail As RTF";
-            toolTipItem36.LeftIndent = 6;
-            toolTipItem36.Text = "Export the document to RTF and attach it to the e-mail.";
-            superToolTip36.Items.Add(toolTipTitleItem36);
-            superToolTip36.Items.Add(toolTipItem36);
-            superToolTip36.MaxWidth = 210;
-            this.printPreviewBarItem36.SuperTip = superToolTip36;
+            superToolTip35.FixedTooltipWidth = true;
+            toolTipTitleItem35.Text = "E-Mail As RTF";
+            toolTipItem35.LeftIndent = 6;
+            toolTipItem35.Text = "Export the document to RTF and attach it to the e-mail.";
+            superToolTip35.Items.Add(toolTipTitleItem35);
+            superToolTip35.Items.Add(toolTipItem35);
+            superToolTip35.MaxWidth = 210;
+            this.printPreviewBarItem36.SuperTip = superToolTip35;
             // 
             // printPreviewBarItem37
             // 
@@ -1077,14 +1052,14 @@
             this.printPreviewBarItem37.Id = 37;
             this.printPreviewBarItem37.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_SendGraphicLarge;
             this.printPreviewBarItem37.Name = "printPreviewBarItem37";
-            superToolTip37.FixedTooltipWidth = true;
-            toolTipTitleItem37.Text = "E-Mail As Image";
-            toolTipItem37.LeftIndent = 6;
-            toolTipItem37.Text = "Export the document to Image and attach it to the e-mail.";
-            superToolTip37.Items.Add(toolTipTitleItem37);
-            superToolTip37.Items.Add(toolTipItem37);
-            superToolTip37.MaxWidth = 210;
-            this.printPreviewBarItem37.SuperTip = superToolTip37;
+            superToolTip36.FixedTooltipWidth = true;
+            toolTipTitleItem36.Text = "E-Mail As Image";
+            toolTipItem36.LeftIndent = 6;
+            toolTipItem36.Text = "Export the document to Image and attach it to the e-mail.";
+            superToolTip36.Items.Add(toolTipTitleItem36);
+            superToolTip36.Items.Add(toolTipItem36);
+            superToolTip36.MaxWidth = 210;
+            this.printPreviewBarItem37.SuperTip = superToolTip36;
             // 
             // printPreviewBarItem38
             // 
@@ -1097,14 +1072,14 @@
             this.printPreviewBarItem38.Id = 38;
             this.printPreviewBarItem38.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_ExportPdfLarge;
             this.printPreviewBarItem38.Name = "printPreviewBarItem38";
-            superToolTip38.FixedTooltipWidth = true;
-            toolTipTitleItem38.Text = "Export to PDF";
-            toolTipItem38.LeftIndent = 6;
-            toolTipItem38.Text = "Export the document to PDF and save it to the file on a disk.";
-            superToolTip38.Items.Add(toolTipTitleItem38);
-            superToolTip38.Items.Add(toolTipItem38);
-            superToolTip38.MaxWidth = 210;
-            this.printPreviewBarItem38.SuperTip = superToolTip38;
+            superToolTip37.FixedTooltipWidth = true;
+            toolTipTitleItem37.Text = "Export to PDF";
+            toolTipItem37.LeftIndent = 6;
+            toolTipItem37.Text = "Export the document to PDF and save it to the file on a disk.";
+            superToolTip37.Items.Add(toolTipTitleItem37);
+            superToolTip37.Items.Add(toolTipItem37);
+            superToolTip37.MaxWidth = 210;
+            this.printPreviewBarItem38.SuperTip = superToolTip37;
             // 
             // printPreviewBarItem39
             // 
@@ -1117,14 +1092,14 @@
             this.printPreviewBarItem39.Id = 39;
             this.printPreviewBarItem39.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_ExportHtmLarge;
             this.printPreviewBarItem39.Name = "printPreviewBarItem39";
-            superToolTip39.FixedTooltipWidth = true;
-            toolTipTitleItem39.Text = "Export to HTML";
-            toolTipItem39.LeftIndent = 6;
-            toolTipItem39.Text = "Export the document to HTML and save it to the file on a disk.";
-            superToolTip39.Items.Add(toolTipTitleItem39);
-            superToolTip39.Items.Add(toolTipItem39);
-            superToolTip39.MaxWidth = 210;
-            this.printPreviewBarItem39.SuperTip = superToolTip39;
+            superToolTip38.FixedTooltipWidth = true;
+            toolTipTitleItem38.Text = "Export to HTML";
+            toolTipItem38.LeftIndent = 6;
+            toolTipItem38.Text = "Export the document to HTML and save it to the file on a disk.";
+            superToolTip38.Items.Add(toolTipTitleItem38);
+            superToolTip38.Items.Add(toolTipItem38);
+            superToolTip38.MaxWidth = 210;
+            this.printPreviewBarItem39.SuperTip = superToolTip38;
             // 
             // printPreviewBarItem40
             // 
@@ -1137,14 +1112,14 @@
             this.printPreviewBarItem40.Id = 40;
             this.printPreviewBarItem40.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_ExportTxtLarge;
             this.printPreviewBarItem40.Name = "printPreviewBarItem40";
-            superToolTip40.FixedTooltipWidth = true;
-            toolTipTitleItem40.Text = "Export to Text";
-            toolTipItem40.LeftIndent = 6;
-            toolTipItem40.Text = "Export the document to Text and save it to the file on a disk.";
-            superToolTip40.Items.Add(toolTipTitleItem40);
-            superToolTip40.Items.Add(toolTipItem40);
-            superToolTip40.MaxWidth = 210;
-            this.printPreviewBarItem40.SuperTip = superToolTip40;
+            superToolTip39.FixedTooltipWidth = true;
+            toolTipTitleItem39.Text = "Export to Text";
+            toolTipItem39.LeftIndent = 6;
+            toolTipItem39.Text = "Export the document to Text and save it to the file on a disk.";
+            superToolTip39.Items.Add(toolTipTitleItem39);
+            superToolTip39.Items.Add(toolTipItem39);
+            superToolTip39.MaxWidth = 210;
+            this.printPreviewBarItem40.SuperTip = superToolTip39;
             // 
             // printPreviewBarItem41
             // 
@@ -1157,14 +1132,14 @@
             this.printPreviewBarItem41.Id = 41;
             this.printPreviewBarItem41.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_ExportCsvLarge;
             this.printPreviewBarItem41.Name = "printPreviewBarItem41";
-            superToolTip41.FixedTooltipWidth = true;
-            toolTipTitleItem41.Text = "Export to CSV";
-            toolTipItem41.LeftIndent = 6;
-            toolTipItem41.Text = "Export the document to CSV and save it to the file on a disk.";
-            superToolTip41.Items.Add(toolTipTitleItem41);
-            superToolTip41.Items.Add(toolTipItem41);
-            superToolTip41.MaxWidth = 210;
-            this.printPreviewBarItem41.SuperTip = superToolTip41;
+            superToolTip40.FixedTooltipWidth = true;
+            toolTipTitleItem40.Text = "Export to CSV";
+            toolTipItem40.LeftIndent = 6;
+            toolTipItem40.Text = "Export the document to CSV and save it to the file on a disk.";
+            superToolTip40.Items.Add(toolTipTitleItem40);
+            superToolTip40.Items.Add(toolTipItem40);
+            superToolTip40.MaxWidth = 210;
+            this.printPreviewBarItem41.SuperTip = superToolTip40;
             // 
             // printPreviewBarItem42
             // 
@@ -1177,14 +1152,14 @@
             this.printPreviewBarItem42.Id = 42;
             this.printPreviewBarItem42.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_ExportMhtLarge;
             this.printPreviewBarItem42.Name = "printPreviewBarItem42";
-            superToolTip42.FixedTooltipWidth = true;
-            toolTipTitleItem42.Text = "Export to MHT";
-            toolTipItem42.LeftIndent = 6;
-            toolTipItem42.Text = "Export the document to MHT and save it to the file on a disk.";
-            superToolTip42.Items.Add(toolTipTitleItem42);
-            superToolTip42.Items.Add(toolTipItem42);
-            superToolTip42.MaxWidth = 210;
-            this.printPreviewBarItem42.SuperTip = superToolTip42;
+            superToolTip41.FixedTooltipWidth = true;
+            toolTipTitleItem41.Text = "Export to MHT";
+            toolTipItem41.LeftIndent = 6;
+            toolTipItem41.Text = "Export the document to MHT and save it to the file on a disk.";
+            superToolTip41.Items.Add(toolTipTitleItem41);
+            superToolTip41.Items.Add(toolTipItem41);
+            superToolTip41.MaxWidth = 210;
+            this.printPreviewBarItem42.SuperTip = superToolTip41;
             // 
             // printPreviewBarItem43
             // 
@@ -1197,14 +1172,14 @@
             this.printPreviewBarItem43.Id = 43;
             this.printPreviewBarItem43.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_ExportXlsLarge;
             this.printPreviewBarItem43.Name = "printPreviewBarItem43";
-            superToolTip43.FixedTooltipWidth = true;
-            toolTipTitleItem43.Text = "Export to XLS";
-            toolTipItem43.LeftIndent = 6;
-            toolTipItem43.Text = "Export the document to XLS and save it to the file on a disk.";
-            superToolTip43.Items.Add(toolTipTitleItem43);
-            superToolTip43.Items.Add(toolTipItem43);
-            superToolTip43.MaxWidth = 210;
-            this.printPreviewBarItem43.SuperTip = superToolTip43;
+            superToolTip42.FixedTooltipWidth = true;
+            toolTipTitleItem42.Text = "Export to XLS";
+            toolTipItem42.LeftIndent = 6;
+            toolTipItem42.Text = "Export the document to XLS and save it to the file on a disk.";
+            superToolTip42.Items.Add(toolTipTitleItem42);
+            superToolTip42.Items.Add(toolTipItem42);
+            superToolTip42.MaxWidth = 210;
+            this.printPreviewBarItem43.SuperTip = superToolTip42;
             // 
             // printPreviewBarItem44
             // 
@@ -1217,14 +1192,14 @@
             this.printPreviewBarItem44.Id = 44;
             this.printPreviewBarItem44.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_ExportXlsxLarge;
             this.printPreviewBarItem44.Name = "printPreviewBarItem44";
-            superToolTip44.FixedTooltipWidth = true;
-            toolTipTitleItem44.Text = "Export to XLSX";
-            toolTipItem44.LeftIndent = 6;
-            toolTipItem44.Text = "Export the document to XLSX and save it to the file on a disk.";
-            superToolTip44.Items.Add(toolTipTitleItem44);
-            superToolTip44.Items.Add(toolTipItem44);
-            superToolTip44.MaxWidth = 210;
-            this.printPreviewBarItem44.SuperTip = superToolTip44;
+            superToolTip43.FixedTooltipWidth = true;
+            toolTipTitleItem43.Text = "Export to XLSX";
+            toolTipItem43.LeftIndent = 6;
+            toolTipItem43.Text = "Export the document to XLSX and save it to the file on a disk.";
+            superToolTip43.Items.Add(toolTipTitleItem43);
+            superToolTip43.Items.Add(toolTipItem43);
+            superToolTip43.MaxWidth = 210;
+            this.printPreviewBarItem44.SuperTip = superToolTip43;
             // 
             // printPreviewBarItem45
             // 
@@ -1237,14 +1212,14 @@
             this.printPreviewBarItem45.Id = 45;
             this.printPreviewBarItem45.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_ExportRtfLarge;
             this.printPreviewBarItem45.Name = "printPreviewBarItem45";
-            superToolTip45.FixedTooltipWidth = true;
-            toolTipTitleItem45.Text = "Export to RTF";
-            toolTipItem45.LeftIndent = 6;
-            toolTipItem45.Text = "Export the document to RTF and save it to the file on a disk.";
-            superToolTip45.Items.Add(toolTipTitleItem45);
-            superToolTip45.Items.Add(toolTipItem45);
-            superToolTip45.MaxWidth = 210;
-            this.printPreviewBarItem45.SuperTip = superToolTip45;
+            superToolTip44.FixedTooltipWidth = true;
+            toolTipTitleItem44.Text = "Export to RTF";
+            toolTipItem44.LeftIndent = 6;
+            toolTipItem44.Text = "Export the document to RTF and save it to the file on a disk.";
+            superToolTip44.Items.Add(toolTipTitleItem44);
+            superToolTip44.Items.Add(toolTipItem44);
+            superToolTip44.MaxWidth = 210;
+            this.printPreviewBarItem45.SuperTip = superToolTip44;
             // 
             // printPreviewBarItem46
             // 
@@ -1257,14 +1232,14 @@
             this.printPreviewBarItem46.Id = 46;
             this.printPreviewBarItem46.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_ExportGraphicLarge;
             this.printPreviewBarItem46.Name = "printPreviewBarItem46";
-            superToolTip46.FixedTooltipWidth = true;
-            toolTipTitleItem46.Text = "Export to Image";
-            toolTipItem46.LeftIndent = 6;
-            toolTipItem46.Text = "Export the document to Image and save it to the file on a disk.";
-            superToolTip46.Items.Add(toolTipTitleItem46);
-            superToolTip46.Items.Add(toolTipItem46);
-            superToolTip46.MaxWidth = 210;
-            this.printPreviewBarItem46.SuperTip = superToolTip46;
+            superToolTip45.FixedTooltipWidth = true;
+            toolTipTitleItem45.Text = "Export to Image";
+            toolTipItem45.LeftIndent = 6;
+            toolTipItem45.Text = "Export the document to Image and save it to the file on a disk.";
+            superToolTip45.Items.Add(toolTipTitleItem45);
+            superToolTip45.Items.Add(toolTipItem45);
+            superToolTip45.MaxWidth = 210;
+            this.printPreviewBarItem46.SuperTip = superToolTip45;
             // 
             // printPreviewBarItem47
             // 
@@ -1276,14 +1251,14 @@
             this.printPreviewBarItem47.Id = 47;
             this.printPreviewBarItem47.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_OpenLarge;
             this.printPreviewBarItem47.Name = "printPreviewBarItem47";
-            superToolTip47.FixedTooltipWidth = true;
-            toolTipTitleItem47.Text = "Open (Ctrl + O)";
-            toolTipItem47.LeftIndent = 6;
-            toolTipItem47.Text = "Open a document.";
-            superToolTip47.Items.Add(toolTipTitleItem47);
-            superToolTip47.Items.Add(toolTipItem47);
-            superToolTip47.MaxWidth = 210;
-            this.printPreviewBarItem47.SuperTip = superToolTip47;
+            superToolTip46.FixedTooltipWidth = true;
+            toolTipTitleItem46.Text = "Open (Ctrl + O)";
+            toolTipItem46.LeftIndent = 6;
+            toolTipItem46.Text = "Open a document.";
+            superToolTip46.Items.Add(toolTipTitleItem46);
+            superToolTip46.Items.Add(toolTipItem46);
+            superToolTip46.MaxWidth = 210;
+            this.printPreviewBarItem47.SuperTip = superToolTip46;
             // 
             // printPreviewBarItem48
             // 
@@ -1295,14 +1270,14 @@
             this.printPreviewBarItem48.Id = 48;
             this.printPreviewBarItem48.LargeGlyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_SaveLarge;
             this.printPreviewBarItem48.Name = "printPreviewBarItem48";
-            superToolTip48.FixedTooltipWidth = true;
-            toolTipTitleItem48.Text = "Save (Ctrl + S)";
-            toolTipItem48.LeftIndent = 6;
-            toolTipItem48.Text = "Save the document.";
-            superToolTip48.Items.Add(toolTipTitleItem48);
-            superToolTip48.Items.Add(toolTipItem48);
-            superToolTip48.MaxWidth = 210;
-            this.printPreviewBarItem48.SuperTip = superToolTip48;
+            superToolTip47.FixedTooltipWidth = true;
+            toolTipTitleItem47.Text = "Save (Ctrl + S)";
+            toolTipItem47.LeftIndent = 6;
+            toolTipItem47.Text = "Save the document.";
+            superToolTip47.Items.Add(toolTipTitleItem47);
+            superToolTip47.Items.Add(toolTipItem47);
+            superToolTip47.MaxWidth = 210;
+            this.printPreviewBarItem48.SuperTip = superToolTip47;
             // 
             // printPreviewStaticItem1
             // 
@@ -1392,7 +1367,6 @@
             this.ribbonPage1.ContextSpecifier = this.documentViewerRibbonController1;
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.printPreviewRibbonPageGroup2,
-            this.printPreviewRibbonPageGroup3,
             this.printPreviewRibbonPageGroup4,
             this.printPreviewRibbonPageGroup5,
             this.printPreviewRibbonPageGroup6,
@@ -1414,28 +1388,6 @@
             this.printPreviewRibbonPageGroup2.Name = "printPreviewRibbonPageGroup2";
             this.printPreviewRibbonPageGroup2.ShowCaptionButton = false;
             this.printPreviewRibbonPageGroup2.Text = "In";
-            // 
-            // printPreviewRibbonPageGroup3
-            // 
-            this.printPreviewRibbonPageGroup3.AllowTextClipping = false;
-            this.printPreviewRibbonPageGroup3.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewRibbonPageGroup3.Glyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_PageMargins;
-            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem9);
-            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem10);
-            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem29);
-            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem27);
-            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem28);
-            this.printPreviewRibbonPageGroup3.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.PageSetup;
-            this.printPreviewRibbonPageGroup3.Name = "printPreviewRibbonPageGroup3";
-            superToolTip49.FixedTooltipWidth = true;
-            toolTipTitleItem49.Text = "Page Setup";
-            toolTipItem49.LeftIndent = 6;
-            toolTipItem49.Text = "Show the Page Setup dialog.";
-            superToolTip49.Items.Add(toolTipTitleItem49);
-            superToolTip49.Items.Add(toolTipItem49);
-            superToolTip49.MaxWidth = 210;
-            this.printPreviewRibbonPageGroup3.SuperTip = superToolTip49;
-            this.printPreviewRibbonPageGroup3.Text = "Page Setup";
             // 
             // printPreviewRibbonPageGroup4
             // 
@@ -1489,7 +1441,6 @@
             this.printPreviewRibbonPageGroup7.ContextSpecifier = this.documentViewerRibbonController1;
             this.printPreviewRibbonPageGroup7.Glyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_ExportFile;
             this.printPreviewRibbonPageGroup7.ItemLinks.Add(this.printPreviewBarItem24);
-            this.printPreviewRibbonPageGroup7.ItemLinks.Add(this.printPreviewBarItem25);
             this.printPreviewRibbonPageGroup7.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Export;
             this.printPreviewRibbonPageGroup7.Name = "printPreviewRibbonPageGroup7";
             this.printPreviewRibbonPageGroup7.ShowCaptionButton = false;
@@ -1520,9 +1471,57 @@
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(1229, 27);
             // 
-            // printableComponentLink1
+            // printPreviewRibbonPageGroup3
             // 
-            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
+            this.printPreviewRibbonPageGroup3.AllowTextClipping = false;
+            this.printPreviewRibbonPageGroup3.ContextSpecifier = this.documentViewerRibbonController1;
+            this.printPreviewRibbonPageGroup3.Glyph = global::Demo.PrintRibbonControllerResources.RibbonPrintPreview_PageMargins;
+            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem9);
+            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem10);
+            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem29);
+            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem27);
+            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem28);
+            this.printPreviewRibbonPageGroup3.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.PageSetup;
+            this.printPreviewRibbonPageGroup3.Name = "printPreviewRibbonPageGroup3";
+            superToolTip48.FixedTooltipWidth = true;
+            toolTipTitleItem48.Text = "Page Setup";
+            toolTipItem48.LeftIndent = 6;
+            toolTipItem48.Text = "Show the Page Setup dialog.";
+            superToolTip48.Items.Add(toolTipTitleItem48);
+            superToolTip48.Items.Add(toolTipItem48);
+            superToolTip48.MaxWidth = 210;
+            this.printPreviewRibbonPageGroup3.SuperTip = superToolTip48;
+            this.printPreviewRibbonPageGroup3.Text = "Page Setup";
+            // 
+            // printPreviewBarItem25
+            // 
+            this.printPreviewBarItem25.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem25.Caption = "E-Mail As";
+            this.printPreviewBarItem25.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendFile;
+            this.printPreviewBarItem25.ContextSpecifier = this.documentViewerRibbonController1;
+            this.printPreviewBarItem25.Enabled = false;
+            this.printPreviewBarItem25.Glyph = ((System.Drawing.Image)(resources.GetObject("printPreviewBarItem25.Glyph")));
+            this.printPreviewBarItem25.Id = 25;
+            this.printPreviewBarItem25.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printPreviewBarItem25.LargeGlyph")));
+            this.printPreviewBarItem25.Name = "printPreviewBarItem25";
+            superToolTip49.FixedTooltipWidth = true;
+            toolTipTitleItem49.Text = "E-Mail As...";
+            toolTipItem49.LeftIndent = 6;
+            toolTipItem49.Text = "Export the current document in one of the available formats, and attach it to the" +
+    " e-mail.";
+            superToolTip49.Items.Add(toolTipTitleItem49);
+            superToolTip49.Items.Add(toolTipItem49);
+            superToolTip49.MaxWidth = 210;
+            this.printPreviewBarItem25.SuperTip = superToolTip49;
+            // 
+            // backstageViewControl1
+            // 
+            this.backstageViewControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Yellow;
+            this.backstageViewControl1.Location = new System.Drawing.Point(70, 211);
+            this.backstageViewControl1.Name = "backstageViewControl1";
+            this.backstageViewControl1.OwnerControl = this.ribbonControl1;
+            this.backstageViewControl1.Size = new System.Drawing.Size(480, 150);
+            this.backstageViewControl1.TabIndex = 3;
             // 
             // GUI_Print_PrintAll
             // 
@@ -1532,6 +1531,7 @@
             this.Controls.Add(this.documentViewer1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
+            this.Controls.Add(this.backstageViewControl1);
             this.Name = "GUI_Print_PrintAll";
             this.Text = "GUI_Print_PrintAll";
             this.Load += new System.EventHandler(this.GUI_Print_PrintAll_Load);
@@ -1540,6 +1540,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1574,7 +1575,6 @@
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem22;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem23;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem24;
-        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem25;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem26;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem27;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem28;
@@ -1609,7 +1609,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar repositoryItemZoomTrackBar1;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPage ribbonPage1;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup2;
-        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup3;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup4;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup5;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup6;
@@ -1617,6 +1616,8 @@
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
-        private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
+        private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageViewControl1;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup3;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem25;
     }
 }

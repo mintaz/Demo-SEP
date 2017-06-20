@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 17" name="Eprogram">
+  <DataContextMoniker Name="/EprogramDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d32fdc82-baa3-4e10-8f83-231ad6e87dad" absoluteBounds="6.25, 13.625, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/EprogramDataContext/Mapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46888392-acbc-42d3-88c6-5d2709e83202" absoluteBounds="6.265, 14.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a0572fe-be58-44e6-b1e0-64fbf3508b88" absoluteBounds="0.75, 7.25, 2, 3.6939111328124987">
+      <DataClassMoniker Name="/EprogramDataContext/Program" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58d0ea96-5ea4-4d5e-be83-a3fb278f888a" absoluteBounds="0.765, 7.71, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="068ca240-e3f1-49aa-a3c5-41c3371529b5" absoluteBounds="3.5, 1.625, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/EprogramDataContext/ProgramObjective" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38b96f79-564f-416d-8e20-012870cb0323" absoluteBounds="3.515, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fe96da00-b2aa-4c33-9737-dda37200fca1" absoluteBounds="3.5, 3.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/EprogramDataContext/ProgramOutcome" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c80ea34-a65e-4cc7-8a79-d02cd2ae0154" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b25d4ad3-7272-4a71-9df6-d437093479bc" absoluteBounds="3.5, 9.5, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/EprogramDataContext/Syllabus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8186bf85-cda8-4f21-847a-f52d97c0798d" absoluteBounds="3.515, 9.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="95ec378f-a97d-4208-9dde-2d00cb42ffda" absoluteBounds="6.25, 6.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/EprogramDataContext/SyllabusObjective" />
+      <nestedChildShapes>
+        <elementListCompartment Id="158e0081-d86b-4b8b-8fb9-b89c6b709a9d" absoluteBounds="6.265, 6.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3803cbd9-25cd-4f5e-ab9c-62c42fab391f" absoluteBounds="6.25, 8.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/EprogramDataContext/SyllabusOutcome" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38526c75-53d3-4df0-a701-09b28c18b5b7" absoluteBounds="6.265, 8.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc108e77-2119-4256-bb2e-0023949c255c" absoluteBounds="6.25, 10.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/EprogramDataContext/SyllabusSchedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f129a2ba-d3af-404a-93b1-f2bbddaa2734" absoluteBounds="6.265, 11.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8443d5e7-0d27-4a9d-851a-5f7f65ea2332" absoluteBounds="6.75, 3.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/EprogramDataContext/Template" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c953a979-68d3-4bf0-b269-8f974a5b5b13" absoluteBounds="6.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.48437375 : 7.25); (1.48437375 : 2.31814697265625); (3.5 : 2.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EprogramDataContext/Program/Program_ProgramObjective" />
+      <nodes>
+        <classShapeMoniker Id="6a0572fe-be58-44e6-b1e0-64fbf3508b88" />
+        <classShapeMoniker Id="068ca240-e3f1-49aa-a3c5-41c3371529b5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 7.25); (2.2812525 : 4.63544840494792); (3.5 : 4.63544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EprogramDataContext/Program/Program_ProgramOutcome" />
+      <nodes>
+        <classShapeMoniker Id="6a0572fe-be58-44e6-b1e0-64fbf3508b88" />
+        <classShapeMoniker Id="fe96da00-b2aa-4c33-9737-dda37200fca1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 13.3862125651042); (4.5 : 15.1835034179688); (6.25 : 15.1835034179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EprogramDataContext/Syllabus/Syllabus_Mapping" />
+      <nodes>
+        <classShapeMoniker Id="b25d4ad3-7272-4a71-9df6-d437093479bc" />
+        <classShapeMoniker Id="d32fdc82-baa3-4e10-8f83-231ad6e87dad" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.2219555664062); (3.5 : 10.2219555664062)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EprogramDataContext/Program/Program_Syllabus" />
+      <nodes>
+        <classShapeMoniker Id="6a0572fe-be58-44e6-b1e0-64fbf3508b88" />
+        <classShapeMoniker Id="b25d4ad3-7272-4a71-9df6-d437093479bc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 9.5); (4.5 : 6.94314697265625); (6.25 : 6.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EprogramDataContext/Syllabus/Syllabus_SyllabusObjective" />
+      <nodes>
+        <classShapeMoniker Id="b25d4ad3-7272-4a71-9df6-d437093479bc" />
+        <classShapeMoniker Id="95ec378f-a97d-4208-9dde-2d00cb42ffda" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 9.72679768880208); (6.25 : 9.72679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EprogramDataContext/Syllabus/Syllabus_SyllabusOutcome" />
+      <nodes>
+        <classShapeMoniker Id="b25d4ad3-7272-4a71-9df6-d437093479bc" />
+        <classShapeMoniker Id="3803cbd9-25cd-4f5e-ab9c-62c42fab391f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 11.8277498372396); (6.25 : 11.8277498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EprogramDataContext/Syllabus/Syllabus_SyllabusSchedule" />
+      <nodes>
+        <classShapeMoniker Id="b25d4ad3-7272-4a71-9df6-d437093479bc" />
+        <classShapeMoniker Id="bc108e77-2119-4256-bb2e-0023949c255c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fd83b708-15c6-4e3f-ab07-38fc5852732a" absoluteBounds="6.75, 1.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/EprogramDataContext/Account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0d1e55fa-38ce-4ec5-9c53-85fb4ef7a314" absoluteBounds="6.765, 1.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
