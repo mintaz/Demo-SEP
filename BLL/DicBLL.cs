@@ -159,6 +159,8 @@ namespace BLL
         {
             switch (sc)
             {
+                case "editprogram":
+                    return "Chỉnh sửa chương trình đào tạo thành công";
                 case "createprogram":
                     return "Tạo chương trình đào tạo mới thành công";
                 case "else":

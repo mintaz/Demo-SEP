@@ -2263,6 +2263,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Syllabus_Lecturer";
             this.Text = "Thông Tin Giảng Viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GUI_Program_PackageInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).EndInit();

@@ -33,17 +33,19 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnEdit = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.btnEdit = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnDel = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.gcCourseOut = new DevExpress.XtraGrid.GridControl();
-            this.gvCourseOut = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcProgramList = new DevExpress.XtraGrid.GridControl();
+            this.gvProgramList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ProgramName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.AccountName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcCourseOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvCourseOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcProgramList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProgramList)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -57,8 +59,7 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btnAdd,
-            this.btnEdit,
-            this.btnDel});
+            this.btnEdit});
             this.barManager1.MaxItemId = 3;
             // 
             // bar1
@@ -69,8 +70,7 @@
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAdd),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnEdit),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnDel, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEdit)});
             this.bar1.Text = "Tools";
             // 
             // btnAdd
@@ -81,6 +81,17 @@
             this.btnAdd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAdd.LargeGlyph")));
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 0);
+            this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Caption = "Sửa";
+            this.btnEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.Glyph")));
+            this.btnEdit.Id = 1;
+            this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 0);
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -110,56 +121,77 @@
             this.barDockControlRight.Location = new System.Drawing.Point(882, 67);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
             // 
-            // btnEdit
+            // gcProgramList
             // 
-            this.btnEdit.Caption = "Sửa";
-            this.btnEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.Glyph")));
-            this.btnEdit.Id = 1;
-            this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 0);
+            this.gcProgramList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcProgramList.Location = new System.Drawing.Point(0, 67);
+            this.gcProgramList.MainView = this.gvProgramList;
+            this.gcProgramList.MenuManager = this.barManager1;
+            this.gcProgramList.Name = "gcProgramList";
+            this.gcProgramList.Size = new System.Drawing.Size(882, 345);
+            this.gcProgramList.TabIndex = 4;
+            this.gcProgramList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvProgramList});
             // 
-            // btnDel
+            // gvProgramList
             // 
-            this.btnDel.Caption = "Xóa";
-            this.btnDel.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDel.Glyph")));
-            this.btnDel.Id = 2;
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 0);
+            this.gvProgramList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.ProgramName,
+            this.AccountName});
+            this.gvProgramList.GridControl = this.gcProgramList;
+            this.gvProgramList.Name = "gvProgramList";
+            this.gvProgramList.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gvProgramList.OptionsFind.AlwaysVisible = true;
+            this.gvProgramList.OptionsFind.FindDelay = 250;
+            this.gvProgramList.OptionsFind.FindNullPrompt = "Nhập Từ để tìm kiếm...";
+            this.gvProgramList.OptionsView.ShowGroupPanel = false;
+            this.gvProgramList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvProgramList_FocusedRowChanged);
             // 
-            // gcCourseOut
+            // ID
             // 
-            this.gcCourseOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcCourseOut.Location = new System.Drawing.Point(0, 67);
-            this.gcCourseOut.MainView = this.gvCourseOut;
-            this.gcCourseOut.MenuManager = this.barManager1;
-            this.gcCourseOut.Name = "gcCourseOut";
-            this.gcCourseOut.Size = new System.Drawing.Size(882, 345);
-            this.gcCourseOut.TabIndex = 4;
-            this.gcCourseOut.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvCourseOut});
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "id";
+            this.ID.Name = "ID";
+            this.ID.OptionsColumn.AllowEdit = false;
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 0;
             // 
-            // gvCourseOut
+            // ProgramName
             // 
-            this.gvCourseOut.GridControl = this.gcCourseOut;
-            this.gvCourseOut.Name = "gvCourseOut";
-            this.gvCourseOut.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.ProgramName.Caption = "Tên Chương Trình";
+            this.ProgramName.FieldName = "Program.name";
+            this.ProgramName.Name = "ProgramName";
+            this.ProgramName.OptionsColumn.AllowEdit = false;
+            this.ProgramName.Visible = true;
+            this.ProgramName.VisibleIndex = 1;
+            // 
+            // AccountName
+            // 
+            this.AccountName.Caption = "Người Đảm Nhận";
+            this.AccountName.FieldName = "Account.name";
+            this.AccountName.Name = "AccountName";
+            this.AccountName.OptionsColumn.AllowEdit = false;
+            this.AccountName.Visible = true;
+            this.AccountName.VisibleIndex = 2;
             // 
             // GUI_Program_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 412);
-            this.Controls.Add(this.gcCourseOut);
+            this.Controls.Add(this.gcProgramList);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Program_List";
-            this.Text = "GUI_Program_List";
+            this.Text = "Danh Sách Chương Trình Đào Tạo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.GUI_Program_List_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcCourseOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvCourseOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcProgramList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProgramList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,8 +207,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarLargeButtonItem btnAdd;
         private DevExpress.XtraBars.BarLargeButtonItem btnEdit;
-        private DevExpress.XtraBars.BarLargeButtonItem btnDel;
-        private DevExpress.XtraGrid.GridControl gcCourseOut;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvCourseOut;
+        private DevExpress.XtraGrid.GridControl gcProgramList;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvProgramList;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn ProgramName;
+        private DevExpress.XtraGrid.Columns.GridColumn AccountName;
     }
 }

@@ -32,12 +32,12 @@
             this.lblProgramList = new System.Windows.Forms.Label();
             this.gcProgramList = new DevExpress.XtraGrid.GridControl();
             this.gvProgramList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NAME = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NAME = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcProgramList)).BeginInit();
@@ -95,6 +95,24 @@
             this.gvProgramList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvProgramList_FocusedRowChanged);
             this.gvProgramList.DoubleClick += new System.EventHandler(this.gvProgramList_DoubleClick);
             // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "id";
+            this.ID.Name = "ID";
+            this.ID.OptionsColumn.AllowEdit = false;
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 0;
+            // 
+            // NAME
+            // 
+            this.NAME.Caption = "Tên";
+            this.NAME.FieldName = "name";
+            this.NAME.Name = "NAME";
+            this.NAME.OptionsColumn.AllowEdit = false;
+            this.NAME.Visible = true;
+            this.NAME.VisibleIndex = 1;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -133,22 +151,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(1142, 24);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // ID
-            // 
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "id";
-            this.ID.Name = "ID";
-            this.ID.Visible = true;
-            this.ID.VisibleIndex = 0;
-            // 
-            // NAME
-            // 
-            this.NAME.Caption = "Tên";
-            this.NAME.FieldName = "name";
-            this.NAME.Name = "NAME";
-            this.NAME.Visible = true;
-            this.NAME.VisibleIndex = 1;
             // 
             // GUI_Program_ProgramList
             // 

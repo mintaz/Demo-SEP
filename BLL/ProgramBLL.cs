@@ -42,6 +42,10 @@ namespace BLL
                 return false;
             }
         }
+        public List<Program> Load()
+        {
+            return db.Programs.ToList();
+        }
         public List<Program> LoadProgram(string id)
         {
             return db.Programs.Where(a => a.id == id).ToList();

@@ -21,11 +21,23 @@ namespace Demo.GUI
         AccountBLL ac = new AccountBLL();
         ProgramBLL p = new ProgramBLL();
         DicBLL dc = new DicBLL();
+        public string idprogram="";
+        public string idacc="";
         private void GUI_Program_CreateProgram_Load(object sender, EventArgs e)
         {
-            cboProgramMaster.DataSource = ac.LoadAccount();
-            cboProgramMaster.DisplayMember = "name";
-            cboProgramMaster.ValueMember = "id";
+            if (idprogram == "")
+            {
+                cboProgramMaster.DataSource = ac.LoadAccount();
+                cboProgramMaster.DisplayMember = "name";
+                cboProgramMaster.ValueMember = "id";
+            } else
+            {
+                cboProgramMaster.DataSource = ac.LoadAccount();
+                cboProgramMaster.DisplayMember = "name";
+                cboProgramMaster.ValueMember = "id";
+                cboProgramMaster.SelectedValue = idacc;
+                txtProgramName.Text = p.LoadProgram(idprogram).Single().name;
+            }
         }
 
         private void btnProgramSave_Click(object sender, EventArgs e)

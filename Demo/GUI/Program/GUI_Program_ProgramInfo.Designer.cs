@@ -113,6 +113,7 @@
             this.txtProgramPoint.Name = "txtProgramPoint";
             this.txtProgramPoint.Size = new System.Drawing.Size(542, 20);
             this.txtProgramPoint.TabIndex = 14;
+            this.txtProgramPoint.Text = "0";
             // 
             // txtProgramSemester
             // 
@@ -120,6 +121,7 @@
             this.txtProgramSemester.Name = "txtProgramSemester";
             this.txtProgramSemester.Size = new System.Drawing.Size(542, 20);
             this.txtProgramSemester.TabIndex = 13;
+            this.txtProgramSemester.Text = "0";
             // 
             // txtProgramMark
             // 
@@ -127,6 +129,7 @@
             this.txtProgramMark.Name = "txtProgramMark";
             this.txtProgramMark.Size = new System.Drawing.Size(542, 20);
             this.txtProgramMark.TabIndex = 12;
+            this.txtProgramMark.Text = "0";
             // 
             // txtProgramProcess
             // 
@@ -339,7 +342,7 @@
             this.ClientSize = new System.Drawing.Size(675, 395);
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Program_ProgramInfo";
-            this.Text = "GUI_Program_ProgramInfo";
+            this.Text = "Thông Tin Chương Trình Đào Tạo";
             this.Load += new System.EventHandler(this.GUI_Program_ProgramInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

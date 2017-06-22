@@ -67,7 +67,7 @@ namespace Demo.GUI
             {
                 mainform.auth = 0;
             }
-            
+            mainform.idpath = this.id;
             mainform.Show();
             this.Hide();
 
