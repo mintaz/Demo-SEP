@@ -139,6 +139,7 @@
             this.btnAdd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAdd.LargeGlyph")));
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 0);
+            this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
             // 
             // btnEdit
             // 
@@ -194,6 +195,10 @@
             this.gvCourse.GridControl = this.gcCourse;
             this.gvCourse.Name = "gvCourse";
             this.gvCourse.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gvCourse.OptionsFind.AlwaysVisible = true;
+            this.gvCourse.OptionsFind.FindDelay = 250;
+            this.gvCourse.OptionsFind.FindNullPrompt = "Nhập Từ để tìm kiếm...";
+            this.gvCourse.OptionsView.ShowGroupPanel = false;
             // 
             // GUI_Program_CreateSyllabus
             // 
@@ -210,7 +215,8 @@
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
             this.Name = "GUI_Program_CreateSyllabus";
-            this.Text = "GUI_Program_CreateSyllabus";
+            this.Text = "Danh sách Môn học";
+            this.Load += new System.EventHandler(this.GUI_Program_CreateSyllabus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCourse)).EndInit();

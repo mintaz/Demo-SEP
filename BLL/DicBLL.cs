@@ -113,6 +113,28 @@ namespace BLL
                     return "No exception";
             }
         }
+        public string errorCreateProgram(string er)
+        {
+            switch(er)
+            {
+                case "else":
+                    return "Lỗi kết nối.\v Vui lòng kiểm tra lại";
+                default:
+                    return "No exception";
+            }
+        }
+        public string successCreateProgram(string sc)
+        {
+            switch (sc)
+            {
+                case "createprogram":
+                    return "Tạo chương trình đào tạo mới thành công";
+                case "else":
+                    return "Lỗi kết nối.\v Vui lòng kiểm tra lại";
+                default:
+                    return "No exception";
+            }
+        }
 
     }
 }

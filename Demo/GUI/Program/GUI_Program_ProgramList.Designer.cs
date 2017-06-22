@@ -83,6 +83,10 @@
             this.gvProgramList.GridControl = this.gcProgramList;
             this.gvProgramList.Name = "gvProgramList";
             this.gvProgramList.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gvProgramList.OptionsFind.AlwaysVisible = true;
+            this.gvProgramList.OptionsFind.FindDelay = 250;
+            this.gvProgramList.OptionsFind.FindNullPrompt = "Nhập Từ để tìm kiếm....";
+            this.gvProgramList.OptionsView.ShowGroupPanel = false;
             // 
             // layoutControlGroup1
             // 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtname = new System.Windows.Forms.TextBox();
             this.btnChangePass = new System.Windows.Forms.Button();
             this.txtOldPass = new System.Windows.Forms.TextBox();
             this.txtNewPass = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtname = new System.Windows.Forms.TextBox();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -76,13 +76,20 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txtname
+            // 
+            this.txtname.Location = new System.Drawing.Point(163, 47);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(299, 20);
+            this.txtname.TabIndex = 6;
+            // 
             // btnChangePass
             // 
             this.btnChangePass.Location = new System.Drawing.Point(52, 155);
             this.btnChangePass.Name = "btnChangePass";
             this.btnChangePass.Size = new System.Drawing.Size(410, 34);
             this.btnChangePass.TabIndex = 5;
-            this.btnChangePass.Text = "Đổi Mật Khẩu";
+            this.btnChangePass.Text = "Thay Đổi";
             this.btnChangePass.UseVisualStyleBackColor = true;
             this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
@@ -205,13 +212,6 @@
             this.emptySpaceItem5.Size = new System.Drawing.Size(40, 242);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // txtname
-            // 
-            this.txtname.Location = new System.Drawing.Point(163, 47);
-            this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(299, 20);
-            this.txtname.TabIndex = 6;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtname;
@@ -228,7 +228,7 @@
             this.ClientSize = new System.Drawing.Size(514, 262);
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Account_ChangePass";
-            this.Text = "Đổi Mật Khẩu";
+            this.Text = "Thay Đổi Thông Tin";
             this.Load += new System.EventHandler(this.GUI_Account_ChangePass_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

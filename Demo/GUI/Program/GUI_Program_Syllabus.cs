@@ -16,5 +16,10 @@ namespace Demo.GUI.Program
         {
             InitializeComponent();
         }
+
+        private void GUI_Program_Syllabus_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -78,6 +78,7 @@
             this.btnProgramSave.TabIndex = 11;
             this.btnProgramSave.Text = "Lưu Lại";
             this.btnProgramSave.UseVisualStyleBackColor = true;
+            this.btnProgramSave.Click += new System.EventHandler(this.btnProgramSave_Click);
             // 
             // txtProgramName
             // 
@@ -152,6 +153,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Program_CreateProgram";
             this.Text = "Tạo Chương Trình Đào Tạo";
+            this.Load += new System.EventHandler(this.GUI_Program_CreateProgram_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();

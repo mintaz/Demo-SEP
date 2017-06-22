@@ -46,8 +46,11 @@
     <Compile Include="DicBLL.cs" />
     <Compile Include="EncryptBLL.cs" />
     <Compile Include="LoginBLL.cs" />
+    <Compile Include="ProgramBLL.cs" />
+    <Compile Include="ProgramListBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResetBLL.cs" />
+    <Compile Include="SyllabusBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

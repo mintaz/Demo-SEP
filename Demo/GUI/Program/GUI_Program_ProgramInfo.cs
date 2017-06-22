@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
+using BLL;
 
 namespace Demo.GUI.Program
 {
@@ -15,6 +17,11 @@ namespace Demo.GUI.Program
         public GUI_Program_ProgramInfo()
         {
             InitializeComponent();
+        }
+
+        private void GUI_Program_ProgramInfo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

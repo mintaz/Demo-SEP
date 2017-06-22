@@ -20,7 +20,7 @@ namespace Demo
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new GUI.GUI_Account_ChangePass());
+            Application.Run(new GUI.GUI_Program_CreateProgram());
         }
     }
 }
