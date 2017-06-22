@@ -36,6 +36,8 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NAME = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcProgramList)).BeginInit();
@@ -80,6 +82,9 @@
             // 
             // gvProgramList
             // 
+            this.gvProgramList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.NAME});
             this.gvProgramList.GridControl = this.gcProgramList;
             this.gvProgramList.Name = "gvProgramList";
             this.gvProgramList.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
@@ -87,6 +92,8 @@
             this.gvProgramList.OptionsFind.FindDelay = 250;
             this.gvProgramList.OptionsFind.FindNullPrompt = "Nhập Từ để tìm kiếm....";
             this.gvProgramList.OptionsView.ShowGroupPanel = false;
+            this.gvProgramList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvProgramList_FocusedRowChanged);
+            this.gvProgramList.DoubleClick += new System.EventHandler(this.gvProgramList_DoubleClick);
             // 
             // layoutControlGroup1
             // 
@@ -127,6 +134,22 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "id";
+            this.ID.Name = "ID";
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 0;
+            // 
+            // NAME
+            // 
+            this.NAME.Caption = "Tên";
+            this.NAME.FieldName = "name";
+            this.NAME.Name = "NAME";
+            this.NAME.Visible = true;
+            this.NAME.VisibleIndex = 1;
+            // 
             // GUI_Program_ProgramList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,5 +183,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn NAME;
     }
 }

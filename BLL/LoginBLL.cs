@@ -40,7 +40,7 @@ namespace BLL
         {
             try
             {
-                db.Accounts.Where(ac => ac.email == user).SingleOrDefault();
+                db.Accounts.Where(ac => ac.email == user).Single();
                 return true;
             }
             catch
@@ -54,7 +54,7 @@ namespace BLL
         {
             try
             {
-                db.Accounts.Where(ac => ac.email == user && ac.password == pass).SingleOrDefault();
+                db.Accounts.Where(ac => ac.email == user && ac.password == pass).Single();
                 return true;
             }
             catch
@@ -68,7 +68,7 @@ namespace BLL
         {
             try
             {
-                db.Accounts.Where(ac => ac.email == user && ac.isAdmin == true).SingleOrDefault();
+                db.Accounts.Where(ac => ac.email == user && ac.isAdmin == true).Single();
                 return true;
             }
             catch
@@ -82,7 +82,7 @@ namespace BLL
         {
             try
             {
-                db.Accounts.Where(ac => ac.email == user && ac.Active == true).SingleOrDefault();
+                db.Accounts.Where(ac => ac.email == user && ac.Active == true).Single();
                 return true;
             }
             catch
@@ -103,6 +103,40 @@ namespace BLL
                 return "error";
             }
         }
-        
+        //count
+        public bool isCount(string id)
+        {
+            try
+            {
+                int p = db.Programs.Where(procount => procount.idAccount == id).Count();
+                int s = db.Syllabus.Where(syllbuscount => syllbuscount.idAccount == id).Count();
+                if ((p == s) && (s == 0))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        //getname
+        public string getnameprogram(string id)
+        {
+            Program p = db.Programs.Where(s => s.id == id).Single();
+            return p.name;
+        }
+
+        public string getnamesyllabus(string id)
+        {
+            Syllabus s = db.Syllabus.Where(t => t.id == id).Single();
+            return s.name;
+        }
+
     }
 }

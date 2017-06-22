@@ -45,27 +45,19 @@
       <Column Name="idAccount" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
       <Column Name="ProgramLevel" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ProgramBranch" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ProgramCode" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ProgramType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ProgramTime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ProgramActor" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ProgramVolume" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ProgramProcess" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ProgramSemester" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProgramTC" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ProgramPoint" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ProgramLecturer" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="ProgramPackage" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="isLock" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Program_ProgramObjective" Member="ProgramObjectives" ThisKey="id" OtherKey="idProgram" Type="ProgramObjective" />
       <Association Name="Program_ProgramOutcome" Member="ProgramOutcomes" ThisKey="id" OtherKey="idProgram" Type="ProgramOutcome" />
       <Association Name="Program_Syllabus" Member="Syllabus" ThisKey="id" OtherKey="idProgram" Type="Syllabus" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ProgramObjectives" Member="ProgramObjectives">
-    <Type Name="ProgramObjective">
-      <Column Name="id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="idProgram" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="ObjContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="Program_ProgramObjective" Member="Program" ThisKey="idProgram" OtherKey="id" Type="Program" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ProgramOutcomes" Member="ProgramOutcomes">

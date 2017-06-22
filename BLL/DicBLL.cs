@@ -12,6 +12,38 @@ namespace BLL
         {
             return "vanlang";
         }
+        public string successupdateprogram(string sc)
+        {
+            switch (sc)
+            {
+                case "sucess":
+                    return "Cập nhập thông tin chương trình đào tạo thành công.";
+                case "level":
+                    return "Thông tin Trình Độ Đào Tạo còn trống.";
+                case "branch":
+                    return "Thông tin Ngành Đào Tạo còn trống.";
+                case "type":
+                    return "Thông tin Loại Hình Đào Tạo còn trống.";
+                case "time":
+                    return "Thông tin Thời Gian Đào Tạo còn trống.";
+                case "vol":
+                    return "Thông tin Khối Lượng Kiến Thức còn trống.";
+                case "actor":
+                    return "Thông tin Đối Tượng Đào Tạo còn trống.";
+                case "process":
+                    return "Thông tin Quy Trình Đào Tạo, Điều Kiện Tốt Nghiệp còn trống.";
+                case "10":
+                    return "Thông tin Thanh Điểm bị sai định dạng hoặc bỏ trống.";
+                case "sem":
+                    return "Thông tin Học Kỳ bị sai định dạng hoặc bỏ trống.";
+                case "tc":
+                    return "Thông tin Tín Chỉ Toàn Khóa bị sai định dạng hoặc bỏ trống.";
+                case "else":
+                    return "Lỗi kết nối.\n Vui lòng kiểm tra lại đường truyền mạng.";
+                default:
+                    return "No exception";
+            }
+        }
         public string errorloginMessage(string error)
         {
             switch (error)

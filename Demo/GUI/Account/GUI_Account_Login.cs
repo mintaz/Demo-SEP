@@ -19,7 +19,7 @@ namespace Demo.GUI
         public bool admin;
         public string idAccountlogin;
 
-        private void btnSignIn_Click(object sender, EventArgs e)
+        public void loginaction()
         {
             EncryptBLL encrypt = new EncryptBLL();
             LoginBLL lg = new LoginBLL();
@@ -29,13 +29,13 @@ namespace Demo.GUI
 
             if (lg.isvaildEmail(user) == true)
             {
-                if(lg.isvaildAccount(user) == true)
+                if (lg.isvaildAccount(user) == true)
                 {
-                    if(lg.isvaildPass(user,pass) == true)
+                    if (lg.isvaildPass(user, pass) == true)
                     {
-                        if(lg.isActive(user) == true)
+                        if (lg.isActive(user) == true)
                         {
-                            if(lg.isAdmin(user)== true)
+                            if (lg.isAdmin(user) == true)
                             {
                                 admin = true;
                             }
@@ -44,6 +44,25 @@ namespace Demo.GUI
                                 admin = false;
                             }
                             idAccountlogin = lg.getID(user);
+                            if (lg.isCount(idAccountlogin) == true)
+                            {
+                                GUI.GUI_Program_ProgramList formlist = new GUI_Program_ProgramList();
+                                formlist.Idaccount = idAccountlogin;
+                                formlist.admin = admin;
+                                //formlist.Formclosing += delegate{(this.Show(); };
+                                formlist.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                Main mainform = new Main();
+                                mainform.auth = 0;
+                                mainform.idaccountmain = idAccountlogin;
+                                mainform.admin = admin;
+                                mainform.FormClosing += delegate { this.Show(); };
+                                mainform.Show();
+                                this.Hide();
+                            }
                         }
                         else
                         {
@@ -64,8 +83,36 @@ namespace Demo.GUI
             {
                 MessageBox.Show(dic.errorloginMessage("sai email"));
             }
+        }
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            loginaction();
 
 
+        }
+
+        private void GUI_Account_Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)13)
+            {
+                loginaction();
+            }
+        }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loginaction();
+            }
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loginaction();
+            }
         }
     }
 }

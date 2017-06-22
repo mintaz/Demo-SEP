@@ -68,7 +68,7 @@ namespace BLL
         {
             try
             {
-                Account accedit = db.Accounts.Where(ac => ac.id == id).SingleOrDefault();
+                Account accedit = db.Accounts.Where(ac => ac.id == id).Single();
                 accedit.email = user;
                 accedit.name = name;
                 accedit.isAdmin = isadmin;
@@ -93,7 +93,7 @@ namespace BLL
         {
             try
             {
-                Account accdel = db.Accounts.Where(ad => ad.id == idd).SingleOrDefault();
+                Account accdel = db.Accounts.Where(ad => ad.id == idd).Single();
                 db.Accounts.DeleteOnSubmit(accdel);
                 db.SubmitChanges();
                 return true;
@@ -103,6 +103,8 @@ namespace BLL
                 return false;
             }
         }
+        
+        
 
 
     }

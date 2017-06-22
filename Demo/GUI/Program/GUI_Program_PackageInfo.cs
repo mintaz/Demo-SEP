@@ -19,7 +19,7 @@ namespace Demo.GUI
 
         private void GUI_Program_PackageInfo_Load(object sender, EventArgs e)
         {
-            richtextboxPackage.LoadDocument("C:\\Users\\Mint\\Desktop\\Template\\Syllabus\\TrainningPlan.docx");
+            //richtextboxPackage.LoadDocument("C:\\Users\\Mint\\Desktop\\Template\\Syllabus\\TrainningPlan.docx");
             
         }
     }

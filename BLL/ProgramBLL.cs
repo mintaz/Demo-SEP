@@ -42,6 +42,35 @@ namespace BLL
                 return false;
             }
         }
+        public List<Program> LoadProgram(string id)
+        {
+            return db.Programs.Where(a => a.id == id).ToList();
+        }
+        public bool UpdateProgram(string id,string programlevel, string programbranch, string programtype, string programtime, string programactor, string programvolume, string programprocess, int programpoint, int programsem, int programmark)
+        {
+            try
+            {
+                Program p = db.Programs.Where(a => a.id == id).Single();
+                p.ProgramLevel = programlevel;
+                p.ProgramBranch = programbranch;
+                p.ProgramType = programtype;
+                p.ProgramTime = programtime;
+                p.ProgramActor = programactor;
+                p.ProgramVolume = programvolume;
+                p.ProgramProcess = programprocess;
+                p.ProgramPoint = programmark;
+                p.ProgramTC = programpoint;
+                p.ProgramSemester = programsem;
+
+
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
     }
 }

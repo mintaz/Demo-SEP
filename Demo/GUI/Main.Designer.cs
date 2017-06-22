@@ -58,9 +58,12 @@
             this.btnProgramLecturerList = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramFacilities = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.btnProgramOut = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.btnExit = new DevExpress.XtraBars.BarButtonItem();
             this.pageProgram = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.groupProgramManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageProgramGeneralInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.groupProgramManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageSyllabus = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupSyllabusInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupSyllabusSchedule = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -68,12 +71,14 @@
             this.groupSyllabusMapping = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pagePrint = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupPrint = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.groupPrintReview = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageAccount = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupAccountManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupAccountPassword = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.GroupLogout = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -107,16 +112,22 @@
             this.btnProgramPlan,
             this.btnProgramLecturerList,
             this.btnProgramFacilities,
-            this.skinRibbonGalleryBarItem1});
+            this.skinRibbonGalleryBarItem1,
+            this.btnProgramOut,
+            this.barStaticItem1,
+            this.btnExit});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 36;
+            this.ribbonControl1.MaxItemId = 42;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.PageHeaderItemLinks.Add(this.barStaticItem1);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.pageProgram,
             this.pageSyllabus,
             this.pagePrint,
             this.pageAccount});
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.skinRibbonGalleryBarItem1);
+            this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEdit1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.ribbonControl1.Size = new System.Drawing.Size(976, 166);
             // 
@@ -128,6 +139,7 @@
             this.btnAccountManager.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAccountManager.LargeGlyph")));
             this.btnAccountManager.LargeWidth = 75;
             this.btnAccountManager.Name = "btnAccountManager";
+            this.btnAccountManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAccountManager_ItemClick);
             // 
             // btnAccountReset
             // 
@@ -137,6 +149,7 @@
             this.btnAccountReset.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAccountReset.LargeGlyph")));
             this.btnAccountReset.LargeWidth = 75;
             this.btnAccountReset.Name = "btnAccountReset";
+            this.btnAccountReset.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAccountReset_ItemClick);
             // 
             // btnAccountChange
             // 
@@ -146,6 +159,7 @@
             this.btnAccountChange.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAccountChange.LargeGlyph")));
             this.btnAccountChange.LargeWidth = 75;
             this.btnAccountChange.Name = "btnAccountChange";
+            this.btnAccountChange.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAccountChange_ItemClick);
             // 
             // btnProgram
             // 
@@ -209,6 +223,7 @@
             this.btnSyllabusCourseInfo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusCourseInfo.LargeGlyph")));
             this.btnSyllabusCourseInfo.LargeWidth = 75;
             this.btnSyllabusCourseInfo.Name = "btnSyllabusCourseInfo";
+            this.btnSyllabusCourseInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusCourseInfo_ItemClick);
             // 
             // btnSyllabusLecturerInfo
             // 
@@ -218,6 +233,7 @@
             this.btnSyllabusLecturerInfo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusLecturerInfo.LargeGlyph")));
             this.btnSyllabusLecturerInfo.LargeWidth = 75;
             this.btnSyllabusLecturerInfo.Name = "btnSyllabusLecturerInfo";
+            this.btnSyllabusLecturerInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusLecturerInfo_ItemClick);
             // 
             // btnSyllabusObjectives
             // 
@@ -227,6 +243,7 @@
             this.btnSyllabusObjectives.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusObjectives.LargeGlyph")));
             this.btnSyllabusObjectives.LargeWidth = 75;
             this.btnSyllabusObjectives.Name = "btnSyllabusObjectives";
+            this.btnSyllabusObjectives.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusObjectives_ItemClick);
             // 
             // btnSyllabusOutcomes
             // 
@@ -236,6 +253,7 @@
             this.btnSyllabusOutcomes.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusOutcomes.LargeGlyph")));
             this.btnSyllabusOutcomes.LargeWidth = 75;
             this.btnSyllabusOutcomes.Name = "btnSyllabusOutcomes";
+            this.btnSyllabusOutcomes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusOutcomes_ItemClick);
             // 
             // btnSyllabusCourseDescription
             // 
@@ -245,6 +263,7 @@
             this.btnSyllabusCourseDescription.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusCourseDescription.LargeGlyph")));
             this.btnSyllabusCourseDescription.LargeWidth = 75;
             this.btnSyllabusCourseDescription.Name = "btnSyllabusCourseDescription";
+            this.btnSyllabusCourseDescription.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusCourseDescription_ItemClick);
             // 
             // btnSyllabusDocument
             // 
@@ -254,6 +273,7 @@
             this.btnSyllabusDocument.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusDocument.LargeGlyph")));
             this.btnSyllabusDocument.LargeWidth = 75;
             this.btnSyllabusDocument.Name = "btnSyllabusDocument";
+            this.btnSyllabusDocument.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusDocument_ItemClick);
             // 
             // btnSyllabusMethod
             // 
@@ -263,6 +283,7 @@
             this.btnSyllabusMethod.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusMethod.LargeGlyph")));
             this.btnSyllabusMethod.LargeWidth = 75;
             this.btnSyllabusMethod.Name = "btnSyllabusMethod";
+            this.btnSyllabusMethod.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusMethod_ItemClick);
             // 
             // btnSyllabusRequirement
             // 
@@ -272,6 +293,7 @@
             this.btnSyllabusRequirement.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusRequirement.LargeGlyph")));
             this.btnSyllabusRequirement.LargeWidth = 75;
             this.btnSyllabusRequirement.Name = "btnSyllabusRequirement";
+            this.btnSyllabusRequirement.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusRequirement_ItemClick);
             // 
             // btnSyllabusSchedule
             // 
@@ -281,6 +303,7 @@
             this.btnSyllabusSchedule.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusSchedule.LargeGlyph")));
             this.btnSyllabusSchedule.LargeWidth = 75;
             this.btnSyllabusSchedule.Name = "btnSyllabusSchedule";
+            this.btnSyllabusSchedule.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusSchedule_ItemClick);
             // 
             // btnSyllabusMapping
             // 
@@ -290,6 +313,7 @@
             this.btnSyllabusMapping.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusMapping.LargeGlyph")));
             this.btnSyllabusMapping.LargeWidth = 75;
             this.btnSyllabusMapping.Name = "btnSyllabusMapping";
+            this.btnSyllabusMapping.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusMapping_ItemClick);
             // 
             // btnProgramCreate
             // 
@@ -299,15 +323,17 @@
             this.btnProgramCreate.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramCreate.LargeGlyph")));
             this.btnProgramCreate.LargeWidth = 75;
             this.btnProgramCreate.Name = "btnProgramCreate";
+            this.btnProgramCreate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProgramCreate_ItemClick);
             // 
             // btnProgramCreateSyllabus
             // 
-            this.btnProgramCreateSyllabus.Caption = "Phân Công Môn Học";
+            this.btnProgramCreateSyllabus.Caption = "Quản Lý Môn Học";
             this.btnProgramCreateSyllabus.Glyph = ((System.Drawing.Image)(resources.GetObject("btnProgramCreateSyllabus.Glyph")));
             this.btnProgramCreateSyllabus.Id = 25;
             this.btnProgramCreateSyllabus.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramCreateSyllabus.LargeGlyph")));
             this.btnProgramCreateSyllabus.LargeWidth = 75;
             this.btnProgramCreateSyllabus.Name = "btnProgramCreateSyllabus";
+            this.btnProgramCreateSyllabus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProgramCreateSyllabus_ItemClick);
             // 
             // btnProgramInfo
             // 
@@ -317,6 +343,7 @@
             this.btnProgramInfo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramInfo.LargeGlyph")));
             this.btnProgramInfo.LargeWidth = 90;
             this.btnProgramInfo.Name = "btnProgramInfo";
+            this.btnProgramInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProgramInfo_ItemClick);
             // 
             // btnProgramObjective
             // 
@@ -344,6 +371,7 @@
             this.btnProgramLecturerList.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramLecturerList.LargeGlyph")));
             this.btnProgramLecturerList.LargeWidth = 90;
             this.btnProgramLecturerList.Name = "btnProgramLecturerList";
+            this.btnProgramLecturerList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProgramLecturerList_ItemClick);
             // 
             // btnProgramFacilities
             // 
@@ -353,6 +381,7 @@
             this.btnProgramFacilities.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramFacilities.LargeGlyph")));
             this.btnProgramFacilities.LargeWidth = 90;
             this.btnProgramFacilities.Name = "btnProgramFacilities";
+            this.btnProgramFacilities.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProgramFacilities_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -364,20 +393,39 @@
             this.skinRibbonGalleryBarItem1.Id = 34;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
+            // btnProgramOut
+            // 
+            this.btnProgramOut.Caption = "Mục Tiêu Đầu Ra";
+            this.btnProgramOut.Glyph = ((System.Drawing.Image)(resources.GetObject("btnProgramOut.Glyph")));
+            this.btnProgramOut.Id = 36;
+            this.btnProgramOut.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramOut.LargeGlyph")));
+            this.btnProgramOut.LargeWidth = 90;
+            this.btnProgramOut.Name = "btnProgramOut";
+            this.btnProgramOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProgramOut_ItemClick);
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "barStaticItem1";
+            this.barStaticItem1.Id = 40;
+            this.barStaticItem1.Name = "barStaticItem1";
+            this.barStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Caption = "Đăng Xuất";
+            this.btnExit.Glyph = ((System.Drawing.Image)(resources.GetObject("btnExit.Glyph")));
+            this.btnExit.Id = 41;
+            this.btnExit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnExit.LargeGlyph")));
+            this.btnExit.LargeWidth = 90;
+            this.btnExit.Name = "btnExit";
+            // 
             // pageProgram
             // 
             this.pageProgram.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.groupProgramManager,
-            this.pageProgramGeneralInfo});
+            this.pageProgramGeneralInfo,
+            this.groupProgramManager});
             this.pageProgram.Name = "pageProgram";
             this.pageProgram.Text = "Chương Trình Đào Tạo";
-            // 
-            // groupProgramManager
-            // 
-            this.groupProgramManager.ItemLinks.Add(this.btnProgramCreate);
-            this.groupProgramManager.ItemLinks.Add(this.btnProgramCreateSyllabus);
-            this.groupProgramManager.Name = "groupProgramManager";
-            this.groupProgramManager.Text = "Quản Lý Chương Trình";
             // 
             // pageProgramGeneralInfo
             // 
@@ -385,8 +433,16 @@
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramPlan);
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramLecturerList);
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramFacilities);
+            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramOut);
             this.pageProgramGeneralInfo.Name = "pageProgramGeneralInfo";
             this.pageProgramGeneralInfo.Text = "Thông Tin Chung";
+            // 
+            // groupProgramManager
+            // 
+            this.groupProgramManager.ItemLinks.Add(this.btnProgramCreate);
+            this.groupProgramManager.ItemLinks.Add(this.btnProgramCreateSyllabus);
+            this.groupProgramManager.Name = "groupProgramManager";
+            this.groupProgramManager.Text = "Quản Lý Chương Trình";
             // 
             // pageSyllabus
             // 
@@ -431,8 +487,7 @@
             // pagePrint
             // 
             this.pagePrint.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.groupPrint,
-            this.groupPrintReview});
+            this.groupPrint});
             this.pagePrint.Name = "pagePrint";
             this.pagePrint.Text = "Xem Lại và In";
             // 
@@ -444,19 +499,12 @@
             this.groupPrint.Name = "groupPrint";
             this.groupPrint.Text = "In";
             // 
-            // groupPrintReview
-            // 
-            this.groupPrintReview.ItemLinks.Add(this.btnPrintReviewProgram);
-            this.groupPrintReview.ItemLinks.Add(this.btnPrintReviewSyllabus);
-            this.groupPrintReview.ItemLinks.Add(this.btnPrintReviewFull);
-            this.groupPrintReview.Name = "groupPrintReview";
-            this.groupPrintReview.Text = "Xem Lại";
-            // 
             // pageAccount
             // 
             this.pageAccount.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.groupAccountManager,
-            this.groupAccountPassword});
+            this.groupAccountPassword,
+            this.GroupLogout});
             this.pageAccount.Name = "pageAccount";
             this.pageAccount.Text = "Tài Khoản";
             // 
@@ -472,6 +520,17 @@
             this.groupAccountPassword.ItemLinks.Add(this.btnAccountChange);
             this.groupAccountPassword.Name = "groupAccountPassword";
             this.groupAccountPassword.Text = "Mật Khẩu";
+            // 
+            // GroupLogout
+            // 
+            this.GroupLogout.ItemLinks.Add(this.btnExit);
+            this.GroupLogout.Name = "GroupLogout";
+            this.GroupLogout.Text = "Đăng Xuất";
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // defaultLookAndFeel1
             // 
@@ -491,6 +550,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,7 +570,6 @@
         private DevExpress.XtraBars.BarButtonItem btnPrintFull;
         private DevExpress.XtraBars.Ribbon.RibbonPage pagePrint;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupPrint;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupPrintReview;
         private DevExpress.XtraBars.BarButtonItem btnPrintReviewProgram;
         private DevExpress.XtraBars.BarButtonItem btnPrintReviewSyllabus;
         private DevExpress.XtraBars.BarButtonItem btnPrintReviewFull;
@@ -541,6 +600,11 @@
         private DevExpress.XtraBars.BarButtonItem btnProgramFacilities;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.XtraBars.BarButtonItem btnProgramOut;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraBars.BarButtonItem btnExit;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup GroupLogout;
     }
 }
 

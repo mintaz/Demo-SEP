@@ -42,9 +42,6 @@ namespace DAL
     partial void InsertProgram(Program instance);
     partial void UpdateProgram(Program instance);
     partial void DeleteProgram(Program instance);
-    partial void InsertProgramObjective(ProgramObjective instance);
-    partial void UpdateProgramObjective(ProgramObjective instance);
-    partial void DeleteProgramObjective(ProgramObjective instance);
     partial void InsertProgramOutcome(ProgramOutcome instance);
     partial void UpdateProgramOutcome(ProgramOutcome instance);
     partial void DeleteProgramOutcome(ProgramOutcome instance);
@@ -118,14 +115,6 @@ namespace DAL
 			get
 			{
 				return this.GetTable<Program>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ProgramObjective> ProgramObjectives
-		{
-			get
-			{
-				return this.GetTable<ProgramObjective>();
 			}
 		}
 		
@@ -950,8 +939,6 @@ namespace DAL
 		
 		private string _ProgramBranch;
 		
-		private string _ProgramCode;
-		
 		private string _ProgramType;
 		
 		private string _ProgramTime;
@@ -962,6 +949,10 @@ namespace DAL
 		
 		private string _ProgramProcess;
 		
+		private System.Nullable<int> _ProgramSemester;
+		
+		private System.Nullable<int> _ProgramTC;
+		
 		private System.Nullable<int> _ProgramPoint;
 		
 		private System.Data.Linq.Binary _ProgramLecturer;
@@ -969,8 +960,6 @@ namespace DAL
 		private System.Data.Linq.Binary _ProgramPackage;
 		
 		private System.Nullable<bool> _isLock;
-		
-		private EntitySet<ProgramObjective> _ProgramObjectives;
 		
 		private EntitySet<ProgramOutcome> _ProgramOutcomes;
 		
@@ -990,8 +979,6 @@ namespace DAL
     partial void OnProgramLevelChanged();
     partial void OnProgramBranchChanging(string value);
     partial void OnProgramBranchChanged();
-    partial void OnProgramCodeChanging(string value);
-    partial void OnProgramCodeChanged();
     partial void OnProgramTypeChanging(string value);
     partial void OnProgramTypeChanged();
     partial void OnProgramTimeChanging(string value);
@@ -1002,6 +989,10 @@ namespace DAL
     partial void OnProgramVolumeChanged();
     partial void OnProgramProcessChanging(string value);
     partial void OnProgramProcessChanged();
+    partial void OnProgramSemesterChanging(System.Nullable<int> value);
+    partial void OnProgramSemesterChanged();
+    partial void OnProgramTCChanging(System.Nullable<int> value);
+    partial void OnProgramTCChanged();
     partial void OnProgramPointChanging(System.Nullable<int> value);
     partial void OnProgramPointChanged();
     partial void OnProgramLecturerChanging(System.Data.Linq.Binary value);
@@ -1014,7 +1005,6 @@ namespace DAL
 		
 		public Program()
 		{
-			this._ProgramObjectives = new EntitySet<ProgramObjective>(new Action<ProgramObjective>(this.attach_ProgramObjectives), new Action<ProgramObjective>(this.detach_ProgramObjectives));
 			this._ProgramOutcomes = new EntitySet<ProgramOutcome>(new Action<ProgramOutcome>(this.attach_ProgramOutcomes), new Action<ProgramOutcome>(this.detach_ProgramOutcomes));
 			this._Syllabus = new EntitySet<Syllabus>(new Action<Syllabus>(this.attach_Syllabus), new Action<Syllabus>(this.detach_Syllabus));
 			OnCreated();
@@ -1120,26 +1110,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramCode", DbType="NVarChar(100)")]
-		public string ProgramCode
-		{
-			get
-			{
-				return this._ProgramCode;
-			}
-			set
-			{
-				if ((this._ProgramCode != value))
-				{
-					this.OnProgramCodeChanging(value);
-					this.SendPropertyChanging();
-					this._ProgramCode = value;
-					this.SendPropertyChanged("ProgramCode");
-					this.OnProgramCodeChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramType", DbType="NVarChar(100)")]
 		public string ProgramType
 		{
@@ -1240,6 +1210,46 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramSemester", DbType="Int")]
+		public System.Nullable<int> ProgramSemester
+		{
+			get
+			{
+				return this._ProgramSemester;
+			}
+			set
+			{
+				if ((this._ProgramSemester != value))
+				{
+					this.OnProgramSemesterChanging(value);
+					this.SendPropertyChanging();
+					this._ProgramSemester = value;
+					this.SendPropertyChanged("ProgramSemester");
+					this.OnProgramSemesterChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramTC", DbType="Int")]
+		public System.Nullable<int> ProgramTC
+		{
+			get
+			{
+				return this._ProgramTC;
+			}
+			set
+			{
+				if ((this._ProgramTC != value))
+				{
+					this.OnProgramTCChanging(value);
+					this.SendPropertyChanging();
+					this._ProgramTC = value;
+					this.SendPropertyChanged("ProgramTC");
+					this.OnProgramTCChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramPoint", DbType="Int")]
 		public System.Nullable<int> ProgramPoint
 		{
@@ -1320,19 +1330,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Program_ProgramObjective", Storage="_ProgramObjectives", ThisKey="id", OtherKey="idProgram")]
-		public EntitySet<ProgramObjective> ProgramObjectives
-		{
-			get
-			{
-				return this._ProgramObjectives;
-			}
-			set
-			{
-				this._ProgramObjectives.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Program_ProgramOutcome", Storage="_ProgramOutcomes", ThisKey="id", OtherKey="idProgram")]
 		public EntitySet<ProgramOutcome> ProgramOutcomes
 		{
@@ -1379,18 +1376,6 @@ namespace DAL
 			}
 		}
 		
-		private void attach_ProgramObjectives(ProgramObjective entity)
-		{
-			this.SendPropertyChanging();
-			entity.Program = this;
-		}
-		
-		private void detach_ProgramObjectives(ProgramObjective entity)
-		{
-			this.SendPropertyChanging();
-			entity.Program = null;
-		}
-		
 		private void attach_ProgramOutcomes(ProgramOutcome entity)
 		{
 			this.SendPropertyChanging();
@@ -1413,157 +1398,6 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.Program = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProgramObjectives")]
-	public partial class ProgramObjective : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _id;
-		
-		private string _idProgram;
-		
-		private string _ObjContent;
-		
-		private EntityRef<Program> _Program;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(string value);
-    partial void OnidChanged();
-    partial void OnidProgramChanging(string value);
-    partial void OnidProgramChanged();
-    partial void OnObjContentChanging(string value);
-    partial void OnObjContentChanged();
-    #endregion
-		
-		public ProgramObjective()
-		{
-			this._Program = default(EntityRef<Program>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idProgram", DbType="VarChar(6)")]
-		public string idProgram
-		{
-			get
-			{
-				return this._idProgram;
-			}
-			set
-			{
-				if ((this._idProgram != value))
-				{
-					if (this._Program.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidProgramChanging(value);
-					this.SendPropertyChanging();
-					this._idProgram = value;
-					this.SendPropertyChanged("idProgram");
-					this.OnidProgramChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ObjContent", DbType="NVarChar(MAX)")]
-		public string ObjContent
-		{
-			get
-			{
-				return this._ObjContent;
-			}
-			set
-			{
-				if ((this._ObjContent != value))
-				{
-					this.OnObjContentChanging(value);
-					this.SendPropertyChanging();
-					this._ObjContent = value;
-					this.SendPropertyChanged("ObjContent");
-					this.OnObjContentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Program_ProgramObjective", Storage="_Program", ThisKey="idProgram", OtherKey="id", IsForeignKey=true)]
-		public Program Program
-		{
-			get
-			{
-				return this._Program.Entity;
-			}
-			set
-			{
-				Program previousValue = this._Program.Entity;
-				if (((previousValue != value) 
-							|| (this._Program.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Program.Entity = null;
-						previousValue.ProgramObjectives.Remove(this);
-					}
-					this._Program.Entity = value;
-					if ((value != null))
-					{
-						value.ProgramObjectives.Add(this);
-						this._idProgram = value.id;
-					}
-					else
-					{
-						this._idProgram = default(string);
-					}
-					this.SendPropertyChanged("Program");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	

@@ -25,24 +25,19 @@ namespace Demo.GUI
         DicBLL dc = new DicBLL(); 
         private void GUI_Account_ChangePass_Load(object sender, EventArgs e)
         {
-            txtname.Text = achange.LoadUser(idChange).SingleOrDefault().name;
+            txtname.Text = achange.LoadUser(idChange).Single().name;
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
-            string oldname = achange.LoadUser(idChange).SingleOrDefault().name;
+            string oldname = achange.LoadUser(idChange).Single().name;
             string newname = txtname.Text;
-            string oldpass = achange.LoadUser(idChange).SingleOrDefault().password;
+            string oldpass = achange.LoadUser(idChange).Single().password;
             string oldpassinput = en.EncodeSHA1(txtOldPass.Text);
             string newpass = txtNewPass.Text;
             string newpassconfirm = txtNewPassConfirm.Text;
             bool check = false;
-            if (com.Compare2string(oldname, newname) == true)
-            {
-                MessageBox.Show(dc.errorChangeMessage("samename"));
-            }
-            else
-            {
+            
                 if((txtOldPass.Text == "") && (txtNewPass.Text == "") && (txtNewPassConfirm.Text == ""))
                 {
                     if (com.changeName(idChange, newname) == true)
@@ -79,8 +74,10 @@ namespace Demo.GUI
                                     else
                                     {
                                         MessageBox.Show(dc.successChangeMessage("changepass"));
+                                    
                                     }
-                                }
+                                this.Close();
+                            }
                                 else
                                 {
                                     MessageBox.Show(dc.successChangeMessage("else"));
@@ -89,7 +86,7 @@ namespace Demo.GUI
                         }
                     }
                 }
-            }
+           
         }
     }
 }
