@@ -137,6 +137,7 @@
             this.Name = "GUI_Program_ProgramList";
             this.Text = "GUI_Program_ProgramList";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.GUI_Program_ProgramList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcProgramList)).EndInit();

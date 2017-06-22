@@ -79,6 +79,7 @@
     <Reference Include="System.Core">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap">
       <Private>True</Private>
     </Reference>

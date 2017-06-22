@@ -32,5 +32,16 @@ namespace DAL.Properties {
                 return ((string)(this["EprogramConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-1P8H70G\\SQLEXPRESS;Initial Catalog=Eprogram;Integrated Securi" +
+            "ty=True")]
+        public string EprogramConnectionString1 {
+            get {
+                return ((string)(this["EprogramConnectionString1"]));
+            }
+        }
     }
 }

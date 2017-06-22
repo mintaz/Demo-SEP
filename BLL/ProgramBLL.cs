@@ -43,9 +43,5 @@ namespace BLL
             }
         }
 
-        public List<Program> loadProgramInfo(string idP)
-        {
-            return db.Programs.
-        }
     }
 }
