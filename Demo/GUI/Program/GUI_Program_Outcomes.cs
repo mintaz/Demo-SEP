@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
+using DAL;
 namespace Demo.GUI.Program
 {
     public partial class GUI_Program_Outcomes : Form
@@ -15,6 +16,16 @@ namespace Demo.GUI.Program
         public GUI_Program_Outcomes()
         {
             InitializeComponent();
+        }
+        public string idprogram = "";
+        ProgramOutBLL pro = new ProgramOutBLL();
+        void loadData()
+        {
+            gcProgramOut.DataSource = pro.LoadPOutcomes(idprogram);
+        }
+        private void GUI_Program_Outcomes_Load(object sender, EventArgs e)
+        {
+            loadData();
         }
     }
 }

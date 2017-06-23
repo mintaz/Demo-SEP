@@ -42,6 +42,21 @@ namespace BLL
                 return false;
             }
         }
+        public bool EditProgram(string id, string name,string idacc)
+        {
+            try
+            {
+                Program editpro = db.Programs.Where(edit => edit.id == id).Single();
+                editpro.name = name;
+                editpro.idAccount = idacc;
+                db.SubmitChanges();
+                return true;
+                
+            }catch
+            {
+                return false;
+            }
+        }
         public List<Program> Load()
         {
             return db.Programs.ToList();

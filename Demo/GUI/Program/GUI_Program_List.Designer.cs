@@ -147,6 +147,7 @@
             this.gvProgramList.OptionsFind.FindNullPrompt = "Nhập Từ để tìm kiếm...";
             this.gvProgramList.OptionsView.ShowGroupPanel = false;
             this.gvProgramList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvProgramList_FocusedRowChanged);
+            this.gvProgramList.DoubleClick += new System.EventHandler(this.gvProgramList_DoubleClick);
             // 
             // ID
             // 

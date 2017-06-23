@@ -17,10 +17,20 @@ namespace Demo.GUI.Program
         {
             InitializeComponent();
         }
+        ProgramBLL pr = new ProgramBLL();
+        EprogramDataContext db = new EprogramDataContext();
         public void loadData()
         {
-            ProgramBLL pr = new ProgramBLL();
-            gcProgramList.DataSource = pr.Load();
+
+            var result = from p in db.Programs
+                         join c in db.Accounts on p.idAccount equals c.id
+                         select new
+                         {
+                             ID = p.id,
+                             ProgramName = p.name,
+                             AccountName = c.name,
+                         };
+            gcProgramList.DataSource = result.ToList();
         }
         private void GUI_Program_List_Load(object sender, EventArgs e)
         {
@@ -42,7 +52,21 @@ namespace Demo.GUI.Program
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string id = gvProgramList.GetRowCellValue(index, this.ID).ToString();
+            GUI.GUI_Program_CreateProgram editform = new GUI_Program_CreateProgram();
+            editform.idprogram = id;
+            editform.idacc = pr.LoadProgram(id).Single().idAccount;
+            editform.ShowDialog();
+            loadData();
+        }
 
+        private void gvProgramList_DoubleClick(object sender, EventArgs e)
+        {
+            string id = gvProgramList.GetRowCellValue(index, this.ID).ToString();
+            GUI.GUI_Program_CreateProgram editform = new GUI_Program_CreateProgram();
+            editform.idprogram = id;
+            editform.idacc = pr.LoadProgram(id).Single().idAccount;
+            editform.ShowDialog();
+            loadData();
         }
     }
 }

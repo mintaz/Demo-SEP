@@ -44,13 +44,27 @@ namespace Demo.GUI
         {
             string name = txtProgramName.Text;
             string ida = cboProgramMaster.SelectedValue.ToString();
-            if (p.CreateProgram(ida, name) == true)
+            if (idprogram == "")
             {
-                dc.successCreateProgram("createprogram");
+                if (p.CreateProgram(ida, name) == true)
+                {
+                    dc.successCreateProgram("createprogram");
+                }
+                else
+                {
+                    dc.errorCreateProgram("else");
+                }
             }
             else
             {
-                dc.errorCreateProgram("else");
+                if (p.EditProgram(idprogram, name, ida) == true)
+                {
+                    dc.successCreateProgram("editprogram");
+                }
+                else
+                {
+                    dc.errorCreateProgram("else");
+                }
             }
         }
     }
