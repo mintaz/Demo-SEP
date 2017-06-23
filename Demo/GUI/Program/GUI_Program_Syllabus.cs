@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
 using BLL;
-using System.Collections.Generic;
 using DevExpress.XtraEditors.Controls;
 
 namespace Demo.GUI.Program
@@ -59,12 +58,17 @@ namespace Demo.GUI.Program
             txtCoursePoint.Text = "";
             txtLTtime.Text = "";
             txtTHtime.Text = "";
+            
             cboCourseSemester.SelectedValue = 1;
             cboCourseType.SelectedValue = 0;
         }
-
+        void loadpre(string line)
+        {
+            gcPrecourse.DataSource = sys.loadpre(line);
+        }
         private void GUI_Program_Syllabus_Load(object sender, EventArgs e)
         {
+            txtLTtime.ReadOnly = true;
             if (idsys == "")
             {
                 loadcomboSY();
@@ -72,9 +76,81 @@ namespace Demo.GUI.Program
             }
             else
             {
-
+                txtCourseName.Text = sys.loadSys(idsys).Single().name;
+                txtCourseCode.Text = sys.loadSys(idsys).Single().CourseCode;
+                txtCoursePoint.Text = sys.loadSys(idsys).Single().CoursePoint.Value.ToString();
+                txtLTtime.Text = sys.loadSys(idsys).Single().CourseLT.Value.ToString();
+                txtTHtime.Text = ((((sys.loadSys(idsys).Single().CoursePoint.Value)*15)-(sys.loadSys(idsys).Single().CourseLT.Value)*15)).ToString();
+                cboCourseOwner.SelectedValue = sys.loadSys(idsys).Single().idAccount;
+                cboCourseSemester.SelectedValue = sys.loadSys(idsys).Single().CourseSemester;
+                cboCourseType.SelectedValue = sys.loadSys(idsys).Single().CourseType;
+                loadpre(sys.loadSys(idsys).Single().PreCourse);
+                rtCourseContent.Text = sys.loadSys(idsys).Single().CourseContent;
             }
             
+        }
+
+        public string line = "";
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string idpre = cboPreCourse.SelectedValue.ToString();
+            line = sys.AddPre(line, idpre);
+            loadpre(line);
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            string id = gvPrecourse.GetRowCellValue(index, this.ID).ToString();
+            line = sys.DelPre(line, id);
+            loadpre(line);
+        }
+        int index;
+        private void gvPrecourse_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            index = e.FocusedRowHandle;
+        }
+
+        private void txtLTtime_TextChanged(object sender, EventArgs e)
+        {
+            int TC = sys.loadSys(idsys).Single().CoursePoint.Value * 15;
+            int LT = sys.loadSys(idsys).Single().CourseLT.Value;
+            int TH = TC - LT;
+            txtTHtime.Text = TH.ToString();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string name = txtCourseName.Text;
+            string code = txtCourseCode.Text;
+            int TC = int.Parse(txtCoursePoint.Text);
+            int LT = int.Parse(txtLTtime.Text);
+            int type = int.Parse(cboCourseType.SelectedValue.ToString());
+            string iac = cboCourseOwner.SelectedValue.ToString();
+            int sem = int.Parse(cboCourseSemester.SelectedValue.ToString());
+            string cont = rtCourseContent.Text;
+            if(idsys == "")
+            {
+                bool add = sys.AddSysllabus(idprogram, name, code, type, iac, sem, TC, LT, line, cont);
+                if(add == true)
+                {
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                bool edit = sys.EditPSysllabus(idsys, name, code, type, iac, sem, TC, LT, line, cont);
+                if( edit == true)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
         }
     }
 }

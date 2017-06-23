@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.gcPrecourse = new DevExpress.XtraGrid.GridControl();
+            this.gvPrecourse = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NAME = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cboPreCourse = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.rtCourseContent = new System.Windows.Forms.RichTextBox();
@@ -59,13 +64,12 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gcPrecourse = new DevExpress.XtraGrid.GridControl();
-            this.gvPrecourse = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnDel = new System.Windows.Forms.Button();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPrecourse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPrecourse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -84,8 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcPrecourse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPrecourse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
@@ -114,6 +116,57 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(602, 291);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(250, 35);
+            this.btnDel.TabIndex = 21;
+            this.btnDel.Text = "Xóa";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // gcPrecourse
+            // 
+            this.gcPrecourse.Location = new System.Drawing.Point(118, 250);
+            this.gcPrecourse.MainView = this.gvPrecourse;
+            this.gcPrecourse.Name = "gcPrecourse";
+            this.gcPrecourse.Size = new System.Drawing.Size(480, 303);
+            this.gcPrecourse.TabIndex = 20;
+            this.gcPrecourse.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvPrecourse});
+            // 
+            // gvPrecourse
+            // 
+            this.gvPrecourse.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.NAME});
+            this.gvPrecourse.GridControl = this.gcPrecourse;
+            this.gvPrecourse.Name = "gvPrecourse";
+            this.gvPrecourse.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gvPrecourse.OptionsView.ShowGroupPanel = false;
+            this.gvPrecourse.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvPrecourse_FocusedRowChanged);
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "id";
+            this.ID.Name = "ID";
+            this.ID.OptionsColumn.AllowEdit = false;
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 0;
+            this.ID.Width = 118;
+            // 
+            // NAME
+            // 
+            this.NAME.Caption = "Tên Môn Học";
+            this.NAME.FieldName = "name";
+            this.NAME.Name = "NAME";
+            this.NAME.OptionsColumn.AllowEdit = false;
+            this.NAME.Visible = true;
+            this.NAME.VisibleIndex = 1;
+            this.NAME.Width = 344;
+            // 
             // cboPreCourse
             // 
             this.cboPreCourse.FormattingEnabled = true;
@@ -130,6 +183,7 @@
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "Lưu Lại";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // rtCourseContent
             // 
@@ -147,6 +201,7 @@
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cboCourseSemester
             // 
@@ -185,6 +240,7 @@
             this.txtLTtime.Name = "txtLTtime";
             this.txtLTtime.Size = new System.Drawing.Size(988, 20);
             this.txtLTtime.TabIndex = 7;
+            this.txtLTtime.TextChanged += new System.EventHandler(this.txtLTtime_TextChanged);
             // 
             // txtCoursePoint
             // 
@@ -384,23 +440,6 @@
             this.layoutControlItem10.Text = "Môn Tiên Quyết";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(103, 13);
             // 
-            // gcPrecourse
-            // 
-            this.gcPrecourse.Location = new System.Drawing.Point(118, 250);
-            this.gcPrecourse.MainView = this.gvPrecourse;
-            this.gcPrecourse.Name = "gcPrecourse";
-            this.gcPrecourse.Size = new System.Drawing.Size(480, 303);
-            this.gcPrecourse.TabIndex = 20;
-            this.gcPrecourse.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvPrecourse});
-            // 
-            // gvPrecourse
-            // 
-            this.gvPrecourse.GridControl = this.gcPrecourse;
-            this.gvPrecourse.Name = "gvPrecourse";
-            this.gvPrecourse.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            this.gvPrecourse.OptionsView.ShowGroupPanel = false;
-            // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.gcPrecourse;
@@ -409,15 +448,6 @@
             this.layoutControlItem14.Size = new System.Drawing.Size(590, 307);
             this.layoutControlItem14.Text = "Môn Tiên Quyết";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(103, 13);
-            // 
-            // btnDel
-            // 
-            this.btnDel.Location = new System.Drawing.Point(602, 291);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(250, 35);
-            this.btnDel.TabIndex = 21;
-            this.btnDel.Text = "Xóa";
-            this.btnDel.UseVisualStyleBackColor = true;
             // 
             // layoutControlItem7
             // 
@@ -439,6 +469,8 @@
             this.Load += new System.EventHandler(this.GUI_Program_Syllabus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcPrecourse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPrecourse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -457,8 +489,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcPrecourse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPrecourse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
@@ -503,5 +533,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvPrecourse;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn NAME;
     }
 }
