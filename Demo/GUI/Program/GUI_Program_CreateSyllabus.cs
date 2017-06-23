@@ -18,7 +18,7 @@ namespace Demo.GUI.Program
             InitializeComponent();
         }
         SyllabusBLL s = new SyllabusBLL();
-        public string idPrg;
+        public string idPrg ="";
         public void loadData()
         {
             gcCourse.DataSource = s.loadSyllabus(idPrg);

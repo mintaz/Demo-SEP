@@ -14,5 +14,10 @@ namespace BLL
         {
             return db.Syllabus.Where(s =>s.idProgram==idprogram).ToList();
         }
+
+        public int getSememster (string idprogram)
+        {
+            return db.Programs.Where(sem => sem.id == idprogram).Single().ProgramSemester.Value;
+        }
     }
 }
