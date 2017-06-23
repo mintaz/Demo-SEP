@@ -77,6 +77,7 @@
             this.btnAdd.Id = 0;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 0);
+            this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
             // 
             // btnEdit
             // 
@@ -86,13 +87,14 @@
             this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 0);
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(663, 67);
+            this.barDockControlTop.Size = new System.Drawing.Size(663, 65);
             // 
             // barDockControlBottom
             // 
@@ -105,33 +107,39 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 67);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 303);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 65);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 305);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(663, 67);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 303);
+            this.barDockControlRight.Location = new System.Drawing.Point(663, 65);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 305);
             // 
             // gcProgramOut
             // 
             this.gcProgramOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcProgramOut.Location = new System.Drawing.Point(0, 67);
+            this.gcProgramOut.Location = new System.Drawing.Point(0, 65);
             this.gcProgramOut.MainView = this.gvProgramOut;
             this.gcProgramOut.MenuManager = this.barManager1;
             this.gcProgramOut.Name = "gcProgramOut";
-            this.gcProgramOut.Size = new System.Drawing.Size(663, 303);
+            this.gcProgramOut.Size = new System.Drawing.Size(663, 305);
             this.gcProgramOut.TabIndex = 4;
             this.gcProgramOut.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvProgramOut});
+            this.gcProgramOut.DoubleClick += new System.EventHandler(this.gcProgramOut_DoubleClick);
             // 
             // gvProgramOut
             // 
             this.gvProgramOut.GridControl = this.gcProgramOut;
             this.gvProgramOut.Name = "gvProgramOut";
             this.gvProgramOut.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gvProgramOut.OptionsFind.AlwaysVisible = true;
+            this.gvProgramOut.OptionsFind.FindDelay = 250;
+            this.gvProgramOut.OptionsFind.FindNullPrompt = "Nhập Từ để tìm kiếm...";
+            this.gvProgramOut.OptionsView.ShowGroupPanel = false;
+            this.gvProgramOut.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvProgramOut_FocusedRowChanged);
             // 
             // GUI_Program_Outcomes
             // 
@@ -144,7 +152,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Program_Outcomes";
-            this.Text = "GUI_Program_Outcomes";
+            this.Text = "Danh Sách Mục Tiêu Đầu Ra Chương Trình Đào Tạo";
             this.Load += new System.EventHandler(this.GUI_Program_Outcomes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcProgramOut)).EndInit();

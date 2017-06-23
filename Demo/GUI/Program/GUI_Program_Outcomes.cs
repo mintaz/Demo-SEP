@@ -27,5 +27,33 @@ namespace Demo.GUI.Program
         {
             loadData();
         }
+
+        private void gcProgramOut_DoubleClick(object sender, EventArgs e)
+        {
+            GUI.GUI_Program_Outcomes_AddEdit editform = new GUI_Program_Outcomes_AddEdit();
+            editform.idp = idprogram;
+            editform.ShowDialog();
+            loadData();
+        }
+        int index;
+        private void gvProgramOut_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            index = e.FocusedRowHandle;
+        }
+
+        private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GUI.GUI_Program_Outcomes_AddEdit addform = new GUI_Program_Outcomes_AddEdit();
+            addform.ShowDialog();
+            loadData();
+        }
+
+        private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GUI.GUI_Program_Outcomes_AddEdit editform = new GUI_Program_Outcomes_AddEdit();
+            editform.idp = idprogram;
+            editform.ShowDialog();
+            loadData();
+        }
     }
 }

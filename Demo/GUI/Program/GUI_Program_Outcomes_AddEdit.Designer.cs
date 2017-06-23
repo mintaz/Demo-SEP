@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtProgramOutNo = new System.Windows.Forms.TextBox();
             this.cboOutcomeType = new System.Windows.Forms.ComboBox();
             this.btnOutcomesSave = new System.Windows.Forms.Button();
             this.rcOutcomes = new System.Windows.Forms.RichTextBox();
@@ -38,7 +39,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.lblOutcometype = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtProgramOutNo = new System.Windows.Forms.TextBox();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -65,6 +65,13 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txtProgramOutNo
+            // 
+            this.txtProgramOutNo.Location = new System.Drawing.Point(100, 12);
+            this.txtProgramOutNo.Name = "txtProgramOutNo";
+            this.txtProgramOutNo.Size = new System.Drawing.Size(468, 20);
+            this.txtProgramOutNo.TabIndex = 7;
+            // 
             // cboOutcomeType
             // 
             this.cboOutcomeType.FormattingEnabled = true;
@@ -81,6 +88,7 @@
             this.btnOutcomesSave.TabIndex = 5;
             this.btnOutcomesSave.Text = "Lưu Lại";
             this.btnOutcomesSave.UseVisualStyleBackColor = true;
+            this.btnOutcomesSave.Click += new System.EventHandler(this.btnOutcomesSave_Click);
             // 
             // rcOutcomes
             // 
@@ -149,13 +157,6 @@
             this.lblOutcometype.Text = "Loại Đầu Ra";
             this.lblOutcometype.TextSize = new System.Drawing.Size(85, 13);
             // 
-            // txtProgramOutNo
-            // 
-            this.txtProgramOutNo.Location = new System.Drawing.Point(100, 12);
-            this.txtProgramOutNo.Name = "txtProgramOutNo";
-            this.txtProgramOutNo.Size = new System.Drawing.Size(468, 20);
-            this.txtProgramOutNo.TabIndex = 7;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtProgramOutNo;
@@ -172,7 +173,8 @@
             this.ClientSize = new System.Drawing.Size(580, 262);
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Program_Outcomes_AddEdit";
-            this.Text = "GUI_Program_Outcomes_AddEdit";
+            this.Text = "Chuẩn Đầu Ra Chương Trình Đào Tạo";
+            this.Load += new System.EventHandler(this.GUI_Program_Outcomes_AddEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
