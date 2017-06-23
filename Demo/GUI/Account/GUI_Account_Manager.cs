@@ -19,7 +19,7 @@ namespace Demo.GUI.Account
             InitializeComponent();
         }
         int index;
-        string id;
+        string id = "";
         public void loadData()
         {
             AccountBLL ac = new AccountBLL();
@@ -45,9 +45,12 @@ namespace Demo.GUI.Account
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             id = gvAccount.GetRowCellValue(index, this.ID).ToString();
-            GUI.GUI_Account_Manager_AddEdit Edit = new GUI_Account_Manager_AddEdit();
-            Edit.idAc = id;
-            Edit.ShowDialog();
+            if (id != "")
+            {
+                GUI.GUI_Account_Manager_AddEdit Edit = new GUI_Account_Manager_AddEdit();
+                Edit.idAc = id;
+                Edit.ShowDialog();
+            }
             loadData();
         }
 
@@ -74,9 +77,12 @@ namespace Demo.GUI.Account
         private void gvAccount_DoubleClick(object sender, EventArgs e)
         {
             id = gvAccount.GetRowCellValue(index, this.ID).ToString();
-            GUI.GUI_Account_Manager_AddEdit Edit = new GUI_Account_Manager_AddEdit();
-            Edit.idAc = id;
-            Edit.ShowDialog();
+            if (id != "")
+            {
+                GUI.GUI_Account_Manager_AddEdit Edit = new GUI_Account_Manager_AddEdit();
+                Edit.idAc = id;
+                Edit.ShowDialog();
+            }
             loadData();
         }
     }

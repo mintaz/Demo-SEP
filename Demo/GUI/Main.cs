@@ -20,6 +20,7 @@ namespace Demo
         public bool admin;
         public string name = "";
         public string idpath="";
+        public string idpathsy = "";
         private Form checkexist(Type ftype)
         {
             foreach (Form f in this.MdiChildren)
@@ -337,8 +338,14 @@ namespace Demo
             {
                 GUI.Program.GUI_Program_Outcomes formprogramout = new GUI.Program.GUI_Program_Outcomes();
                 formprogramout.MdiParent = this;
+                formprogramout.idprogram = idpath;
                 formprogramout.Show();
             }
+        }
+
+        private void btnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

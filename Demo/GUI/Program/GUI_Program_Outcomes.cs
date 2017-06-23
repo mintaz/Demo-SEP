@@ -18,6 +18,7 @@ namespace Demo.GUI.Program
             InitializeComponent();
         }
         public string idprogram = "";
+        public string idprogramout = "";
         ProgramOutBLL pro = new ProgramOutBLL();
         void loadData()
         {
@@ -30,9 +31,13 @@ namespace Demo.GUI.Program
 
         private void gcProgramOut_DoubleClick(object sender, EventArgs e)
         {
-            GUI.GUI_Program_Outcomes_AddEdit editform = new GUI_Program_Outcomes_AddEdit();
-            editform.idp = idprogram;
-            editform.ShowDialog();
+            idprogramout = gvProgramOut.GetRowCellValue(index, this.ID).ToString();
+            if (idprogramout != "")
+            {
+                GUI.GUI_Program_Outcomes_AddEdit editform = new GUI_Program_Outcomes_AddEdit();
+                editform.idprout = idprogramout;
+                editform.ShowDialog();
+            }
             loadData();
         }
         int index;
@@ -50,9 +55,13 @@ namespace Demo.GUI.Program
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            GUI.GUI_Program_Outcomes_AddEdit editform = new GUI_Program_Outcomes_AddEdit();
-            editform.idp = idprogram;
-            editform.ShowDialog();
+            idprogramout =gvProgramOut.GetRowCellValue(index, this.ID).ToString();
+            if (idprogramout != "")
+            {
+                GUI.GUI_Program_Outcomes_AddEdit editform = new GUI_Program_Outcomes_AddEdit();
+                editform.idprout = idprogramout;
+                editform.ShowDialog();
+            }
             loadData();
         }
     }

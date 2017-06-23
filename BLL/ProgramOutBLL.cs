@@ -11,7 +11,7 @@ namespace BLL
         EprogramDataContext db = new EprogramDataContext();
         public List<ProgramOutcome> LoadPOutcomes (string idp)
         {
-            return db.ProgramOutcomes.Where(s => s.id == idp).ToList();
+            return db.ProgramOutcomes.Where(s => s.idProgram == idp).ToList();
         }
 
         public string createID()

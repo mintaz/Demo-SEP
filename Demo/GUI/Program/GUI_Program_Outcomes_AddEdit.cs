@@ -18,8 +18,10 @@ namespace Demo.GUI
         {
             InitializeComponent();
         }
+        public string idprout = "";
         public string idp = "";
         ProgramOutBLL prou = new ProgramOutBLL();
+        DicBLL dc = new DicBLL();
         void clean()
         {
             txtProgramOutNo.Text = "";
@@ -37,21 +39,53 @@ namespace Demo.GUI
             cboOutcomeType.DataSource = list;
             cboOutcomeType.DisplayMember = "Text";
             cboOutcomeType.ValueMember = "Value";
-            if(idp == "")
+            if(idprout == "")
             {
                 clean();
             }
             else
             {
-                txtProgramOutNo.Text = prou.LoadPOutcomes(idp).Single().OutcomeNo;
-                cboOutcomeType.SelectedValue = prou.LoadPOutcomes(idp).Single().OutcomeType;
-                rcOutcomes.Text = prou.LoadPOutcomes(idp).Single().OutcomeContent;
+                txtProgramOutNo.Text = prou.LoadPOutcomes(idprout).Single().OutcomeNo;
+                cboOutcomeType.SelectedValue = prou.LoadPOutcomes(idprout).Single().OutcomeType;
+                rcOutcomes.Text = prou.LoadPOutcomes(idprout).Single().OutcomeContent;
             }
         }
-
+        EprogramDataContext db = new EprogramDataContext();
         private void btnOutcomesSave_Click(object sender, EventArgs e)
         {
-
+            string no = txtProgramOutNo.Text;
+            int type = int.Parse(cboOutcomeType.SelectedValue.ToString());
+            string con = rcOutcomes.Text;
+            if(idprout == "")
+            {
+                var notest = (from s in db.ProgramOutcomes where s.OutcomeNo.Contains(no) select s).ToList();
+                if (notest == null)
+                {
+                    if (prou.AddProOut(idp, no, type, con) == true)
+                    {
+                        MessageBox.Show(dc.successProgramOut("addprogramoutcome"));
+                    }
+                    else
+                    {
+                        MessageBox.Show(dc.successProgramOut("else"));
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(dc.errorProOut("sameno"));
+                }
+            }
+            else
+            {
+                if (prou.EditProOut(idprout, no, type, con) == true)
+                {
+                    MessageBox.Show(dc.successProgramOut("editprogramoutcome"));
+                }
+                else
+                {
+                    MessageBox.Show(dc.successProgramOut("else"));
+                }
+            }
         }
     }
 }

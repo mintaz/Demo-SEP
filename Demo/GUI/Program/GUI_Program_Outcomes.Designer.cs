@@ -40,6 +40,8 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gcProgramOut = new DevExpress.XtraGrid.GridControl();
             this.gvProgramOut = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OUTNO = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcProgramOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvProgramOut)).BeginInit();
@@ -132,6 +134,9 @@
             // 
             // gvProgramOut
             // 
+            this.gvProgramOut.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.OUTNO});
             this.gvProgramOut.GridControl = this.gcProgramOut;
             this.gvProgramOut.Name = "gvProgramOut";
             this.gvProgramOut.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
@@ -140,6 +145,23 @@
             this.gvProgramOut.OptionsFind.FindNullPrompt = "Nhập Từ để tìm kiếm...";
             this.gvProgramOut.OptionsView.ShowGroupPanel = false;
             this.gvProgramOut.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvProgramOut_FocusedRowChanged);
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.Name = "ID";
+            this.ID.OptionsColumn.AllowEdit = false;
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 0;
+            // 
+            // OUTNO
+            // 
+            this.OUTNO.Caption = "Thứ Tự Chuẩn Đầu Ra";
+            this.OUTNO.FieldName = "OutcomeNo";
+            this.OUTNO.Name = "OUTNO";
+            this.OUTNO.OptionsColumn.AllowEdit = false;
+            this.OUTNO.Visible = true;
+            this.OUTNO.VisibleIndex = 1;
             // 
             // GUI_Program_Outcomes
             // 
@@ -174,5 +196,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraGrid.GridControl gcProgramOut;
         private DevExpress.XtraGrid.Views.Grid.GridView gvProgramOut;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn OUTNO;
     }
 }

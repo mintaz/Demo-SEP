@@ -49,6 +49,7 @@ namespace Demo.GUI
                                 GUI.GUI_Program_ProgramList formlist = new GUI_Program_ProgramList();
                                 formlist.Idaccount = idAccountlogin;
                                 formlist.admin = admin;
+                                formlist.FormClosing += delegate { this.Show(); };
                                 //formlist.Formclosing += delegate{(this.Show(); };
                                 formlist.Show();
                                 this.Hide();

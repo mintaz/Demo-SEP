@@ -52,20 +52,26 @@ namespace Demo.GUI.Program
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string id = gvProgramList.GetRowCellValue(index, this.ID).ToString();
-            GUI.GUI_Program_CreateProgram editform = new GUI_Program_CreateProgram();
-            editform.idprogram = id;
-            editform.idacc = pr.LoadProgram(id).Single().idAccount;
-            editform.ShowDialog();
+            if (id != null)
+            {
+                GUI.GUI_Program_CreateProgram editform = new GUI_Program_CreateProgram();
+                editform.idprogram = id;
+                editform.idacc = pr.LoadProgram(id).Single().idAccount;
+                editform.ShowDialog();
+            }
             loadData();
         }
 
         private void gvProgramList_DoubleClick(object sender, EventArgs e)
         {
             string id = gvProgramList.GetRowCellValue(index, this.ID).ToString();
-            GUI.GUI_Program_CreateProgram editform = new GUI_Program_CreateProgram();
-            editform.idprogram = id;
-            editform.idacc = pr.LoadProgram(id).Single().idAccount;
-            editform.ShowDialog();
+            if (id != null)
+            {
+                GUI.GUI_Program_CreateProgram editform = new GUI_Program_CreateProgram();
+                editform.idprogram = id;
+                editform.idacc = pr.LoadProgram(id).Single().idAccount;
+                editform.ShowDialog();
+            }
             loadData();
         }
     }

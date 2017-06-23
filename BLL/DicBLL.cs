@@ -169,6 +169,32 @@ namespace BLL
                     return "No exception";
             }
         }
+        public string successProgramOut (string sc)
+        {
+            switch (sc)
+            {
+                case "addprogramoutcome":
+                    return "Thêm chuẩn đầu ra thành công";
+                case "editprogramoutcome":
+                    return "Chỉnh sửa chuẩn đầu ra thành công";
+                case "else":
+                    return "Lỗi kết nối.\v Vui lòng kiểm tra lại";
+                default:
+                    return "No exception";
+            }
+        }
+        public string errorProOut(string er)
+        {
+            switch (er)
+            {
+                case "sameno":
+                    return "Trùng số chuẩn đầu ra.\nVui lòng kiểm tra lại";
+                case "else":
+                    return "Lỗi kết nối.\v Vui lòng kiểm tra lại";
+                default:
+                    return "No exception";
+            }
+        }
 
     }
 }

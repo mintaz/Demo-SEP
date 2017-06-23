@@ -57,17 +57,18 @@ namespace Demo.GUI
             {
                 mainform.auth = 1;
                 mainform.name = ac.getnameprogram(id);
+                mainform.idpath = this.id;
             }
             else if ( idsub == "SY")
             {
                 mainform.auth = 2;
                 mainform.name = ac.getnamesyllabus(id);
+                mainform.idpathsy = this.id;
             }
             else
             {
                 mainform.auth = 0;
             }
-            mainform.idpath = this.id;
             mainform.Show();
             this.Hide();
 
