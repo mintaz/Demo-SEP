@@ -68,7 +68,7 @@
             this.lblProgramList.Size = new System.Drawing.Size(1138, 20);
             this.lblProgramList.TabIndex = 5;
             this.lblProgramList.Text = "Đây là tất cả chương trình đào tạo, đề cương môn học bạn có thể xây dựng. Vui lòn" +
-    "g chọn một để tiếp tục xây dựng chương trình.";
+    "g chọn một và click đúp để tiếp tục xây dựng chương trình.";
             // 
             // gcProgramList
             // 

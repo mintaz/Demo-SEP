@@ -241,6 +241,7 @@
             this.txtLTtime.Size = new System.Drawing.Size(988, 20);
             this.txtLTtime.TabIndex = 7;
             this.txtLTtime.TextChanged += new System.EventHandler(this.txtLTtime_TextChanged);
+            this.txtLTtime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLTtime_KeyPress);
             // 
             // txtCoursePoint
             // 
@@ -248,6 +249,7 @@
             this.txtCoursePoint.Name = "txtCoursePoint";
             this.txtCoursePoint.Size = new System.Drawing.Size(988, 20);
             this.txtCoursePoint.TabIndex = 6;
+            this.txtCoursePoint.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCoursePoint_KeyPress);
             // 
             // txtCourseCode
             // 

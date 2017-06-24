@@ -87,6 +87,7 @@ namespace BLL
                 Syllabus sys = new Syllabus();
                 sys.id = CreateID();
                 sys.name = sysname;
+                sys.idProgram = idprogram;
                 sys.CourseCode = syscode;
                 sys.CourseType = type;
                 sys.idAccount = idac;

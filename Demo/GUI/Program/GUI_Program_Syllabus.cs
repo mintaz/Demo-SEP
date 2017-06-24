@@ -93,20 +93,31 @@ namespace Demo.GUI.Program
         public string line = "";
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string idpre = cboPreCourse.SelectedValue.ToString();
-            if (idpre != null)
+            try
             {
+                string idpre = cboPreCourse.SelectedValue.ToString();
                 line = sys.AddPre(line, idpre);
                 loadpre(line);
+            }
+            catch
+            {
+
             }
 
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            string id = gvPrecourse.GetRowCellValue(index, this.ID).ToString();
-            line = sys.DelPre(line, id);
-            loadpre(line);
+            try
+            {
+                string id = gvPrecourse.GetRowCellValue(index, this.ID).ToString();
+                line = sys.DelPre(line, id);
+                loadpre(line);
+            }
+            catch
+            {
+
+            }
         }
         int index;
         private void gvPrecourse_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -116,9 +127,30 @@ namespace Demo.GUI.Program
 
         private void txtLTtime_TextChanged(object sender, EventArgs e)
         {
-            int TC = sys.loadSys(idsys).Single().CoursePoint.Value * 15;
-            int LT = sys.loadSys(idsys).Single().CourseLT.Value;
-            int TH = TC - LT;
+            int TC, LT, TH;
+            try
+            {
+                TC = int.Parse(txtCoursePoint.Text);
+            }
+            catch
+            {
+                TC = 0;
+            }
+            try
+            {
+                LT = int.Parse(txtLTtime.Text);
+            }
+            catch
+            {
+                LT = TC*15;
+            }
+            if (LT <= (TC * 15))
+            {
+                TH = TC * 15 - LT;
+            }else
+            {
+                TH = 0;
+            }
             txtTHtime.Text = TH.ToString();
         }
 
@@ -130,7 +162,7 @@ namespace Demo.GUI.Program
             int LT = int.Parse(txtLTtime.Text);
             int type = int.Parse(cboCourseType.SelectedValue.ToString());
             string iac = cboCourseOwner.SelectedValue.ToString();
-            int sem = int.Parse(cboCourseSemester.SelectedValue.ToString());
+            int sem = int.Parse(cboCourseSemester.Text);
             string cont = rtCourseContent.Text;
             if(idsys == "")
             {
@@ -154,6 +186,24 @@ namespace Demo.GUI.Program
                 {
 
                 }
+            }
+        }
+
+        private void txtCoursePoint_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtLTtime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
     }
