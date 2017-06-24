@@ -68,7 +68,7 @@ namespace Demo.GUI.Program
         }
         private void GUI_Program_Syllabus_Load(object sender, EventArgs e)
         {
-            txtLTtime.ReadOnly = true;
+            txtTHtime.ReadOnly = true;
             if (idsys == "")
             {
                 loadcomboSY();
@@ -94,8 +94,12 @@ namespace Demo.GUI.Program
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string idpre = cboPreCourse.SelectedValue.ToString();
-            line = sys.AddPre(line, idpre);
-            loadpre(line);
+            if (idpre != null)
+            {
+                line = sys.AddPre(line, idpre);
+                loadpre(line);
+            }
+
         }
 
         private void btnDel_Click(object sender, EventArgs e)

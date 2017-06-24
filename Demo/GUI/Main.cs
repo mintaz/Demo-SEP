@@ -100,6 +100,7 @@ namespace Demo
             {
                 GUI.Program.GUI_Program_CreateSyllabus formsyllabusmana = new GUI.Program.GUI_Program_CreateSyllabus();
                 formsyllabusmana.MdiParent = this;
+                formsyllabusmana.idPrg = idpath;
                 formsyllabusmana.Show();
             }
         }

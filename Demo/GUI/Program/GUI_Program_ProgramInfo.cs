@@ -24,6 +24,46 @@ namespace Demo.GUI.Program
         {
             txtProgramName.Text = pro.LoadProgram(id).Single().name;
             txtProgramName.ReadOnly = true;
+            if(pro.LoadProgram(id).Single().ProgramActor != null || pro.LoadProgram(id).Single().ProgramActor != "")
+            {
+                txtProgramActor.Text = pro.LoadProgram(id).Single().ProgramActor;
+            }
+            if(pro.LoadProgram(id).Single().ProgramBranch != null || pro.LoadProgram(id).Single().ProgramBranch != "")
+            {
+                txtProgramBranch.Text = pro.LoadProgram(id).Single().ProgramBranch;
+            }
+            if( pro.LoadProgram(id).Single().ProgramLevel != null || pro.LoadProgram(id).Single().ProgramLevel != "")
+            {
+                txtProgramLevel.Text = pro.LoadProgram(id).Single().ProgramLevel;
+            }
+            if(pro.LoadProgram(id).Single().ProgramVolume != null || pro.LoadProgram(id).Single().ProgramVolume != "")
+            {
+                txtProgramVolume.Text = pro.LoadProgram(id).Single().ProgramVolume;
+            }
+            if(pro.LoadProgram(id).Single().ProgramType != null || pro.LoadProgram(id).Single().ProgramType != "")
+            {
+                txtProgramType.Text = pro.LoadProgram(id).Single().ProgramType;
+            }
+            if(pro.LoadProgram(id).Single().ProgramTime != null || pro.LoadProgram(id).Single().ProgramTime != "")
+            {
+                txtProgramTime.Text = pro.LoadProgram(id).Single().ProgramTime;
+            }
+            if(pro.LoadProgram(id).Single().ProgramProcess != null || pro.LoadProgram(id).Single().ProgramProcess != "")
+            {
+                txtProgramProcess.Text = pro.LoadProgram(id).Single().ProgramProcess;
+            }
+            if (pro.LoadProgram(id).Single().ProgramSemester != null || pro.LoadProgram(id).Single().ProgramSemester.ToString() != "")
+            {
+                txtProgramSemester.Text = pro.LoadProgram(id).Single().ProgramSemester.ToString();
+            }
+            if (pro.LoadProgram(id).Single().ProgramPoint != null || pro.LoadProgram(id).Single().ProgramPoint.ToString() != "")
+            {
+                txtProgramMark.Text = pro.LoadProgram(id).Single().ProgramPoint.ToString() ;
+            }
+            if (pro.LoadProgram(id).Single().ProgramTC != null || pro.LoadProgram(id).Single().ProgramTC.ToString() != "")
+            {
+                txtProgramPoint.Text = pro.LoadProgram(id).Single().ProgramTC.ToString();
+            }
         }
         DicBLL dc = new DicBLL();
         string temp;
@@ -106,6 +146,33 @@ namespace Demo.GUI.Program
             else
             {
                 MessageBox.Show(temp + "\nVui lòng kiểm tra lại");
+            }
+        }
+
+        private void txtProgramMark_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtProgramSemester_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtProgramPoint_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -13,6 +13,10 @@ namespace BLL
         {
             return db.ProgramOutcomes.Where(s => s.idProgram == idp).ToList();
         }
+        public List<ProgramOutcome> LoadOutcomes(string idpout)
+        {
+            return db.ProgramOutcomes.Where(s => s.id == idpout).ToList();
+        }
 
         public string createID()
         {
@@ -21,7 +25,7 @@ namespace BLL
             {
                 List<ProgramOutcome> po = db.ProgramOutcomes.ToList().Where(st => st.id.Substring(0, 4) == "POUT").ToList();
                 string max = po.Max(t => t.id);
-                int idnumber = int.Parse(max.Substring(5, 6)) + 1;
+                int idnumber = int.Parse(max.Substring(4, 6)) + 1;
                 string maxId = "POUT" +  idnumber.ToString().PadLeft(6, '0');
                 return maxId;
             }

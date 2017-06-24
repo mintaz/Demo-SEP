@@ -49,6 +49,7 @@ namespace Demo.GUI.Program
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             GUI.GUI_Program_Outcomes_AddEdit addform = new GUI_Program_Outcomes_AddEdit();
+            addform.idp = idprogram;
             addform.ShowDialog();
             loadData();
         }
@@ -59,6 +60,7 @@ namespace Demo.GUI.Program
             if (idprogramout != "")
             {
                 GUI.GUI_Program_Outcomes_AddEdit editform = new GUI_Program_Outcomes_AddEdit();
+                editform.idp = idprogram;
                 editform.idprout = idprogramout;
                 editform.ShowDialog();
             }

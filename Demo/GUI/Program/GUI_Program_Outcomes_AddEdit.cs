@@ -45,9 +45,10 @@ namespace Demo.GUI
             }
             else
             {
-                txtProgramOutNo.Text = prou.LoadPOutcomes(idprout).Single().OutcomeNo;
-                cboOutcomeType.SelectedValue = prou.LoadPOutcomes(idprout).Single().OutcomeType;
-                rcOutcomes.Text = prou.LoadPOutcomes(idprout).Single().OutcomeContent;
+                
+                txtProgramOutNo.Text = prou.LoadOutcomes(idprout).Single().OutcomeNo;
+                cboOutcomeType.SelectedValue = prou.LoadOutcomes(idprout).Single().OutcomeType;
+                rcOutcomes.Text = prou.LoadOutcomes(idprout).Single().OutcomeContent;
             }
         }
         EprogramDataContext db = new EprogramDataContext();
@@ -58,8 +59,8 @@ namespace Demo.GUI
             string con = rcOutcomes.Text;
             if(idprout == "")
             {
-                var notest = (from s in db.ProgramOutcomes where s.OutcomeNo.Contains(no) select s).ToList();
-                if (notest == null)
+                int notest = db.ProgramOutcomes.Where(s => s.OutcomeNo.Contains(no)).Count();
+                if ( notest ==0 )
                 {
                     if (prou.AddProOut(idp, no, type, con) == true)
                     {

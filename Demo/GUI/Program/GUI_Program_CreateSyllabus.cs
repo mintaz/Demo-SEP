@@ -30,7 +30,10 @@ namespace Demo.GUI.Program
 
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            GUI.Program.GUI_Program_Syllabus sysadd = new GUI_Program_Syllabus();
+            sysadd.idprogram = idPrg;
+            sysadd.ShowDialog();
+            loadData();
         }
     }
 }

@@ -27,6 +27,7 @@ namespace BLL
 
             try
             {
+                //T170001
                 List<Account> ac = db.Accounts.ToList().Where(st => st.id.Substring(1, 2) == year).ToList();
                 string max = ac.Max(t => t.id);
                 int idnumber = int.Parse(max.Substring(3, 4)) + 1;

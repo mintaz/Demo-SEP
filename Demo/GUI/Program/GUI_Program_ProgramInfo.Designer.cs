@@ -114,6 +114,7 @@
             this.txtProgramPoint.Size = new System.Drawing.Size(542, 20);
             this.txtProgramPoint.TabIndex = 14;
             this.txtProgramPoint.Text = "0";
+            this.txtProgramPoint.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProgramPoint_KeyPress);
             // 
             // txtProgramSemester
             // 
@@ -122,6 +123,7 @@
             this.txtProgramSemester.Size = new System.Drawing.Size(542, 20);
             this.txtProgramSemester.TabIndex = 13;
             this.txtProgramSemester.Text = "0";
+            this.txtProgramSemester.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProgramSemester_KeyPress);
             // 
             // txtProgramMark
             // 
@@ -130,6 +132,7 @@
             this.txtProgramMark.Size = new System.Drawing.Size(542, 20);
             this.txtProgramMark.TabIndex = 12;
             this.txtProgramMark.Text = "0";
+            this.txtProgramMark.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProgramMark_KeyPress);
             // 
             // txtProgramProcess
             // 
@@ -343,6 +346,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Program_ProgramInfo";
             this.Text = "Thông Tin Chương Trình Đào Tạo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GUI_Program_ProgramInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

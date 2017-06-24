@@ -16,7 +16,7 @@ namespace BLL
         {
             switch (sc)
             {
-                case "sucess":
+                case "success":
                     return "Cập nhập thông tin chương trình đào tạo thành công.";
                 case "level":
                     return "Thông tin Trình Độ Đào Tạo còn trống.";

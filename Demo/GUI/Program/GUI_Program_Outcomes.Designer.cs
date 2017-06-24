@@ -96,7 +96,7 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(663, 65);
+            this.barDockControlTop.Size = new System.Drawing.Size(663, 67);
             // 
             // barDockControlBottom
             // 
@@ -109,24 +109,24 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 65);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 305);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 67);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 303);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(663, 65);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 305);
+            this.barDockControlRight.Location = new System.Drawing.Point(663, 67);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 303);
             // 
             // gcProgramOut
             // 
             this.gcProgramOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcProgramOut.Location = new System.Drawing.Point(0, 65);
+            this.gcProgramOut.Location = new System.Drawing.Point(0, 67);
             this.gcProgramOut.MainView = this.gvProgramOut;
             this.gcProgramOut.MenuManager = this.barManager1;
             this.gcProgramOut.Name = "gcProgramOut";
-            this.gcProgramOut.Size = new System.Drawing.Size(663, 305);
+            this.gcProgramOut.Size = new System.Drawing.Size(663, 303);
             this.gcProgramOut.TabIndex = 4;
             this.gcProgramOut.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvProgramOut});
@@ -149,6 +149,7 @@
             // ID
             // 
             this.ID.Caption = "ID";
+            this.ID.FieldName = "id";
             this.ID.Name = "ID";
             this.ID.OptionsColumn.AllowEdit = false;
             this.ID.Visible = true;
