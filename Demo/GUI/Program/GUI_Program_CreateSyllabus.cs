@@ -35,5 +35,30 @@ namespace Demo.GUI.Program
             sysadd.ShowDialog();
             loadData();
         }
+
+        private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string id = gvCourse.GetRowCellValue(index, this.ID).ToString();
+            GUI.Program.GUI_Program_Syllabus sysedit = new GUI_Program_Syllabus();
+            sysedit.idprogram = idPrg;
+            sysedit.idsys = id;
+            sysedit.ShowDialog();
+            loadData();
+        }
+        int index;
+        private void gvCourse_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            index = e.FocusedRowHandle;
+        }
+
+        private void gvCourse_DoubleClick(object sender, EventArgs e)
+        {
+            string id = gvCourse.GetRowCellValue(index, this.ID).ToString();
+            GUI.Program.GUI_Program_Syllabus sysedit = new GUI_Program_Syllabus();
+            sysedit.idprogram = idPrg;
+            sysedit.idsys = id;
+            sysedit.ShowDialog();
+            loadData();
+        }
     }
 }

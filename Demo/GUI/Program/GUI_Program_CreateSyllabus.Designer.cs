@@ -41,6 +41,7 @@
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnDel = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -119,8 +120,9 @@
             this.barManager2.Form = this;
             this.barManager2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btnAdd,
-            this.btnEdit});
-            this.barManager2.MaxItemId = 4;
+            this.btnEdit,
+            this.btnDel});
+            this.barManager2.MaxItemId = 5;
             // 
             // bar2
             // 
@@ -130,7 +132,8 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnAdd, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnEdit)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEdit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDel)});
             this.bar2.Text = "Tools";
             // 
             // btnAdd
@@ -151,6 +154,16 @@
             this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 0);
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Caption = "Xóa";
+            this.btnDel.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDel.Glyph")));
+            this.btnDel.Id = 4;
+            this.btnDel.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDel.LargeGlyph")));
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 0);
             // 
             // barDockControl1
             // 
@@ -204,12 +217,15 @@
             this.gvCourse.OptionsFind.FindDelay = 250;
             this.gvCourse.OptionsFind.FindNullPrompt = "Nhập Từ để tìm kiếm...";
             this.gvCourse.OptionsView.ShowGroupPanel = false;
+            this.gvCourse.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvCourse_FocusedRowChanged);
+            this.gvCourse.DoubleClick += new System.EventHandler(this.gvCourse_DoubleClick);
             // 
             // ID
             // 
             this.ID.Caption = "ID";
             this.ID.FieldName = "id";
             this.ID.Name = "ID";
+            this.ID.OptionsColumn.AllowEdit = false;
             this.ID.Visible = true;
             this.ID.VisibleIndex = 0;
             // 
@@ -218,6 +234,7 @@
             this.NAME.Caption = "Tên Môn Học";
             this.NAME.FieldName = "name";
             this.NAME.Name = "NAME";
+            this.NAME.OptionsColumn.AllowEdit = false;
             this.NAME.Visible = true;
             this.NAME.VisibleIndex = 1;
             // 
@@ -268,5 +285,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvCourse;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn NAME;
+        private DevExpress.XtraBars.BarLargeButtonItem btnDel;
     }
 }

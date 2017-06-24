@@ -23,6 +23,7 @@ namespace Demo.GUI.Program
         public string idsys = "";
         SyllabusBLL sys = new SyllabusBLL();
         AccountBLL account = new AccountBLL();
+        DicBLL dc = new DicBLL();
 
         void loadcomboSY()
         {
@@ -31,6 +32,7 @@ namespace Demo.GUI.Program
             {
                 cboCourseSemester.Items.Add(i);
             }
+
             cboCourseOwner.DataSource = account.LoadAccount();
             cboCourseOwner.DisplayMember = "name";
             cboCourseOwner.ValueMember = "id";
@@ -76,13 +78,25 @@ namespace Demo.GUI.Program
             }
             else
             {
+                loadcomboSY();
                 txtCourseName.Text = sys.loadSys(idsys).Single().name;
                 txtCourseCode.Text = sys.loadSys(idsys).Single().CourseCode;
-                txtCoursePoint.Text = sys.loadSys(idsys).Single().CoursePoint.Value.ToString();
-                txtLTtime.Text = sys.loadSys(idsys).Single().CourseLT.Value.ToString();
-                txtTHtime.Text = ((((sys.loadSys(idsys).Single().CoursePoint.Value)*15)-(sys.loadSys(idsys).Single().CourseLT.Value)*15)).ToString();
+                txtCoursePoint.Text = sys.loadSys(idsys).Single().CoursePoint.ToString();
+                txtLTtime.Text = sys.loadSys(idsys).Single().CourseLT.ToString();
+                string time = "";
+                try
+                {
+                    int point = (sys.loadSys(idsys).Single().CoursePoint.Value) * 15;
+                    int LT = (sys.loadSys(idsys).Single().CourseLT.Value) * 15;
+                    time = (point -LT).ToString();
+                }
+                catch
+                {
+                    time = "";
+                }
+                txtTHtime.Text = time;
                 cboCourseOwner.SelectedValue = sys.loadSys(idsys).Single().idAccount;
-                cboCourseSemester.SelectedValue = sys.loadSys(idsys).Single().CourseSemester;
+                cboCourseSemester.SelectedItem = int.Parse((sys.loadSys(idsys).Single().CourseSemester).ToString());
                 cboCourseType.SelectedValue = sys.loadSys(idsys).Single().CourseType;
                 loadpre(sys.loadSys(idsys).Single().PreCourse);
                 rtCourseContent.Text = sys.loadSys(idsys).Single().CourseContent;
@@ -169,10 +183,11 @@ namespace Demo.GUI.Program
                 bool add = sys.AddSysllabus(idprogram, name, code, type, iac, sem, TC, LT, line, cont);
                 if(add == true)
                 {
+                    MessageBox.Show(dc.successcreatsyllabus("success"));
                 }
                 else
                 {
-
+                    MessageBox.Show(dc.successcreatsyllabus("else"));
                 }
             }
             else
@@ -180,11 +195,11 @@ namespace Demo.GUI.Program
                 bool edit = sys.EditPSysllabus(idsys, name, code, type, iac, sem, TC, LT, line, cont);
                 if( edit == true)
                 {
-
+                    MessageBox.Show(dc.successcreatsyllabus("edit"));
                 }
                 else
                 {
-
+                    MessageBox.Show(dc.successcreatsyllabus("else"));
                 }
             }
         }

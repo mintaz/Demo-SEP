@@ -12,10 +12,10 @@ namespace BLL
 
         public List<Syllabus> loadSyllabus(string idprogram)
         {
-            return db.Syllabus.Where(s =>s.idProgram==idprogram).ToList();
+            return db.Syllabus.Where(s => s.idProgram == idprogram).ToList();
         }
 
-        public int getSememster (string idprogram)
+        public int getSememster(string idprogram)
         {
             return db.Programs.Where(sem => sem.id == idprogram).Single().ProgramSemester.Value;
         }
@@ -23,14 +23,26 @@ namespace BLL
         {
             return db.Syllabus.Where(s => s.id == id).ToList();
         }
-        
-        public List<Syllabus> loadpre (string list1)
+
+        public List<Syllabus> loadpre(string list1)
         {
-            string[] ar = list1.Split(',').ToArray();
+            string[] ar;
+            try
+            {
+                ar = list1.Split(',').ToArray();
+                //var list = db.Syllabus.Where(s => ar.Contains(s.id)).ToList();
+                var list = db.Syllabus.Where(s => ar.Contains(s.id)).Distinct().ToList();
+                return list;
+            }
+            catch
+            {
+                return db.Syllabus.Take(0).ToList();
+ 
+            }
             //var list = db.Syllabus.Where(s => ar.Contains(s.id)).ToList();
-            var list = db.Syllabus.Where(s => ar.Contains(s.id)).Distinct().ToList();
-            return list;
-        }
+            //var list = db.Syllabus.Where(s => ar.Contains(s.id)).Distinct().ToList();
+
+         }
         public string AddPre(string line, string id)
         {
             if (line == "")

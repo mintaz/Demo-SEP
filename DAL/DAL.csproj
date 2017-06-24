@@ -55,7 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="Eprogram.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Eprogram.designer.cs</LastGenOutput>

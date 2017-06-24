@@ -346,7 +346,7 @@ namespace Demo
 
         private void btnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
     }
 }
