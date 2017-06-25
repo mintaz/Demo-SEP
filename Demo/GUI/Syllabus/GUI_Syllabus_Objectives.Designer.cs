@@ -41,6 +41,9 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gcCourseObj = new DevExpress.XtraGrid.GridControl();
             this.gvCourseObj = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Content = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCourseObj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCourseObj)).BeginInit();
@@ -81,6 +84,7 @@
             this.btnAdd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAdd.LargeGlyph")));
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 0);
+            this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
             // 
             // btnEdit
             // 
@@ -90,6 +94,7 @@
             this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 0);
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // btnDel
             // 
@@ -98,6 +103,7 @@
             this.btnDel.Id = 2;
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 0);
+            this.btnDel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDel_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -141,9 +147,46 @@
             // 
             // gvCourseObj
             // 
+            this.gvCourseObj.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.IDS,
+            this.Content});
             this.gvCourseObj.GridControl = this.gcCourseObj;
             this.gvCourseObj.Name = "gvCourseObj";
             this.gvCourseObj.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gvCourseObj.OptionsFind.AlwaysVisible = true;
+            this.gvCourseObj.OptionsFind.FindDelay = 250;
+            this.gvCourseObj.OptionsFind.FindNullPrompt = "Nhập Từ Khóa để tìm kiếm...";
+            this.gvCourseObj.OptionsView.ShowGroupPanel = false;
+            this.gvCourseObj.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvCourseObj_FocusedRowChanged);
+            this.gvCourseObj.DoubleClick += new System.EventHandler(this.gvCourseObj_DoubleClick);
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "id";
+            this.ID.Name = "ID";
+            this.ID.OptionsColumn.AllowEdit = false;
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 0;
+            // 
+            // IDS
+            // 
+            this.IDS.Caption = "ID môn học";
+            this.IDS.FieldName = "idSyllabus";
+            this.IDS.Name = "IDS";
+            this.IDS.OptionsColumn.AllowEdit = false;
+            this.IDS.Visible = true;
+            this.IDS.VisibleIndex = 1;
+            // 
+            // Content
+            // 
+            this.Content.Caption = "Nội Dung Mục Tiêu";
+            this.Content.FieldName = "ObjContent";
+            this.Content.Name = "Content";
+            this.Content.OptionsColumn.AllowEdit = false;
+            this.Content.Visible = true;
+            this.Content.VisibleIndex = 2;
             // 
             // GUI_Syllabus_Objectives
             // 
@@ -157,6 +200,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Syllabus_Objectives";
             this.Text = "GUI_Syllabus_Objectives";
+            this.Load += new System.EventHandler(this.GUI_Syllabus_Objectives_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCourseObj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCourseObj)).EndInit();
@@ -178,5 +222,8 @@
         private DevExpress.XtraBars.BarLargeButtonItem btnDel;
         private DevExpress.XtraGrid.GridControl gcCourseObj;
         private DevExpress.XtraGrid.Views.Grid.GridView gvCourseObj;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn IDS;
+        private DevExpress.XtraGrid.Columns.GridColumn Content;
     }
 }

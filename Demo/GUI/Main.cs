@@ -162,6 +162,7 @@ namespace Demo
             {
                 GUI.Syllabus.GUI_Syllabus_Info formsyllabusinfo = new GUI.Syllabus.GUI_Syllabus_Info();
                 formsyllabusinfo.MdiParent = this;
+                formsyllabusinfo.idsysinfo = idpathsy;
                 formsyllabusinfo.Show();
             }
         }

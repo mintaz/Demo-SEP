@@ -9,7 +9,21 @@ namespace BLL
     public class SyllabusBLL
     {
         EprogramDataContext db = new EprogramDataContext();
-
+        public bool UpdateSysInfo(string id, string level, string time) 
+        {
+            try
+            {
+                Syllabus sysinfo = db.Syllabus.Where(info => info.id == id).Single();
+                sysinfo.CourseLevel = level;
+                sysinfo.CourseTime = time;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public List<Syllabus> loadSyllabus(string idprogram)
         {
             return db.Syllabus.Where(s => s.idProgram == idprogram).ToList();

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.rtCourseTime = new System.Windows.Forms.RichTextBox();
+            this.txtCourseLevel = new System.Windows.Forms.TextBox();
+            this.txtCoursePoint = new System.Windows.Forms.TextBox();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtCoursePoint = new System.Windows.Forms.TextBox();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtCourseLevel = new System.Windows.Forms.TextBox();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.rtCourseTime = new System.Windows.Forms.RichTextBox();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnSave = new System.Windows.Forms.Button();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -65,6 +65,38 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(12, 166);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(690, 48);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "Lưu Lại";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // rtCourseTime
+            // 
+            this.rtCourseTime.Location = new System.Drawing.Point(109, 60);
+            this.rtCourseTime.Name = "rtCourseTime";
+            this.rtCourseTime.Size = new System.Drawing.Size(593, 62);
+            this.rtCourseTime.TabIndex = 6;
+            this.rtCourseTime.Text = "";
+            // 
+            // txtCourseLevel
+            // 
+            this.txtCourseLevel.Location = new System.Drawing.Point(109, 36);
+            this.txtCourseLevel.Name = "txtCourseLevel";
+            this.txtCourseLevel.Size = new System.Drawing.Size(593, 20);
+            this.txtCourseLevel.TabIndex = 5;
+            // 
+            // txtCoursePoint
+            // 
+            this.txtCoursePoint.Location = new System.Drawing.Point(109, 12);
+            this.txtCoursePoint.Name = "txtCoursePoint";
+            this.txtCoursePoint.Size = new System.Drawing.Size(593, 20);
+            this.txtCoursePoint.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -89,13 +121,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(694, 36);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // txtCoursePoint
-            // 
-            this.txtCoursePoint.Location = new System.Drawing.Point(110, 12);
-            this.txtCoursePoint.Name = "txtCoursePoint";
-            this.txtCoursePoint.Size = new System.Drawing.Size(592, 20);
-            this.txtCoursePoint.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtCoursePoint;
@@ -104,13 +129,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(694, 24);
             this.layoutControlItem1.Text = "Số Đơn Vị Học Trình";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(94, 13);
-            // 
-            // txtCourseLevel
-            // 
-            this.txtCourseLevel.Location = new System.Drawing.Point(110, 36);
-            this.txtCourseLevel.Name = "txtCourseLevel";
-            this.txtCourseLevel.Size = new System.Drawing.Size(592, 20);
-            this.txtCourseLevel.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -121,14 +139,6 @@
             this.layoutControlItem2.Text = "Trình Độ";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(94, 13);
             // 
-            // rtCourseTime
-            // 
-            this.rtCourseTime.Location = new System.Drawing.Point(110, 60);
-            this.rtCourseTime.Name = "rtCourseTime";
-            this.rtCourseTime.Size = new System.Drawing.Size(592, 62);
-            this.rtCourseTime.TabIndex = 6;
-            this.rtCourseTime.Text = "";
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.rtCourseTime;
@@ -137,15 +147,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(694, 66);
             this.layoutControlItem3.Text = "Phân Bố Thời Gian";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(94, 13);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(12, 166);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(690, 48);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Lưu Lại";
-            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // layoutControlItem4
             // 
@@ -172,6 +173,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Syllabus_Info";
             this.Text = "GUI_Syllabus_Info";
+            this.Load += new System.EventHandler(this.GUI_Syllabus_Info_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();

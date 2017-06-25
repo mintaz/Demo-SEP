@@ -12,6 +12,22 @@ namespace BLL
         {
             return "vanlang";
         }
+        public string syllabusinfo (string mes)
+        {
+            switch (mes)
+            {
+                case "success":
+                    return "Cập nhập thông tin môn học thành công.";
+                case "level":
+                    return "Trình độ đào tạo còn trống.";
+                case "time":
+                    return "Phân bổ thời gian còn trống.";
+                case "else":
+                    return "Lỗi kết nối.\n Vui lòng kiểm tra lại đường truyền mạng.";
+                default:
+                    return "No exception";
+            }
+        }
         public string successcreatsyllabus(string sc)
         {
             switch (sc)
