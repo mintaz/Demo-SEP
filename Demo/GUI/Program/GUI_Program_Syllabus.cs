@@ -167,9 +167,11 @@ namespace Demo.GUI.Program
             }
             txtTHtime.Text = TH.ToString();
         }
-
+        string temp;
         private void btnSave_Click(object sender, EventArgs e)
         {
+            bool isempty = false;
+            
             string name = txtCourseName.Text;
             string code = txtCourseCode.Text;
             int TC = int.Parse(txtCoursePoint.Text);
@@ -178,29 +180,61 @@ namespace Demo.GUI.Program
             string iac = cboCourseOwner.SelectedValue.ToString();
             int sem = int.Parse(cboCourseSemester.Text);
             string cont = rtCourseContent.Text;
-            if(idsys == "")
+            if(name == null || name == "")
             {
-                bool add = sys.AddSysllabus(idprogram, name, code, type, iac, sem, TC, LT, line, cont);
-                if(add == true)
+                isempty = true;
+                temp = temp + dc.successcreatsyllabus("name") +"\n";
+            }
+            if( code == null || code == "")
+            {
+                isempty = true;
+                temp = temp+ dc.successcreatsyllabus("code");
+            }
+            if (txtCoursePoint.Text == null || txtCoursePoint.Text == "")
+            {
+                isempty = true;
+                temp = temp+ dc.successcreatsyllabus("TC");
+            }
+            if( txtLTtime.Text == null || txtLTtime.Text == "")
+            {
+                isempty = true;
+                temp = temp + dc.successcreatsyllabus("LT");
+            }
+            if(cont == null || cont == "")
+            {
+                isempty = true;
+                temp = temp + dc.successcreatsyllabus("content");
+            }
+            if (isempty == false)
+            {
+                if (idsys == "")
                 {
-                    MessageBox.Show(dc.successcreatsyllabus("success"));
+                    bool add = sys.AddSysllabus(idprogram, name, code, type, iac, sem, TC, LT, line, cont);
+                    if (add == true)
+                    {
+                        MessageBox.Show(dc.successcreatsyllabus("success"));
+                    }
+                    else
+                    {
+                        MessageBox.Show(dc.successcreatsyllabus("else"));
+                    }
                 }
                 else
                 {
-                    MessageBox.Show(dc.successcreatsyllabus("else"));
+                    bool edit = sys.EditPSysllabus(idsys, name, code, type, iac, sem, TC, LT, line, cont);
+                    if (edit == true)
+                    {
+                        MessageBox.Show(dc.successcreatsyllabus("edit"));
+                    }
+                    else
+                    {
+                        MessageBox.Show(dc.successcreatsyllabus("else"));
+                    }
                 }
             }
             else
             {
-                bool edit = sys.EditPSysllabus(idsys, name, code, type, iac, sem, TC, LT, line, cont);
-                if( edit == true)
-                {
-                    MessageBox.Show(dc.successcreatsyllabus("edit"));
-                }
-                else
-                {
-                    MessageBox.Show(dc.successcreatsyllabus("else"));
-                }
+                MessageBox.Show(temp + "\nVui lòng kiểm tra lại");
             }
         }
 
