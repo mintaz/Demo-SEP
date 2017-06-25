@@ -65,6 +65,7 @@
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lưu Lại";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // rtObjectives
             // 
@@ -130,6 +131,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Syllabus_Objectives_Add";
             this.Text = "GUI_Syllabus_Objectives";
+            this.Load += new System.EventHandler(this.GUI_Syllabus_Objectives_Add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();

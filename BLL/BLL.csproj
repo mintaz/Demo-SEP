@@ -52,6 +52,7 @@
     <Compile Include="ResetBLL.cs" />
     <Compile Include="SyllabusBLL.cs" />
     <Compile Include="SyllabusObjBLL.cs" />
+    <Compile Include="SyllabusOutBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

@@ -81,6 +81,7 @@
             this.btnAdd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAdd.LargeGlyph")));
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 0);
+            this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
             // 
             // btnEdit
             // 
@@ -90,6 +91,7 @@
             this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 0);
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // btnDel
             // 
@@ -98,6 +100,7 @@
             this.btnDel.Id = 2;
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 0);
+            this.btnDel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDel_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -144,6 +147,12 @@
             this.gvCourseOut.GridControl = this.gcCourseOut;
             this.gvCourseOut.Name = "gvCourseOut";
             this.gvCourseOut.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gvCourseOut.OptionsFind.AlwaysVisible = true;
+            this.gvCourseOut.OptionsFind.FindDelay = 250;
+            this.gvCourseOut.OptionsFind.FindNullPrompt = "Nhập Từ Khóa để tìm kiếm...";
+            this.gvCourseOut.OptionsView.ShowGroupPanel = false;
+            this.gvCourseOut.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvCourseOut_FocusedRowChanged);
+            this.gvCourseOut.DoubleClick += new System.EventHandler(this.gvCourseOut_DoubleClick);
             // 
             // GUI_Syllabus_Outcomes
             // 
@@ -156,7 +165,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Syllabus_Outcomes";
-            this.Text = "GUI_Syllabus_Outcomes";
+            this.Text = "Danh Sách Đầu Ra Môn Học";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCourseOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCourseOut)).EndInit();
