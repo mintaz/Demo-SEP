@@ -1,5 +1,0 @@
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\BUS\bin\Debug\BUS.dll
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\BUS\bin\Debug\BUS.pdb
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\BUS\obj\Debug\BUS.dll
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\BUS\obj\Debug\BUS.pdb

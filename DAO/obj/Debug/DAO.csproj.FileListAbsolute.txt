@@ -1,4 +1,0 @@
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\DAO\bin\Debug\DAO.dll
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\DAO\bin\Debug\DAO.pdb
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\DAO\obj\Debug\DAO.dll
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\DAO\obj\Debug\DAO.pdb

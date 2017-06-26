@@ -1,4 +1,0 @@
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\BAL\bin\Debug\BAL.dll
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\BAL\bin\Debug\BAL.pdb
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\BAL\obj\Debug\BAL.dll
-C:\Users\Mint\Documents\Visual Studio 2015\Projects\Demo\BAL\obj\Debug\BAL.pdb

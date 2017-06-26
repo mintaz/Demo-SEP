@@ -151,3 +151,5 @@ C:\Users\ppchu\OneDrive\Documents\GitHub\Demo-SEP\Demo\bin\Debug\de\DevExpress.X
 C:\Users\ppchu\OneDrive\Documents\GitHub\Demo-SEP\Demo\bin\Debug\es\DevExpress.XtraTreeList.v16.1.resources.dll
 C:\Users\ppchu\OneDrive\Documents\GitHub\Demo-SEP\Demo\bin\Debug\ja\DevExpress.XtraTreeList.v16.1.resources.dll
 C:\Users\ppchu\OneDrive\Documents\GitHub\Demo-SEP\Demo\bin\Debug\ru\DevExpress.XtraTreeList.v16.1.resources.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.exe
+C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.pdb
