@@ -30,6 +30,26 @@ namespace BLL
                     return "No exception";
             }
         }
+        public string sysllabusout(string mes)
+        {
+            switch (mes)
+            {
+                case "success":
+                    return "Thêm chuẩn đầu ra môn học thành công.";
+                case "del":
+                    return "Xóa chuẩn đầu ra môn học thành công.";
+                case "edit":
+                    return "Chỉnh sửa chuẩn đầu ra môn học thành công.";
+                case "missingcontent":
+                    return "Nội dung chuẩn đầu ra bị trống.";
+                case "missingno":
+                    return "Ký hiệu chuẩn đầu ra bị trống.";
+                case "else":
+                    return "Lỗi kết nối.\n Vui lòng kiểm tra lại đường truyền mạng.";
+                default:
+                    return "No exception";
+            }
+        }
         public string syllabusinfo (string mes)
         {
             switch (mes)

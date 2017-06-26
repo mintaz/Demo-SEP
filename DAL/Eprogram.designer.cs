@@ -33,9 +33,9 @@ namespace DAL
     partial void InsertAccount(Account instance);
     partial void UpdateAccount(Account instance);
     partial void DeleteAccount(Account instance);
-    partial void InsertTemplate(Template instance);
-    partial void UpdateTemplate(Template instance);
-    partial void DeleteTemplate(Template instance);
+    partial void InsertSyllabusSchedule(SyllabusSchedule instance);
+    partial void UpdateSyllabusSchedule(SyllabusSchedule instance);
+    partial void DeleteSyllabusSchedule(SyllabusSchedule instance);
     partial void InsertMapping(Mapping instance);
     partial void UpdateMapping(Mapping instance);
     partial void DeleteMapping(Mapping instance);
@@ -54,13 +54,13 @@ namespace DAL
     partial void InsertSyllabusOutcome(SyllabusOutcome instance);
     partial void UpdateSyllabusOutcome(SyllabusOutcome instance);
     partial void DeleteSyllabusOutcome(SyllabusOutcome instance);
-    partial void InsertSyllabusSchedule(SyllabusSchedule instance);
-    partial void UpdateSyllabusSchedule(SyllabusSchedule instance);
-    partial void DeleteSyllabusSchedule(SyllabusSchedule instance);
+    partial void InsertTemplate(Template instance);
+    partial void UpdateTemplate(Template instance);
+    partial void DeleteTemplate(Template instance);
     #endregion
 		
 		public EprogramDataContext() : 
-				base(global::DAL.Properties.Settings.Default.EprogramConnectionString1, mappingSource)
+				base(global::DAL.Properties.Settings.Default.EprogramConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -97,11 +97,11 @@ namespace DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<Template> Templates
+		public System.Data.Linq.Table<SyllabusSchedule> SyllabusSchedules
 		{
 			get
 			{
-				return this.GetTable<Template>();
+				return this.GetTable<SyllabusSchedule>();
 			}
 		}
 		
@@ -153,11 +153,11 @@ namespace DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<SyllabusSchedule> SyllabusSchedules
+		public System.Data.Linq.Table<Template> Templates
 		{
 			get
 			{
-				return this.GetTable<SyllabusSchedule>();
+				return this.GetTable<Template>();
 			}
 		}
 	}
@@ -344,17 +344,27 @@ namespace DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Template")]
-	public partial class Template : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SyllabusSchedule")]
+	public partial class SyllabusSchedule : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private string _id;
 		
-		private string _name;
+		private string _idSyllabus;
 		
-		private System.Data.Linq.Binary _ND;
+		private System.Nullable<System.DateTime> _Day;
+		
+		private System.Nullable<int> _NumberPeriods;
+		
+		private string _LectureContent;
+		
+		private string _Activites;
+		
+		private string _Doc;
+		
+		private EntityRef<Syllabus> _Syllabus;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -362,18 +372,27 @@ namespace DAL
     partial void OnCreated();
     partial void OnidChanging(string value);
     partial void OnidChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void OnNDChanging(System.Data.Linq.Binary value);
-    partial void OnNDChanged();
+    partial void OnidSyllabusChanging(string value);
+    partial void OnidSyllabusChanged();
+    partial void OnDayChanging(System.Nullable<System.DateTime> value);
+    partial void OnDayChanged();
+    partial void OnNumberPeriodsChanging(System.Nullable<int> value);
+    partial void OnNumberPeriodsChanged();
+    partial void OnLectureContentChanging(string value);
+    partial void OnLectureContentChanged();
+    partial void OnActivitesChanging(string value);
+    partial void OnActivitesChanged();
+    partial void OnDocChanging(string value);
+    partial void OnDocChanged();
     #endregion
 		
-		public Template()
+		public SyllabusSchedule()
 		{
+			this._Syllabus = default(EntityRef<Syllabus>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="VarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="VarChar(12) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string id
 		{
 			get
@@ -393,42 +412,160 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(50)")]
-		public string name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idSyllabus", DbType="VarChar(10)")]
+		public string idSyllabus
 		{
 			get
 			{
-				return this._name;
+				return this._idSyllabus;
 			}
 			set
 			{
-				if ((this._name != value))
+				if ((this._idSyllabus != value))
 				{
-					this.OnnameChanging(value);
+					if (this._Syllabus.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidSyllabusChanging(value);
 					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
+					this._idSyllabus = value;
+					this.SendPropertyChanged("idSyllabus");
+					this.OnidSyllabusChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ND", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary ND
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Day", DbType="Date")]
+		public System.Nullable<System.DateTime> Day
 		{
 			get
 			{
-				return this._ND;
+				return this._Day;
 			}
 			set
 			{
-				if ((this._ND != value))
+				if ((this._Day != value))
 				{
-					this.OnNDChanging(value);
+					this.OnDayChanging(value);
 					this.SendPropertyChanging();
-					this._ND = value;
-					this.SendPropertyChanged("ND");
-					this.OnNDChanged();
+					this._Day = value;
+					this.SendPropertyChanged("Day");
+					this.OnDayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberPeriods", DbType="Int")]
+		public System.Nullable<int> NumberPeriods
+		{
+			get
+			{
+				return this._NumberPeriods;
+			}
+			set
+			{
+				if ((this._NumberPeriods != value))
+				{
+					this.OnNumberPeriodsChanging(value);
+					this.SendPropertyChanging();
+					this._NumberPeriods = value;
+					this.SendPropertyChanged("NumberPeriods");
+					this.OnNumberPeriodsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LectureContent", DbType="NVarChar(MAX)")]
+		public string LectureContent
+		{
+			get
+			{
+				return this._LectureContent;
+			}
+			set
+			{
+				if ((this._LectureContent != value))
+				{
+					this.OnLectureContentChanging(value);
+					this.SendPropertyChanging();
+					this._LectureContent = value;
+					this.SendPropertyChanged("LectureContent");
+					this.OnLectureContentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activites", DbType="NVarChar(MAX)")]
+		public string Activites
+		{
+			get
+			{
+				return this._Activites;
+			}
+			set
+			{
+				if ((this._Activites != value))
+				{
+					this.OnActivitesChanging(value);
+					this.SendPropertyChanging();
+					this._Activites = value;
+					this.SendPropertyChanged("Activites");
+					this.OnActivitesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Doc", DbType="NVarChar(MAX)")]
+		public string Doc
+		{
+			get
+			{
+				return this._Doc;
+			}
+			set
+			{
+				if ((this._Doc != value))
+				{
+					this.OnDocChanging(value);
+					this.SendPropertyChanging();
+					this._Doc = value;
+					this.SendPropertyChanged("Doc");
+					this.OnDocChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Syllabus_SyllabusSchedule", Storage="_Syllabus", ThisKey="idSyllabus", OtherKey="id", IsForeignKey=true)]
+		public Syllabus Syllabus
+		{
+			get
+			{
+				return this._Syllabus.Entity;
+			}
+			set
+			{
+				Syllabus previousValue = this._Syllabus.Entity;
+				if (((previousValue != value) 
+							|| (this._Syllabus.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Syllabus.Entity = null;
+						previousValue.SyllabusSchedules.Remove(this);
+					}
+					this._Syllabus.Entity = value;
+					if ((value != null))
+					{
+						value.SyllabusSchedules.Add(this);
+						this._idSyllabus = value.id;
+					}
+					else
+					{
+						this._idSyllabus = default(string);
+					}
+					this.SendPropertyChanged("Syllabus");
 				}
 			}
 		}
@@ -1518,13 +1655,13 @@ namespace DAL
 		
 		private System.Nullable<int> _CourseLT;
 		
+		private EntitySet<SyllabusSchedule> _SyllabusSchedules;
+		
 		private EntitySet<Mapping> _Mappings;
 		
 		private EntitySet<SyllabusObjective> _SyllabusObjectives;
 		
 		private EntitySet<SyllabusOutcome> _SyllabusOutcomes;
-		
-		private EntitySet<SyllabusSchedule> _SyllabusSchedules;
 		
 		private EntityRef<Program> _Program;
 		
@@ -1574,10 +1711,10 @@ namespace DAL
 		
 		public Syllabus()
 		{
+			this._SyllabusSchedules = new EntitySet<SyllabusSchedule>(new Action<SyllabusSchedule>(this.attach_SyllabusSchedules), new Action<SyllabusSchedule>(this.detach_SyllabusSchedules));
 			this._Mappings = new EntitySet<Mapping>(new Action<Mapping>(this.attach_Mappings), new Action<Mapping>(this.detach_Mappings));
 			this._SyllabusObjectives = new EntitySet<SyllabusObjective>(new Action<SyllabusObjective>(this.attach_SyllabusObjectives), new Action<SyllabusObjective>(this.detach_SyllabusObjectives));
 			this._SyllabusOutcomes = new EntitySet<SyllabusOutcome>(new Action<SyllabusOutcome>(this.attach_SyllabusOutcomes), new Action<SyllabusOutcome>(this.detach_SyllabusOutcomes));
-			this._SyllabusSchedules = new EntitySet<SyllabusSchedule>(new Action<SyllabusSchedule>(this.attach_SyllabusSchedules), new Action<SyllabusSchedule>(this.detach_SyllabusSchedules));
 			this._Program = default(EntityRef<Program>);
 			OnCreated();
 		}
@@ -1966,6 +2103,19 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Syllabus_SyllabusSchedule", Storage="_SyllabusSchedules", ThisKey="id", OtherKey="idSyllabus")]
+		public EntitySet<SyllabusSchedule> SyllabusSchedules
+		{
+			get
+			{
+				return this._SyllabusSchedules;
+			}
+			set
+			{
+				this._SyllabusSchedules.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Syllabus_Mapping", Storage="_Mappings", ThisKey="id", OtherKey="idSyllabus")]
 		public EntitySet<Mapping> Mappings
 		{
@@ -2002,19 +2152,6 @@ namespace DAL
 			set
 			{
 				this._SyllabusOutcomes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Syllabus_SyllabusSchedule", Storage="_SyllabusSchedules", ThisKey="id", OtherKey="idSyllabus")]
-		public EntitySet<SyllabusSchedule> SyllabusSchedules
-		{
-			get
-			{
-				return this._SyllabusSchedules;
-			}
-			set
-			{
-				this._SyllabusSchedules.Assign(value);
 			}
 		}
 		
@@ -2072,6 +2209,18 @@ namespace DAL
 			}
 		}
 		
+		private void attach_SyllabusSchedules(SyllabusSchedule entity)
+		{
+			this.SendPropertyChanging();
+			entity.Syllabus = this;
+		}
+		
+		private void detach_SyllabusSchedules(SyllabusSchedule entity)
+		{
+			this.SendPropertyChanging();
+			entity.Syllabus = null;
+		}
+		
 		private void attach_Mappings(Mapping entity)
 		{
 			this.SendPropertyChanging();
@@ -2103,18 +2252,6 @@ namespace DAL
 		}
 		
 		private void detach_SyllabusOutcomes(SyllabusOutcome entity)
-		{
-			this.SendPropertyChanging();
-			entity.Syllabus = null;
-		}
-		
-		private void attach_SyllabusSchedules(SyllabusSchedule entity)
-		{
-			this.SendPropertyChanging();
-			entity.Syllabus = this;
-		}
-		
-		private void detach_SyllabusSchedules(SyllabusSchedule entity)
 		{
 			this.SendPropertyChanging();
 			entity.Syllabus = null;
@@ -2447,27 +2584,17 @@ namespace DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SyllabusSchedule")]
-	public partial class SyllabusSchedule : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Template")]
+	public partial class Template : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private string _id;
 		
-		private string _idSyllabus;
+		private string _name;
 		
-		private System.Nullable<System.DateTime> _Day;
-		
-		private System.Nullable<int> _NumberPeriods;
-		
-		private string _LectureContent;
-		
-		private string _Activites;
-		
-		private string _Doc;
-		
-		private EntityRef<Syllabus> _Syllabus;
+		private System.Data.Linq.Binary _ND;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2475,27 +2602,18 @@ namespace DAL
     partial void OnCreated();
     partial void OnidChanging(string value);
     partial void OnidChanged();
-    partial void OnidSyllabusChanging(string value);
-    partial void OnidSyllabusChanged();
-    partial void OnDayChanging(System.Nullable<System.DateTime> value);
-    partial void OnDayChanged();
-    partial void OnNumberPeriodsChanging(System.Nullable<int> value);
-    partial void OnNumberPeriodsChanged();
-    partial void OnLectureContentChanging(string value);
-    partial void OnLectureContentChanged();
-    partial void OnActivitesChanging(string value);
-    partial void OnActivitesChanged();
-    partial void OnDocChanging(string value);
-    partial void OnDocChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnNDChanging(System.Data.Linq.Binary value);
+    partial void OnNDChanged();
     #endregion
 		
-		public SyllabusSchedule()
+		public Template()
 		{
-			this._Syllabus = default(EntityRef<Syllabus>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="VarChar(12) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="VarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string id
 		{
 			get
@@ -2515,160 +2633,42 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idSyllabus", DbType="VarChar(10)")]
-		public string idSyllabus
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(50)")]
+		public string name
 		{
 			get
 			{
-				return this._idSyllabus;
+				return this._name;
 			}
 			set
 			{
-				if ((this._idSyllabus != value))
+				if ((this._name != value))
 				{
-					if (this._Syllabus.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidSyllabusChanging(value);
+					this.OnnameChanging(value);
 					this.SendPropertyChanging();
-					this._idSyllabus = value;
-					this.SendPropertyChanged("idSyllabus");
-					this.OnidSyllabusChanged();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Day", DbType="Date")]
-		public System.Nullable<System.DateTime> Day
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ND", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary ND
 		{
 			get
 			{
-				return this._Day;
+				return this._ND;
 			}
 			set
 			{
-				if ((this._Day != value))
+				if ((this._ND != value))
 				{
-					this.OnDayChanging(value);
+					this.OnNDChanging(value);
 					this.SendPropertyChanging();
-					this._Day = value;
-					this.SendPropertyChanged("Day");
-					this.OnDayChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberPeriods", DbType="Int")]
-		public System.Nullable<int> NumberPeriods
-		{
-			get
-			{
-				return this._NumberPeriods;
-			}
-			set
-			{
-				if ((this._NumberPeriods != value))
-				{
-					this.OnNumberPeriodsChanging(value);
-					this.SendPropertyChanging();
-					this._NumberPeriods = value;
-					this.SendPropertyChanged("NumberPeriods");
-					this.OnNumberPeriodsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LectureContent", DbType="NVarChar(MAX)")]
-		public string LectureContent
-		{
-			get
-			{
-				return this._LectureContent;
-			}
-			set
-			{
-				if ((this._LectureContent != value))
-				{
-					this.OnLectureContentChanging(value);
-					this.SendPropertyChanging();
-					this._LectureContent = value;
-					this.SendPropertyChanged("LectureContent");
-					this.OnLectureContentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activites", DbType="NVarChar(MAX)")]
-		public string Activites
-		{
-			get
-			{
-				return this._Activites;
-			}
-			set
-			{
-				if ((this._Activites != value))
-				{
-					this.OnActivitesChanging(value);
-					this.SendPropertyChanging();
-					this._Activites = value;
-					this.SendPropertyChanged("Activites");
-					this.OnActivitesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Doc", DbType="NVarChar(MAX)")]
-		public string Doc
-		{
-			get
-			{
-				return this._Doc;
-			}
-			set
-			{
-				if ((this._Doc != value))
-				{
-					this.OnDocChanging(value);
-					this.SendPropertyChanging();
-					this._Doc = value;
-					this.SendPropertyChanged("Doc");
-					this.OnDocChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Syllabus_SyllabusSchedule", Storage="_Syllabus", ThisKey="idSyllabus", OtherKey="id", IsForeignKey=true)]
-		public Syllabus Syllabus
-		{
-			get
-			{
-				return this._Syllabus.Entity;
-			}
-			set
-			{
-				Syllabus previousValue = this._Syllabus.Entity;
-				if (((previousValue != value) 
-							|| (this._Syllabus.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Syllabus.Entity = null;
-						previousValue.SyllabusSchedules.Remove(this);
-					}
-					this._Syllabus.Entity = value;
-					if ((value != null))
-					{
-						value.SyllabusSchedules.Add(this);
-						this._idSyllabus = value.id;
-					}
-					else
-					{
-						this._idSyllabus = default(string);
-					}
-					this.SendPropertyChanged("Syllabus");
+					this._ND = value;
+					this.SendPropertyChanged("ND");
+					this.OnNDChanged();
 				}
 			}
 		}

@@ -10,11 +10,11 @@ namespace BLL
     {
         EprogramDataContext db = new EprogramDataContext();
 
-        List<SyllabusOutcome> loadlistout(string id)
+        public List<SyllabusOutcome> loadlistout(string id)
         {
             return db.SyllabusOutcomes.Where(s => s.idSyllabus == id).ToList();
         }
-        List<SyllabusOutcome> loadout(string idout)
+        public List<SyllabusOutcome> loadout(string idout)
         {
             return db.SyllabusOutcomes.Where(s => s.id == idout).ToList();
         }
@@ -59,6 +59,20 @@ namespace BLL
                 SyllabusOutcome outedit = db.SyllabusOutcomes.Where(edit => edit.id == id).Single();
                 outedit.OutcomeNo = no;
                 outedit.OutcomeContent = content;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool DelOut(string id)
+        {
+            try
+            {
+                SyllabusOutcome outdel = db.SyllabusOutcomes.Where(del => del.id == id).Single();
+                db.SyllabusOutcomes.DeleteOnSubmit(outdel);
                 db.SubmitChanges();
                 return true;
             }

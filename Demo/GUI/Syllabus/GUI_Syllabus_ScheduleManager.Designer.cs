@@ -33,12 +33,12 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnEdit = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnDel = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.btnEdit = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnDel = new DevExpress.XtraBars.BarLargeButtonItem();
             this.gcCourseOut = new DevExpress.XtraGrid.GridControl();
             this.gvCourseOut = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -81,6 +81,26 @@
             this.btnAdd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAdd.LargeGlyph")));
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 0);
+            this.btnAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAdd_ItemClick);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Caption = "Sửa";
+            this.btnEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.Glyph")));
+            this.btnEdit.Id = 1;
+            this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 0);
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Caption = "Xóa";
+            this.btnDel.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDel.Glyph")));
+            this.btnDel.Id = 2;
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 0);
+            this.btnDel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDel_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -110,23 +130,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(882, 67);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Caption = "Sửa";
-            this.btnEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.Glyph")));
-            this.btnEdit.Id = 1;
-            this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 0);
-            // 
-            // btnDel
-            // 
-            this.btnDel.Caption = "Xóa";
-            this.btnDel.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDel.Glyph")));
-            this.btnDel.Id = 2;
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 0);
-            // 
             // gcCourseOut
             // 
             this.gcCourseOut.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -144,6 +147,10 @@
             this.gvCourseOut.GridControl = this.gcCourseOut;
             this.gvCourseOut.Name = "gvCourseOut";
             this.gvCourseOut.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gvCourseOut.OptionsFind.AlwaysVisible = true;
+            this.gvCourseOut.OptionsFind.FindDelay = 250;
+            this.gvCourseOut.OptionsFind.FindNullPrompt = "Nhập Từ khóa để tìm kiếm...";
+            this.gvCourseOut.OptionsView.ShowGroupPanel = false;
             // 
             // GUI_Syllabus_ScheduleManager
             // 
@@ -157,6 +164,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Syllabus_ScheduleManager";
             this.Text = "GUI_Syllabus_ScheduleManager";
+            this.Load += new System.EventHandler(this.GUI_Syllabus_ScheduleManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCourseOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCourseOut)).EndInit();

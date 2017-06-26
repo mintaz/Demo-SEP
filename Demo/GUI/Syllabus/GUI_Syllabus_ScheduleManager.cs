@@ -16,5 +16,26 @@ namespace Demo.GUI.Syllabus
         {
             InitializeComponent();
         }
+        public string idS = "";
+        public string idMap = "";
+        private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnDel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void GUI_Syllabus_ScheduleManager_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

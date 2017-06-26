@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.rtCourseOut = new System.Windows.Forms.RichTextBox();
+            this.txtOutNo = new System.Windows.Forms.TextBox();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtOutNo = new System.Windows.Forms.TextBox();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.rtCourseOut = new System.Windows.Forms.RichTextBox();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnSave = new System.Windows.Forms.Button();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -61,6 +61,31 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(12, 125);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(632, 46);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Lưu Lại";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // rtCourseOut
+            // 
+            this.rtCourseOut.Location = new System.Drawing.Point(88, 36);
+            this.rtCourseOut.Name = "rtCourseOut";
+            this.rtCourseOut.Size = new System.Drawing.Size(556, 51);
+            this.rtCourseOut.TabIndex = 5;
+            this.rtCourseOut.Text = "";
+            // 
+            // txtOutNo
+            // 
+            this.txtOutNo.Location = new System.Drawing.Point(88, 12);
+            this.txtOutNo.Name = "txtOutNo";
+            this.txtOutNo.Size = new System.Drawing.Size(556, 20);
+            this.txtOutNo.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -84,13 +109,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(636, 42);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // txtOutNo
-            // 
-            this.txtOutNo.Location = new System.Drawing.Point(89, 12);
-            this.txtOutNo.Name = "txtOutNo";
-            this.txtOutNo.Size = new System.Drawing.Size(555, 20);
-            this.txtOutNo.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtOutNo;
@@ -100,14 +118,6 @@
             this.layoutControlItem1.Text = "Chuẩn Đầu Ra ";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(73, 13);
             // 
-            // rtCourseOut
-            // 
-            this.rtCourseOut.Location = new System.Drawing.Point(89, 36);
-            this.rtCourseOut.Name = "rtCourseOut";
-            this.rtCourseOut.Size = new System.Drawing.Size(555, 51);
-            this.rtCourseOut.TabIndex = 5;
-            this.rtCourseOut.Text = "";
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.rtCourseOut;
@@ -116,15 +126,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(636, 55);
             this.layoutControlItem2.Text = "Nội Dung";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(73, 13);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(12, 125);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(632, 46);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Lưu Lại";
-            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // layoutControlItem3
             // 
@@ -151,6 +152,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Syllabus_Outcomes_Add";
             this.Text = "GUI_Syllabus_Outcomes_Add";
+            this.Load += new System.EventHandler(this.GUI_Syllabus_Outcomes_Add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();

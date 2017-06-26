@@ -26,7 +26,8 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MINT-PC;Initial Catalog=Eprogram;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cmu.vanlanguni.edu.vn;Initial Catalog=team5;user id=team5;password=cr" +
+            "odrabraw")]
         public string EprogramConnectionString {
             get {
                 return ((string)(this["EprogramConnectionString"]));
@@ -36,11 +37,22 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-1P8H70G\\SQLEXPRESS;Initial Catalog=Eprogram;Integrated Securi" +
-            "ty=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cmu.vanlanguni.edu.vn;Initial Catalog=team5;user id=team5;password=cr" +
+            "odrabraw")]
         public string EprogramConnectionString1 {
             get {
                 return ((string)(this["EprogramConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=team05.database.windows.net;Initial Catalog=Eprogram;Persist Security" +
+            " Info=True;User ID=team05;Password=Minhvip123")]
+        public string EprogramConnectionString2 {
+            get {
+                return ((string)(this["EprogramConnectionString2"]));
             }
         }
     }

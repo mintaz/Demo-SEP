@@ -12,3 +12,10 @@ C:\Users\ppchu\OneDrive\Documents\GitHub\Demo-SEP\BLL\bin\Debug\BLL.dll
 C:\Users\ppchu\OneDrive\Documents\GitHub\Demo-SEP\BLL\bin\Debug\BLL.pdb
 C:\Users\ppchu\OneDrive\Documents\GitHub\Demo-SEP\BLL\bin\Debug\DAL.dll
 C:\Users\ppchu\OneDrive\Documents\GitHub\Demo-SEP\BLL\bin\Debug\DAL.pdb
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL\bin\Debug\BLL.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL\bin\Debug\BLL.pdb
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL\bin\Debug\DAL.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL\bin\Debug\DAL.pdb
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL\obj\Debug\BLL.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL\obj\Debug\BLL.pdb

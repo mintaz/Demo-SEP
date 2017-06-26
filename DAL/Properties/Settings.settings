@@ -5,18 +5,26 @@
     <Setting Name="EprogramConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=MINT-PC;Initial Catalog=Eprogram;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=cmu.vanlanguni.edu.vn;Initial Catalog=team5;user id=team5;password=crodrabraw&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=MINT-PC;Initial Catalog=Eprogram;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=cmu.vanlanguni.edu.vn;Initial Catalog=team5;user id=team5;password=crodrabraw</Value>
     </Setting>
     <Setting Name="EprogramConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-1P8H70G\SQLEXPRESS;Initial Catalog=Eprogram;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=cmu.vanlanguni.edu.vn;Initial Catalog=team5;user id=team5;password=crodrabraw&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-1P8H70G\SQLEXPRESS;Initial Catalog=Eprogram;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=cmu.vanlanguni.edu.vn;Initial Catalog=team5;user id=team5;password=crodrabraw</Value>
+    </Setting>
+    <Setting Name="EprogramConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=team05.database.windows.net;Initial Catalog=Eprogram;Persist Security Info=True;User ID=team05;Password=Minhvip123&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=team05.database.windows.net;Initial Catalog=Eprogram;Persist Security Info=True;User ID=team05;Password=Minhvip123</Value>
     </Setting>
   </Settings>
 </SettingsFile>

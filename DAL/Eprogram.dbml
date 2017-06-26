@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Eprogram" Class="EprogramDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-1P8H70G\SQLEXPRESS;Initial Catalog=Eprogram;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="EprogramConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=team05.database.windows.net;Initial Catalog=Eprogram;Persist Security Info=True;User ID=team05" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="EprogramConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Account" Member="Accounts">
     <Type Name="Account">
       <Column Name="id" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -10,11 +10,16 @@
       <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Template" Member="Templates">
-    <Type Name="Template">
-      <Column Name="id" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ND" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+  <Table Name="dbo.SyllabusSchedule" Member="SyllabusSchedules">
+    <Type Name="SyllabusSchedule">
+      <Column Name="id" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idSyllabus" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Day" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NumberPeriods" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LectureContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Activites" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Doc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Syllabus_SyllabusSchedule" Member="Syllabus" ThisKey="idSyllabus" OtherKey="id" Type="Syllabus" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Mapping" Member="Mappings">
@@ -86,10 +91,10 @@
       <Column Name="idAccount" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
       <Column Name="isLockEdit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="CourseLT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Syllabus_SyllabusSchedule" Member="SyllabusSchedules" ThisKey="id" OtherKey="idSyllabus" Type="SyllabusSchedule" />
       <Association Name="Syllabus_Mapping" Member="Mappings" ThisKey="id" OtherKey="idSyllabus" Type="Mapping" />
       <Association Name="Syllabus_SyllabusObjective" Member="SyllabusObjectives" ThisKey="id" OtherKey="idSyllabus" Type="SyllabusObjective" />
       <Association Name="Syllabus_SyllabusOutcome" Member="SyllabusOutcomes" ThisKey="id" OtherKey="idSyllabus" Type="SyllabusOutcome" />
-      <Association Name="Syllabus_SyllabusSchedule" Member="SyllabusSchedules" ThisKey="id" OtherKey="idSyllabus" Type="SyllabusSchedule" />
       <Association Name="Program_Syllabus" Member="Program" ThisKey="idProgram" OtherKey="id" Type="Program" IsForeignKey="true" />
     </Type>
   </Table>
@@ -110,16 +115,11 @@
       <Association Name="Syllabus_SyllabusOutcome" Member="Syllabus" ThisKey="idSyllabus" OtherKey="id" Type="Syllabus" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.SyllabusSchedule" Member="SyllabusSchedules">
-    <Type Name="SyllabusSchedule">
-      <Column Name="id" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="idSyllabus" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Day" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="NumberPeriods" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LectureContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Activites" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Doc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="Syllabus_SyllabusSchedule" Member="Syllabus" ThisKey="idSyllabus" OtherKey="id" Type="Syllabus" IsForeignKey="true" />
+  <Table Name="dbo.Template" Member="Templates">
+    <Type Name="Template">
+      <Column Name="id" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ND" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
 </Database>

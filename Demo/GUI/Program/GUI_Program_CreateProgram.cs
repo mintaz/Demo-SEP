@@ -48,22 +48,22 @@ namespace Demo.GUI
             {
                 if (p.CreateProgram(ida, name) == true)
                 {
-                    dc.successCreateProgram("createprogram");
+                    MessageBox.Show(dc.successCreateProgram("createprogram"));
                 }
                 else
                 {
-                    dc.errorCreateProgram("else");
+                    MessageBox.Show(dc.errorCreateProgram("else"));
                 }
             }
             else
             {
                 if (p.EditProgram(idprogram, name, ida) == true)
                 {
-                    dc.successCreateProgram("editprogram");
+                    MessageBox.Show(dc.successCreateProgram("editprogram"));
                 }
                 else
                 {
-                    dc.errorCreateProgram("else");
+                    MessageBox.Show(dc.errorCreateProgram("else"));
                 }
             }
         }

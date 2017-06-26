@@ -22,15 +22,8 @@ namespace Demo.GUI.Program
         public void loadData()
         {
 
-            var result = from p in db.Programs
-                         join c in db.Accounts on p.idAccount equals c.id
-                         select new
-                         {
-                             ID = p.id,
-                             ProgramName = p.name,
-                             AccountName = c.name,
-                         };
-            gcProgramList.DataSource = result.ToList();
+            gcProgramList.DataSource = pr.Load();
+
         }
         private void GUI_Program_List_Load(object sender, EventArgs e)
         {

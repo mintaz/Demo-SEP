@@ -41,6 +41,9 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gcCourseOut = new DevExpress.XtraGrid.GridControl();
             this.gvCourseOut = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SyOutNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SyOutCon = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCourseOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCourseOut)).BeginInit();
@@ -107,7 +110,7 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(882, 67);
+            this.barDockControlTop.Size = new System.Drawing.Size(882, 65);
             // 
             // barDockControlBottom
             // 
@@ -120,30 +123,34 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 67);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 345);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 65);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 347);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(882, 67);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
+            this.barDockControlRight.Location = new System.Drawing.Point(882, 65);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 347);
             // 
             // gcCourseOut
             // 
             this.gcCourseOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcCourseOut.Location = new System.Drawing.Point(0, 67);
+            this.gcCourseOut.Location = new System.Drawing.Point(0, 65);
             this.gcCourseOut.MainView = this.gvCourseOut;
             this.gcCourseOut.MenuManager = this.barManager1;
             this.gcCourseOut.Name = "gcCourseOut";
-            this.gcCourseOut.Size = new System.Drawing.Size(882, 345);
+            this.gcCourseOut.Size = new System.Drawing.Size(882, 347);
             this.gcCourseOut.TabIndex = 4;
             this.gcCourseOut.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCourseOut});
             // 
             // gvCourseOut
             // 
+            this.gvCourseOut.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.SyOutNo,
+            this.SyOutCon});
             this.gvCourseOut.GridControl = this.gcCourseOut;
             this.gvCourseOut.Name = "gvCourseOut";
             this.gvCourseOut.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
@@ -153,6 +160,33 @@
             this.gvCourseOut.OptionsView.ShowGroupPanel = false;
             this.gvCourseOut.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvCourseOut_FocusedRowChanged);
             this.gvCourseOut.DoubleClick += new System.EventHandler(this.gvCourseOut_DoubleClick);
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "id";
+            this.ID.Name = "ID";
+            this.ID.OptionsColumn.AllowEdit = false;
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 0;
+            // 
+            // SyOutNo
+            // 
+            this.SyOutNo.Caption = "Ký Hiệu Chuẩn Đầu Ra";
+            this.SyOutNo.FieldName = "OutcomeNo";
+            this.SyOutNo.Name = "SyOutNo";
+            this.SyOutNo.OptionsColumn.AllowEdit = false;
+            this.SyOutNo.Visible = true;
+            this.SyOutNo.VisibleIndex = 1;
+            // 
+            // SyOutCon
+            // 
+            this.SyOutCon.Caption = "Nội Dung";
+            this.SyOutCon.FieldName = "SyllabusOutcomes";
+            this.SyOutCon.Name = "SyOutCon";
+            this.SyOutCon.OptionsColumn.AllowEdit = false;
+            this.SyOutCon.Visible = true;
+            this.SyOutCon.VisibleIndex = 2;
             // 
             // GUI_Syllabus_Outcomes
             // 
@@ -166,6 +200,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Syllabus_Outcomes";
             this.Text = "Danh Sách Đầu Ra Môn Học";
+            this.Load += new System.EventHandler(this.GUI_Syllabus_Outcomes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCourseOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCourseOut)).EndInit();
@@ -187,5 +222,8 @@
         private DevExpress.XtraBars.BarLargeButtonItem btnDel;
         private DevExpress.XtraGrid.GridControl gcCourseOut;
         private DevExpress.XtraGrid.Views.Grid.GridView gvCourseOut;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn SyOutNo;
+        private DevExpress.XtraGrid.Columns.GridColumn SyOutCon;
     }
 }
