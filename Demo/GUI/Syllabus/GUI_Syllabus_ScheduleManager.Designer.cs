@@ -39,11 +39,15 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gcCourseOut = new DevExpress.XtraGrid.GridControl();
-            this.gvCourseOut = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcSchedule = new DevExpress.XtraGrid.GridControl();
+            this.gvSchedule = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DATE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Periods = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ND = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcCourseOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvCourseOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcSchedule)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSchedule)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -130,34 +134,76 @@
             this.barDockControlRight.Location = new System.Drawing.Point(882, 67);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
             // 
-            // gcCourseOut
+            // gcSchedule
             // 
-            this.gcCourseOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcCourseOut.Location = new System.Drawing.Point(0, 67);
-            this.gcCourseOut.MainView = this.gvCourseOut;
-            this.gcCourseOut.MenuManager = this.barManager1;
-            this.gcCourseOut.Name = "gcCourseOut";
-            this.gcCourseOut.Size = new System.Drawing.Size(882, 345);
-            this.gcCourseOut.TabIndex = 4;
-            this.gcCourseOut.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvCourseOut});
+            this.gcSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcSchedule.Location = new System.Drawing.Point(0, 67);
+            this.gcSchedule.MainView = this.gvSchedule;
+            this.gcSchedule.MenuManager = this.barManager1;
+            this.gcSchedule.Name = "gcSchedule";
+            this.gcSchedule.Size = new System.Drawing.Size(882, 345);
+            this.gcSchedule.TabIndex = 4;
+            this.gcSchedule.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvSchedule});
             // 
-            // gvCourseOut
+            // gvSchedule
             // 
-            this.gvCourseOut.GridControl = this.gcCourseOut;
-            this.gvCourseOut.Name = "gvCourseOut";
-            this.gvCourseOut.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            this.gvCourseOut.OptionsFind.AlwaysVisible = true;
-            this.gvCourseOut.OptionsFind.FindDelay = 250;
-            this.gvCourseOut.OptionsFind.FindNullPrompt = "Nhập Từ khóa để tìm kiếm...";
-            this.gvCourseOut.OptionsView.ShowGroupPanel = false;
+            this.gvSchedule.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.DATE,
+            this.Periods,
+            this.ND});
+            this.gvSchedule.GridControl = this.gcSchedule;
+            this.gvSchedule.Name = "gvSchedule";
+            this.gvSchedule.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gvSchedule.OptionsFind.AlwaysVisible = true;
+            this.gvSchedule.OptionsFind.FindDelay = 250;
+            this.gvSchedule.OptionsFind.FindNullPrompt = "Nhập Từ khóa để tìm kiếm...";
+            this.gvSchedule.OptionsView.ShowGroupPanel = false;
+            this.gvSchedule.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvSchedule_FocusedRowChanged);
+            this.gvSchedule.DoubleClick += new System.EventHandler(this.gvSchedule_DoubleClick);
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "id";
+            this.ID.Name = "ID";
+            this.ID.OptionsColumn.AllowEdit = false;
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 0;
+            // 
+            // DATE
+            // 
+            this.DATE.Caption = "Ngày";
+            this.DATE.FieldName = "day";
+            this.DATE.Name = "DATE";
+            this.DATE.OptionsColumn.AllowEdit = false;
+            this.DATE.Visible = true;
+            this.DATE.VisibleIndex = 1;
+            // 
+            // Periods
+            // 
+            this.Periods.Caption = "Số tiết";
+            this.Periods.Name = "Periods";
+            this.Periods.OptionsColumn.AllowEdit = false;
+            this.Periods.Visible = true;
+            this.Periods.VisibleIndex = 2;
+            // 
+            // ND
+            // 
+            this.ND.Caption = "Nội Dung ";
+            this.ND.FieldName = "LectureContent";
+            this.ND.Name = "ND";
+            this.ND.OptionsColumn.AllowEdit = false;
+            this.ND.Visible = true;
+            this.ND.VisibleIndex = 3;
             // 
             // GUI_Syllabus_ScheduleManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 412);
-            this.Controls.Add(this.gcCourseOut);
+            this.Controls.Add(this.gcSchedule);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -166,8 +212,8 @@
             this.Text = "GUI_Syllabus_ScheduleManager";
             this.Load += new System.EventHandler(this.GUI_Syllabus_ScheduleManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcCourseOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvCourseOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcSchedule)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSchedule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,7 +230,11 @@
         private DevExpress.XtraBars.BarLargeButtonItem btnAdd;
         private DevExpress.XtraBars.BarLargeButtonItem btnEdit;
         private DevExpress.XtraBars.BarLargeButtonItem btnDel;
-        private DevExpress.XtraGrid.GridControl gcCourseOut;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvCourseOut;
+        private DevExpress.XtraGrid.GridControl gcSchedule;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvSchedule;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn DATE;
+        private DevExpress.XtraGrid.Columns.GridColumn Periods;
+        private DevExpress.XtraGrid.Columns.GridColumn ND;
     }
 }

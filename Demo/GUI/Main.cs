@@ -238,6 +238,7 @@ namespace Demo
             {
                 GUI.Syllabus.GUI_Syllabus_ScheduleManager formsyllabussche = new GUI.Syllabus.GUI_Syllabus_ScheduleManager();
                 formsyllabussche.MdiParent = this;
+                formsyllabussche.idS = idpathsy;
                 formsyllabussche.Show();
             }
         }

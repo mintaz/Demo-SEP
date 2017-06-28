@@ -27,11 +27,13 @@ namespace Demo.GUI.Syllabus
             mapdialog.idmap = id;
             mapdialog.ids = idS;
             mapdialog.ShowDialog();
+            loadata();
         }
 
         private void btnDel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             MessageBox.Show("Bạn không thể xóa liên kết ma trận tại đây.\nĐể xóa liên kết vui lòng xóa tại giao diện quản lý chuẩn đầu ra môn học.");
+            loadata();
         }
 
         private void gvMethodMap_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -46,11 +48,15 @@ namespace Demo.GUI.Syllabus
             mapdialog.idmap = id;
             mapdialog.ids = idS;
             mapdialog.ShowDialog();
+            loadata();
         }
-
+        void loadata()
+        {
+            gcMethodMap.DataSource = map.listmap(idS);
+        }
         private void GUI_Syllabus_MethodMapp_Load(object sender, EventArgs e)
         {
-            gcMethodMap.DataSource= map.listmap(idS);
+            loadata();
         }
     }
 }

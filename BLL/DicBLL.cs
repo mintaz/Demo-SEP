@@ -13,6 +13,22 @@ namespace BLL
             return "vanlang";
         }
 
+        public string schedule(string mes)
+        {
+            switch (mes)
+            {
+                case "success":
+                    return "Lưu ngày học của môn học thành công.";
+                case "edit":
+                    return "Chỉnh sửa ngày học của môn học thành công.";
+                case "del":
+                    return "Xóa ngày học của môn học thành công.";
+                case "else":
+                    return "Lỗi kết nối.\n Vui lòng kiểm tra lại đường truyền mạng.";
+                default:
+                    return "No exception";
+            }
+        }
 
         public string errormethod(string mes)
         {
