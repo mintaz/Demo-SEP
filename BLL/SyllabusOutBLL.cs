@@ -10,6 +10,18 @@ namespace BLL
     {
         EprogramDataContext db = new EprogramDataContext();
         MappingBLL mapz = new MappingBLL();
+        public int getCount(string ids)
+        {
+            try
+            {
+                int s = db.SyllabusOutcomes.Where(st => st.idSyllabus == ids).Count();
+                return s;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
         public List<SyllabusOutcome> loadlistout(string id)
         {
             return db.SyllabusOutcomes.Where(s => s.idSyllabus == id).ToList();

@@ -17,6 +17,7 @@ namespace Demo.GUI
     {
         public string Idaccount = "";
         public bool admin;
+        public bool signout = false;
         public GUI_Program_ProgramList()
         {
             InitializeComponent();
@@ -70,6 +71,17 @@ namespace Demo.GUI
                 mainform.auth = 0;
             }
             mainform.Show();
+            
+            mainform.FormClosing += delegate {
+                signout = mainform.log;
+                if (signout == false)
+                {
+                    Application.Exit();
+                }else
+                {
+                    Close();
+                }
+            };
             this.Hide();
 
         }

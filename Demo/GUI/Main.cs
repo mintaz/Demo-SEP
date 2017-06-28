@@ -22,10 +22,10 @@ namespace Demo
         public string name = "";
         public string idpath="";
         public string idpathsy = "";
-        public bool mapp = false;
         
         SyllabusOutBLL syo = new SyllabusOutBLL();
-        
+        MappingBLL ma = new MappingBLL();
+        SyllabusBLL syl = new SyllabusBLL();
         private Form checkexist(Type ftype)
         {
             foreach (Form f in this.MdiChildren)
@@ -39,11 +39,7 @@ namespace Demo
         }
 
         private void Main_Load(object sender, EventArgs e)
-        {
-            if(syo.loadout(idpathsy).Count>0)
-            {
-                mapp = true;
-            }
+        { 
             barStaticItem1.Caption = name;
             if (admin == false)
             {
@@ -286,7 +282,7 @@ namespace Demo
 
         private void btnSyllabusMapping_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (mapp == true)
+            if (syo.getCount(idpathsy) > 0)
             {
                 Form checkformpsyllabussmapping = this.checkexist(typeof(GUI.Syllabus.GUI_Syllabus_Map));
                 if (checkformpsyllabussmapping != null)
@@ -298,7 +294,7 @@ namespace Demo
                     GUI.Syllabus.GUI_Syllabus_Map formsyllabussmapping = new GUI.Syllabus.GUI_Syllabus_Map();
                     formsyllabussmapping.MdiParent = this;
                     formsyllabussmapping.idsy = idpathsy;
-                    formsyllabussmapping.idpo = idpath;
+                    formsyllabussmapping.idpo = syl.getIDprogram(idpathsy);
                     formsyllabussmapping.Show();
                 }
             }
@@ -310,7 +306,7 @@ namespace Demo
 
         private void btnSyllabusMethod_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (mapp == true)
+            if (ma.getCount(idpathsy) > 0)
             {
                 Form checkformpsyllabussmethodmap = this.checkexist(typeof(GUI.Syllabus.GUI_Syllabus_MethodMapp));
                 if (checkformpsyllabussmethodmap != null)
@@ -326,7 +322,7 @@ namespace Demo
             }
             else
             {
-                MessageBox.Show("Hiện tại chưa có đầu ra môn học để thực hiện Phương pháp đánh giá.\nVui lòng kiểm tra lại.");
+                MessageBox.Show("Hiện tại chưa có Ma Trận Liên Kết môn học để thực hiện Phương pháp đánh giá.\nVui lòng kiểm tra lại.");
             }
         }
 
@@ -372,10 +368,12 @@ namespace Demo
                 formprogramout.Show();
             }
         }
-
+        public bool log = false;
         private void btnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //this.Close();
+            log = true;
+            this.Close();
         }
+        
     }
 }

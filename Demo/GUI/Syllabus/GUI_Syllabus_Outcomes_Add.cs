@@ -60,6 +60,8 @@ namespace Demo.GUI.Syllabus
                     {
 
                         MessageBox.Show(dc.sysllabusout("success"));
+                        rtCourseOut.Text = "";
+                        txtOutNo.Text = "";
                     }
                     else
                     {

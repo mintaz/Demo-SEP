@@ -50,6 +50,7 @@ namespace Demo.GUI.Syllabus
                     if (syso.AddObj(ids, content) == true)
                     {
                         MessageBox.Show(dc.sysllabusobj("success"));
+                        rtObjectives.Text = "";
                     }
                     else
                     {

@@ -28,6 +28,18 @@ namespace BLL
             return db.Mappings.Where(st => st.id == idmap).ToList();
         }
 
+        public int getCount(string ids)
+        {
+            try
+            {
+                int s = db.Mappings.Where(st => st.idSyllabus == ids).Count();
+                return s;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
         public bool UpdateMethod(string idmap, string method, string p1, string p2,string p3, int per1,int per2, int per3, int des)
         {
             try
@@ -56,7 +68,7 @@ namespace BLL
             try
             {
                 //**Type: MAPP000001**//
-                List<SyllabusOutcome> ac = db.SyllabusOutcomes.ToList().Where(st => st.id.Substring(0, 4) == "MAPP").ToList();
+                List<Mapping> ac = db.Mappings.ToList().Where(st => st.id.Substring(0, 4) == "MAPP").ToList();
                 string max = ac.Max(t => t.id);
                 int idnumber = int.Parse(max.Substring(4, 6)) + 1;
                 string maxId = "MAPP" + idnumber.ToString().PadLeft(6, '0');

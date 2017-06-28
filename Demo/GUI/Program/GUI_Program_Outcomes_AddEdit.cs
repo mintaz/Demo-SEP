@@ -65,6 +65,7 @@ namespace Demo.GUI
                     if (prou.AddProOut(idp, no, type, con) == true)
                     {
                         MessageBox.Show(dc.successProgramOut("addprogramoutcome"));
+                        clean();
                     }
                     else
                     {
@@ -81,6 +82,7 @@ namespace Demo.GUI
                 if (prou.EditProOut(idprout, no, type, con) == true)
                 {
                     MessageBox.Show(dc.successProgramOut("editprogramoutcome"));
+                    clean();
                 }
                 else
                 {

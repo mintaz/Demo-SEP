@@ -85,11 +85,13 @@ namespace Demo.GUI.Syllabus
             {
                 map.AddMap(idsy, sts, prostring);
             }
+            MessageBox.Show("Lưu Liên Kết Thành Công");
         }
 
         private void txtLoad_Click(object sender, EventArgs e)
         {
 
+            lsProgramOut.UnCheckAll();
             string sts = lsSyllabusOut.GetItemValue(index).ToString();
             if (map.checkexistid(sts) == true) {
                 string stp = map.loadmap(sts);

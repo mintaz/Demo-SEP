@@ -18,7 +18,12 @@ namespace Demo.GUI
         }
         public bool admin;
         public string idAccountlogin;
-
+        void clean()
+        {
+            txtEmail.Text = "";
+            txtPass.Text = "";
+            txtEmail.Select();
+        }
         public void loginaction()
         {
             EncryptBLL encrypt = new EncryptBLL();
@@ -26,7 +31,7 @@ namespace Demo.GUI
             DicBLL dic = new DicBLL();
             string user = txtEmail.Text;
             string pass = encrypt.EncodeSHA1(txtPass.Text);
-
+            
             if (lg.isvaildEmail(user) == true)
             {
                 if (lg.isvaildAccount(user) == true)
@@ -60,8 +65,19 @@ namespace Demo.GUI
                                 mainform.auth = 0;
                                 mainform.idaccountmain = idAccountlogin;
                                 mainform.admin = admin;
-                                mainform.FormClosing += delegate { this.Show(); };
+                                mainform.FormClosing += delegate {
+                                    bool log = mainform.log;
+                                    if (log == true)
+                                    {
+                                        this.Show();
+                                    }
+                                    else
+                                    {
+                                        Application.Exit();
+                                    }
+                                };
                                 mainform.Show();
+                                clean();
                                 this.Hide();
                             }
                         }
