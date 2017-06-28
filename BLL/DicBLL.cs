@@ -18,6 +18,8 @@ namespace BLL
         {
             switch (mes)
             {
+                case "over":
+                    return "Tỷ trọng vượt mức quy định.";
                 case "success":
                     return "Lưu phương pháp giảng dạy môn học thành công.";
                 case "method":

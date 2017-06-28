@@ -170,7 +170,6 @@
             this.txtdesity.Name = "txtdesity";
             this.txtdesity.Size = new System.Drawing.Size(194, 20);
             this.txtdesity.TabIndex = 10;
-            this.txtdesity.TextChanged += new System.EventHandler(this.txtdesity_TextChanged);
             this.txtdesity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdesity_KeyPress);
             // 
             // txtpart3

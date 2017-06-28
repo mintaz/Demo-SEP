@@ -23,6 +23,10 @@ namespace Demo.GUI.Syllabus
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string id = gvMethodMap.GetRowCellValue(index, this.ID).ToString();
+            GUI.Syllabus.GUI_Syllabus_MethodMap_Dialog mapdialog = new GUI_Syllabus_MethodMap_Dialog();
+            mapdialog.idmap = id;
+            mapdialog.ids = idS;
+            mapdialog.ShowDialog();
         }
 
         private void btnDel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -38,6 +42,10 @@ namespace Demo.GUI.Syllabus
         private void gvMethodMap_DoubleClick(object sender, EventArgs e)
         {
             string id = gvMethodMap.GetRowCellValue(index, this.ID).ToString();
+            GUI.Syllabus.GUI_Syllabus_MethodMap_Dialog mapdialog = new GUI_Syllabus_MethodMap_Dialog();
+            mapdialog.idmap = id;
+            mapdialog.ids = idS;
+            mapdialog.ShowDialog();
         }
 
         private void GUI_Syllabus_MethodMapp_Load(object sender, EventArgs e)

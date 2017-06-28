@@ -36,7 +36,7 @@ namespace Demo.GUI.Syllabus
             foreach ( var item in map.listmap(ids))
             {
                 count += item.desity.Value;
-            }
+            };
             txtcount.Text = count.ToString();
             txtcount.ReadOnly = true;
             rtsys.ReadOnly = true;
@@ -46,6 +46,8 @@ namespace Demo.GUI.Syllabus
         DicBLL dc = new DicBLL();
         private void btnSave_Click(object sender, EventArgs e)
         {
+            bool isempty = false;
+            bool isover = false;
             string temp = "";
             string method = rtmethod.Text;
             string part1 = txtpart1.Text;
@@ -55,39 +57,82 @@ namespace Demo.GUI.Syllabus
             int per2 = int.Parse(txtpercent2.Text);
             int per3 = int.Parse(txtpercent3.Text);
             int des = int.Parse(txtdesity.Text);
-            if(method == null || method == "")
+            if (method == null || method == "")
             {
-                temp += dc.errormethod("method") +"\n";
+                temp += dc.errormethod("method") + "\n";
+                isempty = true;
             }
-            if(part1 == null || part1 == "")
+            if (part1 == null || part1 == "")
             {
                 temp += dc.errormethod("part1") + "\n";
+                isempty = true;
             }
             if (part2 == null || part2 == "")
             {
                 temp += dc.errormethod("part2") + "\n";
+                isempty = true;
             }
             if (part3 == null || part3 == "")
             {
                 temp += dc.errormethod("part3") + "\n";
+                isempty = true;
             }
             if (txtpercent1.Text == null || txtpercent1.Text == "")
             {
                 temp += dc.errormethod("per1") + "\n";
+                isempty = true;
             }
             if (txtpercent2.Text == null || txtpercent2.Text == "")
             {
                 temp += dc.errormethod("per2") + "\n";
+                isempty = true;
             }
             if (txtpercent3.Text == null || txtpercent3.Text == "")
             {
                 temp += dc.errormethod("per3") + "\n";
+                isempty = true;
             }
             if (txtdesity.Text == null || txtdesity.Text == "")
             {
                 temp += dc.errormethod("des") + "\n";
+                isempty = true;
             }
-            
+            int count = 0;
+            foreach (var item in map.listmap(ids))
+            {
+                count += item.desity.Value;
+            };
+            if (des > count)
+            {
+                isover = true;
+            }
+            else
+            {
+                isover = false;
+            }
+            if (isempty == false)
+            {
+                if (isover == false)
+                {
+                    if (map.UpdateMethod(idmap, method, part1, part2, part3, per1, per2, per3, des) == true)
+                    {
+                        MessageBox.Show(dc.errormethod("success"));
+                    }
+                    else
+                    {
+                        MessageBox.Show(dc.errormethod("else"));
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(dc.errormethod("over") + "\nVui lòng kiểm tra lại");
+                }
+            }
+            else
+            {
+                MessageBox.Show(temp + "\nVui lòng kiểm tra lại");
+            }
+        
 
         }
 
@@ -132,9 +177,5 @@ namespace Demo.GUI.Syllabus
             }
         }
 
-        private void txtdesity_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

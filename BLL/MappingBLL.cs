@@ -27,6 +27,30 @@ namespace BLL
         {
             return db.Mappings.Where(st => st.id == idmap).ToList();
         }
+
+        public bool UpdateMethod(string idmap, string method, string p1, string p2,string p3, int per1,int per2, int per3, int des)
+        {
+            try
+            {
+                Mapping manup = db.Mappings.Where(ma => ma.id == idmap).Single();
+                manup.Methods = method;
+                manup.FirstPart = p1;
+                manup.SecondPart = p2;
+                manup.ThirdPart = p3;
+                manup.FirstPercent = per1;
+                manup.SecondPercent = per2;
+                manup.ThirdPercent = per3;
+                manup.desity = des;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
         public string createMapID()
         {
             try
