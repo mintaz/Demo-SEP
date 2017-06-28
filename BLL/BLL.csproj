@@ -51,6 +51,7 @@
     <Compile Include="ProgramOutBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResetBLL.cs" />
+    <Compile Include="ScheduleBLL.cs" />
     <Compile Include="SyllabusBLL.cs" />
     <Compile Include="SyllabusObjBLL.cs" />
     <Compile Include="SyllabusOutBLL.cs" />

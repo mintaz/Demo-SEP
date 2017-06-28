@@ -21,7 +21,7 @@ namespace Demo
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             //Application.Run(new GUI.GUI_Account_Login());
-            Application.Run(new GUI.Syllabus.GUI_Syllabus_Map());
+            Application.Run(new GUI.GUI_Account_Login());
         }
     }
 }

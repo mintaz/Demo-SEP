@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using DAL;
+using BLL;
 namespace Demo
 {
     public partial class Main : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -21,6 +22,10 @@ namespace Demo
         public string name = "";
         public string idpath="";
         public string idpathsy = "";
+        public bool mapp = false;
+        
+        SyllabusOutBLL syo = new SyllabusOutBLL();
+        
         private Form checkexist(Type ftype)
         {
             foreach (Form f in this.MdiChildren)
@@ -35,6 +40,10 @@ namespace Demo
 
         private void Main_Load(object sender, EventArgs e)
         {
+            if(syo.loadout(idpathsy).Count>0)
+            {
+                mapp = true;
+            }
             barStaticItem1.Caption = name;
             if (admin == false)
             {
@@ -277,33 +286,47 @@ namespace Demo
 
         private void btnSyllabusMapping_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form checkformpsyllabussmapping = this.checkexist(typeof(GUI.Syllabus.GUI_Syllabus_Map));
-            if (checkformpsyllabussmapping != null)
+            if (mapp == true)
             {
-                checkformpsyllabussmapping.Activate();
+                Form checkformpsyllabussmapping = this.checkexist(typeof(GUI.Syllabus.GUI_Syllabus_Map));
+                if (checkformpsyllabussmapping != null)
+                {
+                    checkformpsyllabussmapping.Activate();
+                }
+                else
+                {
+                    GUI.Syllabus.GUI_Syllabus_Map formsyllabussmapping = new GUI.Syllabus.GUI_Syllabus_Map();
+                    formsyllabussmapping.MdiParent = this;
+                    formsyllabussmapping.idsy = idpathsy;
+                    formsyllabussmapping.idpo = idpath;
+                    formsyllabussmapping.Show();
+                }
             }
             else
             {
-                GUI.Syllabus.GUI_Syllabus_Map formsyllabussmapping = new GUI.Syllabus.GUI_Syllabus_Map();
-                formsyllabussmapping.MdiParent = this;
-                formsyllabussmapping.idsy = idpathsy;
-                formsyllabussmapping.idpo = idpath;
-                formsyllabussmapping.Show();
+                MessageBox.Show("Hiện tại chưa có đầu ra môn học để thực hiện Ma trận Liên kết.\nVui lòng kiểm tra lại.");
             }
         }
 
         private void btnSyllabusMethod_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form checkformpsyllabussmethodmap = this.checkexist(typeof(GUI.Syllabus.GUI_Syllabus_MethodMapp));
-            if (checkformpsyllabussmethodmap != null)
+            if (mapp == true)
             {
-                checkformpsyllabussmethodmap.Activate();
+                Form checkformpsyllabussmethodmap = this.checkexist(typeof(GUI.Syllabus.GUI_Syllabus_MethodMapp));
+                if (checkformpsyllabussmethodmap != null)
+                {
+                    checkformpsyllabussmethodmap.Activate();
+                }
+                else
+                {
+                    GUI.Syllabus.GUI_Syllabus_MethodMapp formsyllabusmethodmap = new GUI.Syllabus.GUI_Syllabus_MethodMapp();
+                    formsyllabusmethodmap.MdiParent = this;
+                    formsyllabusmethodmap.Show();
+                }
             }
             else
             {
-                GUI.Syllabus.GUI_Syllabus_MethodMapp formsyllabusmethodmap = new GUI.Syllabus.GUI_Syllabus_MethodMapp();
-                formsyllabusmethodmap.MdiParent = this;
-                formsyllabusmethodmap.Show();
+                MessageBox.Show("Hiện tại chưa có đầu ra môn học để thực hiện Phương pháp đánh giá.\nVui lòng kiểm tra lại.");
             }
         }
 
