@@ -20,6 +20,7 @@ namespace Demo.GUI.Syllabus
         public string idSout = "";
         SyllabusOutBLL syou = new SyllabusOutBLL();
         DicBLL dc = new DicBLL();
+        MappingBLL map = new MappingBLL();
         private void GUI_Syllabus_Outcomes_Add_Load(object sender, EventArgs e)
         {
             if (idSout != "")
@@ -57,6 +58,7 @@ namespace Demo.GUI.Syllabus
                 {
                     if (syou.AddOut(idS,no, content) == true)
                     {
+
                         MessageBox.Show(dc.sysllabusout("success"));
                     }
                     else

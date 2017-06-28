@@ -24,7 +24,7 @@ namespace Demo.GUI.Print
            
             RichEditDocumentServer f = new RichEditDocumentServer();
             f.LoadDocument("C:\\Users\\Mint\\Desktop\\ChuongTrinhDaoTao_T.doc");
-            
+
             //printableComponentLink1.Component = f;
             //documentViewer1.DocumentSource = printingSystem1;
         }

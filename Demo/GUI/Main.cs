@@ -253,6 +253,7 @@ namespace Demo
             {
                 GUI.Syllabus.GUI_Syllabus_Objectives formsyllabussobj = new GUI.Syllabus.GUI_Syllabus_Objectives();
                 formsyllabussobj.MdiParent = this;
+                formsyllabussobj.idsys = idpathsy;
                 formsyllabussobj.Show();
             }
         }
@@ -268,6 +269,7 @@ namespace Demo
             {
                 GUI.Syllabus.GUI_Syllabus_Outcomes formsyllabussout = new GUI.Syllabus.GUI_Syllabus_Outcomes();
                 formsyllabussout.MdiParent = this;
+                formsyllabussout.idsys = idpathsy;
                 formsyllabussout.Show();
             }
         }
@@ -283,6 +285,8 @@ namespace Demo
             {
                 GUI.Syllabus.GUI_Syllabus_Map formsyllabussmapping = new GUI.Syllabus.GUI_Syllabus_Map();
                 formsyllabussmapping.MdiParent = this;
+                formsyllabussmapping.idsy = idpathsy;
+                formsyllabussmapping.idpo = idpath;
                 formsyllabussmapping.Show();
             }
         }

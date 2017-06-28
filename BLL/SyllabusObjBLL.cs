@@ -21,16 +21,16 @@ namespace BLL
         {
             try
             {
-                //**Type: POBJ000001**//
-                List<SyllabusObjective> ac = db.SyllabusObjectives.ToList().Where(st => st.id.Substring(0, 4) == "POBJ").ToList();
+                //**Type: SYOB000001**//
+                List<SyllabusObjective> ac = db.SyllabusObjectives.ToList().Where(st => st.id.Substring(0, 4) == "SYOB").ToList();
                 string max = ac.Max(t => t.id);
                 int idnumber = int.Parse(max.Substring(4, 6)) + 1;
-                string maxId = "POBJ" + idnumber.ToString().PadLeft(6, '0');
+                string maxId = "SYOB" + idnumber.ToString().PadLeft(6, '0');
                 return maxId;
             }
             catch (NullReferenceException)
             {
-                return "POBJ" + "000001";
+                return "SYOB" + "000001";
             }
         }
         public bool AddObj (string ids, string content)

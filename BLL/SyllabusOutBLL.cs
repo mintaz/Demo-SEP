@@ -9,7 +9,7 @@ namespace BLL
     public class SyllabusOutBLL
     {
         EprogramDataContext db = new EprogramDataContext();
-
+        MappingBLL mapz = new MappingBLL();
         public List<SyllabusOutcome> loadlistout(string id)
         {
             return db.SyllabusOutcomes.Where(s => s.idSyllabus == id).ToList();
@@ -18,20 +18,23 @@ namespace BLL
         {
             return db.SyllabusOutcomes.Where(s => s.id == idout).ToList();
         }
+
+       
+        public string currentID = "";
         public string createID()
         {
             try
             {
-                //**Type: POBJ000001**//
-                List<SyllabusObjective> ac = db.SyllabusObjectives.ToList().Where(st => st.id.Substring(0, 4) == "POUT").ToList();
+                //**Type: SYOU000001**//
+                List<SyllabusOutcome> ac = db.SyllabusOutcomes.ToList().Where(st => st.id.Substring(0, 4) == "SYOU").ToList();
                 string max = ac.Max(t => t.id);
                 int idnumber = int.Parse(max.Substring(4, 6)) + 1;
-                string maxId = "POUT" + idnumber.ToString().PadLeft(6, '0');
+                string maxId = "SYOU" + idnumber.ToString().PadLeft(6, '0');
                 return maxId;
             }
             catch (NullReferenceException)
             {
-                return "POUT" + "000001";
+                return "SYOU" + "000001";
             }
         }
         public bool AddOut(string ids, string no, string content)
@@ -39,10 +42,12 @@ namespace BLL
             try
             {
                 SyllabusOutcome outadd = new SyllabusOutcome();
-                outadd.id = createID();
+                currentID = createID();
+                outadd.id = currentID;
                 outadd.idSyllabus = ids;
                 outadd.OutcomeNo = no;
                 outadd.OutcomeContent = content;
+                mapz.AddMap(ids, currentID, "");
                 db.SyllabusOutcomes.InsertOnSubmit(outadd);
                 db.SubmitChanges();
                 return true;
@@ -52,7 +57,7 @@ namespace BLL
                 return false;
             }
         }
-        public bool EditOut (string id, string no, string content)
+        public bool EditOut(string id, string no, string content)
         {
             try
             {
@@ -72,6 +77,7 @@ namespace BLL
             try
             {
                 SyllabusOutcome outdel = db.SyllabusOutcomes.Where(del => del.id == id).Single();
+                mapz.DelMap(id);
                 db.SyllabusOutcomes.DeleteOnSubmit(outdel);
                 db.SubmitChanges();
                 return true;

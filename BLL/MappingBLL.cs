@@ -1,0 +1,144 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DAL;
+
+namespace BLL
+{
+    public class MappingBLL
+    {
+        EprogramDataContext db = new EprogramDataContext();
+        public List<SyllabusOutcome> loadSyOut(string idS)
+        {
+            return db.SyllabusOutcomes.Where(st => st.idSyllabus == idS).ToList();
+        }
+        public List<ProgramOutcome> loadPrOut(string idP)
+        {
+            return db.ProgramOutcomes.Where(st => st.idProgram== idP).ToList();
+        }
+        public string createMapID()
+        {
+            try
+            {
+                //**Type: MAPP000001**//
+                List<SyllabusOutcome> ac = db.SyllabusOutcomes.ToList().Where(st => st.id.Substring(0, 4) == "MAPP").ToList();
+                string max = ac.Max(t => t.id);
+                int idnumber = int.Parse(max.Substring(4, 6)) + 1;
+                string maxId = "MAPP" + idnumber.ToString().PadLeft(6, '0');
+                return maxId;
+            }
+            catch (NullReferenceException)
+            {
+                return "MAPP" + "000001";
+            }
+        }
+
+        public bool AddMap (string idS,string sys, string program)
+        {
+            try
+            {
+                Mapping addmap = new Mapping();
+                addmap.id = createMapID();
+                addmap.idSyllabus = idS;
+                addmap.ProgramOutcome = program;
+                addmap.SyllabusOutcome = sys;
+                db.Mappings.InsertOnSubmit(addmap);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public string createString(List<string> listid)
+        {
+            try
+            {
+                string line = String.Join(",", listid);
+                return line;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        //chuyển chuỗi ID trong db thành list
+        public List<string> loadcheckedlist(string line)
+        {
+            try
+            {
+                return line.Split(',').ToList();
+            }
+            catch
+            {
+                return new List<string>();
+            }
+        }
+
+        public bool DelMap(string idS)
+        {
+            try
+            {
+                Mapping mapdel = db.Mappings.Where(z => z.idSyllabus == idS).Single();
+                db.Mappings.DeleteOnSubmit(mapdel);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+        public string loadmap(string sts)
+        {
+            try
+            {
+                return db.Mappings.Where(s => s.SyllabusOutcome == sts).Single().ProgramOutcome;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        public bool ChangePro(string sts, string stp)
+        {
+            try
+            {
+                Mapping map = db.Mappings.Where(s => s.SyllabusOutcome == sts).Single();
+                map.ProgramOutcome = stp;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool checkexistid(string sts)
+        {
+            try
+            {
+                int check = db.Mappings.Where(s => s.SyllabusOutcome == sts).Count();
+                if(check > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+    }
+}

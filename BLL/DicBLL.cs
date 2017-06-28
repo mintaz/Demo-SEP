@@ -12,7 +12,7 @@ namespace BLL
         {
             return "vanlang";
         }
-        public string sysllabusobj( string mes)
+        public string sysllabusobj(string mes)
         {
             switch (mes)
             {
@@ -50,7 +50,7 @@ namespace BLL
                     return "No exception";
             }
         }
-        public string syllabusinfo (string mes)
+        public string syllabusinfo(string mes)
         {
             switch (mes)
             {
@@ -173,7 +173,7 @@ namespace BLL
 
         public string successAccountMessage(string sc)
         {
-            switch(sc)
+            switch (sc)
             {
                 case "add":
                     return "Thêm tài khoản thành công.";
@@ -191,7 +191,7 @@ namespace BLL
 
         public string errorChangeMessage(string er)
         {
-            switch(er)
+            switch (er)
             {
                 case "samepass":
                     return "Mật khẩu mới phải khác mật khẩu cũ.\n Vui lòng kiểm tra lại.";
@@ -209,7 +209,7 @@ namespace BLL
         }
         public string successChangeMessage(string sc)
         {
-            switch(sc)
+            switch (sc)
             {
                 case "changepass":
                     return "Thay đổi mật khẩu thành công";
@@ -225,7 +225,7 @@ namespace BLL
         }
         public string errorCreateProgram(string er)
         {
-            switch(er)
+            switch (er)
             {
                 case "else":
                     return "Lỗi kết nối.\v Vui lòng kiểm tra lại";
@@ -247,7 +247,7 @@ namespace BLL
                     return "No exception";
             }
         }
-        public string successProgramOut (string sc)
+        public string successProgramOut(string sc)
         {
             switch (sc)
             {

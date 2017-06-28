@@ -48,11 +48,11 @@ namespace Demo.GUI.Syllabus
             {
                 if (syou.DelOut(idso) == true)
                 {
-                    MessageBox.Show(dc.sysllabusobj("del"));
+                    MessageBox.Show(dc.sysllabusout("del"));
                 }
                 else
                 {
-                    MessageBox.Show(dc.sysllabusobj("else"));
+                    MessageBox.Show(dc.sysllabusout("else"));
                 }
                 loadData();
             }

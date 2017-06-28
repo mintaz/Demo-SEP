@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtLoad = new System.Windows.Forms.Button();
+            this.lblProOutcome = new System.Windows.Forms.Label();
+            this.lblCouOutcome = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.lsProgramOut = new DevExpress.XtraEditors.CheckedListBoxControl();
             this.lsSyllabusOut = new DevExpress.XtraEditors.ListBoxControl();
@@ -38,10 +41,9 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lblCouOutcome = new System.Windows.Forms.Label();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lblProOutcome = new System.Windows.Forms.Label();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lsProgramOut)).BeginInit();
@@ -54,10 +56,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtLoad);
             this.layoutControl1.Controls.Add(this.lblProOutcome);
             this.layoutControl1.Controls.Add(this.lblCouOutcome);
             this.layoutControl1.Controls.Add(this.btnSave);
@@ -71,20 +75,49 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txtLoad
+            // 
+            this.txtLoad.Location = new System.Drawing.Point(12, 379);
+            this.txtLoad.Name = "txtLoad";
+            this.txtLoad.Size = new System.Drawing.Size(346, 82);
+            this.txtLoad.TabIndex = 9;
+            this.txtLoad.Text = "Tải Ma Trận";
+            this.txtLoad.UseVisualStyleBackColor = true;
+            this.txtLoad.Click += new System.EventHandler(this.txtLoad_Click);
+            // 
+            // lblProOutcome
+            // 
+            this.lblProOutcome.Location = new System.Drawing.Point(386, 12);
+            this.lblProOutcome.Name = "lblProOutcome";
+            this.lblProOutcome.Size = new System.Drawing.Size(323, 20);
+            this.lblProOutcome.TabIndex = 8;
+            this.lblProOutcome.Text = "Chuẩn Đầu Ra Chương Trình Đào Tạo";
+            this.lblProOutcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblCouOutcome
+            // 
+            this.lblCouOutcome.Location = new System.Drawing.Point(12, 12);
+            this.lblCouOutcome.Name = "lblCouOutcome";
+            this.lblCouOutcome.Size = new System.Drawing.Size(320, 20);
+            this.lblCouOutcome.TabIndex = 7;
+            this.lblCouOutcome.Text = "Chuẩn Đầu Ra Môn Học";
+            this.lblCouOutcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 423);
+            this.btnSave.Location = new System.Drawing.Point(362, 379);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(697, 38);
+            this.btnSave.Size = new System.Drawing.Size(347, 82);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Lưu Lại";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lsProgramOut
             // 
             this.lsProgramOut.Location = new System.Drawing.Point(386, 36);
             this.lsProgramOut.Name = "lsProgramOut";
-            this.lsProgramOut.Size = new System.Drawing.Size(323, 355);
+            this.lsProgramOut.Size = new System.Drawing.Size(323, 314);
             this.lsProgramOut.StyleController = this.layoutControl1;
             this.lsProgramOut.TabIndex = 5;
             // 
@@ -92,9 +125,10 @@
             // 
             this.lsSyllabusOut.Location = new System.Drawing.Point(12, 36);
             this.lsSyllabusOut.Name = "lsSyllabusOut";
-            this.lsSyllabusOut.Size = new System.Drawing.Size(320, 355);
+            this.lsSyllabusOut.Size = new System.Drawing.Size(320, 314);
             this.lsSyllabusOut.StyleController = this.layoutControl1;
             this.lsSyllabusOut.TabIndex = 4;
+            this.lsSyllabusOut.Click += new System.EventHandler(this.lsSyllabusOut_Click);
             // 
             // layoutControlGroup1
             // 
@@ -107,7 +141,8 @@
             this.emptySpaceItem2,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem6});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(721, 473);
@@ -118,7 +153,7 @@
             this.layoutControlItem1.Control = this.lsSyllabusOut;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(324, 359);
+            this.layoutControlItem1.Size = new System.Drawing.Size(324, 318);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -127,7 +162,7 @@
             this.layoutControlItem2.Control = this.lsProgramOut;
             this.layoutControlItem2.Location = new System.Drawing.Point(374, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(327, 359);
+            this.layoutControlItem2.Size = new System.Drawing.Size(327, 318);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -136,34 +171,25 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(324, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(50, 383);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(50, 342);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 383);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 342);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(701, 28);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(701, 25);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnSave;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 411);
+            this.layoutControlItem3.Location = new System.Drawing.Point(350, 367);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(701, 42);
+            this.layoutControlItem3.Size = new System.Drawing.Size(351, 86);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // lblCouOutcome
-            // 
-            this.lblCouOutcome.Location = new System.Drawing.Point(12, 12);
-            this.lblCouOutcome.Name = "lblCouOutcome";
-            this.lblCouOutcome.Size = new System.Drawing.Size(320, 20);
-            this.lblCouOutcome.TabIndex = 7;
-            this.lblCouOutcome.Text = "Chuẩn Đầu Ra Môn Học";
-            this.lblCouOutcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // layoutControlItem4
             // 
@@ -174,15 +200,6 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // lblProOutcome
-            // 
-            this.lblProOutcome.Location = new System.Drawing.Point(386, 12);
-            this.lblProOutcome.Name = "lblProOutcome";
-            this.lblProOutcome.Size = new System.Drawing.Size(323, 20);
-            this.lblProOutcome.TabIndex = 8;
-            this.lblProOutcome.Text = "Chuẩn Đầu Ra Chương Trình Đào Tạo";
-            this.lblProOutcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.lblProOutcome;
@@ -192,6 +209,15 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.txtLoad;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 367);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(350, 86);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
             // GUI_Syllabus_Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +226,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Syllabus_Map";
             this.Text = "Ma Trận Đầu Ra";
+            this.Load += new System.EventHandler(this.GUI_Syllabus_Map_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lsProgramOut)).EndInit();
@@ -212,6 +239,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,5 +260,7 @@
         private System.Windows.Forms.Label lblCouOutcome;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private System.Windows.Forms.Button txtLoad;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

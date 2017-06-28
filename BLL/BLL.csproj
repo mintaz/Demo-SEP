@@ -46,6 +46,7 @@
     <Compile Include="DicBLL.cs" />
     <Compile Include="EncryptBLL.cs" />
     <Compile Include="LoginBLL.cs" />
+    <Compile Include="MappingBLL.cs" />
     <Compile Include="ProgramBLL.cs" />
     <Compile Include="ProgramOutBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
