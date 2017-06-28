@@ -18,6 +18,15 @@ namespace BLL
         {
             return db.ProgramOutcomes.Where(st => st.idProgram== idP).ToList();
         }
+
+        public List<Mapping> listmap(string idS)
+        {
+            return db.Mappings.Where(st => st.idSyllabus == idS).ToList();
+        }
+        public List<Mapping> singlemap (string idmap)
+        {
+            return db.Mappings.Where(st => st.id == idmap).ToList();
+        }
         public string createMapID()
         {
             try

@@ -12,6 +12,38 @@ namespace BLL
         {
             return "vanlang";
         }
+
+
+        public string errormethod(string mes)
+        {
+            switch (mes)
+            {
+                case "success":
+                    return "Lưu phương pháp giảng dạy môn học thành công.";
+                case "method":
+                    return "phương pháp giảng dạy môn học bị trống.";
+                case "part1":
+                    return "Nội dung phần thứ nhất môn học bị trống.";
+                case "part2":
+                    return "Nội dung phần thứ hai môn học bị trống.";
+                case "part3":
+                    return "Nội dung phần thứ ba môn học bị trống.";
+                case "per1":
+                    return "Phần trăm phần thứ nhất môn học bị trống.";
+                case "per2":
+                    return "Phần trăm phần thứ hai môn học bị trống.";
+                case "per3":
+                    return "Phần trăm phần thứ ba môn học bị trống.";
+                case "des":
+                    return "Tỉ trọng phương pháp bị trống.";
+                case "else":
+                    return "Lỗi kết nối.\n Vui lòng kiểm tra lại đường truyền mạng.";
+                default:
+                    return "No exception";
+            }
+        }
+
+
         public string sysllabusobj(string mes)
         {
             switch (mes)

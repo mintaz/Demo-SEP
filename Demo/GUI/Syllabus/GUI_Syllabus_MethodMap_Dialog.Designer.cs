@@ -29,40 +29,40 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtpercent3 = new System.Windows.Forms.TextBox();
+            this.txtpercent2 = new System.Windows.Forms.TextBox();
+            this.txtpercent1 = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txtcount = new System.Windows.Forms.TextBox();
+            this.txtdesity = new System.Windows.Forms.TextBox();
+            this.txtpart3 = new System.Windows.Forms.TextBox();
+            this.txtpart2 = new System.Windows.Forms.TextBox();
+            this.txtpart1 = new System.Windows.Forms.TextBox();
+            this.rtmethod = new System.Windows.Forms.RichTextBox();
+            this.rtpro = new System.Windows.Forms.RichTextBox();
+            this.rtsys = new System.Windows.Forms.RichTextBox();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtpart1 = new System.Windows.Forms.TextBox();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtpart2 = new System.Windows.Forms.TextBox();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtpart3 = new System.Windows.Forms.TextBox();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtdesity = new System.Windows.Forms.TextBox();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtcount = new System.Windows.Forms.TextBox();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btnSave = new System.Windows.Forms.Button();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtpercent1 = new System.Windows.Forms.TextBox();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtpercent2 = new System.Windows.Forms.TextBox();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtpercent3 = new System.Windows.Forms.TextBox();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -102,9 +102,9 @@
             this.layoutControl1.Controls.Add(this.txtpart3);
             this.layoutControl1.Controls.Add(this.txtpart2);
             this.layoutControl1.Controls.Add(this.txtpart1);
-            this.layoutControl1.Controls.Add(this.richTextBox3);
-            this.layoutControl1.Controls.Add(this.richTextBox2);
-            this.layoutControl1.Controls.Add(this.richTextBox1);
+            this.layoutControl1.Controls.Add(this.rtmethod);
+            this.layoutControl1.Controls.Add(this.rtpro);
+            this.layoutControl1.Controls.Add(this.rtsys);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -112,6 +112,111 @@
             this.layoutControl1.Size = new System.Drawing.Size(1085, 590);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtpercent3
+            // 
+            this.txtpercent3.Location = new System.Drawing.Point(879, 187);
+            this.txtpercent3.Name = "txtpercent3";
+            this.txtpercent3.Size = new System.Drawing.Size(194, 20);
+            this.txtpercent3.TabIndex = 16;
+            this.txtpercent3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpercent3_KeyPress);
+            // 
+            // txtpercent2
+            // 
+            this.txtpercent2.Location = new System.Drawing.Point(879, 111);
+            this.txtpercent2.Name = "txtpercent2";
+            this.txtpercent2.Size = new System.Drawing.Size(194, 20);
+            this.txtpercent2.TabIndex = 15;
+            this.txtpercent2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpercent2_KeyPress);
+            // 
+            // txtpercent1
+            // 
+            this.txtpercent1.Location = new System.Drawing.Point(879, 36);
+            this.txtpercent1.Name = "txtpercent1";
+            this.txtpercent1.Size = new System.Drawing.Size(194, 20);
+            this.txtpercent1.TabIndex = 14;
+            this.txtpercent1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpercent1_KeyPress);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(919, 337);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(154, 40);
+            this.btnCancel.TabIndex = 13;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(762, 337);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(153, 40);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Lưu Lại";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtcount
+            // 
+            this.txtcount.Location = new System.Drawing.Point(879, 281);
+            this.txtcount.Name = "txtcount";
+            this.txtcount.Size = new System.Drawing.Size(194, 20);
+            this.txtcount.TabIndex = 11;
+            // 
+            // txtdesity
+            // 
+            this.txtdesity.Location = new System.Drawing.Point(879, 235);
+            this.txtdesity.Name = "txtdesity";
+            this.txtdesity.Size = new System.Drawing.Size(194, 20);
+            this.txtdesity.TabIndex = 10;
+            this.txtdesity.TextChanged += new System.EventHandler(this.txtdesity_TextChanged);
+            this.txtdesity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdesity_KeyPress);
+            // 
+            // txtpart3
+            // 
+            this.txtpart3.Location = new System.Drawing.Point(879, 163);
+            this.txtpart3.Name = "txtpart3";
+            this.txtpart3.Size = new System.Drawing.Size(194, 20);
+            this.txtpart3.TabIndex = 9;
+            // 
+            // txtpart2
+            // 
+            this.txtpart2.Location = new System.Drawing.Point(879, 87);
+            this.txtpart2.Name = "txtpart2";
+            this.txtpart2.Size = new System.Drawing.Size(194, 20);
+            this.txtpart2.TabIndex = 8;
+            // 
+            // txtpart1
+            // 
+            this.txtpart1.Location = new System.Drawing.Point(879, 12);
+            this.txtpart1.Name = "txtpart1";
+            this.txtpart1.Size = new System.Drawing.Size(194, 20);
+            this.txtpart1.TabIndex = 7;
+            // 
+            // rtmethod
+            // 
+            this.rtmethod.Location = new System.Drawing.Point(447, 12);
+            this.rtmethod.Name = "rtmethod";
+            this.rtmethod.Size = new System.Drawing.Size(311, 566);
+            this.rtmethod.TabIndex = 6;
+            this.rtmethod.Text = "";
+            // 
+            // rtpro
+            // 
+            this.rtpro.Location = new System.Drawing.Point(129, 275);
+            this.rtpro.Name = "rtpro";
+            this.rtpro.Size = new System.Drawing.Size(197, 303);
+            this.rtpro.TabIndex = 5;
+            this.rtpro.Text = "";
+            // 
+            // rtsys
+            // 
+            this.rtsys.Location = new System.Drawing.Point(129, 12);
+            this.rtsys.Name = "rtsys";
+            this.rtsys.Size = new System.Drawing.Size(197, 207);
+            this.rtsys.TabIndex = 4;
+            this.rtsys.Text = "";
             // 
             // layoutControlGroup1
             // 
@@ -152,17 +257,9 @@
             this.emptySpaceItem3.Size = new System.Drawing.Size(158, 201);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(129, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(197, 207);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
-            // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.richTextBox1;
+            this.layoutControlItem1.Control = this.rtsys;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(318, 211);
@@ -177,46 +274,23 @@
             this.emptySpaceItem4.Size = new System.Drawing.Size(318, 52);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(129, 275);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(197, 303);
-            this.richTextBox2.TabIndex = 5;
-            this.richTextBox2.Text = "";
-            // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.richTextBox2;
+            this.layoutControlItem2.Control = this.rtpro;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 263);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(318, 307);
             this.layoutControlItem2.Text = "Chuẩn Đầu Ra CTĐT";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(114, 13);
             // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(447, 12);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(311, 566);
-            this.richTextBox3.TabIndex = 6;
-            this.richTextBox3.Text = "";
-            // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.richTextBox3;
+            this.layoutControlItem3.Control = this.rtmethod;
             this.layoutControlItem3.Location = new System.Drawing.Point(318, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(432, 570);
             this.layoutControlItem3.Text = "Phương Pháp Đánh Giá";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(114, 13);
-            // 
-            // txtpart1
-            // 
-            this.txtpart1.Location = new System.Drawing.Point(879, 12);
-            this.txtpart1.Name = "txtpart1";
-            this.txtpart1.Size = new System.Drawing.Size(194, 20);
-            this.txtpart1.TabIndex = 7;
             // 
             // layoutControlItem4
             // 
@@ -235,13 +309,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(315, 27);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // txtpart2
-            // 
-            this.txtpart2.Location = new System.Drawing.Point(879, 87);
-            this.txtpart2.Name = "txtpart2";
-            this.txtpart2.Size = new System.Drawing.Size(194, 20);
-            this.txtpart2.TabIndex = 8;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtpart2;
@@ -258,13 +325,6 @@
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(315, 28);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // txtpart3
-            // 
-            this.txtpart3.Location = new System.Drawing.Point(879, 163);
-            this.txtpart3.Name = "txtpart3";
-            this.txtpart3.Size = new System.Drawing.Size(194, 20);
-            this.txtpart3.TabIndex = 9;
             // 
             // layoutControlItem6
             // 
@@ -283,13 +343,6 @@
             this.emptySpaceItem5.Size = new System.Drawing.Size(315, 24);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // txtdesity
-            // 
-            this.txtdesity.Location = new System.Drawing.Point(879, 235);
-            this.txtdesity.Name = "txtdesity";
-            this.txtdesity.Size = new System.Drawing.Size(194, 20);
-            this.txtdesity.TabIndex = 10;
-            // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.txtdesity;
@@ -298,13 +351,6 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(315, 24);
             this.layoutControlItem7.Text = "Tỷ Trọng";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(114, 13);
-            // 
-            // txtcount
-            // 
-            this.txtcount.Location = new System.Drawing.Point(879, 281);
-            this.txtcount.Name = "txtcount";
-            this.txtcount.Size = new System.Drawing.Size(194, 20);
-            this.txtcount.TabIndex = 11;
             // 
             // layoutControlItem8
             // 
@@ -339,15 +385,6 @@
             this.emptySpaceItem8.Size = new System.Drawing.Size(157, 201);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(762, 337);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(153, 40);
-            this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Lưu Lại";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnSave;
@@ -356,15 +393,6 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(157, 44);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(919, 337);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(154, 40);
-            this.btnCancel.TabIndex = 13;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // layoutControlItem10
             // 
@@ -375,13 +403,6 @@
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
-            // txtpercent1
-            // 
-            this.txtpercent1.Location = new System.Drawing.Point(879, 36);
-            this.txtpercent1.Name = "txtpercent1";
-            this.txtpercent1.Size = new System.Drawing.Size(194, 20);
-            this.txtpercent1.TabIndex = 14;
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.txtpercent1;
@@ -391,13 +412,6 @@
             this.layoutControlItem11.Text = "Phần Trăm Phần 1";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(114, 13);
             // 
-            // txtpercent2
-            // 
-            this.txtpercent2.Location = new System.Drawing.Point(879, 111);
-            this.txtpercent2.Name = "txtpercent2";
-            this.txtpercent2.Size = new System.Drawing.Size(194, 20);
-            this.txtpercent2.TabIndex = 15;
-            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.txtpercent2;
@@ -406,13 +420,6 @@
             this.layoutControlItem12.Size = new System.Drawing.Size(315, 24);
             this.layoutControlItem12.Text = "Phần Trăm Phần 2";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(114, 13);
-            // 
-            // txtpercent3
-            // 
-            this.txtpercent3.Location = new System.Drawing.Point(879, 187);
-            this.txtpercent3.Name = "txtpercent3";
-            this.txtpercent3.Size = new System.Drawing.Size(194, 20);
-            this.txtpercent3.TabIndex = 16;
             // 
             // layoutControlItem13
             // 
@@ -431,6 +438,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Syllabus_MethodMap_Dialog";
             this.Text = "GUI_Syllabus_MethodMap_Dialog";
+            this.Load += new System.EventHandler(this.GUI_Syllabus_MethodMap_Dialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -465,9 +473,9 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private System.Windows.Forms.TextBox txtpart1;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtmethod;
+        private System.Windows.Forms.RichTextBox rtpro;
+        private System.Windows.Forms.RichTextBox rtsys;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;

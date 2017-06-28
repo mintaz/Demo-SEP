@@ -40,6 +40,9 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gcMethodMap = new DevExpress.XtraGrid.GridControl();
             this.gvMethodMap = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SYSOUT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SYSPRO = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMethodMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMethodMap)).BeginInit();
@@ -78,6 +81,7 @@
             this.btnEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnEdit.LargeGlyph")));
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 0);
+            this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // btnDel
             // 
@@ -86,6 +90,7 @@
             this.btnDel.Id = 2;
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 0);
+            this.btnDel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDel_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -129,9 +134,46 @@
             // 
             // gvMethodMap
             // 
+            this.gvMethodMap.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.SYSOUT,
+            this.SYSPRO});
             this.gvMethodMap.GridControl = this.gcMethodMap;
             this.gvMethodMap.Name = "gvMethodMap";
             this.gvMethodMap.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gvMethodMap.OptionsFind.AlwaysVisible = true;
+            this.gvMethodMap.OptionsFind.FindDelay = 250;
+            this.gvMethodMap.OptionsFind.FindNullPrompt = "Nhập Từ Khóa để tìm kiếm...";
+            this.gvMethodMap.OptionsView.ShowGroupPanel = false;
+            this.gvMethodMap.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvMethodMap_FocusedRowChanged);
+            this.gvMethodMap.DoubleClick += new System.EventHandler(this.gvMethodMap_DoubleClick);
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "id";
+            this.ID.Name = "ID";
+            this.ID.OptionsColumn.AllowEdit = false;
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 0;
+            // 
+            // SYSOUT
+            // 
+            this.SYSOUT.Caption = "Chuẩn đầu ra Môn học";
+            this.SYSOUT.FieldName = "SyllabusOutcome";
+            this.SYSOUT.Name = "SYSOUT";
+            this.SYSOUT.OptionsColumn.AllowEdit = false;
+            this.SYSOUT.Visible = true;
+            this.SYSOUT.VisibleIndex = 1;
+            // 
+            // SYSPRO
+            // 
+            this.SYSPRO.Caption = "Chuẩn đầu ra Chương trình đào tạo";
+            this.SYSPRO.FieldName = "ProgramOutcome";
+            this.SYSPRO.Name = "SYSPRO";
+            this.SYSPRO.OptionsColumn.AllowEdit = false;
+            this.SYSPRO.Visible = true;
+            this.SYSPRO.VisibleIndex = 2;
             // 
             // GUI_Syllabus_MethodMapp
             // 
@@ -145,6 +187,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Syllabus_MethodMapp";
             this.Text = "GUI_Syllabus_MethodMapp";
+            this.Load += new System.EventHandler(this.GUI_Syllabus_MethodMapp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMethodMap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMethodMap)).EndInit();
@@ -165,5 +208,8 @@
         private DevExpress.XtraBars.BarLargeButtonItem btnDel;
         private DevExpress.XtraGrid.GridControl gcMethodMap;
         private DevExpress.XtraGrid.Views.Grid.GridView gvMethodMap;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn SYSOUT;
+        private DevExpress.XtraGrid.Columns.GridColumn SYSPRO;
     }
 }

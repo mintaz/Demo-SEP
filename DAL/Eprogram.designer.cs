@@ -36,9 +36,6 @@ namespace DAL
     partial void InsertSyllabusSchedule(SyllabusSchedule instance);
     partial void UpdateSyllabusSchedule(SyllabusSchedule instance);
     partial void DeleteSyllabusSchedule(SyllabusSchedule instance);
-    partial void InsertMapping(Mapping instance);
-    partial void UpdateMapping(Mapping instance);
-    partial void DeleteMapping(Mapping instance);
     partial void InsertProgram(Program instance);
     partial void UpdateProgram(Program instance);
     partial void DeleteProgram(Program instance);
@@ -57,6 +54,9 @@ namespace DAL
     partial void InsertTemplate(Template instance);
     partial void UpdateTemplate(Template instance);
     partial void DeleteTemplate(Template instance);
+    partial void InsertMapping(Mapping instance);
+    partial void UpdateMapping(Mapping instance);
+    partial void DeleteMapping(Mapping instance);
     #endregion
 		
 		public EprogramDataContext() : 
@@ -105,14 +105,6 @@ namespace DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<Mapping> Mappings
-		{
-			get
-			{
-				return this.GetTable<Mapping>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Program> Programs
 		{
 			get
@@ -158,6 +150,14 @@ namespace DAL
 			get
 			{
 				return this.GetTable<Template>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Mapping> Mappings
+		{
+			get
+			{
+				return this.GetTable<Mapping>();
 			}
 		}
 	}
@@ -559,349 +559,6 @@ namespace DAL
 					if ((value != null))
 					{
 						value.SyllabusSchedules.Add(this);
-						this._idSyllabus = value.id;
-					}
-					else
-					{
-						this._idSyllabus = default(string);
-					}
-					this.SendPropertyChanged("Syllabus");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Mapping")]
-	public partial class Mapping : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _id;
-		
-		private string _idSyllabus;
-		
-		private string _SyllabusOutcome;
-		
-		private string _Methods;
-		
-		private string _FirstPart;
-		
-		private System.Nullable<int> _FirstPercent;
-		
-		private string _SecondPart;
-		
-		private System.Nullable<int> _SecondPercent;
-		
-		private string _ThirdPart;
-		
-		private System.Nullable<int> _ThirdPercent;
-		
-		private string _ProgramOutcome;
-		
-		private EntityRef<Syllabus> _Syllabus;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(string value);
-    partial void OnidChanged();
-    partial void OnidSyllabusChanging(string value);
-    partial void OnidSyllabusChanged();
-    partial void OnSyllabusOutcomeChanging(string value);
-    partial void OnSyllabusOutcomeChanged();
-    partial void OnMethodsChanging(string value);
-    partial void OnMethodsChanged();
-    partial void OnFirstPartChanging(string value);
-    partial void OnFirstPartChanged();
-    partial void OnFirstPercentChanging(System.Nullable<int> value);
-    partial void OnFirstPercentChanged();
-    partial void OnSecondPartChanging(string value);
-    partial void OnSecondPartChanged();
-    partial void OnSecondPercentChanging(System.Nullable<int> value);
-    partial void OnSecondPercentChanged();
-    partial void OnThirdPartChanging(string value);
-    partial void OnThirdPartChanged();
-    partial void OnThirdPercentChanging(System.Nullable<int> value);
-    partial void OnThirdPercentChanged();
-    partial void OnProgramOutcomeChanging(string value);
-    partial void OnProgramOutcomeChanged();
-    #endregion
-		
-		public Mapping()
-		{
-			this._Syllabus = default(EntityRef<Syllabus>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idSyllabus", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string idSyllabus
-		{
-			get
-			{
-				return this._idSyllabus;
-			}
-			set
-			{
-				if ((this._idSyllabus != value))
-				{
-					if (this._Syllabus.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidSyllabusChanging(value);
-					this.SendPropertyChanging();
-					this._idSyllabus = value;
-					this.SendPropertyChanged("idSyllabus");
-					this.OnidSyllabusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyllabusOutcome", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string SyllabusOutcome
-		{
-			get
-			{
-				return this._SyllabusOutcome;
-			}
-			set
-			{
-				if ((this._SyllabusOutcome != value))
-				{
-					this.OnSyllabusOutcomeChanging(value);
-					this.SendPropertyChanging();
-					this._SyllabusOutcome = value;
-					this.SendPropertyChanged("SyllabusOutcome");
-					this.OnSyllabusOutcomeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Methods", DbType="NVarChar(MAX)")]
-		public string Methods
-		{
-			get
-			{
-				return this._Methods;
-			}
-			set
-			{
-				if ((this._Methods != value))
-				{
-					this.OnMethodsChanging(value);
-					this.SendPropertyChanging();
-					this._Methods = value;
-					this.SendPropertyChanged("Methods");
-					this.OnMethodsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstPart", DbType="NVarChar(100)")]
-		public string FirstPart
-		{
-			get
-			{
-				return this._FirstPart;
-			}
-			set
-			{
-				if ((this._FirstPart != value))
-				{
-					this.OnFirstPartChanging(value);
-					this.SendPropertyChanging();
-					this._FirstPart = value;
-					this.SendPropertyChanged("FirstPart");
-					this.OnFirstPartChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstPercent", DbType="Int")]
-		public System.Nullable<int> FirstPercent
-		{
-			get
-			{
-				return this._FirstPercent;
-			}
-			set
-			{
-				if ((this._FirstPercent != value))
-				{
-					this.OnFirstPercentChanging(value);
-					this.SendPropertyChanging();
-					this._FirstPercent = value;
-					this.SendPropertyChanged("FirstPercent");
-					this.OnFirstPercentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecondPart", DbType="NVarChar(100)")]
-		public string SecondPart
-		{
-			get
-			{
-				return this._SecondPart;
-			}
-			set
-			{
-				if ((this._SecondPart != value))
-				{
-					this.OnSecondPartChanging(value);
-					this.SendPropertyChanging();
-					this._SecondPart = value;
-					this.SendPropertyChanged("SecondPart");
-					this.OnSecondPartChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecondPercent", DbType="Int")]
-		public System.Nullable<int> SecondPercent
-		{
-			get
-			{
-				return this._SecondPercent;
-			}
-			set
-			{
-				if ((this._SecondPercent != value))
-				{
-					this.OnSecondPercentChanging(value);
-					this.SendPropertyChanging();
-					this._SecondPercent = value;
-					this.SendPropertyChanged("SecondPercent");
-					this.OnSecondPercentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThirdPart", DbType="NVarChar(100)")]
-		public string ThirdPart
-		{
-			get
-			{
-				return this._ThirdPart;
-			}
-			set
-			{
-				if ((this._ThirdPart != value))
-				{
-					this.OnThirdPartChanging(value);
-					this.SendPropertyChanging();
-					this._ThirdPart = value;
-					this.SendPropertyChanged("ThirdPart");
-					this.OnThirdPartChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThirdPercent", DbType="Int")]
-		public System.Nullable<int> ThirdPercent
-		{
-			get
-			{
-				return this._ThirdPercent;
-			}
-			set
-			{
-				if ((this._ThirdPercent != value))
-				{
-					this.OnThirdPercentChanging(value);
-					this.SendPropertyChanging();
-					this._ThirdPercent = value;
-					this.SendPropertyChanged("ThirdPercent");
-					this.OnThirdPercentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramOutcome", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string ProgramOutcome
-		{
-			get
-			{
-				return this._ProgramOutcome;
-			}
-			set
-			{
-				if ((this._ProgramOutcome != value))
-				{
-					this.OnProgramOutcomeChanging(value);
-					this.SendPropertyChanging();
-					this._ProgramOutcome = value;
-					this.SendPropertyChanged("ProgramOutcome");
-					this.OnProgramOutcomeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Syllabus_Mapping", Storage="_Syllabus", ThisKey="idSyllabus", OtherKey="id", IsForeignKey=true)]
-		public Syllabus Syllabus
-		{
-			get
-			{
-				return this._Syllabus.Entity;
-			}
-			set
-			{
-				Syllabus previousValue = this._Syllabus.Entity;
-				if (((previousValue != value) 
-							|| (this._Syllabus.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Syllabus.Entity = null;
-						previousValue.Mappings.Remove(this);
-					}
-					this._Syllabus.Entity = value;
-					if ((value != null))
-					{
-						value.Mappings.Add(this);
 						this._idSyllabus = value.id;
 					}
 					else
@@ -1657,11 +1314,11 @@ namespace DAL
 		
 		private EntitySet<SyllabusSchedule> _SyllabusSchedules;
 		
-		private EntitySet<Mapping> _Mappings;
-		
 		private EntitySet<SyllabusObjective> _SyllabusObjectives;
 		
 		private EntitySet<SyllabusOutcome> _SyllabusOutcomes;
+		
+		private EntitySet<Mapping> _Mappings;
 		
 		private EntityRef<Program> _Program;
 		
@@ -1712,9 +1369,9 @@ namespace DAL
 		public Syllabus()
 		{
 			this._SyllabusSchedules = new EntitySet<SyllabusSchedule>(new Action<SyllabusSchedule>(this.attach_SyllabusSchedules), new Action<SyllabusSchedule>(this.detach_SyllabusSchedules));
-			this._Mappings = new EntitySet<Mapping>(new Action<Mapping>(this.attach_Mappings), new Action<Mapping>(this.detach_Mappings));
 			this._SyllabusObjectives = new EntitySet<SyllabusObjective>(new Action<SyllabusObjective>(this.attach_SyllabusObjectives), new Action<SyllabusObjective>(this.detach_SyllabusObjectives));
 			this._SyllabusOutcomes = new EntitySet<SyllabusOutcome>(new Action<SyllabusOutcome>(this.attach_SyllabusOutcomes), new Action<SyllabusOutcome>(this.detach_SyllabusOutcomes));
+			this._Mappings = new EntitySet<Mapping>(new Action<Mapping>(this.attach_Mappings), new Action<Mapping>(this.detach_Mappings));
 			this._Program = default(EntityRef<Program>);
 			OnCreated();
 		}
@@ -2116,19 +1773,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Syllabus_Mapping", Storage="_Mappings", ThisKey="id", OtherKey="idSyllabus")]
-		public EntitySet<Mapping> Mappings
-		{
-			get
-			{
-				return this._Mappings;
-			}
-			set
-			{
-				this._Mappings.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Syllabus_SyllabusObjective", Storage="_SyllabusObjectives", ThisKey="id", OtherKey="idSyllabus")]
 		public EntitySet<SyllabusObjective> SyllabusObjectives
 		{
@@ -2152,6 +1796,19 @@ namespace DAL
 			set
 			{
 				this._SyllabusOutcomes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Syllabus_Mapping", Storage="_Mappings", ThisKey="id", OtherKey="idSyllabus")]
+		public EntitySet<Mapping> Mappings
+		{
+			get
+			{
+				return this._Mappings;
+			}
+			set
+			{
+				this._Mappings.Assign(value);
 			}
 		}
 		
@@ -2221,18 +1878,6 @@ namespace DAL
 			entity.Syllabus = null;
 		}
 		
-		private void attach_Mappings(Mapping entity)
-		{
-			this.SendPropertyChanging();
-			entity.Syllabus = this;
-		}
-		
-		private void detach_Mappings(Mapping entity)
-		{
-			this.SendPropertyChanging();
-			entity.Syllabus = null;
-		}
-		
 		private void attach_SyllabusObjectives(SyllabusObjective entity)
 		{
 			this.SendPropertyChanging();
@@ -2252,6 +1897,18 @@ namespace DAL
 		}
 		
 		private void detach_SyllabusOutcomes(SyllabusOutcome entity)
+		{
+			this.SendPropertyChanging();
+			entity.Syllabus = null;
+		}
+		
+		private void attach_Mappings(Mapping entity)
+		{
+			this.SendPropertyChanging();
+			entity.Syllabus = this;
+		}
+		
+		private void detach_Mappings(Mapping entity)
 		{
 			this.SendPropertyChanging();
 			entity.Syllabus = null;
@@ -2669,6 +2326,373 @@ namespace DAL
 					this._ND = value;
 					this.SendPropertyChanged("ND");
 					this.OnNDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Mapping")]
+	public partial class Mapping : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _id;
+		
+		private string _idSyllabus;
+		
+		private string _SyllabusOutcome;
+		
+		private string _Methods;
+		
+		private string _FirstPart;
+		
+		private System.Nullable<int> _FirstPercent;
+		
+		private string _SecondPart;
+		
+		private System.Nullable<int> _SecondPercent;
+		
+		private string _ThirdPart;
+		
+		private System.Nullable<int> _ThirdPercent;
+		
+		private string _ProgramOutcome;
+		
+		private System.Nullable<int> _desity;
+		
+		private EntityRef<Syllabus> _Syllabus;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(string value);
+    partial void OnidChanged();
+    partial void OnidSyllabusChanging(string value);
+    partial void OnidSyllabusChanged();
+    partial void OnSyllabusOutcomeChanging(string value);
+    partial void OnSyllabusOutcomeChanged();
+    partial void OnMethodsChanging(string value);
+    partial void OnMethodsChanged();
+    partial void OnFirstPartChanging(string value);
+    partial void OnFirstPartChanged();
+    partial void OnFirstPercentChanging(System.Nullable<int> value);
+    partial void OnFirstPercentChanged();
+    partial void OnSecondPartChanging(string value);
+    partial void OnSecondPartChanged();
+    partial void OnSecondPercentChanging(System.Nullable<int> value);
+    partial void OnSecondPercentChanged();
+    partial void OnThirdPartChanging(string value);
+    partial void OnThirdPartChanged();
+    partial void OnThirdPercentChanging(System.Nullable<int> value);
+    partial void OnThirdPercentChanged();
+    partial void OnProgramOutcomeChanging(string value);
+    partial void OnProgramOutcomeChanged();
+    partial void OndesityChanging(System.Nullable<int> value);
+    partial void OndesityChanged();
+    #endregion
+		
+		public Mapping()
+		{
+			this._Syllabus = default(EntityRef<Syllabus>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idSyllabus", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string idSyllabus
+		{
+			get
+			{
+				return this._idSyllabus;
+			}
+			set
+			{
+				if ((this._idSyllabus != value))
+				{
+					if (this._Syllabus.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidSyllabusChanging(value);
+					this.SendPropertyChanging();
+					this._idSyllabus = value;
+					this.SendPropertyChanged("idSyllabus");
+					this.OnidSyllabusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyllabusOutcome", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SyllabusOutcome
+		{
+			get
+			{
+				return this._SyllabusOutcome;
+			}
+			set
+			{
+				if ((this._SyllabusOutcome != value))
+				{
+					this.OnSyllabusOutcomeChanging(value);
+					this.SendPropertyChanging();
+					this._SyllabusOutcome = value;
+					this.SendPropertyChanged("SyllabusOutcome");
+					this.OnSyllabusOutcomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Methods", DbType="NVarChar(MAX)")]
+		public string Methods
+		{
+			get
+			{
+				return this._Methods;
+			}
+			set
+			{
+				if ((this._Methods != value))
+				{
+					this.OnMethodsChanging(value);
+					this.SendPropertyChanging();
+					this._Methods = value;
+					this.SendPropertyChanged("Methods");
+					this.OnMethodsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstPart", DbType="NVarChar(100)")]
+		public string FirstPart
+		{
+			get
+			{
+				return this._FirstPart;
+			}
+			set
+			{
+				if ((this._FirstPart != value))
+				{
+					this.OnFirstPartChanging(value);
+					this.SendPropertyChanging();
+					this._FirstPart = value;
+					this.SendPropertyChanged("FirstPart");
+					this.OnFirstPartChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstPercent", DbType="Int")]
+		public System.Nullable<int> FirstPercent
+		{
+			get
+			{
+				return this._FirstPercent;
+			}
+			set
+			{
+				if ((this._FirstPercent != value))
+				{
+					this.OnFirstPercentChanging(value);
+					this.SendPropertyChanging();
+					this._FirstPercent = value;
+					this.SendPropertyChanged("FirstPercent");
+					this.OnFirstPercentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecondPart", DbType="NVarChar(100)")]
+		public string SecondPart
+		{
+			get
+			{
+				return this._SecondPart;
+			}
+			set
+			{
+				if ((this._SecondPart != value))
+				{
+					this.OnSecondPartChanging(value);
+					this.SendPropertyChanging();
+					this._SecondPart = value;
+					this.SendPropertyChanged("SecondPart");
+					this.OnSecondPartChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecondPercent", DbType="Int")]
+		public System.Nullable<int> SecondPercent
+		{
+			get
+			{
+				return this._SecondPercent;
+			}
+			set
+			{
+				if ((this._SecondPercent != value))
+				{
+					this.OnSecondPercentChanging(value);
+					this.SendPropertyChanging();
+					this._SecondPercent = value;
+					this.SendPropertyChanged("SecondPercent");
+					this.OnSecondPercentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThirdPart", DbType="NVarChar(100)")]
+		public string ThirdPart
+		{
+			get
+			{
+				return this._ThirdPart;
+			}
+			set
+			{
+				if ((this._ThirdPart != value))
+				{
+					this.OnThirdPartChanging(value);
+					this.SendPropertyChanging();
+					this._ThirdPart = value;
+					this.SendPropertyChanged("ThirdPart");
+					this.OnThirdPartChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThirdPercent", DbType="Int")]
+		public System.Nullable<int> ThirdPercent
+		{
+			get
+			{
+				return this._ThirdPercent;
+			}
+			set
+			{
+				if ((this._ThirdPercent != value))
+				{
+					this.OnThirdPercentChanging(value);
+					this.SendPropertyChanging();
+					this._ThirdPercent = value;
+					this.SendPropertyChanged("ThirdPercent");
+					this.OnThirdPercentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProgramOutcome", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ProgramOutcome
+		{
+			get
+			{
+				return this._ProgramOutcome;
+			}
+			set
+			{
+				if ((this._ProgramOutcome != value))
+				{
+					this.OnProgramOutcomeChanging(value);
+					this.SendPropertyChanging();
+					this._ProgramOutcome = value;
+					this.SendPropertyChanged("ProgramOutcome");
+					this.OnProgramOutcomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_desity", DbType="Int")]
+		public System.Nullable<int> desity
+		{
+			get
+			{
+				return this._desity;
+			}
+			set
+			{
+				if ((this._desity != value))
+				{
+					this.OndesityChanging(value);
+					this.SendPropertyChanging();
+					this._desity = value;
+					this.SendPropertyChanged("desity");
+					this.OndesityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Syllabus_Mapping", Storage="_Syllabus", ThisKey="idSyllabus", OtherKey="id", IsForeignKey=true)]
+		public Syllabus Syllabus
+		{
+			get
+			{
+				return this._Syllabus.Entity;
+			}
+			set
+			{
+				Syllabus previousValue = this._Syllabus.Entity;
+				if (((previousValue != value) 
+							|| (this._Syllabus.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Syllabus.Entity = null;
+						previousValue.Mappings.Remove(this);
+					}
+					this._Syllabus.Entity = value;
+					if ((value != null))
+					{
+						value.Mappings.Add(this);
+						this._idSyllabus = value.id;
+					}
+					else
+					{
+						this._idSyllabus = default(string);
+					}
+					this.SendPropertyChanged("Syllabus");
 				}
 			}
 		}
