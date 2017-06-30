@@ -170,8 +170,7 @@ namespace Demo.GUI.Program
         string temp;
         private void btnSave_Click(object sender, EventArgs e)
         {
-            bool isempty = false;
-            
+            bool isempty = false;           
             string name = txtCourseName.Text;
             string code = txtCourseCode.Text;
             int TC = int.Parse(txtCoursePoint.Text);
@@ -185,25 +184,32 @@ namespace Demo.GUI.Program
                 isempty = true;
                 temp = temp + dc.successcreatsyllabus("name") +"\n";
             }
-            if( code == null || code == "")
+            if( code == null || code == "" )
             {
                 isempty = true;
-                temp = temp+ dc.successcreatsyllabus("code");
+                if (sys.checkexist(code) == true)
+                {
+                    temp = temp + dc.successcreatsyllabus("exist") + "\n";
+                }
+                else
+                {
+                    temp = temp + dc.successcreatsyllabus("code") + "\n";
+                }
             }
             if (txtCoursePoint.Text == null || txtCoursePoint.Text == "")
             {
                 isempty = true;
-                temp = temp+ dc.successcreatsyllabus("TC");
+                temp = temp+ dc.successcreatsyllabus("TC") +"\n";
             }
             if( txtLTtime.Text == null || txtLTtime.Text == "")
             {
                 isempty = true;
-                temp = temp + dc.successcreatsyllabus("LT");
+                temp = temp + dc.successcreatsyllabus("LT") + "\n";
             }
             if(cont == null || cont == "")
             {
                 isempty = true;
-                temp = temp + dc.successcreatsyllabus("content");
+                temp = temp + dc.successcreatsyllabus("content") + "\n";
             }
             if (isempty == false)
             {

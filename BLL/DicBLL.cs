@@ -17,6 +17,8 @@ namespace BLL
         {
             switch (mes)
             {
+                case "over":
+                    return "Số tiết học vượt quá quy định.";
                 case "success":
                     return "Lưu ngày học của môn học thành công.";
                 case "edit":
@@ -120,6 +122,8 @@ namespace BLL
         {
             switch (sc)
             {
+                case "exist":
+                    return "Trùng mã môn học.";
                 case "success":
                     return "Tạo môn học thành công.";
                 case "edit":

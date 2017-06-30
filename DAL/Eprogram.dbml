@@ -10,6 +10,30 @@
       <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Template" Member="Templates">
+    <Type Name="Template">
+      <Column Name="id" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ND" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mapping" Member="Mappings">
+    <Type Name="Mapping">
+      <Column Name="id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idSyllabus" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SyllabusOutcome" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Methods" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FirstPart" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FirstPercent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SecondPart" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SecondPercent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThirdPart" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ThirdPercent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProgramOutcome" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="desity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Syllabus_Mapping" Member="Syllabus" ThisKey="idSyllabus" OtherKey="id" Type="Syllabus" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Program" Member="Programs">
     <Type Name="Program">
       <Column Name="id" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -63,9 +87,9 @@
       <Column Name="idAccount" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
       <Column Name="isLockEdit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="CourseLT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Syllabus_Mapping" Member="Mappings" ThisKey="id" OtherKey="idSyllabus" Type="Mapping" />
       <Association Name="Syllabus_SyllabusObjective" Member="SyllabusObjectives" ThisKey="id" OtherKey="idSyllabus" Type="SyllabusObjective" />
       <Association Name="Syllabus_SyllabusOutcome" Member="SyllabusOutcomes" ThisKey="id" OtherKey="idSyllabus" Type="SyllabusOutcome" />
-      <Association Name="Syllabus_Mapping" Member="Mappings" ThisKey="id" OtherKey="idSyllabus" Type="Mapping" />
       <Association Name="Syllabus_SyllabusSchedule" Member="SyllabusSchedules" ThisKey="id" OtherKey="idSyllabus" Type="SyllabusSchedule" />
       <Association Name="Program_Syllabus" Member="Program" ThisKey="idProgram" OtherKey="id" Type="Program" IsForeignKey="true" />
     </Type>
@@ -85,30 +109,6 @@
       <Column Name="OutcomeNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="OutcomeContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="Syllabus_SyllabusOutcome" Member="Syllabus" ThisKey="idSyllabus" OtherKey="id" Type="Syllabus" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Template" Member="Templates">
-    <Type Name="Template">
-      <Column Name="id" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ND" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Mapping" Member="Mappings">
-    <Type Name="Mapping">
-      <Column Name="id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="idSyllabus" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="SyllabusOutcome" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Methods" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="FirstPart" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="FirstPercent" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SecondPart" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="SecondPercent" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ThirdPart" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ThirdPercent" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ProgramOutcome" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="desity" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Syllabus_Mapping" Member="Syllabus" ThisKey="idSyllabus" OtherKey="id" Type="Syllabus" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.SyllabusSchedule" Member="SyllabusSchedules">

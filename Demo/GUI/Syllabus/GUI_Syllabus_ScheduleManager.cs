@@ -18,12 +18,13 @@ namespace Demo.GUI.Syllabus
             InitializeComponent();
         }
         public string idS = "";
-        public string idsche = "";
         int index;
         ScheduleBLL sche = new ScheduleBLL();
+        EprogramDataContext db = new EprogramDataContext();
         void loadata()
         {
-            gcSchedule.DataSource = sche.ListSche(idS);
+            EprogramDataContext dbnew = new EprogramDataContext();
+            gcSchedule.DataSource = dbnew.SyllabusSchedules.Where(x => x.idSyllabus == idS).ToList();
         }
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -38,6 +39,7 @@ namespace Demo.GUI.Syllabus
             string id = gvSchedule.GetRowCellValue(index, this.ID).ToString();
             GUI.Syllabus.GUI_Syllabus_Schedule ScheEdit = new GUI_Syllabus_Schedule();
             ScheEdit.id = id;
+            ScheEdit.idS = idS;
             ScheEdit.ShowDialog();
             loadata();
         }
@@ -55,8 +57,8 @@ namespace Demo.GUI.Syllabus
                 {
                     MessageBox.Show(dc.schedule("else"));
                 }
-                loadata();
             }
+            loadata();
         }
 
         private void GUI_Syllabus_ScheduleManager_Load(object sender, EventArgs e)

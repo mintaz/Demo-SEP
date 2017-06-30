@@ -100,6 +100,7 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(386, 20);
             this.txtPass.TabIndex = 5;
+            this.txtPass.Text = "vanlang";
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // txtEmail
@@ -108,6 +109,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(386, 20);
             this.txtEmail.TabIndex = 4;
+            this.txtEmail.Text = "sys@gmail.com";
             this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // layoutControlGroup1

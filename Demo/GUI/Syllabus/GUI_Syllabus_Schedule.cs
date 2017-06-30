@@ -27,7 +27,7 @@ namespace Demo.GUI.Syllabus
             string con = rtContent.Text;
             string doc = rtDoc.Text;
             bool mid = false;
-            if(ckMid.Checked == true)
+            if (ckMid.Checked == true)
             {
                 mid = true;
                 act = "";
@@ -43,33 +43,60 @@ namespace Demo.GUI.Syllabus
             }
             DateTime dt = dtTime.Value.Date;
             int number = int.Parse(txtPeriods.Text);
-            if(id == "")
+
+
+            if (id == "")
             {
-                if(ss.AddSche(idS,dt,number,con,act,doc,mid) == true)
+                if (ss.check(idS, number) == false)
                 {
-                    MessageBox.Show(dc.schedule("success"));
+                    if (ss.AddSche(idS, dt, number, con, act, doc, mid) == true)
+                    {
+                        MessageBox.Show(dc.schedule("success"));
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(dc.schedule("else"));
+                    }
                 }
                 else
                 {
-                    MessageBox.Show(dc.schedule("else"));
+                    MessageBox.Show(dc.schedule("over") + "\nVui lòng kiểm tra lại");
                 }
             }
             else
             {
-                if (ss.EditSche(id, dt, number, con, act, doc, mid) == true)
+
+                int oldnum = ss.SingleSche(id).Single().NumberPeriods.Value;
+                int newnum = 0;
+                try
                 {
-                    MessageBox.Show(dc.schedule("edit"));
+                    newnum = int.Parse(txtPeriods.Text);
                 }
+                catch
+                {
+                    newnum = 0;
+                }
+                if (newnum <= (int.Parse(txtcount.Text) + oldnum))
+                    if (ss.EditSche(id, dt, number, con, act, doc, mid) == true)
+                    {
+                        MessageBox.Show(dc.schedule("edit"));
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(dc.schedule("else"));
+                    }
                 else
                 {
-                    MessageBox.Show(dc.schedule("else"));
+                    MessageBox.Show(dc.schedule("over") + "\nVui lòng kiểm tra lại");
                 }
             }
         }
         ScheduleBLL ss = new ScheduleBLL();
-        private void GUI_Syllabus_Schedule_Load(object sender, EventArgs e)
+        void loaddata()
         {
-            if(id != "")
+            if (id != "")
             {
                 rtAct.Text = ss.SingleSche(id).Single().Activites;
                 rtContent.Text = ss.SingleSche(id).Single().LectureContent;
@@ -86,11 +113,21 @@ namespace Demo.GUI.Syllabus
                 rtDoc.Text = "";
                 txtPeriods.Text = "";
             }
+            txtcount.Text = ss.getsto(idS);
+        }
+        private void GUI_Syllabus_Schedule_Load(object sender, EventArgs e)
+        {
+            txtcount.ReadOnly = true;
+            loaddata();
         }
 
         private void txtPeriods_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+       (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

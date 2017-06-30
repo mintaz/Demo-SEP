@@ -89,6 +89,7 @@ namespace BLL
                 addmap.idSyllabus = idS;
                 addmap.ProgramOutcome = program;
                 addmap.SyllabusOutcome = sys;
+                addmap.desity = 0;
                 db.Mappings.InsertOnSubmit(addmap);
                 db.SubmitChanges();
                 return true;
@@ -123,6 +124,14 @@ namespace BLL
                 return new List<string>();
             }
         }
+
+        public void DelMapfromSyOut(string idOut)
+        {
+            Mapping mapdel2 = db.Mappings.Where(del => del.SyllabusOutcome == idOut).Single();
+            db.Mappings.DeleteOnSubmit(mapdel2);
+            db.SubmitChanges();
+        }
+
 
         public bool DelMap(string idS)
         {

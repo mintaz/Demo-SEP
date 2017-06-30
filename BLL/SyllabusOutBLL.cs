@@ -89,8 +89,9 @@ namespace BLL
             try
             {
                 SyllabusOutcome outdel = db.SyllabusOutcomes.Where(del => del.id == id).Single();
-                mapz.DelMap(id);
+                mapz.DelMapfromSyOut(id);
                 db.SyllabusOutcomes.DeleteOnSubmit(outdel);
+
                 db.SubmitChanges();
                 return true;
             }

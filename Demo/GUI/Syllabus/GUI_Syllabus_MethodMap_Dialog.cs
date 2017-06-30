@@ -32,12 +32,18 @@ namespace Demo.GUI.Syllabus
             txtpercent2.Text = map.singlemap(idmap).Single().FirstPercent.ToString();
             txtpercent3.Text = map.singlemap(idmap).Single().FirstPercent.ToString();
             txtdesity.Text = map.singlemap(idmap).Single().desity.ToString();
-            int count = 0;
-            foreach ( var item in map.listmap(ids))
+            int count = 100;
+            try
             {
-                count += item.desity.Value;
-            };
-            txtcount.Text = count.ToString();
+                foreach (Mapping item in map.listmap(ids))
+                {
+                    count -= int.Parse(item.desity.Value.ToString());
+                };
+            }catch
+            {
+                count = 100;
+            }
+            txtcount.Text = count.ToString()+"%";
             txtcount.ReadOnly = true;
             rtsys.ReadOnly = true;
             rtpro.ReadOnly = true;
@@ -97,11 +103,13 @@ namespace Demo.GUI.Syllabus
                 temp += dc.errormethod("des") + "\n";
                 isempty = true;
             }
-            int count = 0;
-            foreach (var item in map.listmap(ids))
-            {
-                count += item.desity.Value;
-            };
+            int count = 100;
+
+                foreach (Mapping item in map.listmap(ids))
+                {
+                    count -= int.Parse(item.desity.Value.ToString());
+                };
+
             if (des > count)
             {
                 isover = true;

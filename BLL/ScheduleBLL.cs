@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using System.Reflection;
+
 namespace BLL
 {
     public class ScheduleBLL
     {
         EprogramDataContext db = new EprogramDataContext();
-        
+
         public List<SyllabusSchedule> SingleSche(string id)
         {
             return db.SyllabusSchedules.Where(s => s.id == id).ToList();
@@ -17,6 +19,69 @@ namespace BLL
         public List<SyllabusSchedule> ListSche(string idS)
         {
             return db.SyllabusSchedules.Where(s => s.idSyllabus == idS).ToList();
+        }
+
+        public bool isEdit(string id, int number)
+        {
+            try
+            {
+                SyllabusSchedule sc = db.SyllabusSchedules.Where(sz => sz.id == id).Single();
+                if(sc.NumberPeriods == number)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public string getsto(string idS)
+        {
+            try
+            {
+                int count = 0;
+                foreach (SyllabusSchedule item in db.SyllabusSchedules.Where(st => st.idSyllabus == idS))
+                {
+                    count += item.NumberPeriods.Value;
+                }
+                int total = (db.Syllabus.Where(st => st.id == idS).Single().CoursePoint.Value) * 15;
+                int stor = total - count;
+                return stor.ToString();
+            }
+            catch
+            {
+                return "0";
+            }
+        }
+        public bool check(string idS, int period)
+        {
+            try
+            {
+                int count = 0;
+                foreach (SyllabusSchedule item in db.SyllabusSchedules.Where(st => st.idSyllabus == idS))
+                {
+                    count += item.NumberPeriods.Value;
+                }
+                int total = (db.Syllabus.Where(st => st.id == idS).Single().CoursePoint.Value) * 15;
+                int stor = total - count;
+                if (period > stor)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         string createScheID()

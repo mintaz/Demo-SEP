@@ -49,6 +49,25 @@ namespace BLL
             return db.Syllabus.Where(s => s.id == id).ToList();
         }
 
+        public bool checkexist(string code)
+        {
+            try
+            {
+                int count = db.Syllabus.Where(st => st.CourseCode == code).Count();
+                if(count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public List<Syllabus> loadpre(string list1)
         {
             string[] ar;

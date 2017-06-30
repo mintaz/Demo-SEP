@@ -317,6 +317,7 @@ namespace Demo
                 {
                     GUI.Syllabus.GUI_Syllabus_MethodMapp formsyllabusmethodmap = new GUI.Syllabus.GUI_Syllabus_MethodMapp();
                     formsyllabusmethodmap.MdiParent = this;
+                    formsyllabusmethodmap.idS = idpathsy;
                     formsyllabusmethodmap.Show();
                 }
             }
