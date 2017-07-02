@@ -26,6 +26,7 @@ C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\System.ComponentModel.Da
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\System.Configuration.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\System.Data.DataSetExtensions.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\System.Data.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\System.Data.Linq.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\System.Deployment.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\System.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\System.Drawing.dll
@@ -120,6 +121,9 @@ C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Account.GUI_Acc
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.GUI_Account_Manager_AddEdit.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.GUI_Account_ResetPass.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Print.GUI_Print_PrintAll.resources
+C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Print.GUI_Print_Program.resources
+C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Print.GUI_Print_Syllabus.resources
+C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Program.GUI_Enter_Pass.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_CreateSyllabus.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_Lecturer.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_List.resources
@@ -152,6 +156,3 @@ C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.csproj.GenerateReso
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.exe.licenses
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.exe
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.pdb
-C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Print.GUI_Print_Program.resources
-C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Print.GUI_Print_Syllabus.resources
-C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Program.GUI_Enter_Pass.resources

@@ -13,6 +13,14 @@ C:\Users\ppchu\OneDrive\Documents\GitHub\Demo-SEP\DAL\obj\Debug\DAL.pdb
 C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\DAL.dll.config
 C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\DAL.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\DAL.pdb
+C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\System.Data.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\System.Data.Linq.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\System.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\System.Net.Http.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\System.Xml.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\System.Xml.Linq.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\obj\Debug\DAL.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\obj\Debug\DAL.pdb
