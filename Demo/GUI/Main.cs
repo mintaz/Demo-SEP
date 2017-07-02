@@ -86,6 +86,7 @@ namespace Demo
                 pageProgramGeneralInfo.Visible = false;
                 pagePrint.Visible = false;
                 btnProgramCreateSyllabus.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                pagesubmit.Visible = false;
             }
             
         }
