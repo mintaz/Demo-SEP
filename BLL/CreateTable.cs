@@ -121,6 +121,44 @@ namespace BLL
             return Tabler;
         }
 
+        private Table CreateMappingTableAfter(Table t, ref DocX document, string idSyllabus, string idProgram)
+        {
+            var data = db.Mappings.Where(map => map.idSyllabus == idSyllabus).ToList();
+            int col = db.SyllabusOutcomes.Where(syou => syou.idSyllabus == idSyllabus).Count();
+            int row = db.ProgramOutcomes.Where(prou => prou.idProgram == idProgram).Count();
+            var Tablemap = t.InsertTableAfterSelf(col + 1, row + 1);
+            var tableTitle = new Formatting();
+            tableTitle.Bold = true;
+            int indexpro = 1;
+            foreach( ProgramOutcome pro in db.ProgramOutcomes.Where(pr => pr.idProgram == idProgram).ToList())
+            {
+                Tablemap.Rows[indexpro].Cells[0].InsertParagraph(pro.OutcomeNo, false);
+                indexpro++;
+            }
+            int indexsys = 1;
+            foreach (SyllabusOutcome sys in db.SyllabusOutcomes.Where(s => s.idSyllabus == idSyllabus).ToList())
+            {
+                Tablemap.Rows[0].Cells[indexsys].InsertParagraph(sys.OutcomeNo, false);
+                indexpro++;
+            }
+            int index = 1;
+            MappingBLL maplist = new MappingBLL();
+            foreach(var item in data)
+            {
+                var list = maplist.loadcheckedlist(item.ProgramOutcome);
+                for(int i= 1; i<= col; i++)
+                {
+                    if (list.Contains(Tablemap.Rows[0].Cells[i].ToString()))
+                    {
+                        Tablemap.Rows[index].Cells[i].InsertParagraph("X", false);
+                    }
+                }
+                index++;
+            }
+
+            return Tablemap ;
+        }
+
 
 
 
