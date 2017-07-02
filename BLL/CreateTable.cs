@@ -39,9 +39,8 @@ namespace BLL
             var t1 = temp.Tables[1];
             CreateAndInsertCourseTableAfter(t, ref temp,idProgram);
             CreateAndInsertDetailTableAfter(t1, ref temp, idProgram, 1);
+            t1.Remove();
             t.Remove();
-
-
             return temp;
         }
         public string programoutcomeslist(string id,int type)
@@ -94,10 +93,10 @@ namespace BLL
         {
             var data = db.Syllabus.Where(sys => sys.idProgram == idprogram && sys.CourseSemester == numb).ToList();
 
-            var Tabler = t.InsertTableAfterSelf(data.Count + 1, 7);
+            var Tabler = t.InsertTableAfterSelf(data.Count + 2, 7);
             var tableTitle = new Formatting();
             tableTitle.Bold = true;
-            Tabler.Rows[0].Cells[0].InsertParagraph("Học Kỳ"+numb.ToString(), false, tableTitle);
+            Tabler.Rows[0].Cells[0].InsertParagraph("Học Kỳ "+numb.ToString(), false);
             Tabler.Rows[0].MergeCells(0, 6);
             Tabler.Rows[1].Cells[0].InsertParagraph("STT", false, tableTitle);
             Tabler.Rows[1].Cells[1].InsertParagraph("Mã MH", false, tableTitle);
@@ -119,14 +118,8 @@ namespace BLL
                 Tabler.Rows[index].Cells[6].InsertParagraph(((item.CoursePoint-item.CourseLT) * 15).ToString(), false);
                 index++;
             }
-
-
             return Tabler;
         }
-
-
-
-
 
 
 
