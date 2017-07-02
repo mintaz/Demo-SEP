@@ -1672,7 +1672,7 @@ namespace DAL
 		
 		private string _CourseContent;
 		
-		private System.Data.Linq.Binary _CourseLecturer;
+		private string _CourseLecturer;
 		
 		private string _CourseLevel;
 		
@@ -1724,7 +1724,7 @@ namespace DAL
     partial void OnPreCourseChanged();
     partial void OnCourseContentChanging(string value);
     partial void OnCourseContentChanged();
-    partial void OnCourseLecturerChanging(System.Data.Linq.Binary value);
+    partial void OnCourseLecturerChanging(string value);
     partial void OnCourseLecturerChanged();
     partial void OnCourseLevelChanging(string value);
     partial void OnCourseLevelChanged();
@@ -1940,8 +1940,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseLecturer", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary CourseLecturer
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseLecturer", DbType="NVarChar(MAX)")]
+		public string CourseLecturer
 		{
 			get
 			{

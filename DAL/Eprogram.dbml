@@ -83,7 +83,7 @@
       <Column Name="CourseCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="PreCourse" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="CourseContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CourseLecturer" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CourseLecturer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CourseLevel" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="CourseTime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="CourseDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />

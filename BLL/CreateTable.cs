@@ -60,6 +60,124 @@ namespace BLL
             }
         }
 
+        public string syllabusobje(string id)
+        {
+            string str = "";
+            try
+            {
+                foreach (var item in db.SyllabusObjectives.Where(st => st.id == id).ToList())
+                {
+                    str = str + item.ObjSContent + "\n";
+                }
+                return str;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        public string syllabusoutcomeslist(string id)
+        {
+            string str = "";
+            try
+            {
+                foreach (var item in db.SyllabusOutcomes.Where(st => st.id == id).ToList())
+                {
+                    str = str + item.OutcomeNo +". " + item.OutcomeContent + "\n";
+                }
+                return str;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        public DocX fillSyllabus(DocX temp1, string idSyllabus,string idprogram)
+        {
+            Syllabus sylfill = db.Syllabus.Where(pro => pro.id == idSyllabus).Single();
+            Program profill2 = db.Programs.Where(pro => pro.id == idprogram).Single();
+            string idacc = sylfill.idAccount;
+            string name = db.Accounts.Where(ac => ac.id == idacc).Single().name;
+            temp1.ReplaceText("[SyllabusName]", sylfill.name, false);
+            temp1.ReplaceText("[SyllabusCode]", sylfill.CourseCode, false);
+            temp1.ReplaceText("[LecturerName]", name, false);
+            temp1.ReplaceText("[SyllabusLecturerInfo]", sylfill.CourseLecturer, false);
+            temp1.ReplaceText("[SyllabusPoint]", sylfill.CoursePoint.ToString(), false);
+            temp1.ReplaceText("[SyllabusLevel]", sylfill.CourseLevel, false);
+            temp1.ReplaceText("[SyllabusTime]", sylfill.CourseTime, false);
+            temp1.ReplaceText("[SyllabusPreCourse]", sylfill.PreCourse, false);
+            temp1.ReplaceText("[SyllabusObjective]", syllabusobje(idSyllabus), false);
+            temp1.ReplaceText("[SyllabusOutcome]", syllabusoutcomeslist(idSyllabus), false);
+            temp1.ReplaceText("[SyllabusDescription]", sylfill.CourseDescription, false);
+            temp1.ReplaceText("[SyllabusDocument]", sylfill.CourseDocument, false);
+            temp1.ReplaceText("[SyllabusMethods]", sylfill.CourseMethod, false);
+            temp1.ReplaceText("[SyllabusRequest]", sylfill.CourseRequest, false);
+            var t = temp1.Tables[0];
+            var t1 = temp1.Tables[1];
+            var t2 = temp1.Tables[2];
+            var t3 = temp1.Tables[3];
+            var t4 = temp1.Tables[4];
+            var t5 = temp1.Tables[5];
+            var t6 = temp1.Tables[6];
+            var t7 = temp1.Tables[7];
+            var t8 = temp1.Tables[8];
+            int type = db.Syllabus.Where(pro => pro.id == idSyllabus).Single().CourseType.Value;
+            if(type == 0)
+            {
+                t1.Remove();
+                t2.Remove();
+                t3.Remove();
+                t4.Remove();
+                t5.Remove();
+            }
+            if (type == 1)
+            {
+                t.Remove();
+                t2.Remove();
+                t3.Remove();
+                t4.Remove();
+                t5.Remove();
+            }
+            if (type == 2)
+            {
+                t1.Remove();
+                t.Remove();
+                t3.Remove();
+                t4.Remove();
+                t5.Remove();
+            }
+            if (type == 3)
+            {
+                t1.Remove();
+                t2.Remove();
+                t.Remove();
+                t4.Remove();
+                t5.Remove();
+            }
+            if (type == 4)
+            {
+                t1.Remove();
+                t2.Remove();
+                t3.Remove();
+                t.Remove();
+                t5.Remove();
+            }
+            if (type == 5)
+            {
+                t1.Remove();
+                t2.Remove();
+                t3.Remove();
+                t4.Remove();
+                t.Remove();
+            }
+            CreateMappingTableAfter(t6, ref temp1, idSyllabus, idprogram);
+            CreateMethod(t7, ref temp1, idSyllabus, idprogram);
+            CreateSchedule(t8, ref temp1, idSyllabus, idprogram);
+            t6.Remove();
+            t7.Remove();
+            t8.Remove();
+            return temp1;
+        }
 
         private Table CreateAndInsertCourseTableAfter(Table t, ref DocX document,string idprogram)
         {
@@ -159,22 +277,53 @@ namespace BLL
             return Tablemap ;
         }
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public Table CreateMethod(Table t, ref DocX document, string idSyllabus, string idProgram)
+        {
+            var data = db.Mappings.Where(map => map.idSyllabus == idSyllabus).ToList();
+            var table = t.InsertTableAfterSelf(data.Count +3,5);
+            table.Rows[0].Cells[0].InsertParagraph("Chuẩn đầu ra của môn học ", false);
+            table.Rows[0].Cells[1].InsertParagraph("Phương pháp dạy và học", false);
+            table.Rows[0].Cells[2].InsertParagraph("Phương pháp kiểm tra, đánh giá sinh viên ", false);
+            table.Rows[0].Cells[4].InsertParagraph("Chuẩn đầu ra CTĐT ", false);
+            table.Rows[1].Cells[2].InsertParagraph("Phương pháp  ", false);
+            table.Rows[1].Cells[3].InsertParagraph("Tỷ trọng (%)  ", false);
+            table.Rows[data.Count+3].Cells[0].InsertParagraph("Tổng cộng ", false);
+            table.Rows[data.Count + 3].Cells[3].InsertParagraph("100% ", false);
+            int index = 3;
+            foreach(var item in data)
+            {
+                table.Rows[index].Cells[0].InsertParagraph("Chuẩn " + item.SyllabusOutcome);
+                table.Rows[index].Cells[1].InsertParagraph(item.Methods) ;
+                table.Rows[index].Cells[2].InsertParagraph(item.FirstPart +" " + item.FirstPercent +"\n" + item.SecondPart + " " + item.SecondPercent + "\n"+ item.ThirdPart + " " + item.ThirdPercent );
+                table.Rows[index].Cells[3].InsertParagraph("chuẩn đầu ra số "+item.ProgramOutcome);
+                index++;
+            }
+            return table;
+        }
+        
+        public Table CreateSchedule(Table t, ref DocX document, string idSyllabus, string idProgram)
+        {
+            var data = db.SyllabusSchedules.Where(map => map.idSyllabus == idSyllabus).ToList();
+            var table = t.InsertTableAfterSelf(data.Count + 1, 5);
+            table.Rows[0].Cells[0].InsertParagraph("CBuổi/Tuần/ ngày ", false);
+            table.Rows[0].Cells[1].InsertParagraph("Số tiết trên lớp ", false);
+            table.Rows[0].Cells[2].InsertParagraph("Nội dung bài học  ", false);
+            table.Rows[0].Cells[3].InsertParagraph("Hoạt động dạy và học  ", false);
+            table.Rows[0].Cells[4].InsertParagraph("Tài liệu cần đọc  ", false);
+            int index = 1;
+            foreach(var item in data)
+            {
+                table.Rows[index].Cells[0].InsertParagraph("Buổi "+index+item.Day.ToString());
+                table.Rows[index].Cells[1].InsertParagraph(item.NumberPeriods.ToString());
+                table.Rows[index].Cells[2].InsertParagraph(item.LectureContent);
+                table.Rows[index].Cells[3].InsertParagraph(item.Activites);
+                table.Rows[index].Cells[4].InsertParagraph(item.Doc);
+                index++;
+            }
+            return table;
+        }
 
         public void X()
         {
