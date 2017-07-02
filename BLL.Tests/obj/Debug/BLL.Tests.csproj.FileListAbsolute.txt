@@ -1,0 +1,17 @@
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\BLL.Tests.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\BLL.Tests.pdb
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\BLL.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\DAL.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\Microsoft.Pex.Framework.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\System.Data.Linq.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\DocX.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\Microsoft.ExtendedReflection.Reasoning.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\Microsoft.ExtendedReflection.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\BLL.pdb
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\DAL.pdb
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\Microsoft.Pex.Framework.xml
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\obj\Debug\BLL.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\obj\Debug\BLL.Tests.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\BLL.Tests\obj\Debug\BLL.Tests.pdb

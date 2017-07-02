@@ -13,5 +13,6 @@ C:\Users\ppchu\OneDrive\Documents\GitHub\Demo-SEP\DAL\obj\Debug\DAL.pdb
 C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\DAL.dll.config
 C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\DAL.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\bin\Debug\DAL.pdb
+C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\obj\Debug\DAL.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\DAL\obj\Debug\DAL.pdb

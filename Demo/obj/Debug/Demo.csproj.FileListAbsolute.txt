@@ -1,3 +1,4 @@
+C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\Demo.exe.config
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\Demo.exe
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\Demo.pdb
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\Accessibility.dll
@@ -19,6 +20,7 @@ C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\DevExpress.XtraLayout.v1
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\DevExpress.XtraPrinting.v16.1.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\DevExpress.XtraRichEdit.v16.1.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\DevExpress.XtraRichEdit.v16.1.Extensions.dll
+C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\DocX.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\Microsoft.CSharp.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\System.ComponentModel.DataAnnotations.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\System.Configuration.dll
@@ -112,6 +114,7 @@ C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\es\DevExpress.XtraTreeLi
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\ja\DevExpress.XtraTreeList.v16.1.resources.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\bin\Debug\ru\DevExpress.XtraTreeList.v16.1.resources.dll
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.Form1.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.GUI_Account_ChangePass.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.GUI_Account_Login.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Account.GUI_Account_Manager.resources

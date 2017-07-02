@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtcount = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.ckMid = new System.Windows.Forms.CheckBox();
             this.rtDoc = new System.Windows.Forms.RichTextBox();
@@ -44,7 +45,6 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtcount = new System.Windows.Forms.TextBox();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -78,6 +78,13 @@
             this.layoutControl1.Size = new System.Drawing.Size(967, 617);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtcount
+            // 
+            this.txtcount.Location = new System.Drawing.Point(119, 60);
+            this.txtcount.Name = "txtcount";
+            this.txtcount.Size = new System.Drawing.Size(362, 20);
+            this.txtcount.TabIndex = 11;
             // 
             // btnSave
             // 
@@ -218,13 +225,6 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(947, 84);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
-            // 
-            // txtcount
-            // 
-            this.txtcount.Location = new System.Drawing.Point(119, 60);
-            this.txtcount.Name = "txtcount";
-            this.txtcount.Size = new System.Drawing.Size(362, 20);
-            this.txtcount.TabIndex = 11;
             // 
             // layoutControlItem8
             // 

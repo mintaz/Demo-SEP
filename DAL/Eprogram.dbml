@@ -10,11 +10,17 @@
       <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Template" Member="Templates">
-    <Type Name="Template">
-      <Column Name="id" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ND" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+  <Table Name="dbo.SyllabusSchedule" Member="SyllabusSchedules">
+    <Type Name="SyllabusSchedule">
+      <Column Name="id" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idSyllabus" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Day" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NumberPeriods" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LectureContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Activites" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Doc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="mid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Syllabus_SyllabusSchedule" Member="Syllabus" ThisKey="idSyllabus" OtherKey="id" Type="Syllabus" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Mapping" Member="Mappings">
@@ -49,8 +55,8 @@
       <Column Name="ProgramSemester" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ProgramTC" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ProgramPoint" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ProgramLecturer" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="ProgramPackage" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ProgramLecturer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ProgramPackage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="isLock" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Program_ProgramOutcome" Member="ProgramOutcomes" ThisKey="id" OtherKey="idProgram" Type="ProgramOutcome" />
       <Association Name="Program_Syllabus" Member="Syllabus" ThisKey="id" OtherKey="idProgram" Type="Syllabus" />
@@ -80,17 +86,17 @@
       <Column Name="CourseLecturer" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="CourseLevel" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="CourseTime" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="CourseDescription" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="CourseDocument" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="CourseMethod" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="CourseRequest" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CourseDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CourseDocument" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CourseMethod" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CourseRequest" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="idAccount" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
       <Column Name="isLockEdit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="CourseLT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Syllabus_SyllabusSchedule" Member="SyllabusSchedules" ThisKey="id" OtherKey="idSyllabus" Type="SyllabusSchedule" />
       <Association Name="Syllabus_Mapping" Member="Mappings" ThisKey="id" OtherKey="idSyllabus" Type="Mapping" />
       <Association Name="Syllabus_SyllabusObjective" Member="SyllabusObjectives" ThisKey="id" OtherKey="idSyllabus" Type="SyllabusObjective" />
       <Association Name="Syllabus_SyllabusOutcome" Member="SyllabusOutcomes" ThisKey="id" OtherKey="idSyllabus" Type="SyllabusOutcome" />
-      <Association Name="Syllabus_SyllabusSchedule" Member="SyllabusSchedules" ThisKey="id" OtherKey="idSyllabus" Type="SyllabusSchedule" />
       <Association Name="Program_Syllabus" Member="Program" ThisKey="idProgram" OtherKey="id" Type="Program" IsForeignKey="true" />
     </Type>
   </Table>
@@ -109,19 +115,6 @@
       <Column Name="OutcomeNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="OutcomeContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="Syllabus_SyllabusOutcome" Member="Syllabus" ThisKey="idSyllabus" OtherKey="id" Type="Syllabus" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SyllabusSchedule" Member="SyllabusSchedules">
-    <Type Name="SyllabusSchedule">
-      <Column Name="id" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="idSyllabus" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Day" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="NumberPeriods" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LectureContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Activites" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Doc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="mid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Syllabus_SyllabusSchedule" Member="Syllabus" ThisKey="idSyllabus" OtherKey="id" Type="Syllabus" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
