@@ -42,6 +42,10 @@ namespace Demo.GUI
 
         private void btnProgramSave_Click(object sender, EventArgs e)
         {
+            if(txtProgramName.Text == null)
+            {
+                txtProgramName.Text = "";
+            }
             string name = txtProgramName.Text;
             string ida = cboProgramMaster.SelectedValue.ToString();
             if (idprogram == "")

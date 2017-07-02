@@ -406,7 +406,7 @@ namespace Demo
             log = true;
             this.Close();
         }
-
+        
         private void btnPrintSyllabus_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form checkformprintsyllabus = this.checkexist(typeof(GUI.Program.GUI_Program_Outcomes));
@@ -418,7 +418,6 @@ namespace Demo
             {
                 GUI.Print.GUI_Print_Syllabus formprintsyllabus = new GUI.Print.GUI_Print_Syllabus();
                 formprintsyllabus.MdiParent = this;
-                formprintsyllabus.idprogram = idpath;
                 formprintsyllabus.idS = idpathsy;
                 formprintsyllabus.Show();
             }

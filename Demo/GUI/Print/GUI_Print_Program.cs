@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraRichEdit;
 using BLL;
+using System.IO;
+
 namespace Demo.GUI.Print
 {
     public partial class GUI_Print_Program : Form
@@ -22,9 +24,10 @@ namespace Demo.GUI.Print
         CreateTableBLL table = new CreateTableBLL();
         private void GUI_Print_Program_Load(object sender, EventArgs e)
         {
-            table.Program(idprogram);
+            string appPath = Path.GetDirectoryName(Application.ExecutablePath);
+            table.Program(idprogram, appPath);
             RichEditDocumentServer f = new RichEditDocumentServer();
-            f.LoadDocument(@"Program.docx");
+            f.LoadDocument(appPath+"\\Program.docx");
             printableComponentLink2.Component = f;
             documentViewer1.DocumentSource = printingSystem1;
         }

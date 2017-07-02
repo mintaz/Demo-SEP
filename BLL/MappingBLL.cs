@@ -90,6 +90,13 @@ namespace BLL
                 addmap.ProgramOutcome = program;
                 addmap.SyllabusOutcome = sys;
                 addmap.desity = 0;
+                addmap.FirstPart = "";
+                addmap.FirstPercent =0;
+                addmap.SecondPart = "";
+                addmap.SecondPercent = 0;
+                addmap.ThirdPart = "";
+                addmap.ThirdPercent = 0;
+                addmap.Methods = "";
                 db.Mappings.InsertOnSubmit(addmap);
                 db.SubmitChanges();
                 return true;

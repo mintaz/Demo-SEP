@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraRichEdit;
 using BLL;
+using DAL;
+using System.IO;
 
 namespace Demo.GUI.Print
 {
@@ -20,13 +22,16 @@ namespace Demo.GUI.Print
             InitializeComponent();
         }
         public string idS = "";
-        public string idprogram = "";
+        EprogramDataContext db = new EprogramDataContext();
+        
         CreateTableBLL table = new CreateTableBLL();
         private void GUI_Print_Syllabus_Load(object sender, EventArgs e)
         {
-            table.Syllabus(idS, idprogram);
+            string idr = db.Syllabus.Where(s => s.id == idS).Single().idProgram;
+            string appPath = Path.GetDirectoryName(Application.ExecutablePath);
+            table.Syllabus(appPath,idS, idr);
             RichEditDocumentServer f = new RichEditDocumentServer();
-            f.LoadDocument(@"Syllabus.docx");
+            f.LoadDocument(appPath+"\\Syllabus.docx");
             printableComponentLink1.Component = f;
             documentViewer1.DocumentSource = printingSystem1;
         }

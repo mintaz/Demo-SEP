@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraRichEdit;
 using BLL;
+using System.IO;
 
 namespace Demo.GUI.Print
 {
@@ -24,14 +25,15 @@ namespace Demo.GUI.Print
         SyllabusBLL sys = new SyllabusBLL();
         private void GUI_Print_PrintAll_Load(object sender, EventArgs e)
         {
-            table.ProgramFull(idprogram);
+            string appPath = Path.GetDirectoryName(Application.ExecutablePath);
+            table.ProgramFull(appPath,idprogram);
             foreach (var syl in sys.loadSyllabus(idprogram).ToList())
             {
-                table.Syllabus(syl.id, syl.idProgram);
-                table.Full();
+                table.Syllabus(appPath,syl.id, syl.idProgram);
+                table.Full(appPath);
             }
             RichEditDocumentServer f = new RichEditDocumentServer();
-            f.LoadDocument(@"Full.docx");
+            f.LoadDocument(appPath+"\\Full.docx");
 
             printableComponentLink1.Component = f;
             documentViewer1.DocumentSource = printingSystem1;

@@ -97,6 +97,7 @@ namespace BLL
             Program profill2 = db.Programs.Where(pro => pro.id == idprogram).Single();
             string idacc = sylfill.idAccount;
             string name = db.Accounts.Where(ac => ac.id == idacc).Single().name;
+
             temp1.ReplaceText("[SyllabusName]", sylfill.name, false);
             temp1.ReplaceText("[SyllabusCode]", sylfill.CourseCode, false);
             temp1.ReplaceText("[LecturerName]", name, false);
@@ -324,15 +325,15 @@ namespace BLL
             return table;
         }
 
-        public void Program(string id)
+        public void Program(string id,string path)
         {
             DocX gDoc;
 
             try
             {
 
-                gDoc = fillProgram(DocX.Load(@"ChuongTrinhDaoTao_Template.docx"), id);
-                gDoc.SaveAs(@"Program.docx");
+                gDoc = fillProgram(DocX.Load(path), id);
+                gDoc.SaveAs(Directory.GetCurrentDirectory() + @"\Program.docx");
   
             }
             catch (Exception)
@@ -341,15 +342,15 @@ namespace BLL
                 throw;
             }
         }
-        public void Syllabus(string id,string idprogram)
+        public void Syllabus(string path, string id,string idprogram)
         {
             DocX gDoc;
 
             try
             {
 
-                gDoc = fillSyllabus(DocX.Load(@"Syllabus_Template.docx"), id,idprogram);
-                gDoc.SaveAs(@"Syllabus.docx");
+                gDoc = fillSyllabus(DocX.Load(path+ "\\ChuongTrinhDaoTao_Template.docx"), id,idprogram);
+                gDoc.SaveAs(path + "\\Syllabus.docx");
 
             }
             catch (Exception)
@@ -359,15 +360,15 @@ namespace BLL
             }
         }
 
-        public void ProgramFull(string id)
+        public void ProgramFull(string path, string id)
         {
             DocX gDoc;
 
             try
             {
 
-                gDoc = fillProgram(DocX.Load(@"ChuongTrinhDaoTaoFull_Template.docx"), id);
-                gDoc.SaveAs(@"ProgramFull.docx");
+                gDoc = fillProgram(DocX.Load(path + "\\ChuongTrinhDaoTaoFull_Template.docx"), id);
+                gDoc.SaveAs(path + "\\ProgramFull.docx");
 
             }
             catch (Exception)
@@ -376,15 +377,15 @@ namespace BLL
                 throw;
             }
         }
-        public void Full()
+        public void Full(string path)
         {
             DocX gDoc1;
 
             try
             {
-                gDoc1 = DocX.Load(@"ProgramFull.docx");
-                gDoc1.InsertDocument(DocX.Load(@"Syllabus.docx"), true);
-                gDoc1.SaveAs(@"Full.docx");
+                gDoc1 = DocX.Load(path + "\\ProgramFull.docx");
+                gDoc1.InsertDocument(DocX.Load(path + "\\Syllabus.docx"), true);
+                gDoc1.SaveAs(path + "\\Full.docx");
 
             }
             catch (Exception)

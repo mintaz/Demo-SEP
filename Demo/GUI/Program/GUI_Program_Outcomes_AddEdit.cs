@@ -61,9 +61,18 @@ namespace Demo.GUI
         EprogramDataContext db = new EprogramDataContext();
         private void btnOutcomesSave_Click(object sender, EventArgs e)
         {
+            if (txtProgramOutNo.Text == null || txtProgramOutNo.Text == "")
+            {
+                txtProgramOutNo.Text = "0";
+            }
+            if(rcOutcomes.Text == null)
+            {
+                rcOutcomes.Text = "";
+            }
             string no = txtProgramOutNo.Text;
             int type = int.Parse(cboOutcomeType.SelectedValue.ToString());
             string con = rcOutcomes.Text;
+
             if(idprout == "")
             {
                 int notest = db.ProgramOutcomes.Where(s => s.OutcomeNo.Contains(no)).Count();
