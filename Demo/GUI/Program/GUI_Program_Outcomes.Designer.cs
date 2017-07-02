@@ -34,6 +34,7 @@
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barLargeButtonItem2 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -42,6 +43,7 @@
             this.gvProgramOut = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OUTNO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcProgramOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvProgramOut)).BeginInit();
@@ -58,8 +60,9 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btnAdd,
-            this.btnEdit});
-            this.barManager1.MaxItemId = 2;
+            this.btnEdit,
+            this.barLargeButtonItem2});
+            this.barManager1.MaxItemId = 5;
             // 
             // bar1
             // 
@@ -69,7 +72,8 @@
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnAdd, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnEdit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnEdit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem2)});
             this.bar1.Text = "Tools";
             // 
             // btnAdd
@@ -90,6 +94,16 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 0);
             this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
+            // 
+            // barLargeButtonItem2
+            // 
+            this.barLargeButtonItem2.Caption = "Xóa";
+            this.barLargeButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem2.Glyph")));
+            this.barLargeButtonItem2.Id = 4;
+            this.barLargeButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem2.LargeGlyph")));
+            this.barLargeButtonItem2.Name = "barLargeButtonItem2";
+            this.barLargeButtonItem2.Size = new System.Drawing.Size(75, 0);
+            this.barLargeButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barLargeButtonItem2_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -164,6 +178,15 @@
             this.OUTNO.Visible = true;
             this.OUTNO.VisibleIndex = 1;
             // 
+            // barLargeButtonItem1
+            // 
+            this.barLargeButtonItem1.Caption = "Xóa";
+            this.barLargeButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.Glyph")));
+            this.barLargeButtonItem1.Id = 3;
+            this.barLargeButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.LargeGlyph")));
+            this.barLargeButtonItem1.Name = "barLargeButtonItem1";
+            this.barLargeButtonItem1.Size = new System.Drawing.Size(75, 0);
+            // 
             // GUI_Program_Outcomes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +199,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Program_Outcomes";
             this.Text = "Danh Sách Mục Tiêu Đầu Ra Chương Trình Đào Tạo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GUI_Program_Outcomes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcProgramOut)).EndInit();
@@ -199,5 +223,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvProgramOut;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn OUTNO;
+        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem2;
+        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem1;
     }
 }

@@ -19,11 +19,19 @@ namespace Demo.GUI.Syllabus
         }
         public string idobj ="";
         public string ids = "";
+        public string idp = "";
         SyllabusObjBLL syso = new SyllabusObjBLL();
+        ProgramBLL p = new ProgramBLL();
         DicBLL dc = new DicBLL();
         private void GUI_Syllabus_Objectives_Add_Load(object sender, EventArgs e)
         {
-            if(idobj != "")
+            if (p.getLock(idp) == true)
+            {
+                rtObjectives.ReadOnly = true;
+                btnSave.Enabled = false;
+            }
+
+            if (idobj != "")
             {
                 rtObjectives.Text = syso.loadobj(idobj).Single().ObjSContent;
             }
@@ -51,6 +59,7 @@ namespace Demo.GUI.Syllabus
                     {
                         MessageBox.Show(dc.sysllabusobj("success"));
                         rtObjectives.Text = "";
+                        this.Close();
                     }
                     else
                     {
@@ -62,6 +71,7 @@ namespace Demo.GUI.Syllabus
                     if(syso.EditObj(idobj,content)==true)
                     {
                         MessageBox.Show(dc.sysllabusobj("edit"));
+                        this.Close();
                     }
                     else
                     {

@@ -250,7 +250,8 @@
             this.ClientSize = new System.Drawing.Size(967, 617);
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Syllabus_Schedule";
-            this.Text = "GUI_Syllabus_Schedule";
+            this.Text = "Thông tin Ngày Học";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GUI_Syllabus_Schedule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

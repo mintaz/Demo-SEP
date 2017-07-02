@@ -20,6 +20,103 @@ namespace BLL
                 return "";
             }
         }
+        public bool UpdateDocument(string id, string content)
+        {
+            try
+            {
+                Syllabus sysdocument = db.Syllabus.Where(info => info.id == id).Single();
+                sysdocument.CourseDocument = content;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool delSy(string id)
+        {
+            try
+            {
+                Syllabus dels = db.Syllabus.Where(info => info.id == id).Single();
+                db.Syllabus.DeleteOnSubmit(dels);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateMethods(string id, string content)
+        {
+            try
+            {
+                Syllabus symethods = db.Syllabus.Where(info => info.id == id).Single();
+                symethods.CourseMethod = content;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateRequest(string id, string content)
+        {
+            try
+            {
+                Syllabus request = db.Syllabus.Where(info => info.id == id).Single();
+                request.CourseRequest = content;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateLect(string id, string content)
+        {
+            try
+            {
+                Syllabus syslect = db.Syllabus.Where(info => info.id == id).Single();
+                syslect.CourseLecturer = content;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        public bool UpdateDes(string id, string content)
+        {
+            try
+            {
+                Syllabus sysdocument = db.Syllabus.Where(info => info.id == id).Single();
+                sysdocument.CourseDescription = content;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+
+
+
+
+
+
         public bool UpdateSysInfo(string id, string level, string time) 
         {
             try

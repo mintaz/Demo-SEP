@@ -1,6 +1,6 @@
 ﻿namespace Demo.GUI.Print
 {
-    partial class GUI_Print_PrintAll
+    partial class GUI_Print_Syllabus
     {
         /// <summary>
         /// Required designer variable.
@@ -98,7 +98,7 @@
             DevExpress.Utils.SuperToolTip superToolTip23 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem23 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem23 = new DevExpress.Utils.ToolTipItem();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Print_PrintAll));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Print_Syllabus));
             DevExpress.Utils.SuperToolTip superToolTip24 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem24 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem24 = new DevExpress.Utils.ToolTipItem();
@@ -1533,7 +1533,7 @@
             superToolTip49.MaxWidth = 210;
             this.printPreviewBarItem25.SuperTip = superToolTip49;
             // 
-            // GUI_Print_PrintAll
+            // GUI_Print_Syllabus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1542,10 +1542,10 @@
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.backstageViewControl1);
-            this.Name = "GUI_Print_PrintAll";
-            this.Text = "In Toàn Bộ";
+            this.Name = "GUI_Print_Syllabus";
+            this.Text = "In Đề Cương Môn Học";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.GUI_Print_PrintAll_Load);
+            this.Load += new System.EventHandler(this.GUI_Print_Syllabus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();

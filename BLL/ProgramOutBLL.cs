@@ -71,6 +71,20 @@ namespace BLL
                 return false;
             }
         }
+        public bool delProOut(string id)
+        {
+            try
+            {
+                ProgramOutcome dpoe = db.ProgramOutcomes.Where(po => po.id == id).Single();
+                db.ProgramOutcomes.DeleteOnSubmit(dpoe);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
     }
 }

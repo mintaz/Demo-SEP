@@ -13,6 +13,9 @@ namespace BLL
             return "vanlang";
         }
 
+
+
+
         public string schedule(string mes)
         {
             switch (mes)

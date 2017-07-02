@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="AccountBLL.cs" />
     <Compile Include="CompareBLL.cs" />
-    <Compile Include="CreateTable.cs" />
+    <Compile Include="CreateTableBLL.cs" />
     <Compile Include="DicBLL.cs" />
     <Compile Include="EncryptBLL.cs" />
     <Compile Include="LoginBLL.cs" />

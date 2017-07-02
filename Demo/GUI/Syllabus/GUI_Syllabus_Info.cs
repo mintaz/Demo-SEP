@@ -21,9 +21,17 @@ namespace Demo.GUI.Syllabus
         public string idsysinfo = "";
         SyllabusBLL sys = new SyllabusBLL();
         DicBLL dc = new DicBLL();
+        ProgramBLL p = new ProgramBLL();
+        public string idp = "";
         private void GUI_Syllabus_Info_Load(object sender, EventArgs e)
         {
             txtCoursePoint.ReadOnly = true;
+            if (p.getLock(idp) == true)
+            {
+                txtCourseLevel.ReadOnly = true;
+                txtCoursePoint.ReadOnly = true;
+                btnSave.Enabled = false;
+            }
             string point, level, time;
             try
             {
@@ -75,6 +83,7 @@ namespace Demo.GUI.Syllabus
                 if (sys.UpdateSysInfo(idsysinfo, levevlup, timeup) == true)
                 {
                     MessageBox.Show(dc.syllabusinfo("success"));
+                    this.Close();
                 }
                 else
                 {

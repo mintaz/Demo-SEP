@@ -130,7 +130,7 @@
             this.ClientSize = new System.Drawing.Size(624, 262);
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Syllabus_Objectives_Add";
-            this.Text = "GUI_Syllabus_Objectives";
+            this.Text = "Mục Tiêu Môn Học";
             this.Load += new System.EventHandler(this.GUI_Syllabus_Objectives_Add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

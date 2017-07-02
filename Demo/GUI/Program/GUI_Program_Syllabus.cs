@@ -23,6 +23,7 @@ namespace Demo.GUI.Program
         public string idsys = "";
         SyllabusBLL sys = new SyllabusBLL();
         AccountBLL account = new AccountBLL();
+        ProgramBLL pro = new ProgramBLL();
         DicBLL dc = new DicBLL();
 
         void loadcomboSY()
@@ -78,28 +79,43 @@ namespace Demo.GUI.Program
             }
             else
             {
-                loadcomboSY();
-                txtCourseName.Text = sys.loadSys(idsys).Single().name;
-                txtCourseCode.Text = sys.loadSys(idsys).Single().CourseCode;
-                txtCoursePoint.Text = sys.loadSys(idsys).Single().CoursePoint.ToString();
-                txtLTtime.Text = sys.loadSys(idsys).Single().CourseLT.ToString();
-                string time = "";
-                try
+                if (pro.getLock(idprogram) == false)
                 {
-                    int point = (sys.loadSys(idsys).Single().CoursePoint.Value) * 15;
-                    int LT = (sys.loadSys(idsys).Single().CourseLT.Value) * 15;
-                    time = (point -LT).ToString();
+                    txtCourseCode.ReadOnly = true;
+                    txtCourseName.ReadOnly = true;
+                    txtCoursePoint.ReadOnly = true;
+                    txtLTtime.ReadOnly = true;
+                    txtTHtime.ReadOnly = true;
+                    btnSave.Enabled = false;
+                    btnAdd.Enabled = false;
+                    btnDel.Enabled = false;
+                    rtCourseContent.ReadOnly = true;
                 }
-                catch
                 {
-                    time = "";
+                    
+                    loadcomboSY();
+                    txtCourseName.Text = sys.loadSys(idsys).Single().name;
+                    txtCourseCode.Text = sys.loadSys(idsys).Single().CourseCode;
+                    txtCoursePoint.Text = sys.loadSys(idsys).Single().CoursePoint.ToString();
+                    txtLTtime.Text = sys.loadSys(idsys).Single().CourseLT.ToString();
+                    string time = "";
+                    try
+                    {
+                        int point = (sys.loadSys(idsys).Single().CoursePoint.Value) * 15;
+                        int LT = (sys.loadSys(idsys).Single().CourseLT.Value) * 15;
+                        time = (point - LT).ToString();
+                    }
+                    catch
+                    {
+                        time = "";
+                    }
+                    txtTHtime.Text = time;
+                    cboCourseOwner.SelectedValue = sys.loadSys(idsys).Single().idAccount;
+                    cboCourseSemester.SelectedItem = int.Parse((sys.loadSys(idsys).Single().CourseSemester).ToString());
+                    cboCourseType.SelectedValue = sys.loadSys(idsys).Single().CourseType;
+                    loadpre(sys.loadSys(idsys).Single().PreCourse);
+                    rtCourseContent.Text = sys.loadSys(idsys).Single().CourseContent;
                 }
-                txtTHtime.Text = time;
-                cboCourseOwner.SelectedValue = sys.loadSys(idsys).Single().idAccount;
-                cboCourseSemester.SelectedItem = int.Parse((sys.loadSys(idsys).Single().CourseSemester).ToString());
-                cboCourseType.SelectedValue = sys.loadSys(idsys).Single().CourseType;
-                loadpre(sys.loadSys(idsys).Single().PreCourse);
-                rtCourseContent.Text = sys.loadSys(idsys).Single().CourseContent;
             }
             
         }
@@ -219,6 +235,7 @@ namespace Demo.GUI.Program
                     if (add == true)
                     {
                         MessageBox.Show(dc.successcreatsyllabus("success"));
+                        this.Close();
                     }
                     else
                     {
@@ -231,6 +248,7 @@ namespace Demo.GUI.Program
                     if (edit == true)
                     {
                         MessageBox.Show(dc.successcreatsyllabus("edit"));
+                        this.Close();
                     }
                     else
                     {

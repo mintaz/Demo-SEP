@@ -116,12 +116,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Account\GUI_Account_ChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +152,24 @@
     <Compile Include="GUI\Print\GUI_Print_PrintAll.Designer.cs">
       <DependentUpon>GUI_Print_PrintAll.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Print\GUI_Print_Program.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Print\GUI_Print_Program.Designer.cs">
+      <DependentUpon>GUI_Print_Program.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Print\GUI_Print_Syllabus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Print\GUI_Print_Syllabus.Designer.cs">
+      <DependentUpon>GUI_Print_Syllabus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Program\GUI_Enter_Pass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Program\GUI_Enter_Pass.Designer.cs">
+      <DependentUpon>GUI_Enter_Pass.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Program\GUI_Program_CreateSyllabus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,12 +205,6 @@
     </Compile>
     <Compile Include="GUI\Program\GUI_Program_ProgramList.Designer.cs">
       <DependentUpon>GUI_Program_ProgramList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Program\GUI_Program_Schedule.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Program\GUI_Program_Schedule.Designer.cs">
-      <DependentUpon>GUI_Program_Schedule.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Program\GUI_Program_Syllabus.cs">
       <SubType>Form</SubType>
@@ -327,9 +333,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Account\GUI_Account_ChangePass.resx">
       <DependentUpon>GUI_Account_ChangePass.cs</DependentUpon>
     </EmbeddedResource>
@@ -348,6 +351,15 @@
     <EmbeddedResource Include="GUI\Print\GUI_Print_PrintAll.resx">
       <DependentUpon>GUI_Print_PrintAll.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Print\GUI_Print_Program.resx">
+      <DependentUpon>GUI_Print_Program.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Print\GUI_Print_Syllabus.resx">
+      <DependentUpon>GUI_Print_Syllabus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Program\GUI_Enter_Pass.resx">
+      <DependentUpon>GUI_Enter_Pass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_CreateSyllabus.resx">
       <DependentUpon>GUI_Program_CreateSyllabus.cs</DependentUpon>
     </EmbeddedResource>
@@ -365,9 +377,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_ProgramList.resx">
       <DependentUpon>GUI_Program_ProgramList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Program\GUI_Program_Schedule.resx">
-      <DependentUpon>GUI_Program_Schedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_Syllabus.resx">
       <DependentUpon>GUI_Program_Syllabus.cs</DependentUpon>

@@ -24,6 +24,7 @@ namespace Demo.GUI
         }
         EprogramDataContext db = new EprogramDataContext();
         LoginBLL ac = new LoginBLL();
+        ProgramBLL p = new ProgramBLL();
         private void GUI_Program_ProgramList_Load(object sender, EventArgs e)
         {
             var info = (from c in db.Programs
@@ -42,6 +43,7 @@ namespace Demo.GUI
             gcProgramList.DataSource = info.ToList();
         }
         int index;
+        
         private void gvProgramList_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             index = e.FocusedRowHandle;

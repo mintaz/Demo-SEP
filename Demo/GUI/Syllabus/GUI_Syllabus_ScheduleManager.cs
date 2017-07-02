@@ -18,9 +18,11 @@ namespace Demo.GUI.Syllabus
             InitializeComponent();
         }
         public string idS = "";
+        public string idp = "";
         int index;
         ScheduleBLL sche = new ScheduleBLL();
         EprogramDataContext db = new EprogramDataContext();
+        ProgramBLL p = new ProgramBLL();
         void loadata()
         {
             EprogramDataContext dbnew = new EprogramDataContext();
@@ -40,6 +42,7 @@ namespace Demo.GUI.Syllabus
             GUI.Syllabus.GUI_Syllabus_Schedule ScheEdit = new GUI_Syllabus_Schedule();
             ScheEdit.id = id;
             ScheEdit.idS = idS;
+            ScheEdit.idp = idp;
             ScheEdit.ShowDialog();
             loadata();
         }
@@ -64,6 +67,11 @@ namespace Demo.GUI.Syllabus
         private void GUI_Syllabus_ScheduleManager_Load(object sender, EventArgs e)
         {
             loadata();
+            if (p.getLock(idp) == true)
+            {
+                btnAdd.Enabled = false;
+                btnDel.Enabled = false;
+            }
         }
 
         private void gvSchedule_DoubleClick(object sender, EventArgs e)

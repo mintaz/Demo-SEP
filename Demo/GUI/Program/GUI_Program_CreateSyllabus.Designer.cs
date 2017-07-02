@@ -164,6 +164,7 @@
             this.btnDel.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDel.LargeGlyph")));
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 0);
+            this.btnDel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDel_ItemClick);
             // 
             // barDockControl1
             // 
@@ -254,6 +255,7 @@
             this.Controls.Add(this.barDockControl1);
             this.Name = "GUI_Program_CreateSyllabus";
             this.Text = "Danh sách Môn học";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GUI_Program_CreateSyllabus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();

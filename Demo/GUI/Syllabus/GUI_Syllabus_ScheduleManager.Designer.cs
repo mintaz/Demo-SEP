@@ -111,7 +111,7 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(882, 65);
+            this.barDockControlTop.Size = new System.Drawing.Size(882, 67);
             // 
             // barDockControlBottom
             // 
@@ -124,24 +124,24 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 65);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 347);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 67);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 345);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(882, 65);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 347);
+            this.barDockControlRight.Location = new System.Drawing.Point(882, 67);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
             // 
             // gcSchedule
             // 
             this.gcSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcSchedule.Location = new System.Drawing.Point(0, 65);
+            this.gcSchedule.Location = new System.Drawing.Point(0, 67);
             this.gcSchedule.MainView = this.gvSchedule;
             this.gcSchedule.MenuManager = this.barManager1;
             this.gcSchedule.Name = "gcSchedule";
-            this.gcSchedule.Size = new System.Drawing.Size(882, 347);
+            this.gcSchedule.Size = new System.Drawing.Size(882, 345);
             this.gcSchedule.TabIndex = 4;
             this.gcSchedule.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSchedule});
@@ -210,7 +210,8 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Syllabus_ScheduleManager";
-            this.Text = "GUI_Syllabus_ScheduleManager";
+            this.Text = "Danh Sách Kế Hoạch Giảng Dạy";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GUI_Syllabus_ScheduleManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcSchedule)).EndInit();

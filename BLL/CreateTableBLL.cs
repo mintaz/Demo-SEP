@@ -12,11 +12,10 @@ using System.Text.RegularExpressions;
 
 namespace BLL
 {
-    public class CreateTable
+    public class CreateTableBLL
     {
         EprogramDataContext db = new EprogramDataContext();
 
-        //DocX templ = DocX.Load("");
         public DocX fillProgram(DocX temp,string idProgram)
         {
             Program profill = db.Programs.Where(pro => pro.id == idProgram).Single();
@@ -325,15 +324,15 @@ namespace BLL
             return table;
         }
 
-        public void X()
+        public void Program(string id)
         {
             DocX gDoc;
 
             try
             {
 
-                gDoc = fillProgram(DocX.Load("C:\\Users\\Admin\\Desktop\\ChuongTrinhDaoTao_Teamplate.docx"), "PR0001");
-                gDoc.SaveAs(@"newFile.docx");
+                gDoc = fillProgram(DocX.Load(@"ChuongTrinhDaoTao_Template.docx"), id);
+                gDoc.SaveAs(@"Program.docx");
   
             }
             catch (Exception)
@@ -342,5 +341,58 @@ namespace BLL
                 throw;
             }
         }
+        public void Syllabus(string id,string idprogram)
+        {
+            DocX gDoc;
+
+            try
+            {
+
+                gDoc = fillSyllabus(DocX.Load(@"Syllabus_Template.docx"), id,idprogram);
+                gDoc.SaveAs(@"Syllabus.docx");
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void ProgramFull(string id)
+        {
+            DocX gDoc;
+
+            try
+            {
+
+                gDoc = fillProgram(DocX.Load(@"ChuongTrinhDaoTaoFull_Template.docx"), id);
+                gDoc.SaveAs(@"ProgramFull.docx");
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public void Full()
+        {
+            DocX gDoc1;
+
+            try
+            {
+                gDoc1 = DocX.Load(@"ProgramFull.docx");
+                gDoc1.InsertDocument(DocX.Load(@"Syllabus.docx"), true);
+                gDoc1.SaveAs(@"Full.docx");
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

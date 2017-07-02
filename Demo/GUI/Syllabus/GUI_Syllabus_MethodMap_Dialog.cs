@@ -20,8 +20,25 @@ namespace Demo.GUI.Syllabus
         public string idmap = "";
         public string ids = "";
         MappingBLL map = new MappingBLL();
+        ProgramBLL p = new ProgramBLL();
+        public string idp = "";
         private void GUI_Syllabus_MethodMap_Dialog_Load(object sender, EventArgs e)
         {
+            if (p.getLock(idp) == true)
+            {
+                rtsys.ReadOnly = true;
+                rtpro.ReadOnly = true;
+                rtmethod.ReadOnly = true;
+                txtpart1.ReadOnly = true;
+                txtpart2.ReadOnly = true;
+                txtpart3.ReadOnly = true;
+                txtpercent1.ReadOnly = true;
+                txtpercent2.ReadOnly = true;
+                txtpercent3.ReadOnly = true;
+                txtdesity.ReadOnly = true;
+                txtcount.ReadOnly = true;
+                btnSave.Enabled = false;
+            }
             rtsys.Text = map.singlemap(idmap).Single().SyllabusOutcome;
             rtpro.Text = map.singlemap(idmap).Single().ProgramOutcome;
             rtmethod.Text = map.singlemap(idmap).Single().Methods;
@@ -125,6 +142,7 @@ namespace Demo.GUI.Syllabus
                     if (map.UpdateMethod(idmap, method, part1, part2, part3, per1, per2, per3, des) == true)
                     {
                         MessageBox.Show(dc.errormethod("success"));
+                        this.Close();
                     }
                     else
                     {

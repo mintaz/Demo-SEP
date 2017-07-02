@@ -199,7 +199,8 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Syllabus_Objectives";
-            this.Text = "GUI_Syllabus_Objectives";
+            this.Text = "Danh Sách Mục Tiêu Môn Học";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GUI_Syllabus_Objectives_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCourseObj)).EndInit();

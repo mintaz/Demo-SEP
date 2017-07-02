@@ -20,13 +20,20 @@ namespace Demo.GUI.Program
         public string idprogram = "";
         public string idprogramout = "";
         ProgramOutBLL pro = new ProgramOutBLL();
+        ProgramBLL p = new ProgramBLL();
         void loadData()
         {
             gcProgramOut.DataSource = pro.LoadPOutcomes(idprogram);
+            
         }
         private void GUI_Program_Outcomes_Load(object sender, EventArgs e)
         {
             loadData();
+            if (p.getLock(idprogram) == true)
+            {
+                btnAdd.Enabled = false;
+                barLargeButtonItem2.Enabled = false;
+            }
         }
 
         private void gcProgramOut_DoubleClick(object sender, EventArgs e)
@@ -65,6 +72,23 @@ namespace Demo.GUI.Program
                 editform.ShowDialog();
             }
             loadData();
+        }
+        DicBLL dc = new DicBLL();
+        private void barLargeButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            idprogramout = gvProgramOut.GetRowCellValue(index, this.ID).ToString();
+            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (pro.delProOut(idprogramout) == true)
+                {
+                    MessageBox.Show("Xóa Thành Công.");
+                }
+                else
+                {
+                    MessageBox.Show(dc.errorAccountMessage("else"));
+                }
+                loadData();
+            }
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Demo.GUI
         public string idprout = "";
         public string idp = "";
         ProgramOutBLL prou = new ProgramOutBLL();
+        ProgramBLL pr = new ProgramBLL();
         DicBLL dc = new DicBLL();
         void clean()
         {
@@ -30,6 +31,12 @@ namespace Demo.GUI
         }
         private void GUI_Program_Outcomes_AddEdit_Load(object sender, EventArgs e)
         {
+            if (pr.getLock(idp) == true)
+            {
+                txtProgramOutNo.ReadOnly = true;
+                rcOutcomes.ReadOnly = true;
+                btnOutcomesSave.Enabled = false;
+            }
             var list = new[]
            {
                 new { Text = "Về Kiến Thức",Value =1},
@@ -66,6 +73,7 @@ namespace Demo.GUI
                     {
                         MessageBox.Show(dc.successProgramOut("addprogramoutcome"));
                         clean();
+                        this.Close();
                     }
                     else
                     {
@@ -83,6 +91,7 @@ namespace Demo.GUI
                 {
                     MessageBox.Show(dc.successProgramOut("editprogramoutcome"));
                     clean();
+                    this.Close();
                 }
                 else
                 {

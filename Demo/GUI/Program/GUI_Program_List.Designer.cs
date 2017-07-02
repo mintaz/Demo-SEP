@@ -98,7 +98,7 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(882, 65);
+            this.barDockControlTop.Size = new System.Drawing.Size(882, 67);
             // 
             // barDockControlBottom
             // 
@@ -111,24 +111,24 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 65);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 347);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 67);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 345);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(882, 65);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 347);
+            this.barDockControlRight.Location = new System.Drawing.Point(882, 67);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
             // 
             // gcProgramList
             // 
             this.gcProgramList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcProgramList.Location = new System.Drawing.Point(0, 65);
+            this.gcProgramList.Location = new System.Drawing.Point(0, 67);
             this.gcProgramList.MainView = this.gvProgramList;
             this.gcProgramList.MenuManager = this.barManager1;
             this.gcProgramList.Name = "gcProgramList";
-            this.gcProgramList.Size = new System.Drawing.Size(882, 347);
+            this.gcProgramList.Size = new System.Drawing.Size(882, 345);
             this.gcProgramList.TabIndex = 4;
             this.gcProgramList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvProgramList});

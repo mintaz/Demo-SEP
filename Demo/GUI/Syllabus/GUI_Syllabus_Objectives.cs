@@ -19,7 +19,9 @@ namespace Demo.GUI.Syllabus
         }
         int index;
         public string idsys = "";
+        public string idp = "";
         SyllabusObjBLL sysobj = new SyllabusObjBLL();
+        ProgramBLL p = new ProgramBLL();
         private void gvCourseObj_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             index = e.FocusedRowHandle;
@@ -28,6 +30,11 @@ namespace Demo.GUI.Syllabus
         void loadData()
         {
             gcCourseObj.DataSource = sysobj.loadlistobj(idsys);
+            if (p.getLock(idp) == true)
+            {
+                btnAdd.Enabled = false;
+                btnDel.Enabled = false;
+            }
         }
         private void GUI_Syllabus_Objectives_Load(object sender, EventArgs e)
         {
@@ -57,6 +64,7 @@ namespace Demo.GUI.Syllabus
             string idso = gvCourseObj.GetRowCellValue(index, this.ID).ToString();
             GUI.Syllabus.GUI_Syllabus_Objectives_Add objedit = new GUI_Syllabus_Objectives_Add();
             objedit.idobj = idso;
+            objedit.idp = idp;
             objedit.ShowDialog();
             loadData();
         }

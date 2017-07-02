@@ -49,6 +49,7 @@ namespace Demo.GUI
                 if (p.CreateProgram(ida, name) == true)
                 {
                     MessageBox.Show(dc.successCreateProgram("createprogram"));
+                    this.Close();
                 }
                 else
                 {
@@ -60,6 +61,7 @@ namespace Demo.GUI
                 if (p.EditProgram(idprogram, name, ida) == true)
                 {
                     MessageBox.Show(dc.successCreateProgram("editprogram"));
+                    this.Close();
                 }
                 else
                 {

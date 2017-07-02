@@ -186,7 +186,8 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Syllabus_MethodMapp";
-            this.Text = "GUI_Syllabus_MethodMapp";
+            this.Text = "Phương Pháp Giảng Dạy";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GUI_Syllabus_MethodMapp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMethodMap)).EndInit();

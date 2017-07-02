@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            this.richtextboxPackage = new DevExpress.XtraRichEdit.RichEditControl();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            this.richtextboxrequest = new DevExpress.XtraRichEdit.RichEditControl();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.commonBar1 = new DevExpress.XtraRichEdit.UI.CommonBar();
             this.undoItem1 = new DevExpress.XtraRichEdit.UI.UndoItem();
@@ -54,23 +54,6 @@
             this.makeTextLowerCaseItem1 = new DevExpress.XtraRichEdit.UI.MakeTextLowerCaseItem();
             this.capitalizeEachWordCaseItem1 = new DevExpress.XtraRichEdit.UI.CapitalizeEachWordCaseItem();
             this.toggleTextCaseItem1 = new DevExpress.XtraRichEdit.UI.ToggleTextCaseItem();
-            this.tablesBar1 = new DevExpress.XtraRichEdit.UI.TablesBar();
-            this.insertTableItem1 = new DevExpress.XtraRichEdit.UI.InsertTableItem();
-            this.tableRowsAndColumnsBar1 = new DevExpress.XtraRichEdit.UI.TableRowsAndColumnsBar();
-            this.deleteTableElementsItem1 = new DevExpress.XtraRichEdit.UI.DeleteTableElementsItem();
-            this.showDeleteTableCellsFormItem1 = new DevExpress.XtraRichEdit.UI.ShowDeleteTableCellsFormItem();
-            this.deleteTableColumnsItem1 = new DevExpress.XtraRichEdit.UI.DeleteTableColumnsItem();
-            this.deleteTableRowsItem1 = new DevExpress.XtraRichEdit.UI.DeleteTableRowsItem();
-            this.deleteTableItem1 = new DevExpress.XtraRichEdit.UI.DeleteTableItem();
-            this.insertTableRowAboveItem1 = new DevExpress.XtraRichEdit.UI.InsertTableRowAboveItem();
-            this.insertTableRowBelowItem1 = new DevExpress.XtraRichEdit.UI.InsertTableRowBelowItem();
-            this.insertTableColumnToLeftItem1 = new DevExpress.XtraRichEdit.UI.InsertTableColumnToLeftItem();
-            this.insertTableColumnToRightItem1 = new DevExpress.XtraRichEdit.UI.InsertTableColumnToRightItem();
-            this.showInsertTableCellsFormItem1 = new DevExpress.XtraRichEdit.UI.ShowInsertTableCellsFormItem();
-            this.tableMergeBar1 = new DevExpress.XtraRichEdit.UI.TableMergeBar();
-            this.mergeTableCellsItem1 = new DevExpress.XtraRichEdit.UI.MergeTableCellsItem();
-            this.showSplitTableCellsForm1 = new DevExpress.XtraRichEdit.UI.ShowSplitTableCellsForm();
-            this.splitTableItem1 = new DevExpress.XtraRichEdit.UI.SplitTableItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -105,6 +88,7 @@
             this.repositoryItemRichEditStyleEdit1 = new DevExpress.XtraRichEdit.Design.RepositoryItemRichEditStyleEdit();
             this.showEditStyleFormItem1 = new DevExpress.XtraRichEdit.UI.ShowEditStyleFormItem();
             this.insertPageBreakItem21 = new DevExpress.XtraRichEdit.UI.InsertPageBreakItem2();
+            this.insertTableItem1 = new DevExpress.XtraRichEdit.UI.InsertTableItem();
             this.insertPictureItem1 = new DevExpress.XtraRichEdit.UI.InsertPictureItem();
             this.insertFloatingPictureItem1 = new DevExpress.XtraRichEdit.UI.InsertFloatingPictureItem();
             this.insertBookmarkItem1 = new DevExpress.XtraRichEdit.UI.InsertBookmarkItem();
@@ -231,6 +215,19 @@
             this.selectTableRowItem1 = new DevExpress.XtraRichEdit.UI.SelectTableRowItem();
             this.selectTableItem1 = new DevExpress.XtraRichEdit.UI.SelectTableItem();
             this.showTablePropertiesFormItem1 = new DevExpress.XtraRichEdit.UI.ShowTablePropertiesFormItem();
+            this.deleteTableElementsItem1 = new DevExpress.XtraRichEdit.UI.DeleteTableElementsItem();
+            this.showDeleteTableCellsFormItem1 = new DevExpress.XtraRichEdit.UI.ShowDeleteTableCellsFormItem();
+            this.deleteTableColumnsItem1 = new DevExpress.XtraRichEdit.UI.DeleteTableColumnsItem();
+            this.deleteTableRowsItem1 = new DevExpress.XtraRichEdit.UI.DeleteTableRowsItem();
+            this.deleteTableItem1 = new DevExpress.XtraRichEdit.UI.DeleteTableItem();
+            this.insertTableRowAboveItem1 = new DevExpress.XtraRichEdit.UI.InsertTableRowAboveItem();
+            this.insertTableRowBelowItem1 = new DevExpress.XtraRichEdit.UI.InsertTableRowBelowItem();
+            this.insertTableColumnToLeftItem1 = new DevExpress.XtraRichEdit.UI.InsertTableColumnToLeftItem();
+            this.insertTableColumnToRightItem1 = new DevExpress.XtraRichEdit.UI.InsertTableColumnToRightItem();
+            this.showInsertTableCellsFormItem1 = new DevExpress.XtraRichEdit.UI.ShowInsertTableCellsFormItem();
+            this.mergeTableCellsItem1 = new DevExpress.XtraRichEdit.UI.MergeTableCellsItem();
+            this.showSplitTableCellsForm1 = new DevExpress.XtraRichEdit.UI.ShowSplitTableCellsForm();
+            this.splitTableItem1 = new DevExpress.XtraRichEdit.UI.SplitTableItem();
             this.toggleTableAutoFitItem1 = new DevExpress.XtraRichEdit.UI.ToggleTableAutoFitItem();
             this.toggleTableAutoFitContentsItem1 = new DevExpress.XtraRichEdit.UI.ToggleTableAutoFitContentsItem();
             this.toggleTableAutoFitWindowItem1 = new DevExpress.XtraRichEdit.UI.ToggleTableAutoFitWindowItem();
@@ -287,24 +284,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.richEditBarController1)).BeginInit();
             this.SuspendLayout();
             // 
-            // richtextboxPackage
+            // richtextboxrequest
             // 
-            this.richtextboxPackage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richtextboxPackage.Location = new System.Drawing.Point(0, 33);
-            this.richtextboxPackage.MenuManager = this.barManager1;
-            this.richtextboxPackage.Name = "richtextboxPackage";
-            this.richtextboxPackage.Options.Printing.PrintPreviewFormKind = DevExpress.XtraRichEdit.PrintPreviewFormKind.Bars;
-            this.richtextboxPackage.Size = new System.Drawing.Size(1189, 565);
-            this.richtextboxPackage.TabIndex = 0;
+            this.richtextboxrequest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richtextboxrequest.Location = new System.Drawing.Point(0, 33);
+            this.richtextboxrequest.MenuManager = this.barManager1;
+            this.richtextboxrequest.Name = "richtextboxrequest";
+            this.richtextboxrequest.Options.Printing.PrintPreviewFormKind = DevExpress.XtraRichEdit.PrintPreviewFormKind.Bars;
+            this.richtextboxrequest.Size = new System.Drawing.Size(1189, 565);
+            this.richtextboxrequest.TabIndex = 0;
             // 
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.commonBar1,
-            this.fontBar1,
-            this.tablesBar1,
-            this.tableRowsAndColumnsBar1,
-            this.tableMergeBar1});
+            this.fontBar1});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -549,7 +543,7 @@
             // 
             // commonBar1
             // 
-            this.commonBar1.Control = this.richtextboxPackage;
+            this.commonBar1.Control = this.richtextboxrequest;
             this.commonBar1.DockCol = 0;
             this.commonBar1.DockRow = 0;
             this.commonBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -572,10 +566,11 @@
             // 
             this.fileSaveItem1.Id = 4;
             this.fileSaveItem1.Name = "fileSaveItem1";
+            this.fileSaveItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.fileSaveItem1_ItemClick);
             // 
             // fontBar1
             // 
-            this.fontBar1.Control = this.richtextboxPackage;
+            this.fontBar1.Control = this.richtextboxrequest;
             this.fontBar1.DockCol = 1;
             this.fontBar1.DockRow = 0;
             this.fontBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -616,7 +611,7 @@
             this.repositoryItemRichEditFontSizeEdit1.AutoHeight = false;
             this.repositoryItemRichEditFontSizeEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemRichEditFontSizeEdit1.Control = this.richtextboxPackage;
+            this.repositoryItemRichEditFontSizeEdit1.Control = this.richtextboxrequest;
             this.repositoryItemRichEditFontSizeEdit1.Name = "repositoryItemRichEditFontSizeEdit1";
             // 
             // fontSizeIncreaseItem1
@@ -688,118 +683,6 @@
             // 
             this.toggleTextCaseItem1.Id = 32;
             this.toggleTextCaseItem1.Name = "toggleTextCaseItem1";
-            // 
-            // tablesBar1
-            // 
-            this.tablesBar1.Control = this.richtextboxPackage;
-            this.tablesBar1.DockCol = 2;
-            this.tablesBar1.DockRow = 0;
-            this.tablesBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.tablesBar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.insertTableItem1)});
-            this.tablesBar1.Offset = 662;
-            // 
-            // insertTableItem1
-            // 
-            this.insertTableItem1.Id = 61;
-            this.insertTableItem1.Name = "insertTableItem1";
-            // 
-            // tableRowsAndColumnsBar1
-            // 
-            this.tableRowsAndColumnsBar1.Control = this.richtextboxPackage;
-            this.tableRowsAndColumnsBar1.DockCol = 3;
-            this.tableRowsAndColumnsBar1.DockRow = 0;
-            this.tableRowsAndColumnsBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.tableRowsAndColumnsBar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.deleteTableElementsItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.insertTableRowAboveItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.insertTableRowBelowItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.insertTableColumnToLeftItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.insertTableColumnToRightItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.showInsertTableCellsFormItem1)});
-            this.tableRowsAndColumnsBar1.Offset = 732;
-            // 
-            // deleteTableElementsItem1
-            // 
-            this.deleteTableElementsItem1.Id = 186;
-            this.deleteTableElementsItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.showDeleteTableCellsFormItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.deleteTableColumnsItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.deleteTableRowsItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.deleteTableItem1)});
-            this.deleteTableElementsItem1.Name = "deleteTableElementsItem1";
-            // 
-            // showDeleteTableCellsFormItem1
-            // 
-            this.showDeleteTableCellsFormItem1.Id = 187;
-            this.showDeleteTableCellsFormItem1.Name = "showDeleteTableCellsFormItem1";
-            // 
-            // deleteTableColumnsItem1
-            // 
-            this.deleteTableColumnsItem1.Id = 188;
-            this.deleteTableColumnsItem1.Name = "deleteTableColumnsItem1";
-            // 
-            // deleteTableRowsItem1
-            // 
-            this.deleteTableRowsItem1.Id = 189;
-            this.deleteTableRowsItem1.Name = "deleteTableRowsItem1";
-            // 
-            // deleteTableItem1
-            // 
-            this.deleteTableItem1.Id = 190;
-            this.deleteTableItem1.Name = "deleteTableItem1";
-            // 
-            // insertTableRowAboveItem1
-            // 
-            this.insertTableRowAboveItem1.Id = 191;
-            this.insertTableRowAboveItem1.Name = "insertTableRowAboveItem1";
-            // 
-            // insertTableRowBelowItem1
-            // 
-            this.insertTableRowBelowItem1.Id = 192;
-            this.insertTableRowBelowItem1.Name = "insertTableRowBelowItem1";
-            // 
-            // insertTableColumnToLeftItem1
-            // 
-            this.insertTableColumnToLeftItem1.Id = 193;
-            this.insertTableColumnToLeftItem1.Name = "insertTableColumnToLeftItem1";
-            // 
-            // insertTableColumnToRightItem1
-            // 
-            this.insertTableColumnToRightItem1.Id = 194;
-            this.insertTableColumnToRightItem1.Name = "insertTableColumnToRightItem1";
-            // 
-            // showInsertTableCellsFormItem1
-            // 
-            this.showInsertTableCellsFormItem1.Id = 195;
-            this.showInsertTableCellsFormItem1.Name = "showInsertTableCellsFormItem1";
-            // 
-            // tableMergeBar1
-            // 
-            this.tableMergeBar1.Control = this.richtextboxPackage;
-            this.tableMergeBar1.DockCol = 4;
-            this.tableMergeBar1.DockRow = 0;
-            this.tableMergeBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.tableMergeBar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.mergeTableCellsItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.showSplitTableCellsForm1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.splitTableItem1)});
-            this.tableMergeBar1.Offset = 1003;
-            // 
-            // mergeTableCellsItem1
-            // 
-            this.mergeTableCellsItem1.Id = 196;
-            this.mergeTableCellsItem1.Name = "mergeTableCellsItem1";
-            // 
-            // showSplitTableCellsForm1
-            // 
-            this.showSplitTableCellsForm1.Id = 197;
-            this.showSplitTableCellsForm1.Name = "showSplitTableCellsForm1";
-            // 
-            // splitTableItem1
-            // 
-            this.splitTableItem1.Id = 198;
-            this.splitTableItem1.Name = "splitTableItem1";
             // 
             // barDockControlTop
             // 
@@ -979,7 +862,7 @@
             this.repositoryItemRichEditStyleEdit1.AutoHeight = false;
             this.repositoryItemRichEditStyleEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemRichEditStyleEdit1.Control = this.richtextboxPackage;
+            this.repositoryItemRichEditStyleEdit1.Control = this.richtextboxrequest;
             this.repositoryItemRichEditStyleEdit1.Name = "repositoryItemRichEditStyleEdit1";
             // 
             // showEditStyleFormItem1
@@ -991,6 +874,11 @@
             // 
             this.insertPageBreakItem21.Id = 60;
             this.insertPageBreakItem21.Name = "insertPageBreakItem21";
+            // 
+            // insertTableItem1
+            // 
+            this.insertTableItem1.Id = 61;
+            this.insertTableItem1.Name = "insertTableItem1";
             // 
             // insertPictureItem1
             // 
@@ -1572,7 +1460,7 @@
             // 
             this.galleryChangeTableStyleItem1.Gallery.ColumnCount = 3;
             this.galleryChangeTableStyleItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup2});
+            galleryItemGroup1});
             this.galleryChangeTableStyleItem1.Gallery.ImageSize = new System.Drawing.Size(65, 46);
             this.galleryChangeTableStyleItem1.Id = 163;
             this.galleryChangeTableStyleItem1.ModifyItemLink = null;
@@ -1592,7 +1480,7 @@
             this.repositoryItemBorderLineStyle1.AutoHeight = false;
             this.repositoryItemBorderLineStyle1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemBorderLineStyle1.Control = this.richtextboxPackage;
+            this.repositoryItemBorderLineStyle1.Control = this.richtextboxrequest;
             this.repositoryItemBorderLineStyle1.Name = "repositoryItemBorderLineStyle1";
             // 
             // changeTableBorderLineWeightItem1
@@ -1608,7 +1496,7 @@
             this.repositoryItemBorderLineWeight1.AutoHeight = false;
             this.repositoryItemBorderLineWeight1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemBorderLineWeight1.Control = this.richtextboxPackage;
+            this.repositoryItemBorderLineWeight1.Control = this.richtextboxrequest;
             this.repositoryItemBorderLineWeight1.Name = "repositoryItemBorderLineWeight1";
             // 
             // changeTableBorderColorItem1
@@ -1728,6 +1616,76 @@
             this.showTablePropertiesFormItem1.Id = 185;
             this.showTablePropertiesFormItem1.Name = "showTablePropertiesFormItem1";
             // 
+            // deleteTableElementsItem1
+            // 
+            this.deleteTableElementsItem1.Id = 186;
+            this.deleteTableElementsItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.showDeleteTableCellsFormItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.deleteTableColumnsItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.deleteTableRowsItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.deleteTableItem1)});
+            this.deleteTableElementsItem1.Name = "deleteTableElementsItem1";
+            // 
+            // showDeleteTableCellsFormItem1
+            // 
+            this.showDeleteTableCellsFormItem1.Id = 187;
+            this.showDeleteTableCellsFormItem1.Name = "showDeleteTableCellsFormItem1";
+            // 
+            // deleteTableColumnsItem1
+            // 
+            this.deleteTableColumnsItem1.Id = 188;
+            this.deleteTableColumnsItem1.Name = "deleteTableColumnsItem1";
+            // 
+            // deleteTableRowsItem1
+            // 
+            this.deleteTableRowsItem1.Id = 189;
+            this.deleteTableRowsItem1.Name = "deleteTableRowsItem1";
+            // 
+            // deleteTableItem1
+            // 
+            this.deleteTableItem1.Id = 190;
+            this.deleteTableItem1.Name = "deleteTableItem1";
+            // 
+            // insertTableRowAboveItem1
+            // 
+            this.insertTableRowAboveItem1.Id = 191;
+            this.insertTableRowAboveItem1.Name = "insertTableRowAboveItem1";
+            // 
+            // insertTableRowBelowItem1
+            // 
+            this.insertTableRowBelowItem1.Id = 192;
+            this.insertTableRowBelowItem1.Name = "insertTableRowBelowItem1";
+            // 
+            // insertTableColumnToLeftItem1
+            // 
+            this.insertTableColumnToLeftItem1.Id = 193;
+            this.insertTableColumnToLeftItem1.Name = "insertTableColumnToLeftItem1";
+            // 
+            // insertTableColumnToRightItem1
+            // 
+            this.insertTableColumnToRightItem1.Id = 194;
+            this.insertTableColumnToRightItem1.Name = "insertTableColumnToRightItem1";
+            // 
+            // showInsertTableCellsFormItem1
+            // 
+            this.showInsertTableCellsFormItem1.Id = 195;
+            this.showInsertTableCellsFormItem1.Name = "showInsertTableCellsFormItem1";
+            // 
+            // mergeTableCellsItem1
+            // 
+            this.mergeTableCellsItem1.Id = 196;
+            this.mergeTableCellsItem1.Name = "mergeTableCellsItem1";
+            // 
+            // showSplitTableCellsForm1
+            // 
+            this.showSplitTableCellsForm1.Id = 197;
+            this.showSplitTableCellsForm1.Name = "showSplitTableCellsForm1";
+            // 
+            // splitTableItem1
+            // 
+            this.splitTableItem1.Id = 198;
+            this.splitTableItem1.Name = "splitTableItem1";
+            // 
             // toggleTableAutoFitItem1
             // 
             this.toggleTableAutoFitItem1.Id = 199;
@@ -1824,7 +1782,7 @@
             this.repositoryItemFloatingObjectOutlineWeight1.AutoHeight = false;
             this.repositoryItemFloatingObjectOutlineWeight1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemFloatingObjectOutlineWeight1.Control = this.richtextboxPackage;
+            this.repositoryItemFloatingObjectOutlineWeight1.Control = this.richtextboxrequest;
             this.repositoryItemFloatingObjectOutlineWeight1.Name = "repositoryItemFloatingObjectOutlineWeight1";
             // 
             // changeFloatingObjectTextWrapTypeItem1
@@ -2206,12 +2164,12 @@
             this.richEditBarController1.BarItems.Add(this.floatingObjectSendBackwardItem1);
             this.richEditBarController1.BarItems.Add(this.floatingObjectSendToBackItem1);
             this.richEditBarController1.BarItems.Add(this.floatingObjectSendBehindTextItem1);
-            this.richEditBarController1.Control = this.richtextboxPackage;
+            this.richEditBarController1.Control = this.richtextboxrequest;
             // 
             // paragraphBar1
             // 
             this.paragraphBar1.BarName = "";
-            this.paragraphBar1.Control = this.richtextboxPackage;
+            this.paragraphBar1.Control = this.richtextboxrequest;
             this.paragraphBar1.DockCol = 6;
             this.paragraphBar1.DockRow = 0;
             this.paragraphBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -2234,7 +2192,7 @@
             // tableAlignmentBar1
             // 
             this.tableAlignmentBar1.BarName = "";
-            this.tableAlignmentBar1.Control = this.richtextboxPackage;
+            this.tableAlignmentBar1.Control = this.richtextboxrequest;
             this.tableAlignmentBar1.DockCol = 3;
             this.tableAlignmentBar1.DockRow = 1;
             this.tableAlignmentBar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -2256,14 +2214,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1189, 598);
-            this.Controls.Add(this.richtextboxPackage);
+            this.Controls.Add(this.richtextboxrequest);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Syllabus_Request";
             this.Text = "Yêu Cầu Môn Học";
-            this.Load += new System.EventHandler(this.GUI_Program_PackageInfo_Load);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.GUI_Syllabus_Request_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichEditFontSizeEdit1)).EndInit();
@@ -2279,7 +2238,7 @@
 
         #endregion
 
-        private DevExpress.XtraRichEdit.RichEditControl richtextboxPackage;
+        private DevExpress.XtraRichEdit.RichEditControl richtextboxrequest;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraRichEdit.UI.CommonBar commonBar1;
         private DevExpress.XtraRichEdit.UI.UndoItem undoItem1;
@@ -2307,7 +2266,6 @@
         private DevExpress.XtraRichEdit.UI.ChangeStyleItem changeStyleItem1;
         private DevExpress.XtraRichEdit.Design.RepositoryItemRichEditStyleEdit repositoryItemRichEditStyleEdit1;
         private DevExpress.XtraRichEdit.UI.ShowEditStyleFormItem showEditStyleFormItem1;
-        private DevExpress.XtraRichEdit.UI.TablesBar tablesBar1;
         private DevExpress.XtraRichEdit.UI.InsertTableItem insertTableItem1;
         private DevExpress.XtraRichEdit.UI.ChangeSectionPageMarginsItem changeSectionPageMarginsItem1;
         private DevExpress.XtraRichEdit.UI.SetNormalSectionPageMarginsItem setNormalSectionPageMarginsItem1;
@@ -2344,7 +2302,6 @@
         private DevExpress.XtraRichEdit.UI.SelectTableItem selectTableItem1;
         private DevExpress.XtraRichEdit.UI.ToggleShowTableGridLinesItem toggleShowTableGridLinesItem1;
         private DevExpress.XtraRichEdit.UI.ShowTablePropertiesFormItem showTablePropertiesFormItem1;
-        private DevExpress.XtraRichEdit.UI.TableRowsAndColumnsBar tableRowsAndColumnsBar1;
         private DevExpress.XtraRichEdit.UI.DeleteTableElementsItem deleteTableElementsItem1;
         private DevExpress.XtraRichEdit.UI.ShowDeleteTableCellsFormItem showDeleteTableCellsFormItem1;
         private DevExpress.XtraRichEdit.UI.DeleteTableColumnsItem deleteTableColumnsItem1;
@@ -2355,7 +2312,6 @@
         private DevExpress.XtraRichEdit.UI.InsertTableColumnToLeftItem insertTableColumnToLeftItem1;
         private DevExpress.XtraRichEdit.UI.InsertTableColumnToRightItem insertTableColumnToRightItem1;
         private DevExpress.XtraRichEdit.UI.ShowInsertTableCellsFormItem showInsertTableCellsFormItem1;
-        private DevExpress.XtraRichEdit.UI.TableMergeBar tableMergeBar1;
         private DevExpress.XtraRichEdit.UI.MergeTableCellsItem mergeTableCellsItem1;
         private DevExpress.XtraRichEdit.UI.ShowSplitTableCellsForm showSplitTableCellsForm1;
         private DevExpress.XtraRichEdit.UI.SplitTableItem splitTableItem1;

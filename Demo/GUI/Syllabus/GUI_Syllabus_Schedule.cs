@@ -20,7 +20,9 @@ namespace Demo.GUI.Syllabus
         }
         public string idS = "";
         public string id = "";
+        public string idp = "";
         DicBLL dc = new DicBLL();
+        ProgramBLL p = new ProgramBLL();
         private void btnSave_Click(object sender, EventArgs e)
         {
             string act = rtAct.Text;
@@ -119,6 +121,15 @@ namespace Demo.GUI.Syllabus
         {
             txtcount.ReadOnly = true;
             loaddata();
+            if (p.getLock(idp) == true)
+            {
+                txtcount.ReadOnly = true;
+                txtPeriods.ReadOnly = true;
+                rtAct.ReadOnly = true;
+                rtContent.ReadOnly = true;
+                rtDoc.ReadOnly = true;
+                btnSave.Enabled = false;
+            }
         }
 
         private void txtPeriods_KeyPress(object sender, KeyPressEventArgs e)

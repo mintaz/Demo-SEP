@@ -436,7 +436,8 @@
             this.ClientSize = new System.Drawing.Size(1085, 590);
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Syllabus_MethodMap_Dialog";
-            this.Text = "GUI_Syllabus_MethodMap_Dialog";
+            this.Text = "Chỉnh sửa Phương Pháp Giảng Dạy";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GUI_Syllabus_MethodMap_Dialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

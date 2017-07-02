@@ -151,7 +151,7 @@
             this.ClientSize = new System.Drawing.Size(656, 225);
             this.Controls.Add(this.layoutControl1);
             this.Name = "GUI_Syllabus_Outcomes_Add";
-            this.Text = "GUI_Syllabus_Outcomes_Add";
+            this.Text = "Đầu Ra Môn Học";
             this.Load += new System.EventHandler(this.GUI_Syllabus_Outcomes_Add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

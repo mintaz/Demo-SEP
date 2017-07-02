@@ -22,6 +22,22 @@ namespace Demo.GUI.Program
         public string id ="";
         private void GUI_Program_ProgramInfo_Load(object sender, EventArgs e)
         {
+            if (pro.getLock(id) == true)
+            {
+                txtProgramActor.ReadOnly = true;
+                txtProgramBranch.ReadOnly = true;
+                txtProgramLevel.ReadOnly = true;
+                txtProgramMark.ReadOnly = true;
+                txtProgramName.ReadOnly = true;
+                txtProgramPoint.ReadOnly = true;
+                txtProgramProcess.ReadOnly = true;
+                txtProgramSemester.ReadOnly = true;
+                txtProgramTime.ReadOnly = true;
+                txtProgramType.ReadOnly = true;
+                txtProgramVolume.ReadOnly = true;
+                btnSave.Enabled = false;
+                
+            }
             txtProgramName.Text = pro.LoadProgram(id).Single().name;
             txtProgramName.ReadOnly = true;
             if(pro.LoadProgram(id).Single().ProgramActor != null || pro.LoadProgram(id).Single().ProgramActor != "")
@@ -136,6 +152,7 @@ namespace Demo.GUI.Program
                 if (pro.UpdateProgram(id, level, branch, type, time, actor, vol, process, tc, sem, mark) == true)
                 {
                     MessageBox.Show(dc.successupdateprogram("success"));
+                    this.Close();
                 }
                 else
                 {

@@ -54,16 +54,19 @@
             this.btnProgramCreateSyllabus = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramInfo = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramObjective = new DevExpress.XtraBars.BarButtonItem();
-            this.btnProgramPlan = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramLecturerList = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramFacilities = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.btnProgramOut = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.btnExit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnsubmit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnlock = new DevExpress.XtraBars.BarButtonItem();
+            this.btnunlock = new DevExpress.XtraBars.BarButtonItem();
             this.pageProgram = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.pageProgramGeneralInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupProgramManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pagesubmit = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageSyllabus = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupSyllabusInfo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupSyllabusSchedule = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -109,15 +112,17 @@
             this.btnProgramCreateSyllabus,
             this.btnProgramInfo,
             this.btnProgramObjective,
-            this.btnProgramPlan,
             this.btnProgramLecturerList,
             this.btnProgramFacilities,
             this.skinRibbonGalleryBarItem1,
             this.btnProgramOut,
             this.barStaticItem1,
-            this.btnExit});
+            this.btnExit,
+            this.btnsubmit,
+            this.btnlock,
+            this.btnunlock});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 42;
+            this.ribbonControl1.MaxItemId = 45;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.barStaticItem1);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -169,6 +174,7 @@
             this.btnProgram.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgram.LargeGlyph")));
             this.btnProgram.LargeWidth = 90;
             this.btnProgram.Name = "btnProgram";
+            this.btnProgram.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProgram_ItemClick);
             // 
             // btnPrintSyllabus
             // 
@@ -178,6 +184,7 @@
             this.btnPrintSyllabus.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnPrintSyllabus.LargeGlyph")));
             this.btnPrintSyllabus.LargeWidth = 90;
             this.btnPrintSyllabus.Name = "btnPrintSyllabus";
+            this.btnPrintSyllabus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPrintSyllabus_ItemClick);
             // 
             // btnPrintFull
             // 
@@ -187,6 +194,7 @@
             this.btnPrintFull.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnPrintFull.LargeGlyph")));
             this.btnPrintFull.LargeWidth = 90;
             this.btnPrintFull.Name = "btnPrintFull";
+            this.btnPrintFull.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPrintFull_ItemClick);
             // 
             // btnPrintReviewProgram
             // 
@@ -354,15 +362,6 @@
             this.btnProgramObjective.LargeWidth = 75;
             this.btnProgramObjective.Name = "btnProgramObjective";
             // 
-            // btnProgramPlan
-            // 
-            this.btnProgramPlan.Caption = "Kế Hoạch Giảng Dạy";
-            this.btnProgramPlan.Glyph = ((System.Drawing.Image)(resources.GetObject("btnProgramPlan.Glyph")));
-            this.btnProgramPlan.Id = 30;
-            this.btnProgramPlan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramPlan.LargeGlyph")));
-            this.btnProgramPlan.LargeWidth = 90;
-            this.btnProgramPlan.Name = "btnProgramPlan";
-            // 
             // btnProgramLecturerList
             // 
             this.btnProgramLecturerList.Caption = "Danh Sách Giảng Viên";
@@ -420,18 +419,46 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExit_ItemClick);
             // 
+            // btnsubmit
+            // 
+            this.btnsubmit.Caption = "Submit Chương Trình";
+            this.btnsubmit.Glyph = ((System.Drawing.Image)(resources.GetObject("btnsubmit.Glyph")));
+            this.btnsubmit.Id = 42;
+            this.btnsubmit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnsubmit.LargeGlyph")));
+            this.btnsubmit.LargeWidth = 100;
+            this.btnsubmit.Name = "btnsubmit";
+            this.btnsubmit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // btnlock
+            // 
+            this.btnlock.Caption = "Khóa Chương Trình";
+            this.btnlock.Glyph = ((System.Drawing.Image)(resources.GetObject("btnlock.Glyph")));
+            this.btnlock.Id = 43;
+            this.btnlock.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnlock.LargeGlyph")));
+            this.btnlock.Name = "btnlock";
+            this.btnlock.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // btnunlock
+            // 
+            this.btnunlock.Caption = "Mở Khóa Chương Trình";
+            this.btnunlock.Glyph = ((System.Drawing.Image)(resources.GetObject("btnunlock.Glyph")));
+            this.btnunlock.Id = 44;
+            this.btnunlock.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnunlock.LargeGlyph")));
+            this.btnunlock.Name = "btnunlock";
+            this.btnunlock.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
             // pageProgram
             // 
             this.pageProgram.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.pageProgramGeneralInfo,
-            this.groupProgramManager});
+            this.groupProgramManager,
+            this.pagesubmit});
             this.pageProgram.Name = "pageProgram";
             this.pageProgram.Text = "Chương Trình Đào Tạo";
             // 
             // pageProgramGeneralInfo
             // 
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramInfo);
-            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramPlan);
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramLecturerList);
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramFacilities);
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramOut);
@@ -444,6 +471,14 @@
             this.groupProgramManager.ItemLinks.Add(this.btnProgramCreateSyllabus);
             this.groupProgramManager.Name = "groupProgramManager";
             this.groupProgramManager.Text = "Quản Lý Chương Trình";
+            // 
+            // pagesubmit
+            // 
+            this.pagesubmit.ItemLinks.Add(this.btnsubmit);
+            this.pagesubmit.ItemLinks.Add(this.btnlock);
+            this.pagesubmit.ItemLinks.Add(this.btnunlock);
+            this.pagesubmit.Name = "pagesubmit";
+            this.pagesubmit.Text = "Hoàn thiện";
             // 
             // pageSyllabus
             // 
@@ -547,7 +582,7 @@
             this.IsMdiContainer = true;
             this.Name = "Main";
             this.Ribbon = this.ribbonControl1;
-            this.Text = "Education Program Builder";
+            this.Text = "Chương Trình Xây Dựng Chương Trình Đào Tạo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -595,7 +630,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupProgramManager;
         private DevExpress.XtraBars.BarButtonItem btnProgramInfo;
         private DevExpress.XtraBars.BarButtonItem btnProgramObjective;
-        private DevExpress.XtraBars.BarButtonItem btnProgramPlan;
         private DevExpress.XtraBars.BarButtonItem btnProgramLecturerList;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageProgramGeneralInfo;
         private DevExpress.XtraBars.BarButtonItem btnProgramFacilities;
@@ -606,6 +640,10 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraBars.BarButtonItem btnExit;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup GroupLogout;
+        private DevExpress.XtraBars.BarButtonItem btnsubmit;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pagesubmit;
+        private DevExpress.XtraBars.BarButtonItem btnlock;
+        private DevExpress.XtraBars.BarButtonItem btnunlock;
     }
 }
 

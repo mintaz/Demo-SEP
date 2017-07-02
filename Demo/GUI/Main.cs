@@ -39,7 +39,12 @@ namespace Demo
         }
 
         private void Main_Load(object sender, EventArgs e)
-        { 
+        {
+            if (pro.getLock(idpath) == true)
+            {
+                btnsubmit.Enabled = false;
+                btnlock.Enabled = false;
+            }
             barStaticItem1.Caption = name;
             if (admin == false)
             {
@@ -51,6 +56,10 @@ namespace Demo
                     btnProgramCreate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     btnPrintSyllabus.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     btnPrintFull.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    if (pro.getLock(idpath) == false)
+                    {
+                        btnunlock.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    }
                 }
                 else if (auth == 2)
                 {
@@ -65,6 +74,8 @@ namespace Demo
                     pageProgram.Visible = false;
                     pageSyllabus.Visible = false;
                     groupAccountManager.Visible = false;
+                    btnProgram.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    btnPrintSyllabus.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     btnAccountReset.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
                 }
@@ -93,20 +104,27 @@ namespace Demo
                 formcreateprogram.Show();
             }
         }
-
+        ProgramBLL pro = new ProgramBLL();
         private void btnProgramCreateSyllabus_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form checkformsyllabusmana = this.checkexist(typeof(GUI.Program.GUI_Program_CreateSyllabus));
-            if (checkformsyllabusmana != null)
+            if (pro.getcheckcan(idpath))
             {
-                checkformsyllabusmana.Activate();
+                Form checkformsyllabusmana = this.checkexist(typeof(GUI.Program.GUI_Program_CreateSyllabus));
+                if (checkformsyllabusmana != null)
+                {
+                    checkformsyllabusmana.Activate();
+                }
+                else
+                {
+                    GUI.Program.GUI_Program_CreateSyllabus formsyllabusmana = new GUI.Program.GUI_Program_CreateSyllabus();
+                    formsyllabusmana.MdiParent = this;
+                    formsyllabusmana.idPrg = idpath;
+                    formsyllabusmana.Show();
+                }
             }
             else
             {
-                GUI.Program.GUI_Program_CreateSyllabus formsyllabusmana = new GUI.Program.GUI_Program_CreateSyllabus();
-                formsyllabusmana.MdiParent = this;
-                formsyllabusmana.idPrg = idpath;
-                formsyllabusmana.Show();
+                MessageBox.Show("Bạn phải cập nhập thông tin chương trình đào tạo trước khi phân công môn học. \nVui lòng thử lại.");
             }
         }
 
@@ -137,6 +155,7 @@ namespace Demo
             {
                 GUI.Program.GUI_Program_Lecturer formlecturerlist = new GUI.Program.GUI_Program_Lecturer();
                 formlecturerlist.MdiParent = this;
+                formlecturerlist.idprogram = idpath;
                 formlecturerlist.Show();
             }
         }
@@ -152,6 +171,7 @@ namespace Demo
             {
                 GUI.GUI_Program_PackageInfo formpackage = new GUI.GUI_Program_PackageInfo();
                 formpackage.MdiParent = this;
+                formpackage.idprogram = idpath;
                 formpackage.Show();
             }
         }
@@ -168,6 +188,7 @@ namespace Demo
                 GUI.Syllabus.GUI_Syllabus_Info formsyllabusinfo = new GUI.Syllabus.GUI_Syllabus_Info();
                 formsyllabusinfo.MdiParent = this;
                 formsyllabusinfo.idsysinfo = idpathsy;
+                formsyllabusinfo.idp = idpath;
                 formsyllabusinfo.Show();
             }
         }
@@ -183,6 +204,7 @@ namespace Demo
             {
                 GUI.GUI_Syllabus_Lecturer formsyllabuslecturer = new GUI.GUI_Syllabus_Lecturer();
                 formsyllabuslecturer.MdiParent = this;
+                formsyllabuslecturer.ids = idpathsy;
                 formsyllabuslecturer.Show();
             }
         }
@@ -198,6 +220,8 @@ namespace Demo
             {
                 GUI.GUI_Syllabus_Description formsyllabusdes = new GUI.GUI_Syllabus_Description();
                 formsyllabusdes.MdiParent = this;
+                formsyllabusdes.ids = idpathsy;
+                formsyllabusdes.idp = idpath;
                 formsyllabusdes.Show();
             }
         }
@@ -213,6 +237,8 @@ namespace Demo
             {
                 GUI.GUI_Syllabus_Document formsyllabusdoc = new GUI.GUI_Syllabus_Document();
                 formsyllabusdoc.MdiParent = this;
+                formsyllabusdoc.idsyllabus = idpathsy;
+                formsyllabusdoc.idp = idpath;
                 formsyllabusdoc.Show();
             }
         }
@@ -228,6 +254,7 @@ namespace Demo
             {
                 GUI.GUI_Syllabus_Request formsyllabusreq = new GUI.GUI_Syllabus_Request();
                 formsyllabusreq.MdiParent = this;
+                formsyllabusreq.ids = idpathsy;
                 formsyllabusreq.Show();
             }
         }
@@ -244,6 +271,7 @@ namespace Demo
                 GUI.Syllabus.GUI_Syllabus_ScheduleManager formsyllabussche = new GUI.Syllabus.GUI_Syllabus_ScheduleManager();
                 formsyllabussche.MdiParent = this;
                 formsyllabussche.idS = idpathsy;
+                formsyllabussche.idp = idpath;
                 formsyllabussche.Show();
             }
         }
@@ -260,6 +288,7 @@ namespace Demo
                 GUI.Syllabus.GUI_Syllabus_Objectives formsyllabussobj = new GUI.Syllabus.GUI_Syllabus_Objectives();
                 formsyllabussobj.MdiParent = this;
                 formsyllabussobj.idsys = idpathsy;
+                formsyllabussobj.idp = idpath;
                 formsyllabussobj.Show();
             }
         }
@@ -276,6 +305,7 @@ namespace Demo
                 GUI.Syllabus.GUI_Syllabus_Outcomes formsyllabussout = new GUI.Syllabus.GUI_Syllabus_Outcomes();
                 formsyllabussout.MdiParent = this;
                 formsyllabussout.idsys = idpathsy;
+                formsyllabussout.idp = idpath;
                 formsyllabussout.Show();
             }
         }
@@ -318,6 +348,7 @@ namespace Demo
                     GUI.Syllabus.GUI_Syllabus_MethodMapp formsyllabusmethodmap = new GUI.Syllabus.GUI_Syllabus_MethodMapp();
                     formsyllabusmethodmap.MdiParent = this;
                     formsyllabusmethodmap.idS = idpathsy;
+                    formsyllabusmethodmap.idp = idpath;
                     formsyllabusmethodmap.Show();
                 }
             }
@@ -375,6 +406,86 @@ namespace Demo
             log = true;
             this.Close();
         }
-        
+
+        private void btnPrintSyllabus_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form checkformprintsyllabus = this.checkexist(typeof(GUI.Program.GUI_Program_Outcomes));
+            if (checkformprintsyllabus != null)
+            {
+                checkformprintsyllabus.Activate();
+            }
+            else
+            {
+                GUI.Print.GUI_Print_Syllabus formprintsyllabus = new GUI.Print.GUI_Print_Syllabus();
+                formprintsyllabus.MdiParent = this;
+                formprintsyllabus.idprogram = idpath;
+                formprintsyllabus.idS = idpathsy;
+                formprintsyllabus.Show();
+            }
+        }
+
+        private void btnPrintFull_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form checkprintfull = this.checkexist(typeof(GUI.Program.GUI_Program_Outcomes));
+            if (checkprintfull != null)
+            {
+                checkprintfull.Activate();
+            }
+            else
+            {
+                GUI.Print.GUI_Print_PrintAll printfull = new GUI.Print.GUI_Print_PrintAll();
+                printfull.MdiParent = this;
+                printfull.idprogram = idpath;
+                printfull.Show();
+            }
+        }
+
+        private void btnProgram_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form checkprintprogram = this.checkexist(typeof(GUI.Program.GUI_Program_Outcomes));
+            if (checkprintprogram != null)
+            {
+                checkprintprogram.Activate();
+            }
+            else
+            {
+                GUI.Print.GUI_Print_Program printpro = new GUI.Print.GUI_Print_Program();
+                printpro.MdiParent = this;
+                printpro.idprogram = idpath;
+                printpro.Show();
+            }
+        }
+        EprogramDataContext db = new EprogramDataContext();
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(MessageBox.Show("Bạn chắc chắn muốn hoàn thành việc xây dựng chương trình đào tạo chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk) == DialogResult.OK)
+            {
+                foreach(Syllabus item in db.Syllabus.Where(s => s.idProgram == idpath).ToList())
+                {
+                    item.isLockEdit = true;
+                    db.SubmitChanges();
+                }
+                MessageBox.Show("Cập nhập thành công, bạn không thể xóa môn học.");
+            }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Bạn chắc chắn muốn khóa chương trình đào tạo chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk) == DialogResult.OK)
+            {
+                pro.setlock(idpath);
+                MessageBox.Show("Đã khóa chương trình đào tạo.");
+                log = true;
+                this.Close();
+            }
+        }
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GUI.Program.GUI_Enter_Pass enterpass = new GUI.Program.GUI_Enter_Pass();
+            enterpass.ShowDialog();
+            MessageBox.Show("Chương trình sẽ thoát vì lý do bảo mật, vui lòng đăng nhập lại");
+            log = true;
+            this.Close();
+        }
     }
 }

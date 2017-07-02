@@ -18,11 +18,19 @@ namespace Demo.GUI.Syllabus
         }
         public string idS = "";
         public string idSout = "";
+        public string idp = "";
         SyllabusOutBLL syou = new SyllabusOutBLL();
         DicBLL dc = new DicBLL();
         MappingBLL map = new MappingBLL();
+        ProgramBLL p = new ProgramBLL();
         private void GUI_Syllabus_Outcomes_Add_Load(object sender, EventArgs e)
         {
+            if (p.getLock(idp) == true)
+            {
+                txtOutNo.ReadOnly = true;
+                rtCourseOut.ReadOnly = true;
+                btnSave.Enabled = true;
+            }
             if (idSout != "")
             {
                 txtOutNo.Text = syou.loadout(idSout).Single().OutcomeNo;
@@ -62,6 +70,7 @@ namespace Demo.GUI.Syllabus
                         MessageBox.Show(dc.sysllabusout("success"));
                         rtCourseOut.Text = "";
                         txtOutNo.Text = "";
+                        this.Close();
                     }
                     else
                     {
@@ -73,6 +82,7 @@ namespace Demo.GUI.Syllabus
                     if (syou.EditOut(idSout,no, content) == true)
                     {
                         MessageBox.Show(dc.sysllabusout("edit"));
+                        this.Close();
                     }
                     else
                     {

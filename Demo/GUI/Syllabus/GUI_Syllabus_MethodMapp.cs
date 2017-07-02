@@ -18,14 +18,17 @@ namespace Demo.GUI.Syllabus
             InitializeComponent();
         }
         public string idS = "";
+        public string idp = "";
         int index;
         MappingBLL map = new MappingBLL();
+        ProgramBLL p = new ProgramBLL();
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string id = gvMethodMap.GetRowCellValue(index, this.ID).ToString();
             GUI.Syllabus.GUI_Syllabus_MethodMap_Dialog mapdialog = new GUI_Syllabus_MethodMap_Dialog();
             mapdialog.idmap = id;
             mapdialog.ids = idS;
+            mapdialog.idp = idp;
             mapdialog.ShowDialog();
             loadata();
         }
@@ -57,6 +60,10 @@ namespace Demo.GUI.Syllabus
         private void GUI_Syllabus_MethodMapp_Load(object sender, EventArgs e)
         {
             loadata();
+            if (p.getLock(idp) == true)
+            {
+                btnDel.Enabled = false;
+            }
         }
     }
 }

@@ -26,6 +26,7 @@ namespace Demo.GUI.Syllabus
         MappingBLL map = new MappingBLL();
         public string idsy = "";
         public string idpo = "";
+        ProgramBLL p = new ProgramBLL();
         void loadDB()
         {
             lsSyllabusOut.DataSource = map.loadSyOut(idsy);
@@ -51,6 +52,10 @@ namespace Demo.GUI.Syllabus
 
         private void GUI_Syllabus_Map_Load(object sender, EventArgs e)
         {
+            if (p.getLock(idpo) == true)
+            {
+                btnSave.Enabled = false;
+            }
             loadDB();
             string sts = lsSyllabusOut.GetItemValue(index).ToString();
             string stp = map.loadmap(sts);

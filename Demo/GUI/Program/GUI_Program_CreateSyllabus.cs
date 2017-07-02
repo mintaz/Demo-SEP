@@ -18,22 +18,31 @@ namespace Demo.GUI.Program
             InitializeComponent();
         }
         SyllabusBLL s = new SyllabusBLL();
-        public string idPrg ="";
+        public string idPrg = "";
         public void loadData()
         {
+
             gcCourse.DataSource = s.loadSyllabus(idPrg);
         }
         private void GUI_Program_CreateSyllabus_Load(object sender, EventArgs e)
         {
             loadData();
-        }
+            if (p.getLock(idPrg)==true)
+            {
+                btnAdd.Enabled = false;
+                btnDel.Enabled = false;
+            }
 
+        }
+        ProgramBLL p = new ProgramBLL();
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
             GUI.Program.GUI_Program_Syllabus sysadd = new GUI_Program_Syllabus();
             sysadd.idprogram = idPrg;
             sysadd.ShowDialog();
             loadData();
+
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -59,6 +68,34 @@ namespace Demo.GUI.Program
             sysedit.idsys = id;
             sysedit.ShowDialog();
             loadData();
+        }
+        EprogramDataContext db = new EprogramDataContext();
+        DicBLL dc = new DicBLL();
+        private void btnDel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string id = gvCourse.GetRowCellValue(index, this.ID).ToString();
+
+            if (db.Syllabus.Where(s => s.id == id).Single().isLockEdit == true)
+            {
+                MessageBox.Show("Bạn không thể xóa môn học.");
+            }
+            else
+            {
+
+                if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (s.delSy(id) == true)
+                    {
+                        MessageBox.Show("Xóa Thành Công.");
+                    }
+                    else
+                    {
+                        MessageBox.Show(dc.errorAccountMessage("else"));
+                    }
+                    loadData();
+                }
+            }
+
         }
     }
 }

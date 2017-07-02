@@ -20,6 +20,8 @@ namespace Demo.GUI.Syllabus
         }
         int index;
         public string idsys = "";
+        public string idp = "";
+        ProgramBLL p = new ProgramBLL();
         SyllabusOutBLL syou = new SyllabusOutBLL();
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -30,12 +32,19 @@ namespace Demo.GUI.Syllabus
         }
         void loadData()
         {
+
             gcCourseOut.DataSource = syou.loadlistout(idsys);
+            if (p.getLock(idp) == true)
+            {
+                btnAdd.Enabled = false;
+                btnDel.Enabled = false;
+            }
         }
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string idso = gvCourseOut.GetRowCellValue(index, this.ID).ToString();
             GUI.Syllabus.GUI_Syllabus_Outcomes_Add outedit = new GUI_Syllabus_Outcomes_Add();
+            outedit.idp = idp;
             outedit.idSout = idso;
             outedit.ShowDialog();
             loadData();

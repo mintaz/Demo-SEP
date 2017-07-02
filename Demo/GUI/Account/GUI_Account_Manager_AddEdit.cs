@@ -98,6 +98,7 @@ namespace Demo.GUI
                     {
                         MessageBox.Show(dic.successAccountMessage("add"));
                         clear();
+                        this.Close();
                     }
                     else
                     {
@@ -118,6 +119,7 @@ namespace Demo.GUI
                     {
                         MessageBox.Show(dic.successAccountMessage("edit"));
                         clear();
+                        this.Close();
                     }
                     else
                     {

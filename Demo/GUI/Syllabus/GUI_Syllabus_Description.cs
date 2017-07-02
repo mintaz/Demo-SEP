@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DAL;
+using BLL;
 namespace Demo.GUI
 {
     public partial class GUI_Syllabus_Description : Form
@@ -16,11 +17,43 @@ namespace Demo.GUI
         {
             InitializeComponent();
         }
-
-        private void GUI_Program_PackageInfo_Load(object sender, EventArgs e)
+        public string ids = "";
+        EprogramDataContext db = new EprogramDataContext();
+        public string  idp = "";
+        ProgramBLL p = new ProgramBLL();
+        private void GUI_Syllabus_Description_Load(object sender, EventArgs e)
         {
-            richtextboxPackage.LoadDocument("C:\\Users\\Mint\\Desktop\\Template\\Syllabus\\Description.docx");
+            if (p.getLock(idp) == true)
+            {
+                richtextboxDes.ReadOnly = true;
+                fileSaveItem1.Enabled = false;
+            }
+            try
+            {
+                richtextboxDes.Text = db.Syllabus.Where(pro => pro.id == ids).Single().CourseDescription;
+            }
+            catch
+            {
+                richtextboxDes.Text = "";
+            }
 
+        }
+        SyllabusBLL syl = new SyllabusBLL();
+        private void fileSaveItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (richtextboxDes.Text == null)
+            {
+                richtextboxDes.Text = "";
+            }
+            if (syl.UpdateDes(ids, richtextboxDes.Text))
+            {
+                MessageBox.Show("Cập nhập thành công.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Lỗi đường truyền, vui lòng thử lại sau.");
+            }
         }
     }
 }

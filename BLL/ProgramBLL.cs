@@ -11,6 +11,61 @@ namespace BLL
         EprogramDataContext db = new EprogramDataContext();
 
        
+
+        public bool Updatelecturer(string id, string content)
+        {
+            try
+            {
+                Program lec = db.Programs.Where(st => st.id == id).Single();
+                lec.ProgramLecturer = content;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool getLock(string id)
+        {
+            try
+            {
+                return db.Programs.Where(proram => proram.id == id).Single().isLock.Value;
+
+            }
+            catch
+            {
+                return true;
+            }
+        }
+        public void setlock(string id)
+        {
+            Program program = db.Programs.Where(proram => proram.id == id).Single();
+            program.isLock = true;
+        }
+        public void unlock(string id)
+        {
+            Program program = db.Programs.Where(proram => proram.id == id).Single();
+            program.isLock = false;
+
+        }
+        public bool UpdatePackage(string id, string content)
+        {
+            try
+            {
+                Program lec = db.Programs.Where(st => st.id == id).Single();
+                lec.ProgramPackage = content;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+
         public string createID()
         {
             try
@@ -34,6 +89,7 @@ namespace BLL
                 pr.id = createID();
                 pr.name = namepro;
                 pr.idAccount = idAcc;
+                pr.isLock = false;
                 db.Programs.InsertOnSubmit(pr);
                 db.SubmitChanges();
                 return true;
@@ -65,6 +121,29 @@ namespace BLL
         public List<Program> LoadProgram(string id)
         {
             return db.Programs.Where(a => a.id == id).ToList();
+        }
+        public bool getcheckcan(string id)
+        {
+            try
+            {
+                Program p = db.Programs.Where(a => a.id == id).Single();
+                if (p.ProgramSemester == null || p.ProgramSemester.ToString() == "" || p.ProgramSemester.ToString() == null)
+                {
+                    return false;
+                }
+                else if (p.ProgramTC == null || p.ProgramTC.ToString() == "" || p.ProgramTC.ToString() == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
         public bool UpdateProgram(string id,string programlevel, string programbranch, string programtype, string programtime, string programactor, string programvolume, string programprocess, int programpoint, int programsem, int programmark)
         {

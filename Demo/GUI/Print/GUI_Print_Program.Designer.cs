@@ -1,6 +1,6 @@
 ﻿namespace Demo.GUI.Print
 {
-    partial class GUI_Print_PrintAll
+    partial class GUI_Print_Program
     {
         /// <summary>
         /// Required designer variable.
@@ -98,7 +98,7 @@
             DevExpress.Utils.SuperToolTip superToolTip23 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem23 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem23 = new DevExpress.Utils.ToolTipItem();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Print_PrintAll));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Print_Program));
             DevExpress.Utils.SuperToolTip superToolTip24 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem24 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem24 = new DevExpress.Utils.ToolTipItem();
@@ -179,7 +179,7 @@
             DevExpress.Utils.ToolTipItem toolTipItem49 = new DevExpress.Utils.ToolTipItem();
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
-            this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.printableComponentLink2 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
             this.documentViewerRibbonController1 = new DevExpress.XtraPrinting.Preview.DocumentViewerRibbonController(this.components);
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
@@ -270,11 +270,11 @@
             // printingSystem1
             // 
             this.printingSystem1.Links.AddRange(new object[] {
-            this.printableComponentLink1});
+            this.printableComponentLink2});
             // 
-            // printableComponentLink1
+            // printableComponentLink2
             // 
-            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
+            this.printableComponentLink2.PrintingSystemBase = this.printingSystem1;
             // 
             // documentViewerRibbonController1
             // 
@@ -1533,7 +1533,7 @@
             superToolTip49.MaxWidth = 210;
             this.printPreviewBarItem25.SuperTip = superToolTip49;
             // 
-            // GUI_Print_PrintAll
+            // GUI_Print_Program
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1542,10 +1542,10 @@
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.backstageViewControl1);
-            this.Name = "GUI_Print_PrintAll";
-            this.Text = "In Toàn Bộ";
+            this.Name = "GUI_Print_Program";
+            this.Text = "In Chương Trình Đào Tạo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.GUI_Print_PrintAll_Load);
+            this.Load += new System.EventHandler(this.GUI_Print_Program_Load);
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -1630,6 +1630,6 @@
         private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageViewControl1;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup3;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem25;
-        private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
+        private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink2;
     }
 }

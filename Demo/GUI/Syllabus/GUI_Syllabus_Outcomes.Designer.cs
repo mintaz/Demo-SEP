@@ -200,6 +200,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "GUI_Syllabus_Outcomes";
             this.Text = "Danh Sách Đầu Ra Môn Học";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GUI_Syllabus_Outcomes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCourseOut)).EndInit();

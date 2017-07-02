@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DAL;
+using BLL;
 namespace Demo.GUI.Program
 {
     public partial class GUI_Program_Lecturer : Form
@@ -16,11 +17,42 @@ namespace Demo.GUI.Program
         {
             InitializeComponent();
         }
-
+        public string idprogram = "";
+        EprogramDataContext db = new EprogramDataContext();
+        ProgramBLL p = new ProgramBLL();
         private void GUI_Program_PackageInfo_Load(object sender, EventArgs e)
         {
-            //richtextboxLecturer.LoadDocument("C:\\Users\\Mint\\Desktop\\z1.docx");
+            if (p.getLock(idprogram) == true)
+            {
+                richtextboxLecturer.ReadOnly = true;
+                fileSaveItem1.Enabled = false;
+            }
+            try
+            {
+                richtextboxLecturer.Text = db.Programs.Where(pro => pro.id == idprogram).Single().ProgramLecturer;
+            }
+            catch
+            {
+                richtextboxLecturer.Text = "";
+            }
 
+        }
+
+        private void fileSaveItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(richtextboxLecturer.Text == null)
+            {
+                richtextboxLecturer.Text = "";
+            }
+            if (p.Updatelecturer(idprogram, richtextboxLecturer.Text))
+            {
+                MessageBox.Show("Cập nhập thành công.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Lỗi đường truyền, vui lòng thử lại sau.");
+            }
         }
     }
 }

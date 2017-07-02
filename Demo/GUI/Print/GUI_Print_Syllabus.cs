@@ -13,26 +13,20 @@ using BLL;
 
 namespace Demo.GUI.Print
 {
-    public partial class GUI_Print_PrintAll : Form
+    public partial class GUI_Print_Syllabus : Form
     {
-        public GUI_Print_PrintAll()
+        public GUI_Print_Syllabus()
         {
             InitializeComponent();
         }
-        public string idprogram ="";
+        public string idS = "";
+        public string idprogram = "";
         CreateTableBLL table = new CreateTableBLL();
-        SyllabusBLL sys = new SyllabusBLL();
-        private void GUI_Print_PrintAll_Load(object sender, EventArgs e)
+        private void GUI_Print_Syllabus_Load(object sender, EventArgs e)
         {
-            table.ProgramFull(idprogram);
-            foreach (var syl in sys.loadSyllabus(idprogram).ToList())
-            {
-                table.Syllabus(syl.id, syl.idProgram);
-                table.Full();
-            }
+            table.Syllabus(idS, idprogram);
             RichEditDocumentServer f = new RichEditDocumentServer();
-            f.LoadDocument(@"Full.docx");
-
+            f.LoadDocument(@"Syllabus.docx");
             printableComponentLink1.Component = f;
             documentViewer1.DocumentSource = printingSystem1;
         }
