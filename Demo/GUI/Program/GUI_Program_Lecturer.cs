@@ -35,19 +35,21 @@ namespace Demo.GUI.Program
             {
                 richtextboxLecturer.Text = "";
             }
-
+           richtextboxLecturer.Options.Behavior.SaveAs = DevExpress.XtraRichEdit.DocumentCapability.Disabled;
+            richtextboxLecturer.Options.Behavior.Save = DevExpress.XtraRichEdit.DocumentCapability.Disabled;
         }
 
         private void fileSaveItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(richtextboxLecturer.Text == null)
+
+            if (richtextboxLecturer.Text == null)
             {
                 richtextboxLecturer.Text = "";
             }
             if (p.Updatelecturer(idprogram, richtextboxLecturer.Text))
             {
                 MessageBox.Show("Cập nhập thành công.");
-                this.Close();
+                Hide();
             }
             else
             {

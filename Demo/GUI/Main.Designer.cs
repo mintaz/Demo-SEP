@@ -44,10 +44,7 @@
             this.btnSyllabusLecturerInfo = new DevExpress.XtraBars.BarButtonItem();
             this.btnSyllabusObjectives = new DevExpress.XtraBars.BarButtonItem();
             this.btnSyllabusOutcomes = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSyllabusCourseDescription = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSyllabusDocument = new DevExpress.XtraBars.BarButtonItem();
             this.btnSyllabusMethod = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSyllabusRequirement = new DevExpress.XtraBars.BarButtonItem();
             this.btnSyllabusSchedule = new DevExpress.XtraBars.BarButtonItem();
             this.btnSyllabusMapping = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramCreate = new DevExpress.XtraBars.BarButtonItem();
@@ -55,7 +52,6 @@
             this.btnProgramInfo = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramObjective = new DevExpress.XtraBars.BarButtonItem();
             this.btnProgramLecturerList = new DevExpress.XtraBars.BarButtonItem();
-            this.btnProgramFacilities = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.btnProgramOut = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -102,10 +98,7 @@
             this.btnSyllabusLecturerInfo,
             this.btnSyllabusObjectives,
             this.btnSyllabusOutcomes,
-            this.btnSyllabusCourseDescription,
-            this.btnSyllabusDocument,
             this.btnSyllabusMethod,
-            this.btnSyllabusRequirement,
             this.btnSyllabusSchedule,
             this.btnSyllabusMapping,
             this.btnProgramCreate,
@@ -113,7 +106,6 @@
             this.btnProgramInfo,
             this.btnProgramObjective,
             this.btnProgramLecturerList,
-            this.btnProgramFacilities,
             this.skinRibbonGalleryBarItem1,
             this.btnProgramOut,
             this.barStaticItem1,
@@ -263,26 +255,6 @@
             this.btnSyllabusOutcomes.Name = "btnSyllabusOutcomes";
             this.btnSyllabusOutcomes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusOutcomes_ItemClick);
             // 
-            // btnSyllabusCourseDescription
-            // 
-            this.btnSyllabusCourseDescription.Caption = "Mô Tả Vắn Tắt";
-            this.btnSyllabusCourseDescription.Glyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusCourseDescription.Glyph")));
-            this.btnSyllabusCourseDescription.Id = 17;
-            this.btnSyllabusCourseDescription.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusCourseDescription.LargeGlyph")));
-            this.btnSyllabusCourseDescription.LargeWidth = 75;
-            this.btnSyllabusCourseDescription.Name = "btnSyllabusCourseDescription";
-            this.btnSyllabusCourseDescription.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusCourseDescription_ItemClick);
-            // 
-            // btnSyllabusDocument
-            // 
-            this.btnSyllabusDocument.Caption = "Thông Tin Tài Liệu";
-            this.btnSyllabusDocument.Glyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusDocument.Glyph")));
-            this.btnSyllabusDocument.Id = 18;
-            this.btnSyllabusDocument.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusDocument.LargeGlyph")));
-            this.btnSyllabusDocument.LargeWidth = 75;
-            this.btnSyllabusDocument.Name = "btnSyllabusDocument";
-            this.btnSyllabusDocument.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusDocument_ItemClick);
-            // 
             // btnSyllabusMethod
             // 
             this.btnSyllabusMethod.Caption = "Phương Pháp Đánh Giá";
@@ -292,16 +264,6 @@
             this.btnSyllabusMethod.LargeWidth = 75;
             this.btnSyllabusMethod.Name = "btnSyllabusMethod";
             this.btnSyllabusMethod.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusMethod_ItemClick);
-            // 
-            // btnSyllabusRequirement
-            // 
-            this.btnSyllabusRequirement.Caption = "Yêu Cầu Môn Học";
-            this.btnSyllabusRequirement.Glyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusRequirement.Glyph")));
-            this.btnSyllabusRequirement.Id = 20;
-            this.btnSyllabusRequirement.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSyllabusRequirement.LargeGlyph")));
-            this.btnSyllabusRequirement.LargeWidth = 75;
-            this.btnSyllabusRequirement.Name = "btnSyllabusRequirement";
-            this.btnSyllabusRequirement.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSyllabusRequirement_ItemClick);
             // 
             // btnSyllabusSchedule
             // 
@@ -364,23 +326,13 @@
             // 
             // btnProgramLecturerList
             // 
-            this.btnProgramLecturerList.Caption = "Danh Sách Giảng Viên";
+            this.btnProgramLecturerList.Caption = "Thông tin Khác";
             this.btnProgramLecturerList.Glyph = ((System.Drawing.Image)(resources.GetObject("btnProgramLecturerList.Glyph")));
             this.btnProgramLecturerList.Id = 32;
             this.btnProgramLecturerList.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramLecturerList.LargeGlyph")));
             this.btnProgramLecturerList.LargeWidth = 90;
             this.btnProgramLecturerList.Name = "btnProgramLecturerList";
             this.btnProgramLecturerList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProgramLecturerList_ItemClick);
-            // 
-            // btnProgramFacilities
-            // 
-            this.btnProgramFacilities.Caption = "Thông Tin Cơ Sở Vật Chất";
-            this.btnProgramFacilities.Glyph = ((System.Drawing.Image)(resources.GetObject("btnProgramFacilities.Glyph")));
-            this.btnProgramFacilities.Id = 33;
-            this.btnProgramFacilities.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnProgramFacilities.LargeGlyph")));
-            this.btnProgramFacilities.LargeWidth = 90;
-            this.btnProgramFacilities.Name = "btnProgramFacilities";
-            this.btnProgramFacilities.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProgramFacilities_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -460,7 +412,6 @@
             // 
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramInfo);
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramLecturerList);
-            this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramFacilities);
             this.pageProgramGeneralInfo.ItemLinks.Add(this.btnProgramOut);
             this.pageProgramGeneralInfo.Name = "pageProgramGeneralInfo";
             this.pageProgramGeneralInfo.Text = "Thông Tin Chung";
@@ -494,9 +445,6 @@
             // 
             this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusCourseInfo);
             this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusLecturerInfo);
-            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusCourseDescription);
-            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusDocument);
-            this.groupSyllabusInfo.ItemLinks.Add(this.btnSyllabusRequirement);
             this.groupSyllabusInfo.Name = "groupSyllabusInfo";
             this.groupSyllabusInfo.Text = "Thông Tin Chung";
             // 
@@ -618,10 +566,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupSyllabusMapping;
         private DevExpress.XtraBars.BarButtonItem btnSyllabusObjectives;
         private DevExpress.XtraBars.BarButtonItem btnSyllabusOutcomes;
-        private DevExpress.XtraBars.BarButtonItem btnSyllabusCourseDescription;
-        private DevExpress.XtraBars.BarButtonItem btnSyllabusDocument;
         private DevExpress.XtraBars.BarButtonItem btnSyllabusMethod;
-        private DevExpress.XtraBars.BarButtonItem btnSyllabusRequirement;
         private DevExpress.XtraBars.BarButtonItem btnSyllabusSchedule;
         private DevExpress.XtraBars.BarButtonItem btnSyllabusMapping;
         private DevExpress.XtraBars.BarButtonItem btnProgramCreate;
@@ -632,7 +577,6 @@
         private DevExpress.XtraBars.BarButtonItem btnProgramObjective;
         private DevExpress.XtraBars.BarButtonItem btnProgramLecturerList;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageProgramGeneralInfo;
-        private DevExpress.XtraBars.BarButtonItem btnProgramFacilities;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarButtonItem btnProgramOut;

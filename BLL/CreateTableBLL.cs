@@ -36,10 +36,31 @@ namespace BLL
             temp.ReplaceText("[TableLecturerList]", profill.ProgramLecturer, false);
             var t = temp.Tables[0];
             var t1 = temp.Tables[1];
+            var t2 = temp.Tables[2];
+            var t3 = temp.Tables[3];
+            var t4 = temp.Tables[4];
+            var t5 = temp.Tables[5];
+            var t6 = temp.Tables[6];
+            var t7 = temp.Tables[7];
+            var t8 = temp.Tables[8];
             CreateAndInsertCourseTableAfter(t, ref temp,idProgram);
             CreateAndInsertDetailTableAfter(t1, ref temp, idProgram, 1);
+            CreateAndInsertDetailTableAfter(t2, ref temp, idProgram, 2);
+            CreateAndInsertDetailTableAfter(t3, ref temp, idProgram, 3);
+            CreateAndInsertDetailTableAfter(t4, ref temp, idProgram, 4);
+            CreateAndInsertDetailTableAfter(t5, ref temp, idProgram, 5);
+            CreateAndInsertDetailTableAfter(t6, ref temp, idProgram, 6);
+            CreateAndInsertDetailTableAfter(t7, ref temp, idProgram, 7);
+            CreateAndInsertDetailTableAfter(t8, ref temp, idProgram, 8);
             t1.Remove();
             t.Remove();
+            t2.Remove();
+            t3.Remove();
+            t4.Remove();
+            t5.Remove();
+            t6.Remove();
+            t7.Remove();
+            t8.Remove();
             return temp;
         }
         public string programoutcomeslist(string id,int type)
@@ -332,8 +353,8 @@ namespace BLL
             try
             {
 
-                gDoc = fillProgram(DocX.Load(path), id);
-                gDoc.SaveAs(Directory.GetCurrentDirectory() + @"\Program.docx");
+                gDoc = fillProgram(DocX.Load(path +"\\ChuongTrinhDaoTao_Template.docx"), id);
+                gDoc.SaveAs(Directory.GetCurrentDirectory() + "\\Program.docx");
   
             }
             catch (Exception)
@@ -349,7 +370,7 @@ namespace BLL
             try
             {
 
-                gDoc = fillSyllabus(DocX.Load(path+ "\\ChuongTrinhDaoTao_Template.docx"), id,idprogram);
+                gDoc = fillSyllabus(DocX.Load(path+ "\\Syllabus_Template.docx"), id,idprogram);
                 gDoc.SaveAs(path + "\\Syllabus.docx");
 
             }

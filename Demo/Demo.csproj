@@ -193,6 +193,12 @@
     <Compile Include="GUI\Program\GUI_Program_List.Designer.cs">
       <DependentUpon>GUI_Program_List.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Program\GUI_Program_OtherInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Program\GUI_Program_OtherInfo.Designer.cs">
+      <DependentUpon>GUI_Program_OtherInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Program\GUI_Program_Outcomes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,12 @@
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Objectives_Add.Designer.cs">
       <DependentUpon>GUI_Syllabus_Objectives_Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_OtherInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Syllabus\GUI_Syllabus_OtherInfo.Designer.cs">
+      <DependentUpon>GUI_Syllabus_OtherInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Syllabus\GUI_Syllabus_Outcomes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +386,9 @@
     <EmbeddedResource Include="GUI\Program\GUI_Program_List.resx">
       <DependentUpon>GUI_Program_List.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Program\GUI_Program_OtherInfo.resx">
+      <DependentUpon>GUI_Program_OtherInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Program\GUI_Program_Outcomes.resx">
       <DependentUpon>GUI_Program_Outcomes.cs</DependentUpon>
     </EmbeddedResource>
@@ -424,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Objectives_Add.resx">
       <DependentUpon>GUI_Syllabus_Objectives_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_OtherInfo.resx">
+      <DependentUpon>GUI_Syllabus_OtherInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Syllabus\GUI_Syllabus_Outcomes.resx">
       <DependentUpon>GUI_Syllabus_Outcomes.cs</DependentUpon>

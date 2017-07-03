@@ -127,6 +127,7 @@ C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Program.GUI_Ent
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_CreateSyllabus.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_Lecturer.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_List.resources
+C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_OtherInfo.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_Outcomes.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Program.GUI_Program_ProgramInfo.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.GUI_Program_ProgramList.resources
@@ -144,6 +145,7 @@ C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Syllabus.GUI_Sy
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.GUI_Syllabus_Methods.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Syllabus.GUI_Syllabus_Objectives.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Syllabus.GUI_Syllabus_Objectives_Add.resources
+C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Syllabus.GUI_Syllabus_OtherInfo.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Syllabus.GUI_Syllabus_Outcomes.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.Syllabus.GUI_Syllabus_Outcomes_Add.resources
 C:\Users\Admin\Documents\GitHub\Demo-SEP\Demo\obj\Debug\Demo.GUI.GUI_Syllabus_Request.resources

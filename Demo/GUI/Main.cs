@@ -147,33 +147,17 @@ namespace Demo
 
         private void btnProgramLecturerList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form checkformprogramlecturerlist = this.checkexist(typeof(GUI.Program.GUI_Program_Lecturer));
+            Form checkformprogramlecturerlist = this.checkexist(typeof(GUI.Program.GUI_Program_OtherInfo));
             if (checkformprogramlecturerlist != null)
             {
                 checkformprogramlecturerlist.Activate();
             }
             else
             {
-                GUI.Program.GUI_Program_Lecturer formlecturerlist = new GUI.Program.GUI_Program_Lecturer();
+                GUI.Program.GUI_Program_OtherInfo formlecturerlist = new GUI.Program.GUI_Program_OtherInfo();
                 formlecturerlist.MdiParent = this;
                 formlecturerlist.idprogram = idpath;
                 formlecturerlist.Show();
-            }
-        }
-
-        private void btnProgramFacilities_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Form checkformprogrampackage = this.checkexist(typeof(GUI.GUI_Program_PackageInfo));
-            if (checkformprogrampackage != null)
-            {
-                checkformprogrampackage.Activate();
-            }
-            else
-            {
-                GUI.GUI_Program_PackageInfo formpackage = new GUI.GUI_Program_PackageInfo();
-                formpackage.MdiParent = this;
-                formpackage.idprogram = idpath;
-                formpackage.Show();
             }
         }
 
@@ -196,69 +180,22 @@ namespace Demo
 
         private void btnSyllabusLecturerInfo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form checkformpsyllabuslecturer = this.checkexist(typeof(GUI.GUI_Syllabus_Lecturer));
+            Form checkformpsyllabuslecturer = this.checkexist(typeof(GUI.Syllabus.GUI_Syllabus_OtherInfo));
             if (checkformpsyllabuslecturer != null)
             {
                 checkformpsyllabuslecturer.Activate();
             }
             else
             {
-                GUI.GUI_Syllabus_Lecturer formsyllabuslecturer = new GUI.GUI_Syllabus_Lecturer();
+                GUI.Syllabus.GUI_Syllabus_OtherInfo formsyllabuslecturer = new GUI.Syllabus.GUI_Syllabus_OtherInfo();
                 formsyllabuslecturer.MdiParent = this;
                 formsyllabuslecturer.ids = idpathsy;
+                formsyllabuslecturer.idp = idpath;
                 formsyllabuslecturer.Show();
             }
         }
 
-        private void btnSyllabusCourseDescription_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Form checkformpsyllabusdes = this.checkexist(typeof(GUI.GUI_Syllabus_Description));
-            if (checkformpsyllabusdes != null)
-            {
-                checkformpsyllabusdes.Activate();
-            }
-            else
-            {
-                GUI.GUI_Syllabus_Description formsyllabusdes = new GUI.GUI_Syllabus_Description();
-                formsyllabusdes.MdiParent = this;
-                formsyllabusdes.ids = idpathsy;
-                formsyllabusdes.idp = idpath;
-                formsyllabusdes.Show();
-            }
-        }
-
-        private void btnSyllabusDocument_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Form checkformpsyllabusdoc = this.checkexist(typeof(GUI.GUI_Syllabus_Document));
-            if (checkformpsyllabusdoc != null)
-            {
-                checkformpsyllabusdoc.Activate();
-            }
-            else
-            {
-                GUI.GUI_Syllabus_Document formsyllabusdoc = new GUI.GUI_Syllabus_Document();
-                formsyllabusdoc.MdiParent = this;
-                formsyllabusdoc.idsyllabus = idpathsy;
-                formsyllabusdoc.idp = idpath;
-                formsyllabusdoc.Show();
-            }
-        }
-
-        private void btnSyllabusRequirement_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Form checkformpsyllabusreq = this.checkexist(typeof(GUI.GUI_Syllabus_Request));
-            if (checkformpsyllabusreq != null)
-            {
-                checkformpsyllabusreq.Activate();
-            }
-            else
-            {
-                GUI.GUI_Syllabus_Request formsyllabusreq = new GUI.GUI_Syllabus_Request();
-                formsyllabusreq.MdiParent = this;
-                formsyllabusreq.ids = idpathsy;
-                formsyllabusreq.Show();
-            }
-        }
+       
 
         private void btnSyllabusSchedule_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -486,6 +423,11 @@ namespace Demo
             MessageBox.Show("Chương trình sẽ thoát vì lý do bảo mật, vui lòng đăng nhập lại");
             log = true;
             this.Close();
+        }
+
+        private void btnSyllabusRequirement_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }
