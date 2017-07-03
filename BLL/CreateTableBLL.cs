@@ -191,9 +191,9 @@ namespace BLL
                 t4.Remove();
                 t.Remove();
             }
-            CreateMappingTableAfter(t6, ref temp1, idSyllabus, idprogram);
-            CreateMethod(t7, ref temp1, idSyllabus, idprogram);
-            CreateSchedule(t8, ref temp1, idSyllabus, idprogram);
+            //CreateMappingTableAfter(t6, ref temp1, idSyllabus, idprogram);
+            //CreateMethod(t7, ref temp1, idSyllabus, idprogram);
+            //CreateSchedule(t8, ref temp1, idSyllabus, idprogram);
             t6.Remove();
             t7.Remove();
             t8.Remove();

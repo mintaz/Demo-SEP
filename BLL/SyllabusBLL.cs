@@ -248,6 +248,7 @@ namespace BLL
                 sys.CoursePoint = TC;
                 sys.CourseLT = LT;
                 sys.PreCourse = precourse;
+                sys.isLockEdit = false;
                 sys.CourseContent = content;
                 db.Syllabus.InsertOnSubmit(sys);
                 db.SubmitChanges();

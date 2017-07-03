@@ -173,7 +173,7 @@ namespace Demo
                 GUI.Syllabus.GUI_Syllabus_Info formsyllabusinfo = new GUI.Syllabus.GUI_Syllabus_Info();
                 formsyllabusinfo.MdiParent = this;
                 formsyllabusinfo.idsysinfo = idpathsy;
-                formsyllabusinfo.idp = idpath;
+                formsyllabusinfo.idp = syl.getIDprogram(idpathsy);
                 formsyllabusinfo.Show();
             }
         }
@@ -190,7 +190,7 @@ namespace Demo
                 GUI.Syllabus.GUI_Syllabus_OtherInfo formsyllabuslecturer = new GUI.Syllabus.GUI_Syllabus_OtherInfo();
                 formsyllabuslecturer.MdiParent = this;
                 formsyllabuslecturer.ids = idpathsy;
-                formsyllabuslecturer.idp = idpath;
+                formsyllabuslecturer.idp = syl.getIDprogram(idpathsy);
                 formsyllabuslecturer.Show();
             }
         }
@@ -209,7 +209,7 @@ namespace Demo
                 GUI.Syllabus.GUI_Syllabus_ScheduleManager formsyllabussche = new GUI.Syllabus.GUI_Syllabus_ScheduleManager();
                 formsyllabussche.MdiParent = this;
                 formsyllabussche.idS = idpathsy;
-                formsyllabussche.idp = idpath;
+                formsyllabussche.idp = syl.getIDprogram(idpathsy);
                 formsyllabussche.Show();
             }
         }
@@ -226,7 +226,7 @@ namespace Demo
                 GUI.Syllabus.GUI_Syllabus_Objectives formsyllabussobj = new GUI.Syllabus.GUI_Syllabus_Objectives();
                 formsyllabussobj.MdiParent = this;
                 formsyllabussobj.idsys = idpathsy;
-                formsyllabussobj.idp = idpath;
+                formsyllabussobj.idp = syl.getIDprogram(idpathsy);
                 formsyllabussobj.Show();
             }
         }
@@ -243,7 +243,7 @@ namespace Demo
                 GUI.Syllabus.GUI_Syllabus_Outcomes formsyllabussout = new GUI.Syllabus.GUI_Syllabus_Outcomes();
                 formsyllabussout.MdiParent = this;
                 formsyllabussout.idsys = idpathsy;
-                formsyllabussout.idp = idpath;
+                formsyllabussout.idp = syl.getIDprogram(idpathsy);
                 formsyllabussout.Show();
             }
         }
